@@ -3,8 +3,8 @@
 
 {% block content %}
 <h2 style="margin-bottom: 10px;">Top Movies</h2>
-<div class="grid">
-  {% for movie in media %}
+<div class="catalogue-grid">
+  {% for movie in movies %}
     <div class="media-card">
       <img src="{{ movie.poster_url }}" alt="{{ movie.title }}">
       <p>{{ movie.title }}</p>
@@ -13,8 +13,8 @@
 </div>
 
 <h2 style="margin: 30px 0 10px;">Top TV Shows</h2>
-<div class="grid">
-  {% for show in media %}
+<div class="catalogue-grid">
+  {% for show in tv_shows %}
     <div class="media-card">
       <img src="{{ show.poster_url }}" alt="{{ show.title }}">
       <p>{{ show.title }}</p>

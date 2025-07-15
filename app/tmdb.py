@@ -49,8 +49,10 @@ print("Saved media_catalog.csv with", len(df), "entries")
 @app.route('/')
 def catalogue():
     df = pd.read_csv('media_catalog.csv')
-    media = df.to_dict(orient='records')
-    return render_template('catalogue.html', media=media)
+    # Sends only the top 10 movies and tv shows to the catalogue page
+    movies = df[df["media_type"] == "movie"].head(10).to_dict(orient='records')
+    tv_shows = df[df["media_type"] == "tv"].head(10).to_dict(orient='records')
+    return render_template('catalogue.html', movies=movies, tv_shows=tv_shows)
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")
