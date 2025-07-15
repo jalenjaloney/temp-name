@@ -96,7 +96,6 @@ df = pd.DataFrame(movies + tv)
 df.to_csv("media_catalog.csv", index=False)
 print("Saved media_catalog.csv with", len(df), "entries")
 
-
 # Update TMDB to show to catalogue page
 @app.route('/')
 def catalogue():
@@ -106,6 +105,33 @@ def catalogue():
     tv_shows = df[df["media_type"] == "tv"].head(10).to_dict(orient='records')
     return render_template('catalogue.html', movies=movies, tv_shows=tv_shows)
 
+# fetch and parse tv show seasons
+season_data = []
+episode_data = []
+for show in tv:
+    tv_id = show["tmdb_id"]
+    title = show["title"]
+
+    seasons_raw = fetch_tv_seasons(tv_id)
+    seasons = parse_seasons(tv_id, title, seasons_raw)
+    season_data.extend(seasons)
+
+    for season in seasons:
+        season_num = season["season_number"]
+        season_id = season["season_id"]
+
+        episodes_raw = fetch_season_episodes(tv_id, season_num)
+        episodes = parse_episodes(tv_id, season_num, season_id, episodes_raw)
+        episode_data.extend(episodes)
+    
+
+season_df = pd.DataFrame(season_data)
+season_df.to_csv("tv_seasons.csv", index=False)
+print("Saved tv_seasons.csv with", len(season_df), "entries")
+
+episode_df = pd.DataFrame(episode_data)
+episode_df.to_csv("tv_episodes.csv", index=False)
+print("Saved tv_episodes.csv with", len(episode_df), "entries")
+
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")
-
