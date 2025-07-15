@@ -38,8 +38,8 @@ def home():
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
-    if form.validate_on_submit(): # checks if entries are valid
-         # creating user and adding to database
+    if form.validate_on_submit(): # checks if entry fulfills defined validators
+        # creating user and adding to database
         user = User(username=form.username.data, password=form.password.data)
         db.session.add(user)
         db.session.commit()
@@ -59,7 +59,7 @@ def login():
          flash('Login successful!', 'success')
          return redirect(url_for('home'))
       else:
-         flash('Login failed. Please check username and password.', 'danger')
+         form.username.errors.append('Invalid username or password.')
   return render_template("login.html", form=form)
 
 # @app.route("/update_server", methods=['POST'])
