@@ -13,3 +13,4 @@ Werkzeug==2.3.6
 requests
 pandas
 python-dotenv
+flask_login
