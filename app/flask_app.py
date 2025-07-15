@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, flash, redirect, request
 import git
-from forms import RegistrationForm
+# from forms import RegistrationForm
 from flask_behind_proxy import FlaskBehindProxy
 
 from flask_sqlalchemy import SQLAlchemy
@@ -34,8 +34,8 @@ with app.app_context():
 @app.route("/")
 @app.route("/home")
 def home():
-    users = User.query.all()
-    return render_template('home.html', subtitle='Home Page', text='This is the home page', users=users)
+    # users = User.query.all()
+    return render_template('home.html', subtitle='Home Page', text='This is the home page')
 
 
 # @app.route("/sign_in")
@@ -63,5 +63,5 @@ def home():
 # #     else:
 # #         return 'Wrong event type', 400
 
-# # if __name__ == '__main__':
-# #     app.run(debug=True, host="0.0.0.0")
+if __name__ == '__main__':
+    app.run(debug=True, host="0.0.0.0")
