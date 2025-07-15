@@ -24,6 +24,37 @@ body {
   flex-direction: column;
 }
 
+.layout-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Auth wrapper for login/register pages */
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+  height: 100vh;
+}
+
+.login-container,
+.register-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2,
+.register-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e1e2f;
+}
+
 .logo {
   margin-bottom: 40px;
   font-size: 24px;
@@ -55,25 +86,10 @@ body {
 }
 
 .main-content {
-  margin-left: 220px; /* same as sidebar width */
+  margin-left: 220px;
   padding: 30px;
   flex-grow: 1;
   background-color: lightblue;
-}
-
-.register-container {
-  max-width: 500px;
-  margin: 0 auto;
-  background-color: #f8f9fa;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.register-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #1e1e2f;
 }
 
 .form-group {
@@ -131,21 +147,6 @@ body {
 .btn-top:hover {
   background-color: #33334d;
   color: #fff;
-}
-
-.login-container {
-  max-width: 500px;
-  margin: 0 auto;
-  background-color: #f8f9fa;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.login-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #1e1e2f;
 }
 
 .alert {
