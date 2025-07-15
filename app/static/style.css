@@ -59,6 +59,42 @@ body {
   padding: 30px;
   flex-grow: 1;
   background-color: lightblue;
+  height:fit-content;
+}
+
+.Container {
+  background-color: #fff;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 2em;
+  color: #1e1e1e;
+}
+
+img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+p {
+  line-height: 1.6;
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+strong {
+  font-weight: bold;
+  color: #444;
 }
 
 /* start of the catalogue specific styles */
@@ -92,9 +128,11 @@ body {
 .media-card p {
   margin-top: 6px;
   font-size: 0.9rem;
-  color: white;
+  color: black;
   word-wrap: break-word;    /* makes sure that longer titles display fully */
   white-space: normal;
 }
+
+
 
 
