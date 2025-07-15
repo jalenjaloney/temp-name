@@ -10,7 +10,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)  ## add this line
 
-app.config['SECRET_KEY'] = '7669a686970f61dd6a2c7598628b864d'
+app.config['SECRET_KEY'] = 'SECRET_KEY'
 
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
