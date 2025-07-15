@@ -62,6 +62,11 @@ def login():
          form.username.errors.append('Invalid username or password.')
   return render_template("login.html", form=form)
 
+@app.route("/logout", methods=["GET", "POST"])
+def logout():
+   logout_user()
+   return(redirect(url_for('login')))
+
 # @app.route("/update_server", methods=['POST'])
 # # def webhook():
 # #     if request.method == 'POST':
