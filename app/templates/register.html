@@ -1,5 +1,6 @@
-{% extends "layout.html" %}
+{% extends "auth_layout.html" %}
 {% block content %}
+<div class="auth-wrapper">
   <div class="register-container">
     <h2>Register</h2>
     <form method="POST" action="">
@@ -44,6 +45,12 @@
       <div class="form-group">
         {{ form.submit(class="btn btn-outline-info") }}
       </div>
+
+      <p style="text-align: center;"">
+        Already have an account?
+        <a href="{{ url_for('login') }}" class="btn btn-link">Log in here</a>
+      </p>
     </form>
+  </div>
   </div>
 {% endblock %}

@@ -34,13 +34,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f8f9fa;
+  background-color: #1e1e2f;
   height: 100vh;
 }
 
 .login-container,
 .register-container {
-  max-width: 500px;
+  width: 400px;
+  min-height: 300px;
   margin: 0 auto;
   background-color: #f8f9fa;
   padding: 30px;
@@ -155,4 +156,3 @@ body {
   border-radius: 5px;
   font-size: 14px;
 }
-
