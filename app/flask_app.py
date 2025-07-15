@@ -5,14 +5,20 @@ import pandas as pd
 # from forms import RegistrationForm
 from flask_behind_proxy import FlaskBehindProxy
 from flask_sqlalchemy import SQLAlchemy
-
+import os
+from dotenv import load_dotenv
 
 
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)  ## add this line
 
 app.config['SECRET_KEY'] = '7669a686970f61dd6a2c7598628b864d'
-TMDB_API_KEY = "4abd18d55b49ea191290f8344285d116"
+
+
+load_dotenv()
+TMDB_API_KEY = os.getenv("TMDB_API_KEY")
+
+
 BASE_URL = "https://api.themoviedb.org/3"
 IMG_BASE_URL = "https://image.tmdb.org/t/p/w500"
 
@@ -49,6 +55,53 @@ def parse_tmdb_items(items, media_type):
         })
     return parsed
 
+def fetch_tv_seasons(tv_id):
+    url = f"{BASE_URL}/tv/{tv_id}"
+    response = requests.get(url, params={"api_key": TMDB_API_KEY})
+    response.raise_for_status()
+    return response.json().get("seasons", [])
+
+def parse_seasons(tv_id, title, seasons_raw):
+    seasons = []
+    for season in seasons_raw:
+        seasons.append({
+            "season_id": f"{tv_id}-{season['season_number']}",
+            "tv_id": tv_id,
+            "title": title,
+            "season_number": season["season_number"],
+            "name": season.get("name"),
+            "overview": season.get("overview"),
+            "poster_url": IMG_BASE_URL + season["poster_path"] if season.get("poster_path") else None,
+            "air_date": season.get("air_date"),
+            "episode_count": season.get("episode_count"),
+            "vote_average": season.get("vote_average"),
+        })
+    return seasons
+
+def fetch_season_episodes(tv_id, season_number):
+    url = f"{BASE_URL}/tv/{tv_id}/season/{season_number}"
+    response = requests.get(url, params={"api_key": TMDB_API_KEY})
+    response.raise_for_status()
+    return response.json().get("episodes", [])
+
+def parse_episodes(tv_id, season_num, season_id, episodes_raw):
+    episodes = []
+    for episode in episodes_raw:
+        episodes.append({
+            "episode_id": episode["id"],
+            "season_id": season_id,
+            "tv_id": tv_id,
+            "season_number": season_num,
+            "episode_number": episode["episode_number"],
+            "episode_name": episode.get("name"),
+            "overview": episode.get("overview"),
+            "air_date": episode.get("air_date"),
+            "runtime": episode.get("runtime"),
+            "vote_average": episode.get("vote_average"),
+            "still_url": IMG_BASE_URL + episode["still_path"] if episode.get("still_path") else None,
+        })
+    return episodes
+
 # Fetch and parse both movies and TV shows
 movies_raw = fetch_popular("movie", pages=2)
 tv_raw = fetch_popular("tv", pages=2)
@@ -60,33 +113,22 @@ tv = parse_tmdb_items(tv_raw, "tv")
 df = pd.DataFrame(movies + tv)
 df.to_csv("media_catalog.csv", index=False)
 print("Saved media_catalog.csv with", len(df), "entries")
+
 df = pd.read_csv('media_catalog.csv')
-media = df.to_dict(orient='records')
 # Update TMDB to show to catalogue page
 @app.route('/')
 def catalogue():
-    return render_template('catalogue.html', media=media)
+    # Sends only the top 10 movies and tv shows to the catalogue page
+    movies = df[df["media_type"] == "movie"].head(10).to_dict(orient='records')
+    tv_shows = df[df["media_type"] == "tv"].head(10).to_dict(orient='records')
+    return render_template('catalogue.html', movies=movies, tv_shows=tv_shows)
 
+@app.route('media/<media_id>')
+def get_media(media_id):
+    movie = df[df["imdb_id"] == media_id]
+    return render_template('season_page.html', item=movie)
+    
 
-#Dynamic routes for the specific show
-@app.route("/media/<media_id>")
-def handleShow(media_id):
-  for item in media:
-    if item['tmdb_id'] == int(media_id):
-      return render_template('season_page.html',item=item)
-  return render_template('season_page.html',item=None)
-
-
-
-# @app.route("/update_server", methods=['POST'])
-# # def webhook():
-# #     if request.method == 'POST':
-# #         repo = git.Repo('/home/thealienseb/SEO_Flask_practice')
-# #         origin = repo.remotes.origin
-# #         origin.pull()
-# #         return 'Updated PythonAnywhere successfully', 200
-# #     else:
-# #         return 'Wrong event type', 400
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")
