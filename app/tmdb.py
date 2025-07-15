@@ -1,7 +1,11 @@
 import requests
 import pandas as pd
+import os
+from dotenv import load_dotenv
 
-TMDB_API_KEY = "API KEY HERE"
+load_dotenv()
+TMDB_API_KEY = os.getenv("TMDB_API_KEY")
+
 BASE_URL = "https://api.themoviedb.org/3"
 IMG_BASE_URL = "https://image.tmdb.org/t/p/w500"
 
@@ -30,6 +34,30 @@ def parse_tmdb_items(items, media_type):
         })
     return parsed
 
+def fetch_tv_seasons(tv_id):
+    url = f"{BASE_URL}/tv/{tv_id}"
+    response = requests.get(url, params={"api_key": TMDB_API_KEY})
+    response.raise_for_status()
+    return response.json().get("seasons", [])
+
+def parse_seasons(tv_id, title, seasons_raw):
+    seasons = []
+    for season in seasons_raw:
+        seasons.append({
+            "season_id": f"{tv_id}-{season['season_number']}",
+            "tv_id": tv_id,
+            "title": title,
+            "season_number": season["season_number"],
+            "name": season.get("name"),
+            "overview": season.get("overview"),
+            "poster_url": IMG_BASE_URL + season["poster_path"] if season.get("poster_path") else None,
+            "air_date": season.get("air_date"),
+            "episode_count": season.get("episode_count"),
+            "vote_average": season.get("vote_average"),
+        })
+    return seasons
+
+
 # Fetch and parse both movies and TV shows
 movies_raw = fetch_popular("movie", pages=2)
 tv_raw = fetch_popular("tv", pages=2)
@@ -41,3 +69,18 @@ tv = parse_tmdb_items(tv_raw, "tv")
 df = pd.DataFrame(movies + tv)
 df.to_csv("media_catalog.csv", index=False)
 print("Saved media_catalog.csv with", len(df), "entries")
+
+# fetch and parse tv show seasons
+season_data = []
+for show in tv:
+    tv_id = show["tmdb_id"]
+    title = show["title"]
+
+    seasons_raw = fetch_tv_seasons(tv_id)
+    seasons = parse_seasons(tv_id, title, seasons_raw)
+    season_data.extend(seasons)
+
+season_df = pd.DataFrame(season_data)
+season_df.to_csv("tv_seasons.csv", index=False)
+
+print("Saved tv_seasons.csv with", len(season_df), "entries")
