@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../static/style.css">
+  
+</head>
+
+<body>
+  <nav class="sidebar">
+    <h2 class="logo">TempName</h2>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Bookmarked</a></li>
+      <li><a href="#">My Comments</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">History</a></li>
+    </ul>
+  </nav>
+  <main role="main" class="main-content">
+      <div class="">
+        <h1>From Layout</h1> {% block content %}{% endblock %}
+      </div>
+  </main>
+</body>
+
+</html>
