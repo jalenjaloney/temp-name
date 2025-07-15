@@ -57,6 +57,29 @@ def parse_seasons(tv_id, title, seasons_raw):
         })
     return seasons
 
+def fetch_season_episodes(tv_id, season_number):
+    url = f"{BASE_URL}/tv/{tv_id}/season/{season_number}"
+    response = requests.get(url, params={"api_key": TMDB_API_KEY})
+    response.raise_for_status()
+    return response.json().get("episodes", [])
+
+def parse_episodes(tv_id, season_num, season_id, episodes_raw):
+    episodes = []
+    for episode in episodes_raw:
+        episodes.append({
+            "episode_id": episode["id"],
+            "season_id": season_id,
+            "tv_id": tv_id,
+            "season_number": season_num,
+            "episode_number": episode["episode_number"],
+            "episode_name": episode.get("name"),
+            "overview": episode.get("overview"),
+            "air_date": episode.get("air_date"),
+            "runtime": episode.get("runtime"),
+            "vote_average": episode.get("vote_average"),
+            "still_url": IMG_BASE_URL + episode["still_path"] if episode.get("still_path") else None,
+        })
+    return episodes
 
 # Fetch and parse both movies and TV shows
 movies_raw = fetch_popular("movie", pages=2)
@@ -72,6 +95,7 @@ print("Saved media_catalog.csv with", len(df), "entries")
 
 # fetch and parse tv show seasons
 season_data = []
+episode_data = []
 for show in tv:
     tv_id = show["tmdb_id"]
     title = show["title"]
@@ -80,7 +104,19 @@ for show in tv:
     seasons = parse_seasons(tv_id, title, seasons_raw)
     season_data.extend(seasons)
 
+    for season in seasons:
+        season_num = season["season_number"]
+        season_id = season["season_id"]
+
+        episodes_raw = fetch_season_episodes(tv_id, season_num)
+        episodes = parse_episodes(tv_id, season_num, season_id, episodes_raw)
+        episode_data.extend(episodes)
+    
+
 season_df = pd.DataFrame(season_data)
 season_df.to_csv("tv_seasons.csv", index=False)
-
 print("Saved tv_seasons.csv with", len(season_df), "entries")
+
+episode_df = pd.DataFrame(episode_data)
+episode_df.to_csv("tv_episodes.csv", index=False)
+print("Saved tv_episodes.csv with", len(episode_df), "entries")
