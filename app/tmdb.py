@@ -1,5 +1,6 @@
 import requests
 import pandas as pd
+from flask import Flask, render_template
 import os
 from dotenv import load_dotenv
 
@@ -8,6 +9,8 @@ TMDB_API_KEY = os.getenv("TMDB_API_KEY")
 
 BASE_URL = "https://api.themoviedb.org/3"
 IMG_BASE_URL = "https://image.tmdb.org/t/p/w500"
+
+app = Flask(__name__)
 
 def fetch_popular(media_type="movie", pages=1):
     """Fetch multiple pages of popular movies or TV shows"""
@@ -93,6 +96,15 @@ df = pd.DataFrame(movies + tv)
 df.to_csv("media_catalog.csv", index=False)
 print("Saved media_catalog.csv with", len(df), "entries")
 
+# Update TMDB to show to catalogue page
+@app.route('/')
+def catalogue():
+    df = pd.read_csv('media_catalog.csv')
+    # Sends only the top 10 movies and tv shows to the catalogue page
+    movies = df[df["media_type"] == "movie"].head(10).to_dict(orient='records')
+    tv_shows = df[df["media_type"] == "tv"].head(10).to_dict(orient='records')
+    return render_template('catalogue.html', movies=movies, tv_shows=tv_shows)
+
 # fetch and parse tv show seasons
 season_data = []
 episode_data = []
@@ -120,3 +132,6 @@ print("Saved tv_seasons.csv with", len(season_df), "entries")
 episode_df = pd.DataFrame(episode_data)
 episode_df.to_csv("tv_episodes.csv", index=False)
 print("Saved tv_episodes.csv with", len(episode_df), "entries")
+
+if __name__ == '__main__':
+    app.run(debug=True, host="0.0.0.0")

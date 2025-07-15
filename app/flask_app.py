@@ -8,7 +8,7 @@ from app.models import db, User
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
 
-app.config['SECRET_KEY'] = '7669a686970f61dd6a2c7598628b864d'
+app.config['SECRET_KEY'] = 'SECRET_KEY'
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 
