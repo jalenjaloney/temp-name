@@ -1,9 +1,12 @@
 import requests
 import pandas as pd
+from flask import Flask, render_template
 
-TMDB_API_KEY = "API KEY HERE"
+TMDB_API_KEY = "4abd18d55b49ea191290f8344285d116"
 BASE_URL = "https://api.themoviedb.org/3"
 IMG_BASE_URL = "https://image.tmdb.org/t/p/w500"
+
+app = Flask(__name__)
 
 def fetch_popular(media_type="movie", pages=1):
     """Fetch multiple pages of popular movies or TV shows"""
@@ -41,3 +44,13 @@ tv = parse_tmdb_items(tv_raw, "tv")
 df = pd.DataFrame(movies + tv)
 df.to_csv("media_catalog.csv", index=False)
 print("Saved media_catalog.csv with", len(df), "entries")
+
+# Update TMDB to show to catalogue page
+@app.route('/')
+def catalogue():
+    df = pd.read_csv('media_catalog.csv')
+    media = df.to_dict(orient='records')
+    return render_template('catalogue.html', media=media)
+
+if __name__ == '__main__':
+    app.run(debug=True, host="0.0.0.0")
