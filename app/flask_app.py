@@ -2,7 +2,6 @@ from flask import Flask, render_template, url_for, flash, redirect, request
 import git
 import requests
 import pandas as pd
-from forms import RegistrationForm
 from flask_behind_proxy import FlaskBehindProxy
 from flask_sqlalchemy import SQLAlchemy
 import os
@@ -13,20 +12,18 @@ from flask_login import LoginManager, login_user, logout_user, login_required, c
 from app.models import db, User
 
 app = Flask(__name__)
-proxied = FlaskBehindProxy(app)  ## add this line
+proxied = FlaskBehindProxy(app)
 
 app.config['SECRET_KEY'] = 'SECRET_KEY'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 
 load_dotenv()
 TMDB_API_KEY = os.getenv("TMDB_API_KEY")
 
+db.init_app(app)
 
 BASE_URL = "https://api.themoviedb.org/3"
 IMG_BASE_URL = "https://image.tmdb.org/t/p/w500"
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-
-db.init_app(app)
 
 login_manager = LoginManager()
 login_manager.init_app(app)
@@ -36,9 +33,6 @@ login_manager.login_message_category = 'info'
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-db = SQLAlchemy(app)
 
 with app.app_context():
   db.create_all()
