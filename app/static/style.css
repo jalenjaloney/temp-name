@@ -24,6 +24,37 @@ body {
   flex-direction: column;
 }
 
+.layout-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Auth wrapper for login/register pages */
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+  height: 100vh;
+}
+
+.login-container,
+.register-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2,
+.register-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e1e2f;
+}
+
 .logo {
   margin-bottom: 40px;
   font-size: 24px;
@@ -55,7 +86,7 @@ body {
 }
 
 .main-content {
-  margin-left: 220px; /* same as sidebar width */
+  margin-left: 220px;
   padding: 30px;
   flex-grow: 1;
   background-color: lightblue;
@@ -97,4 +128,67 @@ body {
   white-space: normal;
 }
 
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.2s ease;
+}
+
+.form-control:focus {
+  border-color: #66afe9;
+  outline: none;
+}
+
+.is-invalid {
+  border-color: #dc3545;
+}
+
+.invalid-feedback {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.top-buttons {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  z-index: 10;
+}
+
+.btn-top {
+  background-color: #1e1e2f;
+  color: #fff;
+  padding: 8px 14px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.btn-top:hover {
+  background-color: #33334d;
+  color: #fff;
+}
+
+.alert {
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+}
 

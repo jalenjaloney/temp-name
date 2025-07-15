@@ -1,29 +1,27 @@
 from flask import Flask, render_template, url_for, flash, redirect, request
 import git
-# from forms import RegistrationForm
+from app.forms import RegistrationForm, LoginForm
 from flask_behind_proxy import FlaskBehindProxy
-
-from flask_sqlalchemy import SQLAlchemy
-
-
+from flask_login import LoginManager, login_user, logout_user, login_required, current_user
+from app.models import db, User
 
 app = Flask(__name__)
-proxied = FlaskBehindProxy(app)  ## add this line
+proxied = FlaskBehindProxy(app)
 
 app.config['SECRET_KEY'] = 'SECRET_KEY'
 
-
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-db = SQLAlchemy(app)
 
-# class User(db.Model):
-#   id = db.Column(db.Integer, primary_key=True)
-#   username = db.Column(db.String(20), unique=True, nullable=False)
-#   email = db.Column(db.String(120), unique=True, nullable=False)
-#   password = db.Column(db.String(60), nullable=False)
+db.init_app(app)
 
-#   def __repr__(self):
-#     return f"User('{self.username}', '{self.email}')"
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login' #redirects unathorized users
+login_manager.login_message_category = 'info'
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 #CREATE USER / CATALOGUE / EPISODE / MODELS LIKE THIS IS YOU WANT
 
@@ -34,24 +32,40 @@ with app.app_context():
 @app.route("/")
 @app.route("/home")
 def home():
-    # users = User.query.all()
-    return render_template('home.html', subtitle='Home Page', text='This is the home page')
+    users = User.query.all()
+    return render_template('home.html', subtitle='Home Page', text='This is the home page', users=users)
 
+@app.route("/register", methods=['GET', 'POST'])
+def register():
+    form = RegistrationForm()
+    if form.validate_on_submit(): # checks if entry fulfills defined validators
+        # creating user and adding to database
+        user = User(username=form.username.data, password=form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash(f'Account created for {form.username.data}!', 'success')
+        return redirect(url_for('login')) # send to login page after successful register
+    return render_template('register.html', title='Register', form=form)
 
-# @app.route("/sign_in")
-# def second_page():
-#     return render_template('about.html', subtitle='About Page', text='This is the about page')
+@app.route("/login", methods=["GET", "POST"])
+def login():
+  form = LoginForm()
+  if form.validate_on_submit():
+      user = User.query.filter_by(username=form.username.data).first()
+      print("Stored password:", user.password)
+      print("Entered password:", form.password.data)
+      if user and user.password == form.password.data:
+         login_user(user, remember=form.remember.data)
+         flash('Login successful!', 'success')
+         return redirect(url_for('home'))
+      else:
+         form.username.errors.append('Invalid username or password.')
+  return render_template("login.html", form=form)
 
-# @app.route("/sign_up", methods=['GET', 'POST'])
-# def register():
-#     form = RegistrationForm()
-#     if form.validate_on_submit(): # checks if entries are valid
-#         user = User(username=form.username.data, email=form.email.data, password=form.password.data)
-#         db.session.add(user)
-#         db.session.commit()
-#         flash(f'Account created for {form.username.data}!', 'success')
-#         return redirect(url_for('home')) # if so - send to home page
-#     return render_template('register.html', title='Register', form=form)
+@app.route("/logout", methods=["GET", "POST"])
+def logout():
+   logout_user()
+   return(redirect(url_for('login')))
 
 # @app.route("/update_server", methods=['POST'])
 # # def webhook():
@@ -62,6 +76,3 @@ def home():
 # #         return 'Updated PythonAnywhere successfully', 200
 # #     else:
 # #         return 'Wrong event type', 400
-
-if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0")

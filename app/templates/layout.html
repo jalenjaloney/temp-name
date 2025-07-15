@@ -13,18 +13,34 @@
   <nav class="sidebar">
     <h2 class="logo">TempName</h2>
     <ul class="nav-links">
-      <li><a href="#">Home</a></li>
+      <li><a href="home">Home</a></li>
       <li><a href="#">Bookmarked</a></li>
-      <li><a href="#">My Comments</a></li>
       <li><a href="#">Profile</a></li>
       <li><a href="#">History</a></li>
     </ul>
   </nav>
-  <main role="main" class="main-content">
-      <div class="">
-        <h1>From Layout</h1> {% block content %}{% endblock %}
-      </div>
-  </main>
+  <div class="top-buttons">
+    {% if current_user.is_authenticated %}
+      <a href="{{ url_for('logout') }}" class="btn-top">Logout</a>
+    {% else %}
+      <a href="{{ url_for('register') }}" class="btn-top">Register</a>
+      <a href="{{ url_for('login') }}" class="btn-top">Login</a>
+    {% endif %}
+  </div>
+<main role="main" class="main-content">
+  <div class="container">
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </div>
+</main>
 </body>
 
 </html>
