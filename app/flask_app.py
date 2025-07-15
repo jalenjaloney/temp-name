@@ -123,11 +123,33 @@ def catalogue():
     tv_shows = df[df["media_type"] == "tv"].head(10).to_dict(orient='records')
     return render_template('catalogue.html', movies=movies, tv_shows=tv_shows)
 
-@app.route('media/<media_id>')
+@app.route('/media/<int:media_id>')
 def get_media(media_id):
-    movie = df[df["imdb_id"] == media_id]
-    return render_template('season_page.html', item=movie)
-    
+    match = df[df["tmdb_id"] == int(media_id)]
+
+    if match.empty:
+        return render_template('season_page.html', item=None)
+
+    item = match.iloc[0].to_dict()
+
+    seasons = None
+    episodes = {}
+
+    if item['media_type'] == 'tv':
+        seasons = fetch_tv_seasons(int(item['tmdb_id']))
+        for season in seasons:
+            episodes[season['season_number']] = fetch_season_episodes(
+                int(item['tmdb_id']),
+                int(season['season_number'])
+            )
+
+
+    return render_template('season_page.html', item=item, seasons=seasons, episodes=episodes)
+
+
+#MAKE THE BUTTONS HAVE FUNCTIONALITY TO HAVE A DIFFERENT SET OF EPISODES SHOW UP FOR THAT SEASON. CREATE THE HTML THAT WOULD 
+#ALLOW FOR THOSE EPISODES TO PROPERLY STACK UNDER THE SHOW DESCRIPTION AND WHEN A BUTTON IS CLICKED AGAIN IT SHOULD NOT DEPEND ON AN 
+#REQUEST TO MAKE THE EPISODES APPEAR AGAIN
 
 
 if __name__ == '__main__':
