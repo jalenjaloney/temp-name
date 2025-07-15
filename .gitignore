@@ -1,1 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+
+# Virtual environment
+venv/
+.venv/
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+
+# Environment variables / secrets
 .env
+*.env
+
+# Flask cache
+instance/
+*.log
+
+# macOS system files
+.DS_Store
