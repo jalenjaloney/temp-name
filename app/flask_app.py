@@ -135,20 +135,37 @@ def catalogue():
 @app.route('/media/<media_id>')
 def get_media(media_id):
     media = df[df["tmdb_id"] == int(media_id)].iloc[0].to_dict()
-
+    # gets seasons
     seasons = []
     if media["media_type"] == "tv":
         conn = sqlite3.connect("media.db")
-        season_query = f"SELECT * FROM seasons WHERE tv_id = {media_id} ORDER BY season_number"
+        season_query = f"SELECT * FROM seasons WHERE tv_id = '{media_id}' ORDER BY season_number"
         season_df = pd.read_sql(season_query, conn)
         conn.close()
         seasons = season_df.to_dict(orient='records')
 
     return render_template('season_page.html', item=media, seasons=seasons)
 
-@app.route('/season/<season_id>}')
+@app.route('/season/<season_id>')
 def view_season(season_id):
-    return
+    conn = sqlite3.connect("media.db")
+    season_query = f"SELECT * FROM seasons WHERE season_id = '{season_id}'"
+    season = pd.read_sql(season_query, conn).iloc[0].to_dict()
+
+    episodes_query = f"SELECT * FROM episodes WHERE season_id = '{season_id}' ORDER BY episode_number"
+    episodes = pd.read_sql(episodes_query, conn).to_dict(orient='records')
+    conn.close()
+
+    return render_template("season_detail.html", season=season, episodes=episodes)
+
+@app.route('/episode/<int:episode_id>')
+def view_episode(episode_id):
+    conn = sqlite3.connect("media.db")
+    episode_query = f"SELECT * FROM episodes WHERE episode_id = {episode_id}"
+    episode = pd.read_sql(episode_query, conn).iloc[0].to_dict()
+    conn.close()
+
+    return render_template("episode_detail.html", episode=episode)
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
