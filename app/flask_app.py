@@ -19,7 +19,7 @@ app.config['SECRET_KEY'] = 'SECRET_KEY'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 
 load_dotenv()
-TMDB_API_KEY = "TMDB_KEY"
+TMDB_API_KEY = os.getenv("TMDB_API_KEY")
 
 db.init_app(app)
 
@@ -141,22 +141,28 @@ def get_media(media_id):
         conn = sqlite3.connect("media.db")
         season_query = f"SELECT * FROM seasons WHERE tv_id = '{media_id}' ORDER BY season_number"
         season_df = pd.read_sql(season_query, conn)
-        conn.close()
-        seasons = season_df.to_dict(orient='records')
 
+        for idx, row in season_df.iterrows():
+            season_dict = row.to_dict()
+            episode_query = f"SELECT * FROM episodes WHERE season_id = '{row['season_id']}' ORDER BY episode_number"
+            episode_df = pd.read_sql(episode_query, conn)
+            season_dict["episodes"] = episode_df.to_dict(orient="records") 
+
+            seasons.append(season_dict)
+        conn.close()
     return render_template('season_page.html', item=media, seasons=seasons)
 
-@app.route('/season/<season_id>')
-def view_season(season_id):
-    conn = sqlite3.connect("media.db")
-    season_query = f"SELECT * FROM seasons WHERE season_id = '{season_id}'"
-    season = pd.read_sql(season_query, conn).iloc[0].to_dict()
+# @app.route('/season/<season_id>')
+# def view_season(season_id):
+#     conn = sqlite3.connect("media.db")
+#     season_query = f"SELECT * FROM seasons WHERE season_id = '{season_id}'"
+#     season = pd.read_sql(season_query, conn).iloc[0].to_dict()
 
-    episodes_query = f"SELECT * FROM episodes WHERE season_id = '{season_id}' ORDER BY episode_number"
-    episodes = pd.read_sql(episodes_query, conn).to_dict(orient='records')
-    conn.close()
+#     episodes_query = f"SELECT * FROM episodes WHERE season_id = '{season_id}' ORDER BY episode_number"
+#     episodes = pd.read_sql(episodes_query, conn).to_dict(orient='records')
+#     conn.close()
 
-    return render_template("season_detail.html", season=season, episodes=episodes)
+#     return render_template("season_detail.html", season=season, episodes=episodes)
 
 @app.route('/episode/<int:episode_id>')
 def view_episode(episode_id):

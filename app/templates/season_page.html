@@ -15,9 +15,19 @@
   {% if item.media_type == "tv" and seasons %}
     <div class="seasons-button-grid">
     {% for season in seasons %}
-        <a href="{{ url_for('view_season', season_id = season.season_id) }}" class="btn-season">
-            Season {{ season.season_number }}
-        </a>
+      <div class="season-block dropdown-container">
+        <button class="btn-season">Season {{ season.season_number }}</button>
+        <!-- dropdown -->
+        <div class="dropdown-eps">
+          <ul>
+            {% for episode in season.episodes %}
+              <li>
+                <a href="{{ url_for('view_episode', episode_id=episode.episode_id) }}">Episode {{ episode.episode_number }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
     {% endfor %}
     </div>
   {% endif %}
