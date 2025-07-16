@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, ValidationError
-from wtforms.validators import DataRequired, Length, EqualTo
+from wtforms import TextAreaField, StringField, PasswordField, SubmitField, BooleanField, ValidationError
+from wtforms.validators import DataRequired, Regexp, Length, EqualTo
 from app.models import User
 
 class RegistrationForm(FlaskForm):
@@ -22,3 +22,14 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     remember = BooleanField('Remember Me')
     submit = SubmitField('Login')
+
+class commentForm(FlaskForm):
+    content = TextAreaField('Comment', validators=[DataRequired()])
+    timestamp = StringField(
+        'Timestamp (HH:MM:SS)',
+        validators=[
+            DataRequired(),
+            Regexp(r'^(\d{1,2}:)?[0-5]?\d:[0-5]\d$', message="Use HH:MM:SS or MM:SS format")
+        ]
+    )
+    submit = SubmitField('Post Comment')

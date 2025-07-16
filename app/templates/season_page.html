@@ -1,15 +1,66 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="Container">
-    {% if item %}
-      <h1>{{ item.title }}</h1>
-      <img src="{{ item.poster_url }}" alt="{{ item.title }}" width="300">
-      <p>{{ item.overview }}</p>
-      <p><strong>Type:</strong> {{ item.media_type }}</p>
-      <p><strong>Release Date:</strong> {{ item.release_date }}</p>
-      <p><strong>Rating:</strong> {{ item.vote_average }}</p>
-    {% else %}
-      <h2>Media not found.</h2>
-    {% endif %}
-  </div>
+
+  {% if item %}
+    <h1>{{ item.title }}</h1>
+    <img src="{{ item.poster_url }}" alt="{{ item.title }}" width="300">
+    <p>{{ item.overview }}</p>
+    <p><strong>Type:</strong> {{ item.media_type }}</p>
+    <p><strong>Release Date:</strong> {{ item.release_date }}</p>
+    <p><strong>Rating:</strong> {{ item.vote_average }}</p>
+  {% else %}
+    <h2>Media not found.</h2>
+  {% endif %}
+
+  <hr>
+  <h2>Comments</h2>
+
+  {% if comments %}
+    {% for comment in comments %}
+      {% set hrs = comment.timestamp // 3600 %}
+      {% set mins = (comment.timestamp % 3600) // 60 %}
+      {% set secs = comment.timestamp % 60 %}
+      <div style="margin-bottom: 1rem; padding-left: 10px;">
+        <strong>{{ comment.user.username }}</strong> at
+        <code>{{ "%02d:%02d:%02d"|format(hrs, mins, secs) }}</code>:<br>
+        {{ comment.content }}
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>No comments yet.</p>
+  {% endif %}
+
+  <hr>
+  {% if current_user.is_authenticated %}
+    <h3>Add a Comment</h3>
+    <form method="POST">
+      {{ form.hidden_tag() }}
+
+      <div>
+        <label for="timestamp">{{ form.timestamp.label }}</label><br>
+        {{ form.timestamp(size=10, placeholder="e.g., 01:23:45") }}
+        {% for error in form.timestamp.errors %}
+          <p style="color: red;">{{ error }}</p>
+        {% endfor %}
+      </div>
+
+      <br>
+
+      <div>
+        <label for="content">{{ form.content.label }}</label><br>
+        {{ form.content(rows=3, cols=40) }}
+        {% for error in form.content.errors %}
+          <p style="color: red;">{{ error }}</p>
+        {% endfor %}
+      </div>
+
+      <br>
+      {{ form.submit() }}
+    </form>
+  {% else %}
+    <p><a href="{{ url_for('login') }}">Log in</a> to leave a comment.</p>
+  {% endif %}
+
+</div>
 {% endblock content %}

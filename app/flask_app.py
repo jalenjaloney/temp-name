@@ -6,10 +6,10 @@ from flask_behind_proxy import FlaskBehindProxy
 from flask_sqlalchemy import SQLAlchemy
 import os
 from dotenv import load_dotenv
-from app.forms import RegistrationForm, LoginForm
+from app.forms import *
 from flask_behind_proxy import FlaskBehindProxy
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
-from app.models import db, User
+from app.models import db, User, Comment
 
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
@@ -109,6 +109,18 @@ def parse_episodes(tv_id, season_num, season_id, episodes_raw):
         })
     return episodes
 
+# Helper function to parse comment timestamp
+def parse_timestamp_string(ts_str):
+    parts = list(map(int, ts_str.split(":")))
+    if len(parts) == 2:
+        minutes, seconds = parts
+        return minutes * 60 + seconds
+    elif len(parts) == 3:
+        hours, minutes, seconds = parts
+        return hours * 3600 + minutes * 60 + seconds
+    else:
+        raise ValueError("Invalid timestamp format")
+
 # Fetch and parse both movies and TV shows
 movies_raw = fetch_popular("movie", pages=2)
 tv_raw = fetch_popular("tv", pages=2)
@@ -131,11 +143,39 @@ def catalogue():
     users = User.query.all()
     return render_template('catalogue.html', movies=movies, tv_shows=tv_shows, users=users)
 
-@app.route('/media/<media_id>')
+@app.route('/media/<media_id>', methods=['GET', 'POST'])
 def get_media(media_id):
     movie = df[df["tmdb_id"] == int(media_id)]
+    if movie.empty:
+        return "Media not found", 404
 
-    return render_template('season_page.html', item=movie.iloc[0].to_dict())
+    # Allow commenting
+    form = commentForm()
+    if form.validate_on_submit() and current_user.is_authenticated:
+        # Checking if timestamp is properly formatted
+        try:
+            timestamp_seconds = parse_timestamp_string(form.timestamp.data)
+        except ValueError:
+            flash("Invalid timestamp format.", "danger")
+            return redirect(url_for('get_media', media_id=media_id))
+        
+        new_comment = Comment(
+            content=form.content.data,
+            timestamp=timestamp_seconds,
+            user_id=current_user.id,
+            media_id=int(media_id)
+        )
+        db.session.add(new_comment)
+        db.session.commit()
+        flash("Comment added!")
+        return redirect(url_for('get_media', media_id=media_id))
+
+    comments = Comment.query.filter_by(media_id=int(media_id)).order_by(Comment.timestamp).all()
+
+    return render_template('season_page.html',
+                           item=movie.iloc[0].to_dict(),
+                           form=form,
+                           comments=comments)
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
@@ -157,7 +197,6 @@ def login():
       if user:
         if user.password == form.password.data:
          login_user(user, remember=form.remember.data)
-         flash('Login successful!', 'success')
          return redirect(url_for('catalogue'))
       else:
          form.username.errors.append('Invalid username or password.')
