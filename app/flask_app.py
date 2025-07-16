@@ -10,6 +10,7 @@ from forms import RegistrationForm, LoginForm
 from flask_behind_proxy import FlaskBehindProxy
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from models import db, User
+import sqlite3
 
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
@@ -133,31 +134,53 @@ def catalogue():
 
 @app.route('/media/<int:media_id>')
 def get_media(media_id):
-    match = df[df["tmdb_id"] == int(media_id)]
+    media = df[df["tmdb_id"] == int(media_id)].iloc[0].to_dict()
 
-    if match.empty:
-        return render_template('season_page.html', item=None)
+    seasons = []
+    if media["media_type"] == "tv":
+        conn = sqlite3.connect("media.db")
+        season_query = f"SELECT * FROM seasons WHERE tv_id = {media_id} ORDER BY season_number"
+        season_df = pd.read_sql(season_query, conn)
+        conn.close()
+        seasons = season_df.to_dict(orient='records')
 
-    item = match.iloc[0].to_dict()
+    return render_template('season_page.html', item=media, seasons=seasons)
 
-    seasons = None
-    episodes = {}
+@app.route('/season/<season_id>}')
+def view_season(season_id):
+    return
 
-    if item['media_type'] == 'tv':
-        seasons = fetch_tv_seasons(int(item['tmdb_id']))
-        for season in seasons:
-            episodes[season['season_number']] = fetch_season_episodes(
-                int(item['tmdb_id']),
-                int(season['season_number'])
-            )
+@app.route("/register", methods=['GET', 'POST'])
+def register():
+    form = RegistrationForm()
+    if form.validate_on_submit(): # checks if entry fulfills defined validators
+        # creating user and adding to database
+        user = User(username=form.username.data, password=form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash(f'Account created for {form.username.data}!', 'success')
+        return redirect(url_for('login')) # send to login page after successful register
+    return render_template('register.html', title='Register', form=form)
 
+@app.route("/login", methods=["GET", "POST"])
+def login():
+  form = LoginForm()
+  if form.validate_on_submit():
+      user = User.query.filter_by(username=form.username.data).first()
+      print("Stored password:", user.password)
+      print("Entered password:", form.password.data)
+      if user and user.password == form.password.data:
+         login_user(user, remember=form.remember.data)
+         flash('Login successful!', 'success')
+         return redirect(url_for('catalogue'))
+      else:
+         form.username.errors.append('Invalid username or password.')
+  return render_template("login.html", form=form)
 
-    return render_template('season_page.html', item=item, seasons=seasons, episodes=episodes)
-
-
-#MAKE THE BUTTONS HAVE FUNCTIONALITY TO HAVE A DIFFERENT SET OF EPISODES SHOW UP FOR THAT SEASON. CREATE THE HTML THAT WOULD 
-#ALLOW FOR THOSE EPISODES TO PROPERLY STACK UNDER THE SHOW DESCRIPTION AND WHEN A BUTTON IS CLICKED AGAIN IT SHOULD NOT DEPEND ON AN 
-#REQUEST TO MAKE THE EPISODES APPEAR AGAIN
+@app.route("/logout", methods=["GET", "POST"])
+def logout():
+   logout_user()
+   return(redirect(url_for('login')))
 
 
 if __name__ == '__main__':
