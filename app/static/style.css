@@ -227,4 +227,12 @@ strong {
   padding: 10px 15px;
   border-radius: 5px;
   font-size: 14px;
+
+.btn-season {
+  padding: 8px 16px;
+  background-color: #1e1e2f;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
 }

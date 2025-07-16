@@ -10,6 +10,7 @@ from app.forms import *
 from flask_behind_proxy import FlaskBehindProxy
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from app.models import db, User, Comment
+import sqlite3
 
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
@@ -177,6 +178,14 @@ def get_media(media_id):
                            form=form,
                            comments=comments)
 
+@app.route('/season/<season_id>}')
+def view_season(season_id):
+    return
+
+@app.route('/episode/<episode_id>')
+def view_episode(episode_id):
+    return
+
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
@@ -194,8 +203,9 @@ def login():
   form = LoginForm()
   if form.validate_on_submit():
       user = User.query.filter_by(username=form.username.data).first()
-      if user:
-        if user.password == form.password.data:
+      print("Stored password:", user.password)
+      print("Entered password:", form.password.data)
+      if user and user.password == form.password.data:
          login_user(user, remember=form.remember.data)
          return redirect(url_for('catalogue'))
       else:
