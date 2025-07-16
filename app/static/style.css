@@ -227,26 +227,6 @@ strong {
   padding: 10px 15px;
   border-radius: 5px;
   font-size: 14px;
-}
-
-.greeting {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 24px;
-  color: #333;
-  background-color: #e0f7fa;
-  padding: 15px 25px;
-  margin: 20px auto;
-  border-left: 6px solid #00796b;
-  border-radius: 8px;
-  width: fit-content;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
-}
-
-.greeting:hover {
-  transform: scale(1.02);
-  background-color: #b2ebf2;
-}
 
 .btn-season {
   padding: 8px 16px;

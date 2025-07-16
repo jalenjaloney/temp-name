@@ -47,7 +47,10 @@
         {{ form.remember() }}
         {{ form.remember.label() }}
       </div>
-
+      <p style="text-align: center;"">
+        Don't have an account?
+        <a href="{{ url_for('register') }}" class="btn btn-link">Register here</a>
+      </p>
     </form>
   </div>
   </div>
