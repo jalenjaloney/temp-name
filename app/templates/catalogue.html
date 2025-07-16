@@ -7,7 +7,7 @@
 <h2 style="margin-bottom: 10px;">Top Movies</h2>
 <div class="catalogue-grid">
   {% for movie in movies %}
-  <a href="{{ url_for('view_episode', media_id = show.tmdb_id) }}">
+  <a href="{{ url_for('view_episode', media_id = movie.tmdb_id) }}">
     <div class="media-card">
       <img src="{{ movie.poster_url }}" alt="{{ movie.title }}">
       <p>{{ movie.title }}</p>
