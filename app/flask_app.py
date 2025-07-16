@@ -10,6 +10,7 @@ from forms import RegistrationForm, LoginForm
 from flask_behind_proxy import FlaskBehindProxy
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from models import db, User
+import sqlite3
 
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
@@ -133,9 +134,21 @@ def catalogue():
 
 @app.route('/media/<media_id>')
 def get_media(media_id):
-    movie = df[df["tmdb_id"] == int(media_id)]
+    media = df[df["tmdb_id"] == int(media_id)].iloc[0].to_dict()
 
-    return render_template('season_page.html', item=movie.iloc[0].to_dict())
+    seasons = []
+    if media["media_type"] == "tv":
+        conn = sqlite3.connect("media.db")
+        season_query = f"SELECT * FROM seasons WHERE tv_id = {media_id} ORDER BY season_number"
+        season_df = pd.read_sql(season_query, conn)
+        conn.close()
+        seasons = season_df.to_dict(orient='records')
+
+    return render_template('season_page.html', item=media, seasons=seasons)
+
+@app.route('/season/<season_id>}')
+def view_season(season_id):
+    return
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
