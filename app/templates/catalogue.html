@@ -2,9 +2,12 @@
 {% block title %}Catalogue Page{% endblock %}
 
 {% block content %}
+{% for user in users %}
+<h1 class="greeting">Welcome {{user.username}}! Browse your favorite movies/shows here!</h1>
+{% endfor %}
 <h2 style="margin-bottom: 10px;">Top Movies</h2>
 <div class="catalogue-grid">
-  {% for movie in media %}
+  {% for movie in movies %}
   <a href="/media/{{movie.tmdb_id}}">
     <div class="media-card">
       <img src="{{ movie.poster_url }}" alt="{{ movie.title }}">
@@ -16,7 +19,7 @@
 
 <h2 style="margin: 30px 0 10px;">Top TV Shows</h2>
 <div class="catalogue-grid">
-  {% for show in media %}
+  {% for show in tv_shows %}
   <a href="/media/{{show.tmdb_id}}">
     <div class="media-card">
       <img src="{{ show.poster_url }}" alt="{{ show.title }}">

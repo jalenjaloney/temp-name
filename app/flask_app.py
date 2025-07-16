@@ -6,10 +6,10 @@ from flask_behind_proxy import FlaskBehindProxy
 from flask_sqlalchemy import SQLAlchemy
 import os
 from dotenv import load_dotenv
-from app.forms import RegistrationForm, LoginForm
+from forms import RegistrationForm, LoginForm
 from flask_behind_proxy import FlaskBehindProxy
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
-from app.models import db, User
+from models import db, User
 
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
@@ -128,18 +128,14 @@ def catalogue():
     # Sends only the top 10 movies and tv shows to the catalogue page
     movies = df[df["media_type"] == "movie"].head(10).to_dict(orient='records')
     tv_shows = df[df["media_type"] == "tv"].head(10).to_dict(orient='records')
-    return render_template('catalogue.html', movies=movies, tv_shows=tv_shows)
-
-@app.route('media/<media_id>')
-def get_media(media_id):
-    movie = df[df["imdb_id"] == media_id]
-    return render_template('season_page.html', item=movie)
-    
-@app.route("/")
-@app.route("/home")
-def home():
     users = User.query.all()
-    return render_template('home.html', subtitle='Home Page', text='This is the home page', users=users)
+    return render_template('catalogue.html', movies=movies, tv_shows=tv_shows, users=users)
+
+@app.route('/media/<media_id>')
+def get_media(media_id):
+    movie = df[df["tmdb_id"] == int(media_id)]
+
+    return render_template('season_page.html', item=movie.iloc[0].to_dict())
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
@@ -163,7 +159,7 @@ def login():
       if user and user.password == form.password.data:
          login_user(user, remember=form.remember.data)
          flash('Login successful!', 'success')
-         return redirect(url_for('home'))
+         return redirect(url_for('catalogue'))
       else:
          form.username.errors.append('Invalid username or password.')
   return render_template("login.html", form=form)
