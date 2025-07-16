@@ -8,8 +8,21 @@
       <p><strong>Type:</strong> {{ item.media_type }}</p>
       <p><strong>Release Date:</strong> {{ item.release_date }}</p>
       <p><strong>Rating:</strong> {{ item.vote_average }}</p>
+
+      {% for season in seasons %}
+        <button>Season {{season.season_number}}</button>
+      {% endfor %}
+
     {% else %}
       <h2>Media not found.</h2>
     {% endif %}
-  </div>
+
+  {% if item.media_type == "tv" and seasons %}
+    {% for season in seasons %}
+      <a href="{{ url_for('view_season', season_id = season.season_id) }}" class="btn-season">
+          Season {{ season.season_number }}</a>
+    {% endfor %}
+  {% endif %}
+</div>
+
 {% endblock content %}
