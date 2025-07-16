@@ -150,6 +150,11 @@ def get_media(media_id):
 def view_season(season_id):
     return
 
+@app.route('/episode/<episode_id>')
+def view_episode(episode_id):
+    return
+
+
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
