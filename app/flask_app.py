@@ -6,10 +6,10 @@ from flask_behind_proxy import FlaskBehindProxy
 from flask_sqlalchemy import SQLAlchemy
 import os
 from dotenv import load_dotenv
-from app.forms import RegistrationForm, LoginForm
+from forms import RegistrationForm, LoginForm
 from flask_behind_proxy import FlaskBehindProxy
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
-from app.models import db, User
+from models import db, User
 import sqlite3
 
 app = Flask(__name__)
@@ -152,6 +152,8 @@ def view_season(season_id):
 
 @app.route('/episode/<episode_id>')
 def view_episode(episode_id):
+    
+
     return
 
 
@@ -172,8 +174,9 @@ def login():
   form = LoginForm()
   if form.validate_on_submit():
       user = User.query.filter_by(username=form.username.data).first()
-      if user:
-        if user.password == form.password.data:
+      print("Stored password:", user.password)
+      print("Entered password:", form.password.data)
+      if user and user.password == form.password.data:
          login_user(user, remember=form.remember.data)
          flash('Login successful!', 'success')
          return redirect(url_for('catalogue'))
