@@ -13,10 +13,13 @@
     {% endif %}
 
   {% if item.media_type == "tv" and seasons %}
+    <div class="seasons-button-grid">
     {% for season in seasons %}
-      <a href="{{ url_for('view_season', season_id = season.season_id) }}" class="btn-season">
-          Season {{ season.season_number }}</a>
+        <a href="{{ url_for('view_season', season_id = season.season_id) }}" class="btn-season">
+            Season {{ season.season_number }}
+        </a>
     {% endfor %}
+    </div>
   {% endif %}
 </div>
 
