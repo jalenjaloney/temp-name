@@ -150,44 +150,10 @@ def get_media(media_id):
     if movie.empty:
         return "Media not found", 404
 
-    # Allow commenting
-    form = commentForm()
-    if form.validate_on_submit() and current_user.is_authenticated:
-        # Checking if timestamp is properly formatted
-        try:
-            timestamp_seconds = parse_timestamp_string(form.timestamp.data)
-        except ValueError:
-            flash("Invalid timestamp format.", "danger")
-            return redirect(url_for('get_media', media_id=media_id))
-        
-        new_comment = Comment(
-            content=form.content.data,
-            timestamp=timestamp_seconds,
-            user_id=current_user.id,
-            media_id=int(media_id)
-        )
-        db.session.add(new_comment)
-        db.session.commit()
-        flash("Comment added!")
-        return redirect(url_for('get_media', media_id=media_id))
-
-    comments = Comment.query.filter_by(media_id=int(media_id)).order_by(Comment.timestamp).all()
+    
 
     return render_template('season_page.html',
-                           item=movie.iloc[0].to_dict(),
-                           form=form,
-                           comments=comments)
-    media = df[df["tmdb_id"] == int(media_id)].iloc[0].to_dict()
-
-    seasons = []
-    if media["media_type"] == "tv":
-        conn = sqlite3.connect("media.db")
-        season_query = f"SELECT * FROM seasons WHERE tv_id = {media_id} ORDER BY season_number"
-        season_df = pd.read_sql(season_query, conn)
-        conn.close()
-        seasons = season_df.to_dict(orient='records')
-
-    return render_template('season_page.html', item=media, seasons=seasons)
+                           item=movie.iloc[0].to_dict())
 
 @app.route('/season/<season_id>}')
 def view_season(season_id):
@@ -197,7 +163,29 @@ def view_season(season_id):
 def view_episode(episode_id):
     media = df[df["tmdb_id"] == int(episode_id)].iloc[0].to_dict()
 
-    return render_template('season_page.html', item=media)
+    # Allow commenting
+    form = commentForm()
+    if form.validate_on_submit() and current_user.is_authenticated:
+        # Checking if timestamp is properly formatted
+        try:
+            timestamp_seconds = parse_timestamp_string(form.timestamp.data)
+        except ValueError:
+            flash("Invalid timestamp format.", "danger")
+            return redirect(url_for('view_episode', episode_id=episode_id))
+        
+        new_comment = Comment(
+            content=form.content.data,
+            timestamp=timestamp_seconds,
+            user_id=current_user.id,
+            media_id=int(episode_id)
+        )
+        db.session.add(new_comment)
+        db.session.commit()
+        flash("Comment added!")
+        return redirect(url_for('view_episode', episode_id=episode_id))
+
+    comments = Comment.query.filter_by(media_id=int(episode_id)).order_by(Comment.timestamp).all()
+    return render_template('episode_page.html', item=media, form=form, comments=comments)
 
 
 @app.route("/register", methods=['GET', 'POST'])
