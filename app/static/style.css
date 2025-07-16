@@ -228,6 +228,7 @@ strong {
   border-radius: 5px;
   font-size: 14px;
 
+}
 .btn-season {
   padding: 8px 16px;
   background-color: #1e1e2f;
@@ -236,3 +237,171 @@ strong {
   text-decoration: none;
   transition: background-color 0.2s ease;
 }
+
+
+/* ====== Episode page comment area ====== */
+
+/* Container spacing */
+.Container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Section titles */
+h2, h3 {
+  margin: 1.5rem 0 1rem;
+  font-size: 1.4rem;
+  border-bottom: 2px solid #e5e5e5;
+  padding-bottom: 0.25rem;
+}
+
+/* Individual comment “bubble” */
+.Container .comment {
+  background: #fafafa;
+  border: 1px solid #e1e1e1;
+  border-left: 4px solid #6366f1;      /* pleasant indigo accent */
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+/* Username + timestamp line */
+.comment-header {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.4rem;
+}
+
+.comment-header code {
+  background: #f3f3f3;
+  padding: 0 0.3rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+}
+
+/* Comment body text */
+.comment-body {
+  line-height: 1.45;
+}
+
+/* ====== Comment form ====== */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+form label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+form input[type="text"],
+form textarea {
+  width: 100%;
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+  padding: 0.5rem 0.6rem;
+  font-size: 0.95rem;
+  transition: border 0.2s;
+}
+
+form input[type="text"]:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #6366f1;               /* same indigo accent */
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.2);
+}
+
+form input[type="submit"],
+form button[type="submit"] {
+  align-self: flex-start;
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+form input[type="submit"]:hover,
+form button[type="submit"]:hover {
+  background: #4f51c2;
+}
+
+/* Error messages */
+p[style*="color: red;"] {
+  margin: 0.25rem 0 0;
+  font-size: 0.8rem;
+  color: #e11d48 !important;          /* clearer error red */
+}
+
+
+
+/* --- playback bar --- */
+.progress-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 8px;
+  margin: 1.5rem auto;   /*  ← this “auto” on the sides centers it  */
+  background: #e5e5e5;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;                       /* you can set this to actual progress */
+  background: #6366f1;             /* indigo accent */
+  border-radius: 4px;
+  border-color:#6366f1;
+}
+
+/* tooltip */
+.progress-tooltip {
+  position: absolute;
+  top: -32px;
+  left: 0;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  display: none;                   /* hidden until hover */
+  pointer-events: none;
+}
+
+/* tiny toggle button and functionality */
+
+/* .commments-container{
+  display: none;
+} */
+
+
+.toggle-btn {
+  align-self: flex-start;
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.2s;
+  margin:5px;
+}
+
+.toggle-btn:hover {
+  background: #4f51c2;
+}
+

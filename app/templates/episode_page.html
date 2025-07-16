@@ -14,24 +14,41 @@
     {% endif %}
 
     <hr>
-<h2>Comments</h2>
+<!-- Fake playback bar -->
+<div id="progress-container"
+class="progress-container"
+data-duration="{{ item.runtime_seconds or 3600 }}">   <!-- total seconds -->
+<div id="progress-bar" class="progress-bar"></div>
+<span id="progress-tooltip" class="progress-tooltip"></span>
+</div>
 
-{% if comments %}
-  {% for comment in comments %}
+
+<div id="comments-container" class="comments-container hidden">
+    <h2>Comments</h2>
+
+    {% if comments %}
+    {% for comment in comments %}
     {% set hrs = comment.timestamp // 3600 %}
     {% set mins = (comment.timestamp % 3600) // 60 %}
     {% set secs = comment.timestamp % 60 %}
-    <div style="margin-bottom: 1rem; padding-left: 10px;">
-      <strong>{{ comment.user.username }}</strong> at
-      <code>{{ "%02d:%02d:%02d"|format(hrs, mins, secs) }}</code>:<br>
-      {{ comment.content }}
+    <div class="comment">
+        <div class="comment-header">
+        <strong>{{ comment.user.username }}</strong> at
+        <code>{{ "%02d:%02d:%02d"|format(hrs, mins, secs) }}</code>
+        </div>
+        <div class="comment-body">
+        {{ comment.content }}
+        </div>
     </div>
-  {% endfor %}
+    {% endfor %}
+</div>
 {% else %}
   <p>No comments yet.</p>
 {% endif %}
 
 <hr>
+
+</div>
 {% if current_user.is_authenticated %}
   <h3>Add a Comment</h3>
   <form method="POST">
@@ -61,10 +78,66 @@
 {% else %}
   <p><a href="{{ url_for('login') }}">Log in</a> to leave a comment.</p>
 {% endif %}
- 
-  
-</div>
-
+<button id="toggle-comments" class="toggle-btn">Show Comments</button>
 </div>
 
 {% endblock content %}
+
+{% block scripts %}
+<script>
+(() => {
+  const container = document.getElementById('progress-container');
+  if (!container) return;
+
+  const tooltip = document.getElementById('progress-tooltip');
+  const tsInput = document.getElementById('timestamp');  // ← actual input
+  const duration = parseInt(container.dataset.duration, 10) || 0;
+
+  /* seconds → HH:MM:SS */
+  const fmt = s => {
+    s = Math.round(s);
+    const h = String(Math.floor(s / 3600)).padStart(2,'0');
+    const m = String(Math.floor((s % 3600) / 60)).padStart(2,'0');
+    const sec = String(s % 60).padStart(2,'0');
+    return `${h}:${m}:${sec}`;
+  };
+
+  container.addEventListener('mousemove', e => {
+    const rect = container.getBoundingClientRect();
+    const pct  = (e.clientX - rect.left) / rect.width;
+    tooltip.style.left  = `${e.clientX - rect.left}px`;
+    tooltip.textContent = fmt(pct * duration);
+    tooltip.style.display = 'block';
+  });
+
+  container.addEventListener('click', e => {
+    if (!tsInput) return;
+    const rect = container.getBoundingClientRect();
+    const pct  = (e.clientX - rect.left) / rect.width;
+    tsInput.value = fmt(pct * duration);   // fill the input
+    tsInput.focus();
+  });
+
+  container.addEventListener('mouseleave', () => {
+    tooltip.style.display = 'none';
+  });
+
+
+const commentsContainer = document.getElementById('comments-container');
+const toggleBtn = document.getElementById('toggle-comments');
+
+if (toggleBtn && commentsContainer) {
+  toggleBtn.addEventListener('click', () => {
+    const hidden = commentsContainer.style.display === 'none';
+    commentsContainer.style.display = hidden ? '' : 'none';
+    toggleBtn.textContent = hidden ? 'Hide Comments' : 'Show Comments';
+  });
+}
+
+
+
+
+
+})();
+</script>
+{% endblock %}

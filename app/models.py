@@ -20,6 +20,6 @@ class Comment(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    media_id = db.Column(db.Integer, nullable=False)
+    episode_id = db.Column(db.Integer, nullable=False)
 
     user = db.relationship('User', backref='comments')

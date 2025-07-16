@@ -159,10 +159,10 @@ def get_media(media_id):
 def view_season(season_id):
     return
 
-@app.route('/episode/<episode_id>')
+@app.route('/episode/<episode_id>', methods=['GET','POST'])
 def view_episode(episode_id):
     media = df[df["tmdb_id"] == int(episode_id)].iloc[0].to_dict()
-
+    
     # Allow commenting
     form = commentForm()
     if form.validate_on_submit() and current_user.is_authenticated:
@@ -177,14 +177,14 @@ def view_episode(episode_id):
             content=form.content.data,
             timestamp=timestamp_seconds,
             user_id=current_user.id,
-            media_id=int(episode_id)
+            episode_id=int(episode_id)
         )
         db.session.add(new_comment)
         db.session.commit()
         flash("Comment added!")
         return redirect(url_for('view_episode', episode_id=episode_id))
 
-    comments = Comment.query.filter_by(media_id=int(episode_id)).order_by(Comment.timestamp).all()
+    comments = Comment.query.filter_by(episode_id=int(episode_id)).order_by(Comment.timestamp).all()
     return render_template('episode_page.html', item=media, form=form, comments=comments)
 
 
