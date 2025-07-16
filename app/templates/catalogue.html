@@ -2,6 +2,9 @@
 {% block title %}Catalogue Page{% endblock %}
 
 {% block content %}
+{% for user in users %}
+<h1 class="greeting">Welcome {{user.username}}! Browse your favorite movies/shows here!</h1>
+{% endfor %}
 <h2 style="margin-bottom: 10px;">Top Movies</h2>
 <div class="catalogue-grid">
   {% for movie in movies %}

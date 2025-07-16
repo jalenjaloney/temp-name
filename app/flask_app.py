@@ -2,33 +2,40 @@ from flask import Flask, render_template, url_for, flash, redirect, request
 import git
 import requests
 import pandas as pd
-# from forms import RegistrationForm
 from flask_behind_proxy import FlaskBehindProxy
 from flask_sqlalchemy import SQLAlchemy
 import os
 from dotenv import load_dotenv
-
+from forms import RegistrationForm, LoginForm
+from flask_behind_proxy import FlaskBehindProxy
+from flask_login import LoginManager, login_user, logout_user, login_required, current_user
+from models import db, User
 
 app = Flask(__name__)
-proxied = FlaskBehindProxy(app)  ## add this line
+proxied = FlaskBehindProxy(app)
 
-app.config['SECRET_KEY'] = '7669a686970f61dd6a2c7598628b864d'
-
+app.config['SECRET_KEY'] = 'SECRET_KEY'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 
 load_dotenv()
 TMDB_API_KEY = os.getenv("TMDB_API_KEY")
 
+db.init_app(app)
 
 BASE_URL = "https://api.themoviedb.org/3"
 IMG_BASE_URL = "https://image.tmdb.org/t/p/w500"
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
-db = SQLAlchemy(app)
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login' #redirects unathorized users
+login_manager.login_message_category = 'info'
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 with app.app_context():
   db.create_all()
-
-
 
 def fetch_popular(media_type="movie", pages=1):
     """Fetch multiple pages of popular movies or TV shows"""
@@ -121,7 +128,8 @@ def catalogue():
     # Sends only the top 10 movies and tv shows to the catalogue page
     movies = df[df["media_type"] == "movie"].head(10).to_dict(orient='records')
     tv_shows = df[df["media_type"] == "tv"].head(10).to_dict(orient='records')
-    return render_template('catalogue.html', movies=movies, tv_shows=tv_shows)
+    users = User.query.all()
+    return render_template('catalogue.html', movies=movies, tv_shows=tv_shows, users=users)
 
 @app.route('/media/<int:media_id>')
 def get_media(media_id):
@@ -154,3 +162,13 @@ def get_media(media_id):
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")
+
+# @app.route("/update_server", methods=['POST'])
+# # def webhook():
+# #     if request.method == 'POST':
+# #         repo = git.Repo('/home/thealienseb/SEO_Flask_practice')
+# #         origin = repo.remotes.origin
+# #         origin.pull()
+# #         return 'Updated PythonAnywhere successfully', 200
+# #     else:
+# #         return 'Wrong event type', 400

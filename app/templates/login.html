@@ -1,8 +1,17 @@
 {% extends "auth_layout.html" %}
 {% block content %}
 <div class="auth-wrapper">
-  <div class="register-container">
-    <h2>Register</h2>
+  <div class="login-container">
+    <h2>Login</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
     <form method="POST" action="">
       {{ form.hidden_tag() }}
 
@@ -31,25 +40,14 @@
       </div>
 
       <div class="form-group">
-        {{ form.confirm_password.label(class="form-control-label") }}
-        {{ form.confirm_password(class="form-control" + (' is-invalid' if form.confirm_password.errors else '')) }}
-        {% if form.confirm_password.errors %}
-          <div class="invalid-feedback">
-            {% for error in form.confirm_password.errors %}
-              <span>{{ error }}</span>
-            {% endfor %}
-          </div>
-        {% endif %}
-      </div>
-
-      <div class="form-group">
         {{ form.submit(class="btn btn-outline-info") }}
       </div>
 
-      <p style="text-align: center;"">
-        Already have an account?
-        <a href="{{ url_for('login') }}" class="btn btn-link">Log in here</a>
-      </p>
+      <div class="form-group form-check">
+        {{ form.remember() }}
+        {{ form.remember.label() }}
+      </div>
+
     </form>
   </div>
   </div>
