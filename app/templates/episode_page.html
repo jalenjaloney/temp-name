@@ -39,16 +39,13 @@ data-duration="{{ item.runtime_seconds or 3600 }}">   <!-- total seconds -->
         <div class="comment-body">
         {{ comment.content }}
         </div>
-    </div>
     {% endfor %}
-</div>
+    </div>
 {% else %}
   <p>No comments yet.</p>
 {% endif %}
 
 <hr>
-
-</div>
 {% if current_user.is_authenticated %}
   <h3>Add a Comment</h3>
   <form method="POST">
@@ -78,6 +75,7 @@ data-duration="{{ item.runtime_seconds or 3600 }}">   <!-- total seconds -->
 {% else %}
   <p><a href="{{ url_for('login') }}">Log in</a> to leave a comment.</p>
 {% endif %}
+</div>
 <button id="toggle-comments" class="toggle-btn">Show Comments</button>
 </div>
 
