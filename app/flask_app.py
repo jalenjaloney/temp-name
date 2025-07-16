@@ -207,11 +207,12 @@ def login():
       user = User.query.filter_by(username=form.username.data).first()
       print("Stored password:", user.password)
       print("Entered password:", form.password.data)
-      if user and user.password == form.password.data:
-         login_user(user, remember=form.remember.data)
-         return redirect(url_for('catalogue'))
-      else:
-         form.username.errors.append('Invalid username or password.')
+      if user:
+        if user.password == form.password.data:
+            login_user(user, remember=form.remember.data)
+            return redirect(url_for('catalogue'))
+        else:
+            form.username.errors.append('Invalid username or password.')
   return render_template("login.html", form=form)
 
 @app.route("/logout", methods=["GET", "POST"])
