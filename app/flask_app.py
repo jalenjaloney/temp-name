@@ -210,7 +210,7 @@ def login():
             login_user(user, remember=form.remember.data)
             return redirect(url_for('catalogue'))
         else:
-            form.username.errors.append('Invalid username or password.')
+            form.password.errors.append('Invalid username or password.')
   return render_template("login.html", form=form)
 
 @app.route("/logout", methods=["GET", "POST"])
