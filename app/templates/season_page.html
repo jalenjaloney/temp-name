@@ -11,5 +11,13 @@
     {% else %}
       <h2>Media not found.</h2>
     {% endif %}
-  </div>
+
+  {% if item.media_type == "tv" and seasons %}
+    {% for season in seasons %}
+      <a href="{{ url_for('view_season', season_id = season.season_id) }}" class="btn-season">
+          Season {{ season.season_number }}</a>
+    {% endfor %}
+  {% endif %}
+</div>
+
 {% endblock content %}
