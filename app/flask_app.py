@@ -152,9 +152,9 @@ def view_season(season_id):
 
 @app.route('/episode/<episode_id>')
 def view_episode(episode_id):
-    
+    media = df[df["tmdb_id"] == int(episode_id)].iloc[0].to_dict()
 
-    return
+    return render_template('season_page.html', item=media)
 
 
 @app.route("/register", methods=['GET', 'POST'])

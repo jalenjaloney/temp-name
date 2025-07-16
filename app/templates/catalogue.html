@@ -19,7 +19,7 @@
 <h2 style="margin: 30px 0 10px;">Top TV Shows</h2>
 <div class="catalogue-grid">
   {% for show in tv_shows %}
-  <a href="/media/{{show.tmdb_id}}">
+  <a href="{{ url_for('get_media', media_id = show.tmdb_id) }}">
     <div class="media-card">
       <img src="{{ show.poster_url }}" alt="{{ show.title }}">
       <p>{{ show.title }}</p>

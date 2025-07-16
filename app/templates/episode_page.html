@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="Container">
+    {% if item %}
+      <h1>{{ item.title }}</h1>
+      <img src="{{ item.poster_url }}" alt="{{ item.title }}" width="300">
+      <p>{{ item.overview }}</p>
+      <p><strong>Type:</strong> {{ item.media_type }}</p>
+      <p><strong>Release Date:</strong> {{ item.release_date }}</p>
+      <p><strong>Rating:</strong> {{ item.vote_average }}</p>
+
+    {% else %}
+      <h2>Media not found.</h2>
+    {% endif %}
+
+</div>
+
+{% endblock content %}
