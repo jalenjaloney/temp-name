@@ -146,23 +146,67 @@ def catalogue():
 
 @app.route('/media/<int:media_id>')
 def get_media(media_id):
-    movie = df[df["tmdb_id"] == int(media_id)]
-    if movie.empty:
-        return "Media not found", 404
+    media = df[df["tmdb_id"] == int(media_id)].iloc[0].to_dict()
+    # gets seasons
+    seasons = []
+    if media["media_type"] == "tv":
+        conn = sqlite3.connect("media.db")
+        season_query = f"SELECT * FROM seasons WHERE tv_id = '{media_id}' ORDER BY season_number"
+        season_df = pd.read_sql(season_query, conn)
 
-    
+        for idx, row in season_df.iterrows():
+            season_dict = row.to_dict()
+            episode_query = f"SELECT * FROM episodes WHERE season_id = '{row['season_id']}' ORDER BY episode_number"
+            episode_df = pd.read_sql(episode_query, conn)
+            season_dict["episodes"] = episode_df.to_dict(orient="records") 
 
-    return render_template('season_page.html',
-                           item=movie.iloc[0].to_dict())
+            seasons.append(season_dict)
+        conn.close()
+    return render_template('season_page.html', item=media, seasons=seasons)
 
-@app.route('/season/<season_id>}')
-def view_season(season_id):
-    return
+# for movies
+@app.route('/movie/<int:movie_id>', methods=['GET','POST'])
+def view_movie(movie_id):
+    # get episode from sqlite
+    conn = sqlite3.connect("media.db")
+    movie_query = f"SELECT * FROM media WHERE tmdb_id = {movie_id} AND media_type = 'movie'"
+    movie = pd.read_sql(movie_query, conn).iloc[0].to_dict()
+    conn.close()
 
-@app.route('/episode/<episode_id>', methods=['GET','POST'])
+    # Allow commenting
+    form = commentForm()
+    if form.validate_on_submit() and current_user.is_authenticated:
+        # Checking if timestamp is properly formatted
+        try:
+            timestamp_seconds = parse_timestamp_string(form.timestamp.data)
+        except ValueError:
+            flash("Invalid timestamp format.", "danger")
+            return redirect(url_for('view_movie', movie_id=movie_id))
+        
+        new_comment = Comment(
+            content=form.content.data,
+            timestamp=timestamp_seconds,
+            user_id=current_user.id,
+            episode_id=int(movie_id)
+        )
+        db.session.add(new_comment)
+        db.session.commit()
+        flash("Comment added!")
+        return redirect(url_for('view_movie', movie_id=movie_id))
+
+    comments = Comment.query.filter_by(episode_id=int(movie_id)).order_by(Comment.timestamp).all()
+    return render_template('movie_page.html', movie=movie, form=form, comments=comments)
+
+
+# for shows
+@app.route('/episode/<int:episode_id>', methods=['GET','POST'])
 def view_episode(episode_id):
-    media = df[df["tmdb_id"] == int(episode_id)].iloc[0].to_dict()
-    
+    # get episode from sqlite
+    conn = sqlite3.connect("media.db")
+    episode_query = f"SELECT * FROM episodes WHERE episode_id = {episode_id}"
+    episode = pd.read_sql(episode_query, conn).iloc[0].to_dict()
+    conn.close()
+        
     # Allow commenting
     form = commentForm()
     if form.validate_on_submit() and current_user.is_authenticated:
@@ -185,7 +229,7 @@ def view_episode(episode_id):
         return redirect(url_for('view_episode', episode_id=episode_id))
 
     comments = Comment.query.filter_by(episode_id=int(episode_id)).order_by(Comment.timestamp).all()
-    return render_template('episode_page.html', item=media, form=form, comments=comments)
+    return render_template('episode_page.html', episode=episode, form=form, comments=comments)
 
 
 @app.route("/register", methods=['GET', 'POST'])
