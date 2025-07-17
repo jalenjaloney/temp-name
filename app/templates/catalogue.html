@@ -14,7 +14,7 @@
             {% for movie in movies %}
             <div class="movie-card">
                 <span class="rank-badge">#{{ loop.index }}</span>
-                <a href="/media/{{ movie.tmdb_id }}">
+                <a href="{{ url_for('view_movie', movie_id=movie.tmdb_id)}}">
                     <img src="{{ movie.poster_url }}" alt="{{ movie.title }}">
                 </a>
                 <p class="media-title">{{ movie.title }}</p>
@@ -28,7 +28,7 @@
         <h1 class="section-header">📺 Featured TV Shows</h1>
         <div class="featured-grid">
             {% for show in tv_shows %}
-            <a href="/media/{{ show.tmdb_id }}" class="media-link">
+            <a href="{{ url_for('get_media', media_id=show.tmdb_id)}}" class="media-link">
                 <div>
                     <img src="{{ show.poster_url }}" alt="{{ show.title }}">
                     <p class="media-title">{{ show.title }}</p>
