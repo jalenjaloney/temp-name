@@ -6,19 +6,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="../static/style.css">
-  
 </head>
 
 <body>
   {% if request.endpoint not in ['login', 'register'] %}
   <nav class="sidebar">
-    <h2 class="logo">STAMPER</h2>
+    <div class="logo-box">
+      <h2 class="logo"><strong>STAMPER 🕹️</strong></h2>
+    </div>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
       <li><a href="#">Bookmarked</a></li>
       <li><a href="#">Profile</a></li>
       <li><a href="#">History</a></li>
     </ul>
+    <div class="search-bar">
+      <input type="text" placeholder="Search..." disabled>
+    </div>
   </nav>
   <main role="main" class="main-content">
   {% endif %}
@@ -30,9 +34,9 @@
       <a href="{{ url_for('login') }}" class="btn-top">Login</a>
     {% endif %}
   </div>
-<main role="main" class="main-content {% if request.endpoint in ['login', 'register'] %}no-sidebar{% else %}with-sidebar{% endif %}">
+  <main role="main" class="main-content {% if request.endpoint in ['login', 'register'] %}no-sidebar{% else %}with-sidebar{% endif %}">
+  
   <div class="container">
-
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
         {% for category, message in messages %}

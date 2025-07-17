@@ -12,7 +12,7 @@ body {
 }
 
 .sidebar {
-  width: 220px;
+  width: 260px;
   background-color: #1e1e2f;
   color: #fff;
   position: fixed;
@@ -43,7 +43,7 @@ body {
   width: 400px;
   min-height: 300px;
   margin: 0 auto;
-  background-color: #f8f9fa;
+  background-color: #F3F3E0;
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -56,10 +56,37 @@ body {
   color: #1e1e2f;
 }
 
+.logo-box {
+  align-items: center;
+  justify-content: center;
+  background-color: #a0a1e8;
+  padding: 0.1rem 0.05rem;
+  border-radius: 12px; 
+}
+
 .logo {
-  margin-bottom: 40px;
-  font-size: 24px;
-  text-align: center;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #eeeeee;
+  font-weight: 700;
+}
+
+.search-bar {
+  padding: 0.5rem;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.4rem 0.75rem;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  background-color: #f0f0f0;
+  color: #999;
+  outline: none;
+  cursor: not-allowed;
 }
 
 .nav-links {
@@ -90,7 +117,7 @@ body {
   margin-left: 220px;
   padding: 30px;
   flex-grow: 1;
-  background-color: #f4f1ee;
+  background-color: #f8eee4;
   height:fit-content;
 }
 
@@ -128,41 +155,99 @@ strong {
   color: #444;
 }
 
-/* start of the catalogue specific styles */
-.catalogue-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 150px); /* 5 fixed columns */
-  gap: 12px 16px; /* tight vertical and horizontal spacing */
-  justify-content: center; /* center the whole grid horizontally */
-  margin-top: 10px;
+/* Beginning of the catalogue specific styles */
+.catalogue-wrapper {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 1rem 0.5rem;
 }
 
-.media-card {
-  text-align: center;
-  color: white;
-  font-size: 0.9rem;
+.section-header {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem;
+  color: #444;
 }
 
-.media-card img {
-  width: 150px;
-  height: 225px; /* locked aspect ratio */
+.media-section {
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+}
+
+.movie-scroll {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scroll-snap-type: x mandatory;
+}
+
+.movie-card {
+  flex: 0 0 140px; /* tighter width */
+  scroll-snap-align: start;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 12px 12px 0 0;
   object-fit: cover;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+.rank-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: #ff4757;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.media-title {
+  padding: 0.5rem;
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: #222;
+  text-decoration: none;
+}
+
+/* Featured TV Shows Grid */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+
+.featured-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   transition: transform 0.2s ease;
 }
 
-.media-card img:hover {
-  transform: scale(1.04);
+.featured-grid img:hover {
+  transform: scale(1.03);
 }
 
-.media-card p {
-  margin-top: 6px;
-  font-size: 0.9rem;
-  color: black;
-  word-wrap: break-word;    /* makes sure that longer titles display fully */
-  white-space: normal;
+@media (max-width: 900px) {
+  .featured-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
+
+@media (max-width: 600px) {
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* End of Catalogue Specific Styles */
 
 .form-group {
   margin-bottom: 20px;
@@ -229,9 +314,23 @@ strong {
 
 }
 
+.greeting {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 24px;
+  color: #333;
+  background-color: #ffffff;
+  padding: 15px 25px;
+  margin: 20px auto;
+  border-left: 6px solid #183B4E;
+  border-radius: 8px;
+  width: fit-content;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
 .greeting:hover {
   transform: scale(1.02);
-  background-color: #b2ebf2;
+  background-color: #f4f4f4;
 }
 
 /* start of the season page specific styles */
@@ -318,7 +417,7 @@ strong {
 .Container {
   max-width: 800px;
   padding: 1rem;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
 }
 
 .Details{
@@ -353,7 +452,7 @@ h2, h3 {
 .comment {
   background: #fafafa;
   border: 1px solid #e1e1e1;
-  border-left: 4px solid #6366f1;      /* pleasant indigo accent */
+  border-left: 4px solid #6366f1;
   border-radius: 6px;
   padding: 1rem;
   box-shadow: 0 1px 2px rgba(0,0,0,0.04);

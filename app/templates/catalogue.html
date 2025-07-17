@@ -2,30 +2,40 @@
 {% block title %}Catalogue Page{% endblock %}
 
 {% block content %}
-{% for user in users %}
-{% endfor %}
-<h2 style="margin-bottom: 10px;">Top Movies</h2>
-<div class="catalogue-grid">
-  {% for movie in movies %}
-  <a href="{{ url_for('view_movie', movie_id = movie.tmdb_id) }}">
-    <div class="media-card">
-      <img src="{{ movie.poster_url }}" alt="{{ movie.title }}">
-      <p>{{ movie.title }}</p>
-    </div>
-  </a>
-  {% endfor %}
-</div>
+<div class="catalogue-wrapper">
+    {% for user in users %}
+    <h1 class="greeting">Welcome {{user.username}}! Looking for the next thing to stamp?</h1>
+    {% endfor %}
 
+    <!-- Top movies section, ranked format -->
+    <section class="media-section">
+        <h1 class="section-header">🎬 Featured Movies</h1>
+        <div class="movie-scroll" id="movieScroll">
+            {% for movie in movies %}
+            <div class="movie-card">
+                <span class="rank-badge">#{{ loop.index }}</span>
+                <a href="/media/{{ movie.tmdb_id }}">
+                    <img src="{{ movie.poster_url }}" alt="{{ movie.title }}">
+                </a>
+                <p class="media-title">{{ movie.title }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
 
-<h2 style="margin: 30px 0 10px;">Top TV Shows</h2>
-<div class="catalogue-grid">
-  {% for show in tv_shows %}
-  <a href="{{ url_for('get_media', media_id = show.tmdb_id) }}">
-    <div class="media-card">
-      <img src="{{ show.poster_url }}" alt="{{ show.title }}">
-      <p>{{ show.title }}</p>
-    </div>
-  </a>
-  {% endfor %}
+    <!-- Featured Shows Grid -->
+    <section class="media-section">
+        <h1 class="section-header">📺 Featured TV Shows</h1>
+        <div class="featured-grid">
+            {% for show in tv_shows %}
+            <a href="/media/{{ show.tmdb_id }}" class="media-link">
+                <div>
+                    <img src="{{ show.poster_url }}" alt="{{ show.title }}">
+                    <p class="media-title">{{ show.title }}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
 </div>
 {% endblock %}
