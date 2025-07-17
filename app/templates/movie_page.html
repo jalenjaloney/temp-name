@@ -1,52 +1,38 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="container">
-    <h2>{{ movie.title }}</h2>
-    {% if movie.poster_url %}
-        <img src="{{ movie.poster_url }}" alt="{{ movie.title }}">
-    {% endif %}
+<div class="Container">
+  <div class="Details">
+
+    <div class="title-poster">
+        <h2>{{ movie.title }}</h2>
+        {% if movie.poster_url %}
+            <img src="{{ movie.poster_url }}" alt="{{ movie.title }}">
+        {% endif %}
+    </div> <!-- Title poster ends here-->
+    <div class="Overview">
     <p>{{ movie.overview }}</p>
     <p><strong>Air Date:</strong> {{ movie.release_date }}</p>
     <p><strong>Rating:</strong> {{ movie.vote_average }}</p>
+    </div> <!-- Overview ends here-->
 
+
+  </div><!-- Movie Details div ends here
+  
+  
+  -->
     <hr>
 <!-- Fake playback bar -->
-<div id="progress-container"
-  class="progress-container"
-  data-duration="{{ movie.runtime or 3600 }}">   <!-- total seconds -->
-  <div id="progress-bar" class="progress-bar"></div>
-  <span id="progress-tooltip" class="progress-tooltip"></span>
-</div>
 
-
-<div id="comments-container" class="comments-container hidden">
-    <h2>Comments</h2>
-
-    {% if comments %}
-      {% for comment in comments %}
-        {% set hrs = comment.timestamp // 3600 %}
-        {% set mins = (comment.timestamp % 3600) // 60 %}
-        {% set secs = comment.timestamp % 60 %}
-        <div class="comment">
-          <div class="comment-header">
-            <strong>{{ comment.user.username }}</strong> at
-            <code>{{ "%02d:%02d:%02d"|format(hrs, mins, secs) }}</code>
-          </div>
-          <div class="comment-body">
-            {{ comment.content }}
-          </div>
-        </div>
-      {% endfor %}
-    {% else %}
-      <p>No comments yet.</p>
-    {% endif %}
-</div>
-
-<hr>
 
 {% if current_user.is_authenticated %}
   <h3>Add a Comment</h3>
   <form method="POST">
+    <div id="progress-container"
+    class="progress-container"
+    data-duration="{{ movie.runtime or 3600 }}">   <!-- total seconds -->
+    <div id="progress-bar" class="progress-bar"></div>
+    <span id="progress-tooltip" class="progress-tooltip"></span>
+    </div>
     {{ form.hidden_tag() }}
 
     <div>
@@ -74,13 +60,43 @@
   <p><a href="{{ url_for('login') }}">Log in</a> to leave a comment.</p>
 {% endif %}
 <button id="toggle-comments" class="toggle-btn">Show Comments</button>
-</div>
 
+
+
+<hr>
+
+
+<h2>Comments</h2>
+<div id="comments-container" class="comments-container hidden">
+  {% if comments %}
+    {% for comment in comments %}
+      {% set hrs = comment.timestamp // 3600 %}
+      {% set mins = (comment.timestamp % 3600) // 60 %}
+      {% set secs = comment.timestamp % 60 %}
+      <div class="comment">
+        <div class="comment-header">
+          <strong>{{ comment.user.username }}</strong> at
+          <code>{{ "%02d:%02d:%02d"|format(hrs, mins, secs) }}</code>
+        </div>
+        <div class="comment-body">
+          {{ comment.content }}
+        </div>
+      </div>
+    {% endfor %}  <!-- there was a random end div here -->
+  {% else %}
+    <p>No comments yet.</p>
+  {% endif %}
+</div> <!-- comments-container end-->
+
+
+
+</div> <!-- Main container end-->
 {% endblock content %}
 
 {% block scripts %}
 <script>
 (() => {
+  document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('progress-container');
   if (!container) return;
 
@@ -123,11 +139,15 @@ const toggleBtn = document.getElementById('toggle-comments');
 
 if (toggleBtn && commentsContainer) {
   toggleBtn.addEventListener('click', () => {
-    const hidden = commentsContainer.style.display === 'none';
-    commentsContainer.style.display = hidden ? '' : 'none';
-    toggleBtn.textContent = hidden ? 'Hide Comments' : 'Show Comments';
+    // flip the `.hidden` switch
+    commentsContainer.classList.toggle('hidden');
+
+    // update button text
+    const nowHidden = commentsContainer.classList.contains('hidden');
+    toggleBtn.textContent = nowHidden ? 'Show Comments' : 'Hide Comments';
   });
-}
+  };
+});
 })();
 </script>
 {% endblock scripts %}

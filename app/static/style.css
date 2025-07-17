@@ -97,7 +97,6 @@ body {
 .Container {
   background-color: #fff;
   max-width: 800px;
-  margin: 50px auto;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -318,10 +317,29 @@ strong {
 /* Container spacing */
 .Container {
   max-width: 800px;
-  margin: 2rem auto;
   padding: 1rem;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
+
+.Details{
+  display:flex;
+
+}
+
+.title-poster{
+  display: flex;
+  flex-direction: column;
+}
+
+.Overview{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  margin: 10px;
+  padding-left: 5px;
+}
+
 
 /* Section titles */
 h2, h3 {
@@ -332,14 +350,18 @@ h2, h3 {
 }
 
 /* Individual comment “bubble” */
-.Container .comment {
+.comment {
   background: #fafafa;
   border: 1px solid #e1e1e1;
   border-left: 4px solid #6366f1;      /* pleasant indigo accent */
   border-radius: 6px;
   padding: 1rem;
-  margin-bottom: 1rem;
   box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+.comments-container{
+  max-height: 350px;   /* pick a size that looks good in your layout */
+  overflow-y: auto;    /* vertical scrollbar appears when needed */
+  padding-right: 0.5rem; /* avoids text hiding under the scrollbar */
 }
 
 /* Username + timestamp line */
@@ -426,9 +448,11 @@ p[style*="color: red;"] {
   max-width: 600px;
   height: 8px;
   margin: 1.5rem auto;   /*  ← this “auto” on the sides centers it  */
-  background: #e5e5e5;
+  background: rgb(170, 169, 169);
   border-radius: 4px;
   cursor: pointer;
+  border-color:#6366f1;
+  padding:2px;
 }
 
 .progress-bar {
@@ -457,9 +481,9 @@ p[style*="color: red;"] {
 
 /* tiny toggle button and functionality */
 
-/* .commments-container{
+.hidden{
   display: none;
-} */
+}
 
 
 .toggle-btn {
@@ -472,7 +496,8 @@ p[style*="color: red;"] {
   font-size: 0.95rem;
   cursor: pointer;
   transition: 0.2s;
-  margin:5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .toggle-btn:hover {

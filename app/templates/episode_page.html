@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="container">
+<div class="Container">
     <h2>Episode {{ episode.episode_number }}: {{ episode.episode_name }}</h2>
     {% if episode.still_url %}
         <img src="{{ episode.still_url }}" alt="{{ episode.episode_name }}">
@@ -15,35 +15,15 @@
     <!-- Fake playback bar -->
     <div id="progress-container"
         class="progress-container"
-        data-duration="{{ episode.runtime_seconds or 3600 }}">   <!-- total seconds -->
+        data-duration="{{ episode.runtime*60 or 3600 }}">   <!-- total seconds -->
       <div id="progress-bar" class="progress-bar"></div>
       <span id="progress-tooltip" class="progress-tooltip"></span>
     </div>
 
-    <div id="comments-container" class="comments-container hidden">
-        <h2>Comments</h2>
-        {% if comments %}
-          {% for comment in comments %}
-            {% set hrs = comment.timestamp // 3600 %}
-            {% set mins = (comment.timestamp % 3600) // 60 %}
-            {% set secs = comment.timestamp % 60 %}
-            <div class="comment">
-              <div class="comment-header">
-                <strong>{{ comment.user.username }}</strong> at
-                <code>{{ "%02d:%02d:%02d"|format(hrs, mins, secs) }}</code>
-              </div>
-              <div class="comment-body">
-                {{ comment.content }}
-              </div>
-            </div>
-          {% endfor %}  <!-- there was a random end div here -->
-        {% else %}
-          <p>No comments yet.</p>
-        {% endif %}
-    </div>
+
 
     <hr>
-
+    
     {% if current_user.is_authenticated %}
       <h3>Add a Comment</h3>
       <form method="POST">
@@ -74,13 +54,42 @@
       <p><a href="{{ url_for('login') }}">Log in</a> to leave a comment.</p>
     {% endif %}
     <button id="toggle-comments" class="toggle-btn">Show Comments</button>
+
+<hr>
+
+
+
+
+<div id="comments-container" class="comments-container hidden">
+    <h2>Comments</h2>
+    {% if comments %}
+      {% for comment in comments %}
+        {% set hrs = comment.timestamp // 3600 %}
+        {% set mins = (comment.timestamp % 3600) // 60 %}
+        {% set secs = comment.timestamp % 60 %}
+        <div class="comment">
+          <div class="comment-header">
+            <strong>{{ comment.user.username }}</strong> at
+            <code>{{ "%02d:%02d:%02d"|format(hrs, mins, secs) }}</code>
+          </div>
+          <div class="comment-body">
+            {{ comment.content }}
+          </div>
+        </div>
+      {% endfor %}  <!-- there was a random end div here -->
+    {% else %}
+      <p>No comments yet.</p>
+    {% endif %}
 </div>
+</div>
+
 {% endblock content %}
 
 
 {% block scripts %}
 <script>
 (() => {
+document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('progress-container');
   if (!container) return;
 
@@ -122,12 +131,16 @@
   const toggleBtn = document.getElementById('toggle-comments');
 
   if (toggleBtn && commentsContainer) {
-    toggleBtn.addEventListener('click', () => {
-      const hidden = commentsContainer.style.display === 'none';
-      commentsContainer.style.display = hidden ? '' : 'none';
-      toggleBtn.textContent = hidden ? 'Hide Comments' : 'Show Comments';
+  toggleBtn.addEventListener('click', () => {
+    // flip the `.hidden` switch
+    commentsContainer.classList.toggle('hidden');
+
+    // update button text
+    const nowHidden = commentsContainer.classList.contains('hidden');
+    toggleBtn.textContent = nowHidden ? 'Show Comments' : 'Hide Comments';
+  });
+  };
     });
-  }
 })();
 </script>
 {% endblock scripts %}
