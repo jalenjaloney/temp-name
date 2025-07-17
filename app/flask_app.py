@@ -246,6 +246,19 @@ def view_episode(episode_id):
 
     return render_template('episode_page.html', episode=episode, form=form, comments=comments, emoji_summary=emoji_summary)
 
+@app.route('/comment/<int:comment_id>/delete', methods=['POST'])
+@login_required
+def delete_comment(comment_id):
+    comment = Comment.query.get_or_404(comment_id)
+
+    if comment.user_id != current_user.id:
+        flash("You don't have permission to delete this comment.", "danger")
+        return redirect(request.referrer or url_for('catalogue'))
+
+    db.session.delete(comment)
+    db.session.commit()
+    flash("Comment deleted.", "success")
+    return redirect(request.referrer or url_for('catalogue'))
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
