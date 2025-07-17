@@ -6,10 +6,10 @@ from flask_behind_proxy import FlaskBehindProxy
 from flask_sqlalchemy import SQLAlchemy
 import os
 from dotenv import load_dotenv
-from forms import *
+from app.forms import *
 from flask_behind_proxy import FlaskBehindProxy
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
-from models import db, User, Comment
+from app.models import db, User, Comment
 import sqlite3
 
 app = Flask(__name__)
@@ -249,13 +249,12 @@ def login():
   form = LoginForm()
   if form.validate_on_submit():
       user = User.query.filter_by(username=form.username.data).first()
-      print("Stored password:", user.password)
-      print("Entered password:", form.password.data)
-      if user and user.password == form.password.data:
-         login_user(user, remember=form.remember.data)
-         return redirect(url_for('catalogue'))
-      else:
-         form.username.errors.append('Invalid username or password.')
+      if user:
+        if user.password == form.password.data:
+            login_user(user, remember=form.remember.data)
+            return redirect(url_for('catalogue'))
+        else:
+            form.password.errors.append('Invalid username or password.')
   return render_template("login.html", form=form)
 
 @app.route("/logout", methods=["GET", "POST"])
