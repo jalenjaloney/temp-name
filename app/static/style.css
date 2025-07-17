@@ -332,7 +332,7 @@ h2, h3 {
 }
 
 /* Individual comment “bubble” */
-.Container .comment {
+.comment {
   background: #fafafa;
   border: 1px solid #e1e1e1;
   border-left: 4px solid #6366f1;      /* pleasant indigo accent */

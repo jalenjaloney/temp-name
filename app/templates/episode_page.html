@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="container">
+<div class="Container">
     <h2>Episode {{ episode.episode_number }}: {{ episode.episode_name }}</h2>
     {% if episode.still_url %}
         <img src="{{ episode.still_url }}" alt="{{ episode.episode_name }}">
