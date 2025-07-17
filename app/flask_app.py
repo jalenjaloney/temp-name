@@ -11,6 +11,7 @@ from flask_behind_proxy import FlaskBehindProxy
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from app.models import db, User, Comment
 import sqlite3
+import subprocess
 
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
@@ -268,6 +269,10 @@ def webhook():
         repo = git.Repo('/home/jalenseotechdev/temp-name')
         origin = repo.remotes.origin
         origin.pull()
+
+        # Rebuild media.db
+        subprocess.run(["python3", "app/query_db.py"])
+
         return 'Updated PythonAnywhere successfully', 200
     else:
         return 'Wrong event type', 400
