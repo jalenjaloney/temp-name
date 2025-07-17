@@ -31,29 +31,36 @@ body {
 
 /* Auth wrapper for login/register pages */
 .auth-wrapper {
+  height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1e1e2f;
-  height: 100vh;
+  background: linear-gradient(125deg, #5353ff, #1e1e2f);
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 20px;
 }
 
-.login-container,
-.register-container {
-  width: 400px;
-  min-height: 300px;
-  margin: 0 auto;
-  background-color: #F3F3E0;
+/* The translucent, blurred box */
+.auth-content {
+  max-width: 400px;
+  width: 100%;
   padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;  /* changed from content-box */
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  color: #fff;
 }
 
 .login-container h2,
 .register-container h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #1e1e2f;
+  color: #ffffff;
 }
 
 .logo-box {
@@ -249,6 +256,7 @@ strong {
 }
 /* End of Catalogue Specific Styles */
 
+/* Start of Login/Register Styles */
 .form-group {
   margin-bottom: 20px;
 }
@@ -311,8 +319,8 @@ strong {
   padding: 10px 15px;
   border-radius: 5px;
   font-size: 14px;
-
 }
+/* End of Login/Register Styles */
 
 .greeting {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
