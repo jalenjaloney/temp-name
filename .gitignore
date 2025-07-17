@@ -25,3 +25,5 @@ instance/
 
 # macOS system files
 .DS_Store
+
+*.csv
