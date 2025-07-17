@@ -14,13 +14,13 @@ episodes_df.to_sql("episodes", conn, if_exists="replace", index=False)
 
 # example query
 query = """
-SELECT title, COUNT(*) AS season_count
-FROM seasons
-GROUP BY title
-ORDER BY season_count DESC;
+SELECT title, runtime
+FROM media
+WHERE media_type = 'movie' AND runtime IS NOT NULL
+ORDER BY runtime DESC;
 """
-season_counts = pd.read_sql(query, conn)
-print("\nTop shows by number of seasons:")
-print(season_counts.head(10))
+long_movies = pd.read_sql(query, conn)
+print("\nTop movies by runtime:")
+print(long_movies.head(10))
 
 conn.close()
