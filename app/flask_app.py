@@ -12,6 +12,7 @@ from flask_login import LoginManager, login_user, logout_user, login_required, c
 from app.models import db, User, Comment
 import sqlite3
 import subprocess
+from app.google_ai import get_comments, summarize_comments
 
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
@@ -19,8 +20,10 @@ proxied = FlaskBehindProxy(app)
 app.config['SECRET_KEY'] = 'SECRET_KEY'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 
-load_dotenv()
-TMDB_API_KEY = "API_KEY"
+dotenv_path = os.path.join(os.path.dirname(__file__), '..', '.env')
+load_dotenv(dotenv_path=dotenv_path)
+
+TMDB_API_KEY = os.getenv("TMDB_API_KEY")
 
 db.init_app(app)
 
@@ -198,7 +201,11 @@ def view_movie(movie_id):
         return redirect(url_for('view_movie', movie_id=movie_id))
 
     comments = Comment.query.filter_by(episode_id=int(movie_id)).order_by(Comment.timestamp).all()
-    return render_template('movie_page.html', movie=movie, form=form, comments=comments)
+
+    comment_block = get_comments(movie_id)
+    emoji_summary = summarize_comments(comment_block) if comment_block else ""
+
+    return render_template('movie_page.html', movie=movie, form=form, comments=comments, emoji_summary=emoji_summary)
 
 
 # for shows
@@ -233,8 +240,25 @@ def view_episode(episode_id):
         return redirect(url_for('view_episode', episode_id=episode_id))
 
     comments = Comment.query.filter_by(episode_id=int(episode_id)).order_by(Comment.timestamp).all()
-    return render_template('episode_page.html', episode=episode, form=form, comments=comments)
 
+    comment_block = get_comments(episode_id)
+    emoji_summary = summarize_comments(comment_block) if comment_block else ""
+
+    return render_template('episode_page.html', episode=episode, form=form, comments=comments, emoji_summary=emoji_summary)
+
+@app.route('/comment/<int:comment_id>/delete', methods=['POST'])
+@login_required
+def delete_comment(comment_id):
+    comment = Comment.query.get_or_404(comment_id)
+
+    if comment.user_id != current_user.id:
+        flash("You don't have permission to delete this comment.", "danger")
+        return redirect(request.referrer or url_for('catalogue'))
+
+    db.session.delete(comment)
+    db.session.commit()
+    flash("Comment deleted.", "success")
+    return redirect(request.referrer or url_for('catalogue'))
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():

@@ -1,146 +1,226 @@
 {% extends "layout.html" %}
-
 {% block content %}
 <div class="Container">
-    <h2>Episode {{ episode.episode_number }}: {{ episode.episode_name }}</h2>
-    {% if episode.still_url %}
-        <img src="{{ episode.still_url }}" alt="{{ episode.episode_name }}">
-    {% endif %}
-    <p>{{ episode.overview }}</p>
-    <p><strong>Air Date:</strong> {{ episode.air_date }}</p>
-    <p><strong>Rating:</strong> {{ episode.vote_average }}</p>
+  <div class="Details">
 
+    <div class="title-poster">
+        <h2>Episode {{ episode.episode_number }}: {{ episode.episode_name }}</h2>
+        {% if episode.still_url %}
+            <img src="{{ episode.still_url }}" alt="{{ episode.episode_name }}">
+        {% endif %}
+    </div> <!-- Title poster ends here-->
+    <div class="Overview">
+        <p>{{ episode.overview }}</p>
+        <p><strong>Air Date:</strong> {{ episode.air_date }}</p>
+        <p><strong>Rating:</strong> {{ episode.vote_average }}</p>
+        {% if emoji_summary %}
+          <p><strong>General Viewer Reaction:</strong> {{ emoji_summary }} </p>
+        {% endif %}
+    </div> <!-- Overview ends here-->
+
+
+  </div><!-- Movie Details div ends here
+  
+  
+  -->
     <hr>
-
-    <!-- Fake playback bar -->
-    <div id="progress-container"
-        class="progress-container"
-        data-duration="{{ episode.runtime*60 or 3600 }}">   <!-- total seconds -->
-      <div id="progress-bar" class="progress-bar"></div>
-      <span id="progress-tooltip" class="progress-tooltip"></span>
+<!-- Fake playback bar -->
+    <div class="player">
+        <button id="play-btn" type="button" class="play-btn" aria-label="Play">
+        ▶
+        </button>
+  
+        <div id="progress-container"
+            class="progress-container"
+            data-duration="{{ episode.runtime*60 or 3600 }}">
+        <div id="progress-bar" class="progress-bar"></div>
+        <span id="progress-tooltip" class="progress-tooltip"></span>
+        </div>
     </div>
 
+{% if current_user.is_authenticated %}
+  <h3>Add a Comment</h3>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+
+    <div>
+      <label for="timestamp">{{ form.timestamp.label }}</label><br>
+      {{ form.timestamp(size=10, placeholder="e.g., 01:23:45") }}
+      {% for error in form.timestamp.errors %}
+        <p style="color: red;">{{ error }}</p>
+      {% endfor %}
+    </div>
+
+    <br>
+
+    <div>
+      <label for="content">{{ form.content.label }}</label><br>
+      {{ form.content(rows=3, cols=40) }}
+      {% for error in form.content.errors %}
+        <p style="color: red;">{{ error }}</p>
+      {% endfor %}
+    </div>
+
+    <br>
+    {{ form.submit() }}
+  </form>
+{% else %}
+  <p><a href="{{ url_for('login') }}">Log in</a> to leave a comment.</p>
+{% endif %}
+<button id="toggle-comments" class="toggle-btn">Show Comments</button>
 
 
-    <hr>
-    
-    {% if current_user.is_authenticated %}
-      <h3>Add a Comment</h3>
-      <form method="POST">
-        {{ form.hidden_tag() }}
-
-        <div>
-          <label for="timestamp">{{ form.timestamp.label }}</label><br>
-          {{ form.timestamp(size=10, placeholder="e.g., 01:23:45") }}
-          {% for error in form.timestamp.errors %}
-            <p style="color: red;">{{ error }}</p>
-          {% endfor %}
-        </div>
-
-        <br>
-
-        <div>
-          <label for="content">{{ form.content.label }}</label><br>
-          {{ form.content(rows=3, cols=40) }}
-          {% for error in form.content.errors %}
-            <p style="color: red;">{{ error }}</p>
-          {% endfor %}
-        </div>
-
-        <br>
-        {{ form.submit() }}
-      </form>
-    {% else %}
-      <p><a href="{{ url_for('login') }}">Log in</a> to leave a comment.</p>
-    {% endif %}
-    <button id="toggle-comments" class="toggle-btn">Show Comments</button>
 
 <hr>
 
 
 
-
+{% if comments %}
+{% set count = comments|length %}
+<h2>{{ count }} Comment{{ '' if count == 1 else 's' }}</h2>
 <div id="comments-container" class="comments-container hidden">
-    <h2>Comments</h2>
-    {% if comments %}
-      {% for comment in comments %}
-        {% set hrs = comment.timestamp // 3600 %}
-        {% set mins = (comment.timestamp % 3600) // 60 %}
-        {% set secs = comment.timestamp % 60 %}
-        <div class="comment">
-          <div class="comment-header">
-            <strong>{{ comment.user.username }}</strong> at
-            <code>{{ "%02d:%02d:%02d"|format(hrs, mins, secs) }}</code>
-          </div>
-          <div class="comment-body">
-            {{ comment.content }}
-          </div>
+    {% for comment in comments %}
+      {% set hrs = comment.timestamp // 3600 %}
+      {% set mins = (comment.timestamp % 3600) // 60 %}
+      {% set secs = comment.timestamp % 60 %}
+      <div class="comment" data-secs="{{ comment.timestamp }}">
+
+        <div class="comment-header">
+          <strong>{{ comment.user.username }}</strong> at
+          <code>{{ "%02d:%02d:%02d"|format(hrs, mins, secs) }}</code>
         </div>
-      {% endfor %}  <!-- there was a random end div here -->
-    {% else %}
-      <p>No comments yet.</p>
-    {% endif %}
-</div>
-</div>
+        <div class="comment-body">
+          {{ comment.content }}
+        </div>
+          {% if current_user.is_authenticated and comment.user_id == current_user.id %}
+            <form method="POST" action="{{ url_for('delete_comment', comment_id=comment.id) }}">
+              <button type="submit" class="delete-comment">🗑️</button>
+            </form>
+          {% endif %}
+      </div>
+    {% endfor %}  <!-- there was a random end div here -->
+</div> <!-- comments-container end-->
+{% else %}
+<p>No comments yet.</p>
+{% endif %}
 
+
+
+</div> <!-- Main container end-->
 {% endblock content %}
-
 
 {% block scripts %}
 <script>
-(() => {
-document.addEventListener('DOMContentLoaded', () => {
-  const container = document.getElementById('progress-container');
-  if (!container) return;
+ /* use episode ID so each episode remembers its own spot */
+ document.addEventListener('DOMContentLoaded', () => {
+  /* grab elements */
+  const bar      = document.getElementById('progress-container');
+  const barFill  = document.getElementById('progress-bar');
+  const tooltip  = document.getElementById('progress-tooltip');
+  const playBtn  = document.getElementById('play-btn');
+  const tsInput  = document.getElementById('timestamp');
+  const comments = document.getElementById('comments-container');
+  const toggle   = document.getElementById('toggle-comments');
+  if (!bar) return;
 
-  const tooltip = document.getElementById('progress-tooltip');
-  const tsInput = document.getElementById('timestamp');  // ← actual input
-  const duration = parseInt(container.dataset.duration, 10) || 0;
+  /* unique storage key for THIS episode */
+  const STORAGE_KEY = `episode:${bar.dataset.epid}:${location.pathname}`;
 
-  /* seconds → HH:MM:SS */
+  /* helpers */
+  const duration = Number(bar.dataset.duration) || 0;
   const fmt = s => {
     s = Math.round(s);
-    const h = String(Math.floor(s / 3600)).padStart(2,'0');
-    const m = String(Math.floor((s % 3600) / 60)).padStart(2,'0');
-    const sec = String(s % 60).padStart(2,'0');
-    return `${h}:${m}:${sec}`;
+    const h = String(Math.floor(s/3600)).padStart(2,'0');
+    const m = String(Math.floor((s%3600)/60)).padStart(2,'0');
+    const c = String(s%60).padStart(2,'0');
+    return `${h}:${m}:${c}`;
   };
 
-  container.addEventListener('mousemove', e => {
-    const rect = container.getBoundingClientRect();
+  /* state (pick up saved value) */
+  let playing = false;
+  let elapsed = Number(localStorage.getItem(STORAGE_KEY)) || 0;
+  let timerId = null;
+
+  /* comment‑reveal helper */
+  function updateComments() {
+    document.querySelectorAll('.comment').forEach(el => {
+      el.style.display = (+el.dataset.secs <= elapsed) ? '' : 'none';
+    });
+  }
+
+  /* render everything */
+  function render() {
+    const pct = elapsed / duration;
+    barFill.style.width = `${Math.min(pct*100,100)}%`;
+
+    const px = pct * bar.clientWidth;
+    tooltip.style.left    = `${px}px`;
+    tooltip.textContent   = fmt(elapsed);
+    tooltip.style.display = playing ? 'block' : tooltip.style.display;
+
+    playBtn.textContent = playing ? '❚❚' : '▶';
+    if (tsInput) tsInput.value = fmt(elapsed);
+
+    updateComments();
+    localStorage.setItem(STORAGE_KEY, elapsed);      // <- save here
+  }
+
+  /* tick every second */
+  function tick() {
+    elapsed += 1;
+    if (elapsed >= duration) {
+      elapsed = duration;
+      clearInterval(timerId);
+      playing = false;
+      localStorage.removeItem(STORAGE_KEY);          // wipe at the end
+    }
+    render();
+  }
+
+  /* play / pause */
+  playBtn.addEventListener('click', () => {
+    playing = !playing;
+    if (playing) {
+      timerId = setInterval(tick, 1000);
+    } else {
+      clearInterval(timerId);
+    }
+    render();
+  });
+
+  /* === bar hover tooltip (only when NOT playing) === */
+  bar.addEventListener('mousemove', e => {
+    if (playing) return;                  // let auto‑mode handle it
+    const rect = bar.getBoundingClientRect();
     const pct  = (e.clientX - rect.left) / rect.width;
-    tooltip.style.left  = `${e.clientX - rect.left}px`;
-    tooltip.textContent = fmt(pct * duration);
+    tooltip.style.left    = `${e.clientX - rect.left}px`;
+    tooltip.textContent   = fmt(pct * duration);
     tooltip.style.display = 'block';
   });
 
-  container.addEventListener('click', e => {
-    if (!tsInput) return;
-    const rect = container.getBoundingClientRect();
+  bar.addEventListener('mouseleave', () => {
+    if (!playing) tooltip.style.display = 'none';
+  });
+
+  /* === click (seek) === */
+  bar.addEventListener('click', e => {
+    const rect = bar.getBoundingClientRect();
     const pct  = (e.clientX - rect.left) / rect.width;
-    tsInput.value = fmt(pct * duration);   // fill the input
-    tsInput.focus();
+    elapsed = pct * duration;
+    render();
   });
 
-  container.addEventListener('mouseleave', () => {
-    tooltip.style.display = 'none';
-  });
-
-
-  const commentsContainer = document.getElementById('comments-container');
-  const toggleBtn = document.getElementById('toggle-comments');
-
-  if (toggleBtn && commentsContainer) {
-  toggleBtn.addEventListener('click', () => {
-    // flip the `.hidden` switch
-    commentsContainer.classList.toggle('hidden');
-
-    // update button text
-    const nowHidden = commentsContainer.classList.contains('hidden');
-    toggleBtn.textContent = nowHidden ? 'Show Comments' : 'Hide Comments';
-  });
-  };
+  /* === show / hide comments === */
+  if (toggle && comments) {
+    toggle.addEventListener('click', () => {
+      comments.classList.toggle('hidden');
+      toggle.textContent = comments.classList.contains('hidden')
+                           ? 'Show Comments' : 'Hide Comments';
     });
-})();
+  }
+
+
+  render();               // initial paint with restored time
+});
 </script>
 {% endblock scripts %}
