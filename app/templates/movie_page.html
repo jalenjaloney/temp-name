@@ -13,6 +13,9 @@
     <p>{{ movie.overview }}</p>
     <p><strong>Air Date:</strong> {{ movie.release_date }}</p>
     <p><strong>Rating:</strong> {{ movie.vote_average }}</p>
+    {% if emoji_summary %}
+        <p><strong>General Viewer Reaction:</strong> {{ emoji_summary }} </p>
+    {% endif %}
     </div> <!-- Overview ends here-->
 
 
