@@ -11,9 +11,14 @@
 <body>
   {% if request.endpoint not in ['login', 'register'] %}
   <nav class="sidebar">
+    <a href="/">
     <div class="logo-box">
-      <h2 class="logo"><strong>STAMPER 🕹️</strong></h2>
+      <h2 class="logo">
+        <span>STAMPER</span>
+        <span class="emoji">🕹️</span>
+      </h2>
     </div>
+    </a>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
       <li><a href="#">Bookmarked</a></li>
