@@ -20,7 +20,7 @@ app.config['SECRET_KEY'] = 'SECRET_KEY'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 
 load_dotenv()
-TMDB_API_KEY = "API_KEY"
+TMDB_API_KEY = os.getenv("TMDB_API_KEY")
 
 db.init_app(app)
 
