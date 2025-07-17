@@ -92,6 +92,11 @@
         <div class="comment-body">
           {{ comment.content }}
         </div>
+          {% if current_user.is_authenticated and comment.user_id == current_user.id %}
+            <form method="POST" action="{{ url_for('delete_comment', comment_id=comment.id) }}">
+              <button type="submit" class="delete-comment">🗑️</button>
+            </form>
+          {% endif %}
       </div>
     {% endfor %}  <!-- there was a random end div here -->
 </div> <!-- comments-container end-->
