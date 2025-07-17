@@ -11,6 +11,7 @@ from flask_behind_proxy import FlaskBehindProxy
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from app.models import db, User, Comment
 import sqlite3
+import subprocess
 
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
@@ -150,7 +151,8 @@ def get_media(media_id):
     # gets seasons
     seasons = []
     if media["media_type"] == "tv":
-        conn = sqlite3.connect("media.db")
+        MEDIA_DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "media.db")
+        conn = sqlite3.connect(MEDIA_DB_PATH)
         season_query = f"SELECT * FROM seasons WHERE tv_id = '{media_id}' ORDER BY season_number"
         season_df = pd.read_sql(season_query, conn)
 
@@ -168,7 +170,8 @@ def get_media(media_id):
 @app.route('/movie/<int:movie_id>', methods=['GET','POST'])
 def view_movie(movie_id):
     # get episode from sqlite
-    conn = sqlite3.connect("media.db")
+    MEDIA_DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "media.db")
+    conn = sqlite3.connect(MEDIA_DB_PATH)
     movie_query = f"SELECT * FROM media WHERE tmdb_id = {movie_id} AND media_type = 'movie'"
     movie = pd.read_sql(movie_query, conn).iloc[0].to_dict()
     conn.close()
@@ -202,7 +205,8 @@ def view_movie(movie_id):
 @app.route('/episode/<int:episode_id>', methods=['GET','POST'])
 def view_episode(episode_id):
     # get episode from sqlite
-    conn = sqlite3.connect("media.db")
+    MEDIA_DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "media.db")
+    conn = sqlite3.connect(MEDIA_DB_PATH)
     episode_query = f"SELECT * FROM episodes WHERE episode_id = {episode_id}"
     episode = pd.read_sql(episode_query, conn).iloc[0].to_dict()
     conn.close()
@@ -268,6 +272,10 @@ def webhook():
         repo = git.Repo('/home/jalenseotechdev/temp-name')
         origin = repo.remotes.origin
         origin.pull()
+
+        # Rebuild media.db
+        subprocess.run(["python3", "app/query_db.py"])
+
         return 'Updated PythonAnywhere successfully', 200
     else:
         return 'Wrong event type', 400
