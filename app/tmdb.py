@@ -25,7 +25,16 @@ def fetch_popular(media_type="movie", pages=1):
 def parse_tmdb_items(items, media_type):
     """Extract only the fields we care about"""
     parsed = []
+    # get the runtime for movies
     for item in items:
+        runtime = None
+        if media_type == "movie":
+            movie_url = f"{BASE_URL}/movie/{item['id']}"
+            response = requests.get(movie_url, params={"api_key": TMDB_API_KEY})
+            if response.ok:
+                details = response.json()
+                runtime = details.get("runtime")
+
         parsed.append({
             "tmdb_id": item["id"],
             "title": item.get("title") or item.get("name"),
@@ -33,6 +42,7 @@ def parse_tmdb_items(items, media_type):
             "poster_url": IMG_BASE_URL + item["poster_path"] if item.get("poster_path") else None,
             "overview": item.get("overview", ""),
             "release_date": item.get("release_date") or item.get("first_air_date"),
+            "runtime": runtime,
             "vote_average": item.get("vote_average"),
         })
     return parsed
