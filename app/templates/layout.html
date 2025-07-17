@@ -41,7 +41,7 @@
   </div>
   <main role="main" class="main-content {% if request.endpoint in ['login', 'register'] %}no-sidebar{% else %}with-sidebar{% endif %}">
   
-  <div class="container">
+  <div>
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
         {% for category, message in messages %}
