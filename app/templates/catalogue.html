@@ -3,9 +3,7 @@
 
 {% block content %}
 <div class="catalogue-wrapper">
-    {% for user in users %}
-    <h1 class="greeting">Welcome {{user.username}}! Looking for the next thing to stamp?</h1>
-    {% endfor %}
+    <h1 class="greeting">Welcome {{current_user.username}}! Looking for the next thing to stamp?</h1>
 
     <!-- Top movies section, ranked format -->
     <section class="media-section">
