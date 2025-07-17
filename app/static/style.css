@@ -478,6 +478,7 @@ strong {
 .title-poster{
   display: flex;
   flex-direction: column;
+  width:400px;
 }
 
 .Overview{
@@ -487,6 +488,7 @@ strong {
   justify-content: center;
   margin: 10px;
   padding-left: 5px;
+  width:fit-content;
 }
 
 

@@ -29,7 +29,7 @@
 
   <div id="progress-container"
       class="progress-container"
-      data-duration="{{ movie.runtime or 3600 }}">
+      data-duration="{{ movie.runtime*60 or 3600 }}">
   <div id="progress-bar" class="progress-bar"></div>
   <span id="progress-tooltip" class="progress-tooltip"></span>
   </div>
