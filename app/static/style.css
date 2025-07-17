@@ -468,6 +468,7 @@ strong {
   max-width: 800px;
   padding: 1rem;
   font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  height: 100vh;
 }
 
 .Details{
@@ -548,7 +549,7 @@ h2, h3 {
   background-color: #ffe6e6 !important; /* Override the universal submit styling */
   color: rgb(247, 90, 90) !important;
   border: 1px solid rgb(247, 90, 90) !important;
-  border-radius: 7px !important;
+  border-radius: 5px !important;
   padding: 4px 8px !important;
   font-size: 0.7rem !important;
   transition: background-color 0.2s ease, color 0.2s ease;
