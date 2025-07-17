@@ -6,10 +6,10 @@ from flask_behind_proxy import FlaskBehindProxy
 from flask_sqlalchemy import SQLAlchemy
 import os
 from dotenv import load_dotenv
-from forms import *
+from app.forms import *
 from flask_behind_proxy import FlaskBehindProxy
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
-from models import db, User, Comment
+from app.models import db, User, Comment
 import sqlite3
 
 app = Flask(__name__)
