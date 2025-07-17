@@ -13,6 +13,9 @@
     <p>{{ movie.overview }}</p>
     <p><strong>Air Date:</strong> {{ movie.release_date }}</p>
     <p><strong>Rating:</strong> {{ movie.vote_average }}</p>
+    {% if emoji_summary %}
+        <p><strong>General Viewer Reaction:</strong> {{ emoji_summary }} </p>
+    {% endif %}
     </div> <!-- Overview ends here-->
 
 
@@ -86,7 +89,12 @@
         <div class="comment-body">
           {{ comment.content }}
         </div>
-      </div>
+          {% if current_user.is_authenticated and comment.user_id == current_user.id %}
+            <form method="POST" action="{{ url_for('delete_comment', comment_id=comment.id) }}">
+              <button type="submit" class="delete-comment">🗑️</button>
+            </form>
+          {% endif %}
+        </div>
     {% endfor %}  <!-- there was a random end div here -->
 </div> <!-- comments-container end-->
 {% else %}
