@@ -6,10 +6,10 @@ from flask_behind_proxy import FlaskBehindProxy
 from flask_sqlalchemy import SQLAlchemy
 import os
 from dotenv import load_dotenv
-from forms import RegistrationForm, LoginForm
+from forms import *
 from flask_behind_proxy import FlaskBehindProxy
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
-from models import db, User
+from models import db, User, Comment
 import sqlite3
 
 app = Flask(__name__)
@@ -110,6 +110,18 @@ def parse_episodes(tv_id, season_num, season_id, episodes_raw):
         })
     return episodes
 
+# Helper function to parse comment timestamp
+def parse_timestamp_string(ts_str):
+    parts = list(map(int, ts_str.split(":")))
+    if len(parts) == 2:
+        minutes, seconds = parts
+        return minutes * 60 + seconds
+    elif len(parts) == 3:
+        hours, minutes, seconds = parts
+        return hours * 3600 + minutes * 60 + seconds
+    else:
+        raise ValueError("Invalid timestamp format")
+
 # Fetch and parse both movies and TV shows
 movies_raw = fetch_popular("movie", pages=2)
 tv_raw = fetch_popular("tv", pages=2)
@@ -132,7 +144,7 @@ def catalogue():
     users = User.query.all()
     return render_template('catalogue.html', movies=movies, tv_shows=tv_shows, users=users)
 
-@app.route('/media/<media_id>')
+@app.route('/media/<int:media_id>')
 def get_media(media_id):
     media = df[df["tmdb_id"] == int(media_id)].iloc[0].to_dict()
     # gets seasons
@@ -152,26 +164,73 @@ def get_media(media_id):
         conn.close()
     return render_template('season_page.html', item=media, seasons=seasons)
 
-# @app.route('/season/<season_id>')
-# def view_season(season_id):
-#     conn = sqlite3.connect("media.db")
-#     season_query = f"SELECT * FROM seasons WHERE season_id = '{season_id}'"
-#     season = pd.read_sql(season_query, conn).iloc[0].to_dict()
+# for movies
+@app.route('/movie/<int:movie_id>', methods=['GET','POST'])
+def view_movie(movie_id):
+    # get episode from sqlite
+    conn = sqlite3.connect("media.db")
+    movie_query = f"SELECT * FROM media WHERE tmdb_id = {movie_id} AND media_type = 'movie'"
+    movie = pd.read_sql(movie_query, conn).iloc[0].to_dict()
+    conn.close()
 
-#     episodes_query = f"SELECT * FROM episodes WHERE season_id = '{season_id}' ORDER BY episode_number"
-#     episodes = pd.read_sql(episodes_query, conn).to_dict(orient='records')
-#     conn.close()
+    # Allow commenting
+    form = commentForm()
+    if form.validate_on_submit() and current_user.is_authenticated:
+        # Checking if timestamp is properly formatted
+        try:
+            timestamp_seconds = parse_timestamp_string(form.timestamp.data)
+        except ValueError:
+            flash("Invalid timestamp format.", "danger")
+            return redirect(url_for('view_movie', movie_id=movie_id))
+        
+        new_comment = Comment(
+            content=form.content.data,
+            timestamp=timestamp_seconds,
+            user_id=current_user.id,
+            episode_id=int(movie_id)
+        )
+        db.session.add(new_comment)
+        db.session.commit()
+        flash("Comment added!")
+        return redirect(url_for('view_movie', movie_id=movie_id))
 
-#     return render_template("season_detail.html", season=season, episodes=episodes)
+    comments = Comment.query.filter_by(episode_id=int(movie_id)).order_by(Comment.timestamp).all()
+    return render_template('movie_page.html', movie=movie, form=form, comments=comments)
 
-@app.route('/episode/<int:episode_id>')
+
+# for shows
+@app.route('/episode/<int:episode_id>', methods=['GET','POST'])
 def view_episode(episode_id):
+    # get episode from sqlite
     conn = sqlite3.connect("media.db")
     episode_query = f"SELECT * FROM episodes WHERE episode_id = {episode_id}"
     episode = pd.read_sql(episode_query, conn).iloc[0].to_dict()
     conn.close()
+        
+    # Allow commenting
+    form = commentForm()
+    if form.validate_on_submit() and current_user.is_authenticated:
+        # Checking if timestamp is properly formatted
+        try:
+            timestamp_seconds = parse_timestamp_string(form.timestamp.data)
+        except ValueError:
+            flash("Invalid timestamp format.", "danger")
+            return redirect(url_for('view_episode', episode_id=episode_id))
+        
+        new_comment = Comment(
+            content=form.content.data,
+            timestamp=timestamp_seconds,
+            user_id=current_user.id,
+            episode_id=int(episode_id)
+        )
+        db.session.add(new_comment)
+        db.session.commit()
+        flash("Comment added!")
+        return redirect(url_for('view_episode', episode_id=episode_id))
 
-    return render_template("episode_detail.html", episode=episode)
+    comments = Comment.query.filter_by(episode_id=int(episode_id)).order_by(Comment.timestamp).all()
+    return render_template('episode_page.html', episode=episode, form=form, comments=comments)
+
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
@@ -194,7 +253,6 @@ def login():
       print("Entered password:", form.password.data)
       if user and user.password == form.password.data:
          login_user(user, remember=form.remember.data)
-         flash('Login successful!', 'success')
          return redirect(url_for('catalogue'))
       else:
          form.username.errors.append('Invalid username or password.')
@@ -205,6 +263,15 @@ def logout():
    logout_user()
    return(redirect(url_for('login')))
 
+@app.route("/update_server", methods=['POST'])
+def webhook():
+    if request.method == 'POST':
+        repo = git.Repo('/home/jalenseotechdev/temp-name')
+        origin = repo.remotes.origin
+        origin.pull()
+        return 'Updated PythonAnywhere successfully', 200
+    else:
+        return 'Wrong event type', 400
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")
