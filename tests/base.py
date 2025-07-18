@@ -1,10 +1,14 @@
+import os
 import unittest
 from sqlalchemy import text
+from app.query_db import create_media_db
 from app.flask_app import app, db
 from app.models import User
 
 class BaseTestCase(unittest.TestCase):
     def setUp(self):
+        app.config["MEDIA_DB_PATH"] = os.path.abspath("media.db")
+        create_media_db(app.config["MEDIA_DB_PATH"])
         # Enable test mode, turn off CSRF, use in-memory DB
         app.config["TESTING"] = True
         app.config["WTF_CSRF_ENABLED"] = False
@@ -14,23 +18,6 @@ class BaseTestCase(unittest.TestCase):
         # Init tables before each test
         with app.app_context():
             db.create_all()
-
-            # Create media table for raw SQL access
-            db.session.execute(text("""
-                CREATE TABLE IF NOT EXISTS media (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    tmdb_id INTEGER,
-                    media_type TEXT,
-                    title TEXT
-                )
-            """))
-
-            # Add dummy row to media
-            db.session.execute(text("""
-                INSERT INTO media (tmdb_id, media_type, title)
-                VALUES (1087192, 'movie', 'Dummy Movie')
-            """))
-            db.session.commit()
 
     def tearDown(self):
         # Drop tables after each test
