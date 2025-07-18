@@ -25,7 +25,7 @@ This project is created with:
 - Python (Flask)
 - HTML
 - CSS
-- Javascript
+- JavaScript
 - Jinja2
 - [TMDb API](https://developer.themoviedb.org/docs/getting-started)
 - [Google GenAI API](https://ai.google.dev/)
