@@ -204,8 +204,10 @@ def get_media(media_id):
 
         for idx, row in season_df.iterrows():
             season_dict = row.to_dict()
-            episode_query = f"SELECT * FROM episodes WHERE season_id = '{
-                row['season_id']}' ORDER BY episode_number"
+            episode_query = (
+                f"SELECT * FROM episodes WHERE season_id = '{row['season_id']}' "
+                "ORDER BY episode_number"
+            )
             episode_df = pd.read_sql(episode_query, conn)
             season_dict["episodes"] = episode_df.to_dict(orient="records")
 
