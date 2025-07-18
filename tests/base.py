@@ -17,7 +17,7 @@ class BaseTestCase(unittest.TestCase):
 
             # Create media table for raw SQL access
             db.session.execute(text("""
-                CREATE TABLE media (
+                CREATE TABLE IF NOT EXISTS media_mock (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     tmdb_id INTEGER,
                     media_type TEXT,
@@ -27,7 +27,7 @@ class BaseTestCase(unittest.TestCase):
 
             # Add dummy row to media
             db.session.execute(text("""
-                INSERT INTO media (tmdb_id, media_type, title)
+                INSERT INTO media_mock (tmdb_id, media_type, title)
                 VALUES (1087192, 'movie', 'Dummy Movie')
             """))
             db.session.commit()
