@@ -293,7 +293,7 @@ def logout():
 @app.route("/update_server", methods=['POST'])
 def webhook():
     if request.method == 'POST':
-        repo = git.Repo('/home/jalenseotechdev/temp-name')
+        repo = git.Repo('/home/jalenseotechdev/stamper')
         origin = repo.remotes.origin
         origin.pull()
 
