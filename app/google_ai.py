@@ -42,14 +42,14 @@ def get_comments(media_id, db_path=None):
         hours = seconds // 3600
         minutes = (seconds % 3600) // 60
         secs = seconds % 60
-        timestamp = (
-            f"{
-                hours:02}:{
-                minutes:02}:{
-                secs:02}" if hours else f"{
-                    minutes:02}:{
-                        secs:02}")
+
+        if hours:
+            timestamp = f"{hours:02}:{minutes:02}:{secs:02}"
+        else:
+            timestamp = f"{minutes:02}:{secs:02}"
+
         formatted.append(f"[{timestamp}] {content}")
+
 
     return "\n".join(formatted)
 
