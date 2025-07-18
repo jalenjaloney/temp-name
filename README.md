@@ -28,7 +28,8 @@ This project is created with:
 - Jinja2
 - [TMDb API](https://developer.themoviedb.org/docs/getting-started)
 - [Google GenAI API](https://ai.google.dev/)
-- SQLite
+- SQLite3
+- Pandas
 - dotenv
 
 
