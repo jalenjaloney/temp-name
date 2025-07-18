@@ -6,24 +6,29 @@ import sqlite3
 
 load_dotenv()
 # Set environment variables
-my_api_key = os.getenv('GENAI_KEY')
+my_api_key = os.getenv("GENAI_KEY")
 genai.api_key = my_api_key
 
 # Create an genAI client using the key from our environment variable
 client = genai.Client(api_key=my_api_key)
 
+
 def get_comments(media_id, db_path=None):
     if not db_path:
-        db_path = os.path.join(os.path.dirname(__file__), "..", "instance", "site.db")
+        db_path = os.path.join(os.path.dirname(
+            __file__), "..", "instance", "site.db")
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
 
-    cursor.execute("""
+    cursor.execute(
+        """
         SELECT timestamp, content
         FROM comment
         WHERE episode_id = ?
         ORDER BY timestamp ASC
-    """, (media_id,))
+    """,
+        (media_id,),
+    )
 
     comments = cursor.fetchall()
     conn.close()
@@ -37,10 +42,17 @@ def get_comments(media_id, db_path=None):
         hours = seconds // 3600
         minutes = (seconds % 3600) // 60
         secs = seconds % 60
-        timestamp = f"{hours:02}:{minutes:02}:{secs:02}" if hours else f"{minutes:02}:{secs:02}"
+        timestamp = (
+            f"{
+                hours:02}:{
+                minutes:02}:{
+                secs:02}" if hours else f"{
+                    minutes:02}:{
+                        secs:02}")
         formatted.append(f"[{timestamp}] {content}")
 
     return "\n".join(formatted)
+
 
 def summarize_comments(comment_block):
 
@@ -57,16 +69,17 @@ def summarize_comments(comment_block):
     response = client.models.generate_content(
         model="gemini-2.5-flash",
         config=types.GenerateContentConfig(
-            system_instruction=("You are a helpful assistant. Only print those 4 emojis")
+            system_instruction=(
+                "You are a helpful assistant. Only print those 4 emojis"
+            )
         ),
-        contents=prompt
+        contents=prompt,
     )
-    
+
     return response.text.strip()
 
 
-
-#test
+# test
 # if __name__ == "__main__":
 #     episode_or_movie_id = 1922715
 #     comment_text = get_comments(episode_or_movie_id)

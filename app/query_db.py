@@ -3,13 +3,16 @@ import sqlite3
 import os
 
 # load the generated csvs
-media_catalog_path = os.path.join(os.path.dirname(__file__), '..', 'media_catalog.csv')
+media_catalog_path = os.path.join(
+    os.path.dirname(__file__), "..", "media_catalog.csv")
 media_df = pd.read_csv(media_catalog_path)
 
-tv_seasons_path = os.path.join(os.path.dirname(__file__), '..', 'tv_seasons.csv')
+tv_seasons_path = os.path.join(
+    os.path.dirname(__file__), "..", "tv_seasons.csv")
 seasons_df = pd.read_csv(tv_seasons_path)
 
-tv_episodes_path = os.path.join(os.path.dirname(__file__), '..', 'tv_episodes.csv')
+tv_episodes_path = os.path.join(
+    os.path.dirname(__file__), "..", "tv_episodes.csv")
 episodes_df = pd.read_csv(tv_episodes_path)
 
 conn = sqlite3.connect("media.db")
