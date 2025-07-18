@@ -56,3 +56,5 @@ GENAI_KEY=your_genai_key
 The project is deployed on PythonAnywhere: https://jalenseotechdev.pythonanywhere.com/
 
 ### Workflows
+[![Check Style](https://github.com/jalenjaloney/Civic-Compass/actions/workflows/stylecheck.yaml/badge.svg)](https://github.com/jalenjaloney/Civic-Compass/actions/workflows/stylecheck.yaml)
+[![Tests](https://github.com/jalenjaloney/Civic-Compass/actions/workflows/tests.yaml/badge.svg)](https://github.com/jalenjaloney/Civic-Compass/actions/workflows/tests.yaml)
