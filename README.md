@@ -9,10 +9,10 @@
 - [Workflows](#workflows)
 
 ### General Info
-**Stamper** is a social platform that allows users to post timestamped comments while watching a show or movie, offering a 
-space to share reactions at specific moments. Whether it is shock at a plot twist or laughter at a punch line, these 
-moment-specific reactions create a shared experience that enhances rather than interrupts what you're watching.
-
+**Stamper** is a social platform where users can post timestamped comments while watching a show or movie, creating a space
+to share reactions in real time. Whether it's shock at a plot twist or laughter at a particular scene, these moment-specific comments
+create a shared experience that enhances rather than interrupts what you're watching.
+    
 ### Features
 - Timestamped commenting synced to movie/show runtime
 - Gemini-powered emoji summaries based on viewer comments
@@ -36,8 +36,8 @@ This project is created with:
 In the terminal:
 ``` bash
 # Clone the repository
-git clone https://github.com/jalenjaloney/temp-name.git
-cd temp-name/
+git clone https://github.com/jalenjaloney/stamper.git
+cd stamper/
 
 # Install Python dependencies
 pip install -r requirements.txt
