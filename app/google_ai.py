@@ -5,13 +5,6 @@ from dotenv import load_dotenv
 import sqlite3
 
 load_dotenv()
-# Set environment variables
-my_api_key = os.getenv("GENAI_KEY")
-genai.api_key = my_api_key
-
-# Create an genAI client using the key from our environment variable
-client = genai.Client(api_key=my_api_key)
-
 
 def get_comments(media_id, db_path=None):
     if not db_path:
@@ -55,6 +48,9 @@ def get_comments(media_id, db_path=None):
 
 
 def summarize_comments(comment_block):
+    # Create genAI client in function to avoid errors when testing
+    api_key = os.getenv("GENAI_KEY")
+    client = genai.Client(api_key=api_key)
 
     prompt = f"""
     Analyze timestamped viewer comments on a movie or episode.
