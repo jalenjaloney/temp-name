@@ -21,5 +21,5 @@ jobs:
         env:
           TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GENAI_KEY }}
         run: python3 -m unittest discover -s tests
