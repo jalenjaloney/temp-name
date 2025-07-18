@@ -15,6 +15,24 @@ class BaseTestCase(unittest.TestCase):
         with app.app_context():
             db.create_all()
 
+            # Create media table for SQL queries in tests
+            db.session.execute("""
+                CREATE TABLE media (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    tmdb_id INTEGER,
+                    media_type TEXT,
+                    title TEXT
+                )
+            """)
+
+            # Add dummy row to media
+            db.session.execute("""
+                INSERT INTO media (tmdb_id, media_type, title)
+                VALUES (1087192, 'movie', 'Dummy Movie')
+            """)
+            db.session.commit()
+
+
     def tearDown(self):
         # Drop tables after each test
         with app.app_context():
