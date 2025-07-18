@@ -26,8 +26,8 @@ This project is created with:
 - HTML
 - CSS
 - Jinja2
-- TMDb API
-- Google GenAI
+- [TMDb API](https://developer.themoviedb.org/docs/getting-started)
+- [Google GenAI API](https://ai.google.dev/)
 - SQLite
 - dotenv
 
