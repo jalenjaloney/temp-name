@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="Container">
+<!-- This is the overview part of the media (Desc, Title, Poster) -->
   <div class="Details">
-
     <div class="title-poster">
         <h2>Episode {{ episode.episode_number }}: {{ episode.episode_name }}</h2>
         {% if episode.still_url %}
@@ -36,7 +36,8 @@
         <div id="progress-bar" class="progress-bar"></div>
         <span id="progress-tooltip" class="progress-tooltip"></span>
         </div>
-    </div>
+    </div> 
+    <!--  End player div-->
 
 {% if current_user.is_authenticated %}
   <h3>Add a Comment</h3>
@@ -110,117 +111,5 @@
 {% endblock content %}
 
 {% block scripts %}
-<script>
- /* use episode ID so each episode remembers its own spot */
- document.addEventListener('DOMContentLoaded', () => {
-  /* grab elements */
-  const bar      = document.getElementById('progress-container');
-  const barFill  = document.getElementById('progress-bar');
-  const tooltip  = document.getElementById('progress-tooltip');
-  const playBtn  = document.getElementById('play-btn');
-  const tsInput  = document.getElementById('timestamp');
-  const comments = document.getElementById('comments-container');
-  const toggle   = document.getElementById('toggle-comments');
-  if (!bar) return;
-
-  /* unique storage key for THIS episode */
-  const STORAGE_KEY = `episode:${bar.dataset.epid}:${location.pathname}`;
-
-  /* helpers */
-  const duration = Number(bar.dataset.duration) || 0;
-  const fmt = s => {
-    s = Math.round(s);
-    const h = String(Math.floor(s/3600)).padStart(2,'0');
-    const m = String(Math.floor((s%3600)/60)).padStart(2,'0');
-    const c = String(s%60).padStart(2,'0');
-    return `${h}:${m}:${c}`;
-  };
-
-  /* state (pick up saved value) */
-  let playing = false;
-  let elapsed = Number(localStorage.getItem(STORAGE_KEY)) || 0;
-  let timerId = null;
-
-  /* comment‑reveal helper */
-  function updateComments() {
-    document.querySelectorAll('.comment').forEach(el => {
-      el.style.display = (+el.dataset.secs <= elapsed) ? '' : 'none';
-    });
-  }
-
-  /* render everything */
-  function render() {
-    const pct = elapsed / duration;
-    barFill.style.width = `${Math.min(pct*100,100)}%`;
-
-    const px = pct * bar.clientWidth;
-    tooltip.style.left    = `${px}px`;
-    tooltip.textContent   = fmt(elapsed);
-    tooltip.style.display = playing ? 'block' : tooltip.style.display;
-
-    playBtn.textContent = playing ? '❚❚' : '▶';
-    if (tsInput) tsInput.value = fmt(elapsed);
-
-    updateComments();
-    localStorage.setItem(STORAGE_KEY, elapsed);      // <- save here
-  }
-
-  /* tick every second */
-  function tick() {
-    elapsed += 1;
-    if (elapsed >= duration) {
-      elapsed = duration;
-      clearInterval(timerId);
-      playing = false;
-      localStorage.removeItem(STORAGE_KEY);          // wipe at the end
-    }
-    render();
-  }
-
-  /* play / pause */
-  playBtn.addEventListener('click', () => {
-    playing = !playing;
-    if (playing) {
-      timerId = setInterval(tick, 1000);
-    } else {
-      clearInterval(timerId);
-    }
-    render();
-  });
-
-  /* === bar hover tooltip (only when NOT playing) === */
-  bar.addEventListener('mousemove', e => {
-    if (playing) return;                  // let auto‑mode handle it
-    const rect = bar.getBoundingClientRect();
-    const pct  = (e.clientX - rect.left) / rect.width;
-    tooltip.style.left    = `${e.clientX - rect.left}px`;
-    tooltip.textContent   = fmt(pct * duration);
-    tooltip.style.display = 'block';
-  });
-
-  bar.addEventListener('mouseleave', () => {
-    if (!playing) tooltip.style.display = 'none';
-  });
-
-  /* === click (seek) === */
-  bar.addEventListener('click', e => {
-    const rect = bar.getBoundingClientRect();
-    const pct  = (e.clientX - rect.left) / rect.width;
-    elapsed = pct * duration;
-    render();
-  });
-
-  /* === show / hide comments === */
-  if (toggle && comments) {
-    toggle.addEventListener('click', () => {
-      comments.classList.toggle('hidden');
-      toggle.textContent = comments.classList.contains('hidden')
-                           ? 'Show Comments' : 'Hide Comments';
-    });
-  }
-
-
-  render();               // initial paint with restored time
-});
-</script>
+<script src="{{ url_for('static', filename='progress_bar.js') }}"></script>
 {% endblock scripts %}
