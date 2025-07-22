@@ -56,6 +56,18 @@ def parse_tmdb_items(items, media_type):
             })
     return parsed
 
+# Fetch and parse both movies and TV shows
+movies_raw = fetch_popular("movie", pages=2)
+tv_raw = fetch_popular("tv", pages=2)
+
+movies = parse_tmdb_items(movies_raw, "movie")
+tv = parse_tmdb_items(tv_raw, "tv")
+
+# Combine movie and TV data and store into single CSV file
+df = pd.DataFrame(movies + tv)
+df.to_csv("media_catalog.csv", index=False)
+print("Saved media_catalog.csv with", len(df), "entries")
+
 # Fetch all seasons of a particular TV show
 def fetch_tv_seasons(tv_id):
     url = f"{BASE_URL}/tv/{tv_id}"
@@ -119,44 +131,32 @@ def parse_episodes(tv_id, season_num, season_id, episodes_raw):
         )
     return episodes
 
+# Take all the episode data and store them in csvs
+def generate_episode_csvs():
+    season_data = []
+    episode_data = []
+    for show in tv:
+        tv_id = show["tmdb_id"]
+        title = show["title"]
 
-# Fetch and parse both movies and TV shows
-movies_raw = fetch_popular("movie", pages=2)
-tv_raw = fetch_popular("tv", pages=2)
+        seasons_raw = fetch_tv_seasons(tv_id)
+        seasons = parse_seasons(tv_id, title, seasons_raw)
+        season_data.extend(seasons)
 
-movies = parse_tmdb_items(movies_raw, "movie")
-tv = parse_tmdb_items(tv_raw, "tv")
+        for season in seasons:
+            season_num = season["season_number"]
+            season_id = season["season_id"]
 
-# Combine movie and TV data and store into single CSV file
-df = pd.DataFrame(movies + tv)
-df.to_csv("media_catalog.csv", index=False)
-print("Saved media_catalog.csv with", len(df), "entries")
+            episodes_raw = fetch_season_episodes(tv_id, season_num)
+            episodes = parse_episodes(tv_id, season_num, season_id, episodes_raw)
+            episode_data.extend(episodes)
+    
+    # Save season data to CSV
+    season_df = pd.DataFrame(season_data)
+    season_df.to_csv("tv_seasons.csv", index=False)
+    print("Saved tv_seasons.csv with", len(season_df), "entries")
 
-# Fetch and parse season and episode data for each TV show
-season_data = []
-episode_data = []
-for show in tv:
-    tv_id = show["tmdb_id"]
-    title = show["title"]
-
-    seasons_raw = fetch_tv_seasons(tv_id)
-    seasons = parse_seasons(tv_id, title, seasons_raw)
-    season_data.extend(seasons)
-
-    for season in seasons:
-        season_num = season["season_number"]
-        season_id = season["season_id"]
-
-        episodes_raw = fetch_season_episodes(tv_id, season_num)
-        episodes = parse_episodes(tv_id, season_num, season_id, episodes_raw)
-        episode_data.extend(episodes)
-
-# Save season data to CSV
-season_df = pd.DataFrame(season_data)
-season_df.to_csv("tv_seasons.csv", index=False)
-print("Saved tv_seasons.csv with", len(season_df), "entries")
-
-# Save episode data to CSV
-episode_df = pd.DataFrame(episode_data)
-episode_df.to_csv("tv_episodes.csv", index=False)
-print("Saved tv_episodes.csv with", len(episode_df), "entries")
+    # Save episode data to CSV
+    episode_df = pd.DataFrame(episode_data)
+    episode_df.to_csv("tv_episodes.csv", index=False)
+    print("Saved tv_episodes.csv with", len(episode_df), "entries")
