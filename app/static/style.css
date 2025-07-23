@@ -727,21 +727,15 @@ p[style*="color: red;"] {
   min-width: 0;
 }
 
-.movie-container {
-  flex: 2;
-  min-width: 0;
-}
-
-.comments-container-box {
+.comments-sidebar {
   flex: 1;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
   max-height: 80vh;
   overflow-y: auto;
   position: sticky;
   top: 20px;
-}
-
-.comments-sidebar {
-  height: 100%;
 }
 
 .comment-input-section h3 {
@@ -776,15 +770,6 @@ p[style*="color: red;"] {
   }
   
   .comments-sidebar {
-    position: static;
-    max-height: none;
-  }
-
-  .main-content-wrapper {
-    flex-direction: column;
-  }
-  
-  .comments-container-box {
     position: static;
     max-height: none;
   }

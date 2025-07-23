@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="main-content-wrapper">
-  <div class="Container movie-container">
+<div class="Container">
+  <div class="main-content-wrapper">
     <div class="movie-main">
 <!-- This is the overview part of the media (Desc, Title, Poster) -->
     <div class="Details">
@@ -11,15 +11,16 @@
               <img src="{{ movie.poster_url }}" alt="{{ movie.title }}">
           {% endif %}
       </div> <!-- Title poster ends here-->
-
       <div class="Overview">
-        <p>{{ movie.overview }}</p>
-        <p><strong>Air Date:</strong> {{ movie.release_date }}</p>
-        <p><strong>Rating:</strong> {{ movie.vote_average }}</p>
-        {% if emoji_summary %}
-            <p><strong>General Viewer Reaction:</strong> {{ emoji_summary }} </p>
-        {% endif %}
+      <p>{{ movie.overview }}</p>
+      <p><strong>Air Date:</strong> {{ movie.release_date }}</p>
+      <p><strong>Rating:</strong> {{ movie.vote_average }}</p>
+      {% if emoji_summary %}
+          <p><strong>General Viewer Reaction:</strong> {{ emoji_summary }} </p>
+      {% endif %}
       </div> <!-- Overview ends here-->
+
+
     </div><!-- Movie Details div ends here-->
       <hr>
   <!-- Fake playback bar -->
@@ -35,91 +36,91 @@
       <span id="progress-tooltip" class="progress-tooltip"></span>
       </div> <!-- end progress container div -->
   </div><!-- end the play div -->
-    </div><!-- end movie-main -->
-  </div><!-- end movie-container -->
+  </div><!-- end movie-main -->
 
-
-  <!-- Right Container - Comments -->
-  <div class="Container comments-container-box">
-    <div class="comments-sidebar">
+  <!-- Right side - Comments sidebar -->
+  <div class="comments-sidebar">
     <!-- Comment Input Section -->
     <div class="comment-input-section">
-<!-- Add a comment section -->
+      <!-- Add a comment section -->
       {% if current_user.is_authenticated %}
       <h3>Add a Comment</h3>
       <form method="POST">
       {{ form.hidden_tag() }}
 
+      <!-- Time stamp form -->
+      <div>
+      <label for="timestamp">{{ form.timestamp.label }}</label><br>
+      {{ form.timestamp(size=10, placeholder="e.g., 01:23:45") }}
+      {% for error in form.timestamp.errors %}
+        <p style="color: red;">{{ error }}</p>
+      {% endfor %}
+      </div>
 
-<!-- Time stamp form -->
-<div>
-<label for="timestamp">{{ form.timestamp.label }}</label><br>
-{{ form.timestamp(size=10, placeholder="e.g., 01:23:45") }}
-{% for error in form.timestamp.errors %}
-  <p style="color: red;">{{ error }}</p>
-{% endfor %}
-</div>
+      <br>
+      <!--Comment form-->
+      <div>
+      <label for="content">{{ form.content.label }}</label><br>
+      {{ form.content(rows=3, cols=40) }}
+      {% for error in form.content.errors %}
+        <p style="color: red;">{{ error }}</p>
+      {% endfor %}
+      </div>
 
-<br>
-<!--Comment form-->
-<div>
-<label for="content">{{ form.content.label }}</label><br>
-{{ form.content(rows=3, cols=40) }}
-{% for error in form.content.errors %}
-  <p style="color: red;">{{ error }}</p>
-{% endfor %}
-</div>
+      <br>
+      {{ form.submit() }}
+      </form>
+      {% else %}
+      <p><a href="{{ url_for('login') }}">Log in</a> to leave a comment.</p>
+      {% endif %}
+    </div> <!-- Close comment-input-section -->
 
-<br>
-{{ form.submit() }}
-</form>
-{% else %}
-<p><a href="{{ url_for('login') }}">Log in</a> to leave a comment.</p>
-{% endif %}
-<button id="toggle-comments" class="toggle-btn">Show Comments</button>
+    <hr class="sidebar-divider">
 
+    <!-- Comments Section -->
+    <div class="comments-section">
+      <!-- Comments section -->
+      {% if comments %}
+      {% set count = comments|length %}
+      <div class="comments-header">
+        <h3>{{ count }} Comment{{ '' if count == 1 else 's' }}</h3>
+        <button id="toggle-comments" class="toggle-btn">Hide Comments</button>
+      </div>
+      
+      <div id="comments-container" class="comments-container">
+          {% for comment in comments %}
+            {% set hrs = comment.timestamp // 3600 %}
+            {% set mins = (comment.timestamp % 3600) // 60 %}
+            {% set secs = comment.timestamp % 60 %}
+            <div class="comment" data-secs="{{ comment.timestamp }}">
 
-<hr>
-
-
-<!-- Comments section -->
-{% if comments %}
-{% set count = comments|length %}
-<div class ="comments-header">
-  <h2>{{ count }} Comment{{ '' if count == 1 else 's' }}</h2>
-</div>
-<div id="comments-container" class="comments-container hidden">
-    {% for comment in comments %}
-      {% set hrs = comment.timestamp // 3600 %}
-      {% set mins = (comment.timestamp % 3600) // 60 %}
-      {% set secs = comment.timestamp % 60 %}
-      <div class="comment" data-secs="{{ comment.timestamp }}">
-
-        <div class="comment-header">
-          <strong>{{ comment.user.username }}</strong> at
-          <code>{{ "%02d:%02d:%02d"|format(hrs, mins, secs) }}</code>
-        </div>
-        <div class="comment-body">
-          {{ comment.content }}
-        </div>
-          {% if current_user.is_authenticated and comment.user_id == current_user.id %}
-            <form method="POST" action="{{ url_for('delete_comment', comment_id=comment.id) }}">
-              <button type="submit" class="delete-comment">🗑️</button>
-            </form>
-          {% endif %}
-        </div> <!-- Comment div end -->
-    {% endfor %}  
-</div> <!-- comments-container end-->
-{% else %}
-<p>No comments yet.</p>
-{% endif %}
-
-
-
-    </div> <!-- Close comments-sidebar -->
-  </div> <!-- Close comments-container-box -->
-</div> <!-- Close main-content-wrapper -->
+              <div class="comment-header">
+                <strong>{{ comment.user.username }}</strong> at
+                <code>{{ "%02d:%02d:%02d"|format(hrs, mins, secs) }}</code>
+              </div>
+              <div class="comment-body">
+                {{ comment.content }}
+              </div>
+                {% if current_user.is_authenticated and comment.user_id == current_user.id %}
+                  <form method="POST" action="{{ url_for('delete_comment', comment_id=comment.id) }}">
+                    <button type="submit" class="delete-comment">🗑️</button>
+                  </form>
+                {% endif %}
+              </div> <!-- Comment div end -->
+          {% endfor %}  
+      </div> <!-- comments-container end-->
+      {% else %}
+      <div class="no-comments">
+        <h3>Comments</h3>
+        <p>No comments yet.</p>
+      </div>
+      {% endif %}
+    </div> <!-- Close comments-section -->
+  </div> <!-- Close comments-sidebar -->
+  </div> <!-- Close main-content-wrapper -->
+</div> <!-- Main container end-->
 {% endblock content %}
+
 
 {% block scripts %}
 <script src="{{ url_for('static', filename='progress_bar.js') }}"></script>
