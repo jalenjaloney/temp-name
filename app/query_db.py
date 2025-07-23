@@ -30,3 +30,4 @@ def create_media_db(db_path="media.db"):
     episodes_df.to_sql("episodes", conn, if_exists="replace", index=False)
 
     conn.close()
+create_media_db()

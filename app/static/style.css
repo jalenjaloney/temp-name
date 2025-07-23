@@ -715,4 +715,77 @@ p[style*="color: red;"] {
 
 .play-btn:hover { background:#4f51c2; }
 
+/* Sidebar Layout for Movie/Episode Pages */
+.main-content-wrapper {
+  display: flex;
+  gap: 20px;
+  min-height: 600px;
+}
 
+.movie-main {
+  flex: 2;
+  min-width: 0;
+}
+
+.movie-container {
+  flex: 2;
+  min-width: 0;
+}
+
+.comments-container-box {
+  flex: 1;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: sticky;
+  top: 20px;
+}
+
+.comments-sidebar {
+  height: 100%;
+}
+
+.comment-input-section h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.2em;
+}
+
+.comments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.comments-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.2em;
+}
+
+.sidebar-divider {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #dee2e6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-content-wrapper {
+    flex-direction: column;
+  }
+  
+  .comments-sidebar {
+    position: static;
+    max-height: none;
+  }
+
+  .main-content-wrapper {
+    flex-direction: column;
+  }
+  
+  .comments-container-box {
+    position: static;
+    max-height: none;
+  }
+}

@@ -1,45 +1,54 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="Container">
-
+<div class="main-content-wrapper">
+  <div class="Container movie-container">
+    <div class="movie-main">
 <!-- This is the overview part of the media (Desc, Title, Poster) -->
-  <div class="Details">
-    <div class="title-poster">
-        <h2>{{ movie.title }}</h2>
-        {% if movie.poster_url %}
-            <img src="{{ movie.poster_url }}" alt="{{ movie.title }}">
+    <div class="Details">
+      <div class="title-poster">
+          <h2>{{ movie.title }}</h2>
+          {% if movie.poster_url %}
+              <img src="{{ movie.poster_url }}" alt="{{ movie.title }}">
+          {% endif %}
+      </div> <!-- Title poster ends here-->
+
+      <div class="Overview">
+        <p>{{ movie.overview }}</p>
+        <p><strong>Air Date:</strong> {{ movie.release_date }}</p>
+        <p><strong>Rating:</strong> {{ movie.vote_average }}</p>
+        {% if emoji_summary %}
+            <p><strong>General Viewer Reaction:</strong> {{ emoji_summary }} </p>
         {% endif %}
-    </div> <!-- Title poster ends here-->
-    <div class="Overview">
-    <p>{{ movie.overview }}</p>
-    <p><strong>Air Date:</strong> {{ movie.release_date }}</p>
-    <p><strong>Rating:</strong> {{ movie.vote_average }}</p>
-    {% if emoji_summary %}
-        <p><strong>General Viewer Reaction:</strong> {{ emoji_summary }} </p>
-    {% endif %}
-    </div> <!-- Overview ends here-->
+      </div> <!-- Overview ends here-->
+    </div><!-- Movie Details div ends here-->
+      <hr>
+  <!-- Fake playback bar -->
+  <div class="player">
+      <button id="play-btn" type="button" class="play-btn" aria-label="Play">
+      ▶
+      </button>
+
+      <div id="progress-container"
+          class="progress-container"
+          data-duration="{{ movie.runtime*60 or 3600 }}">
+      <div id="progress-bar" class="progress-bar"></div>
+      <span id="progress-tooltip" class="progress-tooltip"></span>
+      </div> <!-- end progress container div -->
+  </div><!-- end the play div -->
+    </div><!-- end movie-main -->
+  </div><!-- end movie-container -->
 
 
-  </div><!-- Movie Details div ends here-->
-    <hr>
-<!-- Fake playback bar -->
-<div class="player">
-    <button id="play-btn" type="button" class="play-btn" aria-label="Play">
-    ▶
-    </button>
-
-    <div id="progress-container"
-        class="progress-container"
-        data-duration="{{ movie.runtime*60 or 3600 }}">
-    <div id="progress-bar" class="progress-bar"></div>
-    <span id="progress-tooltip" class="progress-tooltip"></span>
-    </div> <!-- end progress container div -->
-</div><!-- end the play div -->
+  <!-- Right Container - Comments -->
+  <div class="Container comments-container-box">
+    <div class="comments-sidebar">
+    <!-- Comment Input Section -->
+    <div class="comment-input-section">
 <!-- Add a comment section -->
-{% if current_user.is_authenticated %}
-<h3>Add a Comment</h3>
-<form method="POST">
-{{ form.hidden_tag() }}
+      {% if current_user.is_authenticated %}
+      <h3>Add a Comment</h3>
+      <form method="POST">
+      {{ form.hidden_tag() }}
 
 
 <!-- Time stamp form -->
@@ -76,7 +85,9 @@
 <!-- Comments section -->
 {% if comments %}
 {% set count = comments|length %}
-<h2>{{ count }} Comment{{ '' if count == 1 else 's' }}</h2>
+<div class ="comments-header">
+  <h2>{{ count }} Comment{{ '' if count == 1 else 's' }}</h2>
+</div>
 <div id="comments-container" class="comments-container hidden">
     {% for comment in comments %}
       {% set hrs = comment.timestamp // 3600 %}
@@ -105,7 +116,9 @@
 
 
 
-</div> <!-- Main container end-->
+    </div> <!-- Close comments-sidebar -->
+  </div> <!-- Close comments-container-box -->
+</div> <!-- Close main-content-wrapper -->
 {% endblock content %}
 
 {% block scripts %}
