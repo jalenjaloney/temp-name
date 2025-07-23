@@ -160,3 +160,6 @@ def generate_episode_csvs():
     episode_df = pd.DataFrame(episode_data)
     episode_df.to_csv("tv_episodes.csv", index=False)
     print("Saved tv_episodes.csv with", len(episode_df), "entries")
+
+if __name__ == "__main__":
+    generate_episode_csvs()
