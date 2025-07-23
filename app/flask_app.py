@@ -15,6 +15,15 @@ from flask_login import (
     login_user,
     logout_user,
 )
+# import all functions from tmdb.py except for generate_episode_csvs()
+from app.tmdb import (
+    fetch_popular,
+    parse_tmdb_items,
+    fetch_tv_seasons,
+    parse_seasons,
+    fetch_season_episodes,
+    parse_episodes,
+)
 
 from app.forms import RegistrationForm, LoginForm, commentForm
 from app.google_ai import get_comments, summarize_comments
@@ -50,104 +59,6 @@ def load_user(user_id):
 with app.app_context():
     db.create_all()
 
-
-def fetch_popular(media_type="movie", pages=1):
-    """Fetch multiple pages of popular movies or TV shows"""
-    results = []
-    for page in range(1, pages + 1):
-        url = f"{BASE_URL}/{media_type}/popular"
-        response = requests.get(
-            url, params={"api_key": TMDB_API_KEY, "page": page})
-        response.raise_for_status()
-        results.extend(response.json()["results"])
-    return results
-
-
-def parse_tmdb_items(items, media_type):
-    """Extract only the fields we care about"""
-    parsed = []
-    for item in items:
-        parsed.append(
-            {
-                "tmdb_id": item["id"],
-                "title": item.get("title") or item.get("name"),
-                "media_type": media_type,
-                "poster_url": (
-                    IMG_BASE_URL + item["poster_path"]
-                    if item.get("poster_path")
-                    else None
-                ),
-                "overview": item.get("overview", ""),
-                "release_date": item.get("release_date") or item.get("first_air_date"),
-                "vote_average": item.get("vote_average"),
-            }
-        )
-    return parsed
-
-
-def fetch_tv_seasons(tv_id):
-    url = f"{BASE_URL}/tv/{tv_id}"
-    response = requests.get(url, params={"api_key": TMDB_API_KEY})
-    response.raise_for_status()
-    return response.json().get("seasons", [])
-
-
-def parse_seasons(tv_id, title, seasons_raw):
-    seasons = []
-    for season in seasons_raw:
-        seasons.append(
-            {
-                "season_id": f"{tv_id}-{season['season_number']}",
-                "tv_id": tv_id,
-                "title": title,
-                "season_number": season["season_number"],
-                "name": season.get("name"),
-                "overview": season.get("overview"),
-                "poster_url": (
-                    IMG_BASE_URL + season["poster_path"]
-                    if season.get("poster_path")
-                    else None
-                ),
-                "air_date": season.get("air_date"),
-                "episode_count": season.get("episode_count"),
-                "vote_average": season.get("vote_average"),
-            }
-        )
-    return seasons
-
-
-def fetch_season_episodes(tv_id, season_number):
-    url = f"{BASE_URL}/tv/{tv_id}/season/{season_number}"
-    response = requests.get(url, params={"api_key": TMDB_API_KEY})
-    response.raise_for_status()
-    return response.json().get("episodes", [])
-
-
-def parse_episodes(tv_id, season_num, season_id, episodes_raw):
-    episodes = []
-    for episode in episodes_raw:
-        episodes.append(
-            {
-                "episode_id": episode["id"],
-                "season_id": season_id,
-                "tv_id": tv_id,
-                "season_number": season_num,
-                "episode_number": episode["episode_number"],
-                "episode_name": episode.get("name"),
-                "overview": episode.get("overview"),
-                "air_date": episode.get("air_date"),
-                "runtime": episode.get("runtime"),
-                "vote_average": episode.get("vote_average"),
-                "still_url": (
-                    IMG_BASE_URL + episode["still_path"]
-                    if episode.get("still_path")
-                    else None
-                ),
-            }
-        )
-    return episodes
-
-
 # Helper function to parse comment timestamp
 def parse_timestamp_string(ts_str):
     parts = list(map(int, ts_str.split(":")))
@@ -160,21 +71,8 @@ def parse_timestamp_string(ts_str):
     else:
         raise ValueError("Invalid timestamp format")
 
-
-# Fetch and parse both movies and TV shows
-movies_raw = fetch_popular("movie", pages=2)
-tv_raw = fetch_popular("tv", pages=2)
-
-movies = parse_tmdb_items(movies_raw, "movie")
-tv = parse_tmdb_items(tv_raw, "tv")
-
-# Combine and store
-df = pd.DataFrame(movies + tv)
-df.to_csv("media_catalog.csv", index=False)
-print("Saved media_catalog.csv with", len(df), "entries")
-
+# media catalo csv created from tmdb.py
 df = pd.read_csv("media_catalog.csv")
-
 
 # Update TMDB to show to catalogue page
 @app.route("/")

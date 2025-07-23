@@ -4,8 +4,8 @@ from flask import Flask, render_template
 import os
 from dotenv import load_dotenv
 
+# Load environmental variables from .env file
 load_dotenv()
-
 TMDB_API_KEY = os.getenv("TMDB_API_KEY")
 
 BASE_URL = "https://api.themoviedb.org/3"
@@ -13,9 +13,8 @@ IMG_BASE_URL = "https://image.tmdb.org/t/p/w500"
 
 app = Flask(__name__)
 
-
+# Fetch multiple pages of popular movies or TV shows
 def fetch_popular(media_type="movie", pages=1):
-    """Fetch multiple pages of popular movies or TV shows"""
     results = []
     for page in range(1, pages + 1):
         url = f"{BASE_URL}/{media_type}/popular"
@@ -25,11 +24,11 @@ def fetch_popular(media_type="movie", pages=1):
         results.extend(response.json()["results"])
     return results
 
-
+# Extract necessary fields from TMDb movie/TV show data
 def parse_tmdb_items(items, media_type):
-    """Extract only the fields we care about"""
     parsed = []
-    # get the runtime for movies
+
+    # For movies, get the runtime
     for item in items:
         runtime = None
         if media_type == "movie":
@@ -57,14 +56,26 @@ def parse_tmdb_items(items, media_type):
             })
     return parsed
 
+# Fetch and parse both movies and TV shows
+movies_raw = fetch_popular("movie", pages=2)
+tv_raw = fetch_popular("tv", pages=2)
 
+movies = parse_tmdb_items(movies_raw, "movie")
+tv = parse_tmdb_items(tv_raw, "tv")
+
+# Combine movie and TV data and store into single CSV file
+df = pd.DataFrame(movies + tv)
+df.to_csv("media_catalog.csv", index=False)
+print("Saved media_catalog.csv with", len(df), "entries")
+
+# Fetch all seasons of a particular TV show
 def fetch_tv_seasons(tv_id):
     url = f"{BASE_URL}/tv/{tv_id}"
     response = requests.get(url, params={"api_key": TMDB_API_KEY})
     response.raise_for_status()
     return response.json().get("seasons", [])
 
-
+# Extract necessary fields from TV show seasons data
 def parse_seasons(tv_id, title, seasons_raw):
     seasons = []
     for season in seasons_raw:
@@ -88,14 +99,14 @@ def parse_seasons(tv_id, title, seasons_raw):
         )
     return seasons
 
-
+# Fetch all episodes for a particular TV show season
 def fetch_season_episodes(tv_id, season_number):
     url = f"{BASE_URL}/tv/{tv_id}/season/{season_number}"
     response = requests.get(url, params={"api_key": TMDB_API_KEY})
     response.raise_for_status()
     return response.json().get("episodes", [])
 
-
+# Extract necessary fields from TV show episodes data
 def parse_episodes(tv_id, season_num, season_id, episodes_raw):
     episodes = []
     for episode in episodes_raw:
@@ -120,57 +131,35 @@ def parse_episodes(tv_id, season_num, season_id, episodes_raw):
         )
     return episodes
 
+# Take all the episode data and store them in csvs
+def generate_episode_csvs():
+    season_data = []
+    episode_data = []
+    for show in tv:
+        tv_id = show["tmdb_id"]
+        title = show["title"]
 
-# Fetch and parse both movies and TV shows
-movies_raw = fetch_popular("movie", pages=2)
-tv_raw = fetch_popular("tv", pages=2)
+        seasons_raw = fetch_tv_seasons(tv_id)
+        seasons = parse_seasons(tv_id, title, seasons_raw)
+        season_data.extend(seasons)
 
-movies = parse_tmdb_items(movies_raw, "movie")
-tv = parse_tmdb_items(tv_raw, "tv")
+        for season in seasons:
+            season_num = season["season_number"]
+            season_id = season["season_id"]
 
-# Combine and store
-df = pd.DataFrame(movies + tv)
-df.to_csv("media_catalog.csv", index=False)
-print("Saved media_catalog.csv with", len(df), "entries")
+            episodes_raw = fetch_season_episodes(tv_id, season_num)
+            episodes = parse_episodes(tv_id, season_num, season_id, episodes_raw)
+            episode_data.extend(episodes)
+    
+    # Save season data to CSV
+    season_df = pd.DataFrame(season_data)
+    season_df.to_csv("tv_seasons.csv", index=False)
+    print("Saved tv_seasons.csv with", len(season_df), "entries")
 
-
-# Update TMDB to show to catalogue page
-@app.route("/")
-def catalogue():
-    df = pd.read_csv("media_catalog.csv")
-    # Sends only the top 10 movies and tv shows to the catalogue page
-    movies = df[df["media_type"] == "movie"].head(10).to_dict(orient="records")
-    tv_shows = df[df["media_type"] == "tv"].head(10).to_dict(orient="records")
-    return render_template("catalogue.html", movies=movies, tv_shows=tv_shows)
-
-
-# fetch and parse tv show seasons
-season_data = []
-episode_data = []
-for show in tv:
-    tv_id = show["tmdb_id"]
-    title = show["title"]
-
-    seasons_raw = fetch_tv_seasons(tv_id)
-    seasons = parse_seasons(tv_id, title, seasons_raw)
-    season_data.extend(seasons)
-
-    for season in seasons:
-        season_num = season["season_number"]
-        season_id = season["season_id"]
-
-        episodes_raw = fetch_season_episodes(tv_id, season_num)
-        episodes = parse_episodes(tv_id, season_num, season_id, episodes_raw)
-        episode_data.extend(episodes)
-
-
-season_df = pd.DataFrame(season_data)
-season_df.to_csv("tv_seasons.csv", index=False)
-print("Saved tv_seasons.csv with", len(season_df), "entries")
-
-episode_df = pd.DataFrame(episode_data)
-episode_df.to_csv("tv_episodes.csv", index=False)
-print("Saved tv_episodes.csv with", len(episode_df), "entries")
+    # Save episode data to CSV
+    episode_df = pd.DataFrame(episode_data)
+    episode_df.to_csv("tv_episodes.csv", index=False)
+    print("Saved tv_episodes.csv with", len(episode_df), "entries")
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0")
+    generate_episode_csvs()
