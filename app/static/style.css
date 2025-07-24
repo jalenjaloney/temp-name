@@ -170,9 +170,25 @@ body {
   padding: 30px;
   flex-grow: 1;
   background-color: #f8eee4;
-  height:fit-content;
+  height: min-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.main-container {
+  margin-left: 220px;
+  padding: 30px;
+  background-color: #f8eee4;
+  height: 100vh;
+  width: calc(100vw - 220px); /* Full width minus sidebar */
+  display: flex; /* Change back to flex */
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* This is the media page container CSS */
 .Container {
   background-color: #fff;
   max-width: 800px;
@@ -212,6 +228,7 @@ strong {
   max-width: 1800px;
   margin: 0 auto;
   padding: 1rem 0.5rem;
+  min-height: fit-content;
 }
 
 .section-header {
@@ -763,6 +780,11 @@ p[style*="color: red;"] {
   border-top: 1px solid #dee2e6;
 }
 
+.comment-timestamp { 
+  font-size: 0.8em; 
+  color: #777; 
+  text-align: left; }
+  
 /* Responsive design */
 @media (max-width: 768px) {
   .main-content-wrapper {
