@@ -88,6 +88,7 @@ def parse_anime(anime_raw):
             "episodes": anime["episodes"],
             "duration": anime["duration"],
             "average_score": anime["averageScore"],
+            "trending": anime["trending"],
             "genres": ", ".join(anime["genres"]),
             "description": anime["description"],
             "cover_url": anime["coverImage"]["large"],

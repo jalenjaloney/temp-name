@@ -27,7 +27,7 @@ from app.tmdb import (
 
 from app.forms import RegistrationForm, LoginForm, commentForm
 from app.google_ai import get_comments, summarize_comments
-from app.models import Comment, User, db, Item
+from app.models import Comment, User, db #Item
 
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
@@ -71,18 +71,22 @@ def parse_timestamp_string(ts_str):
     else:
         raise ValueError("Invalid timestamp format")
 
-# media catalo csv created from tmdb.py
-df = pd.read_csv("media_catalog.csv")
+# csv created from tmdb.py and anilist.py
+media_df = pd.read_csv("media_catalog.csv")
+anime_df = pd.read_csv("anime_catalog.csv")
 
 # Update TMDB to show to catalogue page
 @app.route("/")
 def catalogue():
     # Sends only the top 10 movies and tv shows to the catalogue page
-    movies = df[df["media_type"] == "movie"].head(10).to_dict(orient="records")
-    tv_shows = df[df["media_type"] == "tv"].head(10).to_dict(orient="records")
+    movies = media_df[media_df["media_type"] == "movie"].head(10).to_dict(orient="records")
+    tv_shows = media_df[media_df["media_type"] == "tv"].head(10).to_dict(orient="records")
+    # sends top 10 trending animes
+    anime = anime_df.sort_values(by="trending", ascending=False).head(10).to_dict(orient="records")
+    
     users = User.query.all()
     return render_template(
-        "catalogue.html", movies=movies, tv_shows=tv_shows, users=users
+        "catalogue.html", movies=movies, tv_shows=tv_shows, anime=anime, users=users
     )
 
 
