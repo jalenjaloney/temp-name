@@ -26,3 +26,5 @@ class Comment(db.Model):
     episode_id = db.Column(db.Integer, nullable=False)
 
     user = db.relationship("User", backref="comments")
+
+
