@@ -59,6 +59,7 @@ def fetch_anime(pages):
         )
         response.raise_for_status()
         data = response.json()
+        # add to all_anime list
         all_anime.extend(data["data"]["Page"]["media"])
     return all_anime
 
