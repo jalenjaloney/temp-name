@@ -28,8 +28,3 @@ class Comment(db.Model):
     user = db.relationship("User", backref="comments")
 
 
-class Item(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(120), index=True, nullable=False)
-    description = db.Column(db.Text)
-
