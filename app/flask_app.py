@@ -83,7 +83,7 @@ def catalogue():
     tv_shows = media_df[media_df["media_type"] == "tv"].head(10).to_dict(orient="records")
     # sends top 10 trending animes
     anime = anime_df.sort_values(by="trending", ascending=False).head(10).to_dict(orient="records")
-    
+
     users = User.query.all()
     return render_template(
         "catalogue.html", movies=movies, tv_shows=tv_shows, anime=anime, users=users
@@ -92,7 +92,7 @@ def catalogue():
 
 @app.route("/media/<int:media_id>")
 def get_media(media_id):
-    media = df[df["tmdb_id"] == int(media_id)].iloc[0].to_dict()
+    media = media_df[media_df["tmdb_id"] == int(media_id)].iloc[0].to_dict()
     # gets seasons
     seasons = []
     if media["media_type"] == "tv":
