@@ -56,13 +56,6 @@ body {
   color: #fff;
 }
 
-.login-container h2,
-.register-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #ffffff;
-}
-
 /* --- container --- */
 .logo-box {
   --accent-1: #8c8dfa;   /* indigo-ish highlight */
@@ -320,14 +313,28 @@ strong {
   outline: none;
 }
 
-.is-invalid {
-  border-color: #dc3545;
+/* extra styling for form validation */
+.form-control.is-valid {
+  border-color: #4ae152;
+  background-color: #ebffea;
 }
 
-.invalid-feedback {
-  color: #dc3545;
-  font-size: 14px;
-  margin-top: 5px;
+.form-control.is-invalid {
+  border-color: #dc3545;
+  background-color: #ffe6e6;
+}
+
+.live-feedback {
+  font-size: 0.85rem;
+  color: #bbbbbb; /* Neutral gray cause red was scary */
+  margin-top: 0.25rem;
+}
+
+.login-container h2,
+.register-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
 }
 
 .btn {
