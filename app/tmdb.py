@@ -1,6 +1,5 @@
 import requests
 import pandas as pd
-from flask import Flask, render_template
 import os
 from dotenv import load_dotenv
 
@@ -10,8 +9,6 @@ TMDB_API_KEY = os.getenv("TMDB_API_KEY")
 
 BASE_URL = "https://api.themoviedb.org/3"
 IMG_BASE_URL = "https://image.tmdb.org/t/p/w500"
-
-app = Flask(__name__)
 
 # Fetch multiple pages of popular movies or TV shows
 def fetch_popular(media_type="movie", pages=1):
