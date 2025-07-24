@@ -170,9 +170,14 @@ body {
   padding: 30px;
   flex-grow: 1;
   background-color: #f8eee4;
-  height:fit-content;
+  height:100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+
+/* This is the media page container CSS */
 .Container {
   background-color: #fff;
   max-width: 800px;
