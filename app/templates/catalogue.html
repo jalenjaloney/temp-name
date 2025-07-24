@@ -2,6 +2,7 @@
 {% block title %}Catalogue Page{% endblock %}
 
 {% block content %}
+<main class="main-content">
 <div class="catalogue-wrapper">
     {% if current_user.is_authenticated %}
         <h1 class="greeting">Welcome {{ current_user.username }}! Looking for the next thing to stamp?</h1>
@@ -39,4 +40,5 @@
         </div>
     </section>
 </div>
+</main>
 {% endblock %}
