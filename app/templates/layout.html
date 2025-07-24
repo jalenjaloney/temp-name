@@ -40,19 +40,19 @@
   </div>
   <main role="main" class="main-content {% if request.endpoint in ['login', 'register'] %}no-sidebar{% else %}with-sidebar{% endif %}">
   
-  <div>
-    {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        {% for category, message in messages %}
-          <div class="alert alert-{{ category }}">{{ message }}</div>
-        {% endfor %}
-      {% endif %}
-    {% endwith %}
+      <div>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
 
-    {% block content %}{% endblock %}
-    {% block scripts %}{% endblock %}
-  </div>
-</main>
+        {% block content %}{% endblock %}
+        {% block scripts %}{% endblock %}
+      </div>
+  </main>
 </body>
 
 </html>

@@ -170,7 +170,7 @@ body {
   padding: 30px;
   flex-grow: 1;
   background-color: #f8eee4;
-  height:100vh;
+  height:fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -217,6 +217,7 @@ strong {
   max-width: 1800px;
   margin: 0 auto;
   padding: 1rem 0.5rem;
+  min-height: fit-content;
 }
 
 .section-header {
