@@ -1,0 +1,39 @@
+.comment {
+  position: relative;
+  background: #fafafa;
+  border: 1px solid #e1e1e1;
+  border-left: 4px solid #6366f1;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.comments-container{
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.comment-header {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.4rem;
+}
+
+.comment[data-hidden="true"] {
+  display: none;
+}
+
+.comment-header code {
+  background: #f3f3f3;
+  padding: 0 0.3rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+}
+
+.comment-body {
+  line-height: 1.45;
+}
+
+.hidden{
+  display: none;
+}

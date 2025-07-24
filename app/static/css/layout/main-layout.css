@@ -1,0 +1,32 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  background-color: #1e1e2f;
+}
+
+.main-content {
+  margin-left: 220px;
+  padding: 30px;
+  flex-grow: 1;
+  background-color: #f8eee4;
+  height: min-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-container {
+  margin-left: 220px;
+  padding: 30px;
+  background-color: #f8eee4;
+  min-height: 100vh;
+  width: calc(100vw - 220px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layout-container {
+  display: flex;
+  height: 100vh;
+}
