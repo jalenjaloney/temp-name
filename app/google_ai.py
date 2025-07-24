@@ -6,13 +6,18 @@ import sqlite3
 
 load_dotenv()
 
+# Fetches timestamped comments for given episode/movie from SQLite database.
 def get_comments(media_id, db_path=None):
+    # Determine path to database
     if not db_path:
         db_path = os.path.join(os.path.dirname(
             __file__), "..", "instance", "site.db")
+    
+    # Connect to SQLite database
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
 
+    # query all comments of episode/movie, sorted by time
     cursor.execute(
         """
         SELECT timestamp, content
@@ -43,7 +48,6 @@ def get_comments(media_id, db_path=None):
 
         formatted.append(f"[{timestamp}] {content}")
 
-
     return "\n".join(formatted)
 
 
@@ -73,16 +77,3 @@ def summarize_comments(comment_block):
     )
 
     return response.text.strip()
-
-
-# test
-# if __name__ == "__main__":
-#     episode_or_movie_id = 1922715
-#     comment_text = get_comments(episode_or_movie_id)
-
-#     if not comment_text:
-#         print("No comments found.")
-#     else:
-#         # print("Comment Summary:\n")
-#         summary = summarize_comments(comment_text)
-#         print(summary)
