@@ -158,8 +158,9 @@ def view_movie(movie_id):
     emoji_summary = summarize_comments(comment_block) if comment_block else ""
 
     return render_template(
-        "movie_page.html",
-        movie=movie,
+        "media_page.html",
+        media=movie,
+        media_type="movie",
         form=form,
         comments=comments,
         emoji_summary=emoji_summary,
@@ -209,8 +210,9 @@ def view_episode(episode_id):
     emoji_summary = summarize_comments(comment_block) if comment_block else ""
 
     return render_template(
-        "episode_page.html",
-        episode=episode,
+        "media_page.html",
+        media=episode,
+        media_type="episode",
         form=form,
         comments=comments,
         emoji_summary=emoji_summary,

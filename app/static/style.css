@@ -163,9 +163,25 @@ body {
   padding: 30px;
   flex-grow: 1;
   background-color: #f8eee4;
-  height:fit-content;
+  height: min-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.main-container {
+  margin-left: 220px;
+  padding: 30px;
+  background-color: #f8eee4;
+  height: 100vh;
+  width: calc(100vw - 220px); /* Full width minus sidebar */
+  display: flex; /* Change back to flex */
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* This is the media page container CSS */
 .Container {
   background-color: #fff;
   max-width: 800px;
@@ -205,6 +221,7 @@ strong {
   max-width: 1800px;
   margin: 0 auto;
   padding: 1rem 0.5rem;
+  min-height: fit-content;
 }
 
 .section-header {
@@ -722,4 +739,62 @@ p[style*="color: red;"] {
 
 .play-btn:hover { background:#4f51c2; }
 
+/* Sidebar Layout for Movie/Episode Pages */
+.main-content-wrapper {
+  display: flex;
+  gap: 20px;
+  min-height: 600px;
+}
 
+.movie-main {
+  flex: 2;
+  min-width: 0;
+}
+
+.comments-sidebar {
+  flex: 1;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: sticky;
+  top: 20px;
+}
+
+.comment-input-section h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.2em;
+}
+
+.comments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.comments-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.2em;
+}
+
+.sidebar-divider {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #dee2e6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-content-wrapper {
+    flex-direction: column;
+  }
+  
+  .comments-sidebar {
+    position: static;
+    max-height: none;
+  }
+}
