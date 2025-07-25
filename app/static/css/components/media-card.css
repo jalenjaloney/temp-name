@@ -1,0 +1,34 @@
+.movie-card {
+  flex: 0 0 140px;
+  scroll-snap-align: start;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+  object-fit: cover;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+.rank-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: #ff4757;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.media-title {
+  padding: 0.5rem;
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: #222;
+  text-decoration: none;
+}

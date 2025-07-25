@@ -23,6 +23,8 @@
               <img src="{{ media.poster_url }}" alt="{{ media.title }}">
             {% endif %}
           {% endif %}
+          <p><strong>Air Date:</strong> {{ media.air_date if media_type == 'episode' else media.release_date }}</p>
+          <p><strong>Rating:</strong> {{ media.vote_average }}</p>
         </div> <!-- Title poster ends here-->
         
         <div class="Overview">
@@ -33,6 +35,7 @@
             <p><strong>Air Date:</strong> {{ media.air_date if media_type == 'episode' else media.release_date }}</p>
             <p><strong>Rating:</strong> {{ media.vote_average }}</p>
           {% endif %}
+        
           {% if emoji_summary %}
             <p><strong>General Viewer Reaction:</strong> {{ emoji_summary }}</p>
           {% endif %}

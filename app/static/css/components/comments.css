@@ -1,0 +1,141 @@
+.comment {
+  position: relative;
+  background: #fafafa;
+  border: 1px solid #e1e1e1;
+  border-left: 4px solid #6366f1;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.comments-container{
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.comment-header {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.4rem;
+}
+
+.comment[data-hidden="true"] {
+  display: none;
+}
+
+.comment-header code {
+  background: #f3f3f3;
+  padding: 0 0.3rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+}
+
+.comment-body {
+  line-height: 1.45;
+}
+
+.comment-with-gif {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.comment-with-gif textarea {
+  flex: 1;
+  padding-right: 2.5rem;
+}
+
+.gif-icon-btn {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: transform 0.2s;
+}
+
+.gif-icon-btn:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.gif-popup-wrapper {
+  position: relative;
+}
+
+.gif-popup {
+  position: relative;
+  bottom: 120%;
+  right: 0;
+  width: 300px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+}
+
+.gif-popup-header {
+  display: flex;
+  gap: 6px;
+  padding: 6px;
+  background: #f8f8f8;
+  border-bottom: 1px solid #ccc;
+}
+
+.gif-popup-header input {
+  flex: 1;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+.gif-popup-header button {
+  padding: 6px 10px;
+  background-color: #6366f1;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.gif-popup-header button:hover {
+  background-color: #4f51c2;
+}
+
+.gif-scroll-wrapper {
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 6px;
+}
+
+.gif-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 4px;
+}
+
+.gif-item {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.gif-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}

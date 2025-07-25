@@ -1,0 +1,51 @@
+.sidebar {
+  width: 260px;
+  background-color: #1e1e2f;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-bar {
+  padding: 0.5rem;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.4rem 0.75rem;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  background-color: #f0f0f0;
+  color: #999;
+  outline: none;
+  cursor: not-allowed;
+}
+
+.nav-links {
+  list-style: none;
+  flex-grow: 1;
+}
+
+.nav-links li {
+  margin-bottom: 20px;
+}
+
+.nav-links a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.nav-links a:hover {
+  background-color: #33334d;
+  color: #fff;
+}

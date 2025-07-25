@@ -447,7 +447,7 @@ def webhook():
         origin.pull()
 
         # Rebuild media.db
-        subprocess.run(["python3", "app/query_db.py"])
+        subprocess.run(["python3", "app/daily_update.py"])
 
         return "Updated PythonAnywhere successfully", 200
     else:
