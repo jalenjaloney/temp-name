@@ -132,7 +132,7 @@ def parse_episodes(tv_id, season_num, season_id, episodes_raw):
     return episodes
 
 # Take all the episode data and store them in csvs
-def generate_episode_csvs():
+def generate_episode_csvs(tv):
     season_data = []
     episode_data = []
     for show in tv:
@@ -161,5 +161,17 @@ def generate_episode_csvs():
     episode_df.to_csv("tv_episodes.csv", index=False)
     print("Saved tv_episodes.csv with", len(episode_df), "entries")
 
+def main():
+    movies_raw = fetch_popular("movie", pages=2)
+    tv_raw = fetch_popular("tv", pages=2)
+    movies = parse_tmdb_items(movies_raw, "movie")
+    tv = parse_tmdb_items(tv_raw, "tv")
+    df = pd.DataFrame(movies + tv)
+    df.to_csv("media_catalog.csv", index=False)
+    print("Saved media_catalog.csv with", len(df), "entries")
+
+    generate_episode_csvs(tv)
+
 if __name__ == "__main__":
-    generate_episode_csvs()
+    main()
+
