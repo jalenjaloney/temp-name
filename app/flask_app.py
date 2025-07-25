@@ -4,7 +4,6 @@ import subprocess
 
 import git
 import pandas as pd
-import requests
 from dotenv import load_dotenv
 from flask import Flask, flash, redirect, render_template, request, url_for, jsonify
 from flask_behind_proxy import FlaskBehindProxy
@@ -14,15 +13,6 @@ from flask_login import (
     login_required,
     login_user,
     logout_user,
-)
-# import all functions from tmdb.py except for generate_episode_csvs()
-from app.tmdb import (
-    fetch_popular,
-    parse_tmdb_items,
-    fetch_tv_seasons,
-    parse_seasons,
-    fetch_season_episodes,
-    parse_episodes,
 )
 
 from app.forms import RegistrationForm, LoginForm, commentForm
@@ -72,24 +62,37 @@ def parse_timestamp_string(ts_str):
     else:
         raise ValueError("Invalid timestamp format")
 
-# media catalo csv created from tmdb.py
-df = pd.read_csv("media_catalog.csv")
-
 # Update TMDB to show to catalogue page
 @app.route("/")
 def catalogue():
-    # Sends only the top 10 movies and tv shows to the catalogue page
-    movies = df[df["media_type"] == "movie"].head(10).to_dict(orient="records")
-    tv_shows = df[df["media_type"] == "tv"].head(10).to_dict(orient="records")
+    MEDIA_DB_PATH = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "..", "media.db"
+    )
+    conn = sqlite3.connect(MEDIA_DB_PATH)
+
+    movie_query = "SELECT * FROM media WHERE media_type = 'movie' ORDER BY vote_average DESC LIMIT 10"
+    tv_query = "SELECT * FROM media WHERE media_type = 'tv' ORDER BY vote_average DESC LIMIT 10"
+
+    movies = pd.read_sql(movie_query, conn).to_dict(orient="records")
+    tv_shows = pd.read_sql(tv_query, conn).to_dict(orient="records")
+
+    conn.close()
     users = User.query.all()
     return render_template(
         "catalogue.html", movies=movies, tv_shows=tv_shows, users=users
     )
 
 
+
 @app.route("/media/<int:media_id>")
 def get_media(media_id):
-    media = df[df["tmdb_id"] == int(media_id)].iloc[0].to_dict()
+    MEDIA_DB_PATH = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "..", "media.db"
+    )
+    conn = sqlite3.connect(MEDIA_DB_PATH)
+    media_query = f"SELECT * FROM media WHERE tmdb_id = {media_id}"
+    media = pd.read_sql(media_query, conn).iloc[0].to_dict()
+
     # gets seasons
     seasons = []
     if media["media_type"] == "tv":
