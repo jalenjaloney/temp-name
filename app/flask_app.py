@@ -27,7 +27,7 @@ from app.tmdb import (
 
 from app.forms import RegistrationForm, LoginForm, commentForm
 from app.google_ai import get_comments, summarize_comments
-from app.models import Comment, User, db, Item
+from app.models import Comment, User, db
 
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
