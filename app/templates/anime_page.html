@@ -26,7 +26,7 @@
     <div class="seasons-button-grid">
       {% for episode in episodes %}
       <div class="season-block">
-        <a href="{{ url_for('view_anime', anime_id=anime.anilist_id, episode_index=loop.index0) }}">
+        <a href="{{ url_for('view_anime_episode', episode_id=episode.episode_id) }}">
           <button class="btn-season">{{ episode.episode_title }}</button>
         </a>
       </div>

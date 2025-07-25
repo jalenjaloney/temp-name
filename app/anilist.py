@@ -20,7 +20,7 @@ query ($page: Int, $perPage: Int) {
         english
       }
       episodes
-      duration
+      
       averageScore
       trending
       genres
@@ -43,6 +43,7 @@ EPISODE_QUERY = """
 query ($id: Int) {
   Media(id: $id, type: ANIME) {
     id
+    duration
     streamingEpisodes {
       title
       thumbnail
@@ -106,7 +107,7 @@ def parse_anime(anime_raw):
             "title_romaji": anime["title"]["romaji"],
             "title_english": anime["title"]["english"],
             "episodes": anime["episodes"],
-            "duration": anime["duration"],
+            #"duration": anime["duration"],
             "average_score": f"{anime['averageScore'] / 10:.1f}" if anime["averageScore"] is not None else None,
             "trending": anime["trending"],
             "genres": ", ".join(anime["genres"]),
@@ -136,7 +137,10 @@ def fetch_episodes(anilist_id):
     data = response.json()
     media = data.get("data", {}).get("Media", {})
 
-    return media.get("streamingEpisodes", [])
+    return {
+        "streamingEpisodes": media.get("streamingEpisodes", []),
+        "duration": media.get("duration")
+    }
 
 # try to get episode num
 def extract_ep_num(episode_title):
@@ -145,20 +149,35 @@ def extract_ep_num(episode_title):
         match = re.match(r'^(?:Episode|Ep)?\s*(\d+)', episode_title, re.IGNORECASE)
         if match:
             return int(match.group(1))
-        # Fallback if no specific "Episode X" prefix, just look for any leading number
+        # if no leading num
         num_match = re.match(r'^(\d+)', episode_title)
         if num_match:
             return int(num_match.group(1))
     return 0
 
 # get the title and thumbnail
-def parse_episodes(anilist_id, episodes_raw):
+def parse_episodes(anilist_id, episodes_data):
     parsed = []
-    for episode in episodes_raw:
+
+    episodes_raw = episodes_data.get("streamingEpisodes", [])
+    anime_duration = episodes_data.get("duration")
+
+    # create an episode id
+    numbered_eps = []
+    for ep in episodes_raw:
+        ep_num = extract_ep_num(ep.get("title"))
+        numbered_eps.append((ep_num, ep))
+    numbered_eps.sort(key=lambda x: x[0])
+
+    for ep_num, episode in numbered_eps:
+        custom_episode_id = (anilist_id * 1000) + ep_num
+
         parsed.append({
             "anilist_id": anilist_id,
+            "episode_id": custom_episode_id,
             "episode_title": episode.get("title"),
             "thumbnail": episode.get("thumbnail"),
+            "duration": anime_duration,
         })
     return parsed
 
@@ -175,7 +194,7 @@ def generate_episode_csvs():
             # delay bc of rate limiting
             time.sleep(1.8)
         except Exception as e:
-            print(f"failed to fetch episodes for {anime.get('title_romaji')}: {e}")
+            print(f"failed to fetch episodes for {anime.get('title_english')}: {e}")
 
     pd.DataFrame(all_episodes).to_csv("anime_episodes.csv", index=False)
     print("Saved anime_episodes.csv with", len(all_episodes), "entries")
