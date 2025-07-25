@@ -270,6 +270,72 @@ def view_anime(anime_id):
 
     return render_template("anime_page.html", anime=anime, episodes=episodes)
 
+# anime details
+@app.route("/aniepisode/<int:episode_id>", methods=["GET", "POST"])
+def view_anime_episode(episode_id):
+    MEDIA_DB_PATH = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "..", "media.db"
+    )
+    conn = sqlite3.connect(MEDIA_DB_PATH)
+
+    episode_query = f"SELECT * FROM anime_ep WHERE episode_id = {episode_id}"
+    episode_df = pd.read_sql(episode_query, conn)
+    
+
+    if episode_df.empty:
+        abort(404)
+
+    episode = episode_df.iloc[0].to_dict()
+
+    anilist_id = episode.get("anilist_id") # Get the anilist_id from the episode data
+    anime_details = None
+    if anilist_id:
+        anime_query = f"SELECT * FROM anime WHERE anilist_id = {anilist_id}"
+        anime_df = pd.read_sql(anime_query, conn)
+        if not anime_df.empty:
+            anime_details = anime_df.iloc[0].to_dict()
+    conn.close()
+
+    # Allow commenting
+    form = commentForm()
+    if form.validate_on_submit() and current_user.is_authenticated:
+        try:
+            timestamp_seconds = parse_timestamp_string(form.timestamp.data)
+        except ValueError:
+            flash("Invalid timestamp format.", "danger")
+            return redirect(url_for("view_anime_episode", episode_id=episode_id))
+
+        new_comment = Comment(
+            content=form.content.data,
+            timestamp=timestamp_seconds,
+            gif_url=form.gif_url.data,
+            user_id=current_user.id,
+            episode_id=int(episode_id),
+        )
+        db.session.add(new_comment)
+        db.session.commit()
+        flash("Comment added!")
+        return redirect(url_for("view_anime_episode", episode_id=episode_id))
+
+    comments = (
+        Comment.query.filter_by(episode_id=int(episode_id))
+        .order_by(Comment.timestamp)
+        .all()
+    )
+
+    comment_block = get_comments(episode_id)
+    emoji_summary = summarize_comments(comment_block) if comment_block else ""
+
+    return render_template(
+        "media_page.html",
+        media=episode,
+        anime=anime_details,
+        media_type="anime_episode",
+        form=form,
+        comments=comments,
+        emoji_summary=emoji_summary,
+    )
+
 
 @app.route("/comment/<int:comment_id>/delete", methods=["POST"])
 @login_required
