@@ -4,8 +4,10 @@ import subprocess
 
 import git
 import pandas as pd
+import requests
+import re
 from dotenv import load_dotenv
-from flask import Flask, flash, redirect, render_template, request, url_for, jsonify
+from flask import Flask, abort, flash, redirect, render_template, request, url_for, jsonify
 from flask_behind_proxy import FlaskBehindProxy
 from flask_login import (
     LoginManager,
@@ -14,9 +16,28 @@ from flask_login import (
     login_user,
     logout_user,
 )
+# import all functions from tmdb.py except for generate_episode_csvs()
+from app.tmdb import (
+    fetch_popular,
+    parse_tmdb_items,
+    fetch_tv_seasons,
+    parse_seasons,
+    fetch_season_episodes,
+    parse_episodes,
+)
+# import functions for anilist
+from app.anilist import (
+    fetch_anime,
+    format_start_date,
+    parse_anime,
+    fetch_episodes,
+    parse_episodes,
+    extract_ep_num,
+)
 
 from app.forms import RegistrationForm, LoginForm, commentForm
 from app.google_ai import get_comments, summarize_comments
+
 from app.models import Comment, User, db
 from app.tenor import search_gif, featured_gifs
 
@@ -62,6 +83,7 @@ def parse_timestamp_string(ts_str):
     else:
         raise ValueError("Invalid timestamp format")
 
+
 # Update TMDB to show to catalogue page
 @app.route("/")
 def catalogue():
@@ -72,14 +94,17 @@ def catalogue():
 
     movie_query = "SELECT * FROM media WHERE media_type = 'movie' ORDER BY vote_average DESC LIMIT 10"
     tv_query = "SELECT * FROM media WHERE media_type = 'tv' ORDER BY vote_average DESC LIMIT 10"
+    anime_query = "SELECT * FROM anime ORDER BY trending DESC LIMIT 10"
 
     movies = pd.read_sql(movie_query, conn).to_dict(orient="records")
     tv_shows = pd.read_sql(tv_query, conn).to_dict(orient="records")
+    anime = pd.read_sql(anime_query, conn).to_dict(orient="records")
 
     conn.close()
+
     users = User.query.all()
     return render_template(
-        "catalogue.html", movies=movies, tv_shows=tv_shows, users=users
+        "catalogue.html", movies=movies, tv_shows=tv_shows, anime=anime, users=users
     )
 
 
@@ -223,6 +248,27 @@ def view_episode(episode_id):
         comments=comments,
         emoji_summary=emoji_summary,
     )
+
+# anime
+@app.route("/anime/<int:anime_id>")
+def view_anime(anime_id):
+    MEDIA_DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "media.db")
+    conn = sqlite3.connect(MEDIA_DB_PATH)
+
+    anime_query = f"SELECT * FROM anime WHERE anilist_id = {anime_id}"
+    anime_result = pd.read_sql(anime_query, conn).to_dict(orient="records")
+    if not anime_result:
+        abort(404)
+    anime = anime_result[0]
+
+    episode_query = f"SELECT * FROM anime_ep WHERE anilist_id = {anime_id}"
+    episodes = pd.read_sql(episode_query, conn).to_dict(orient="records")
+    conn.close()
+
+    # get episode nums
+    episodes.sort(key=lambda x: extract_ep_num(x.get('episode_title')), reverse=False)
+
+    return render_template("anime_page.html", anime=anime, episodes=episodes)
 
 
 @app.route("/comment/<int:comment_id>/delete", methods=["POST"])
