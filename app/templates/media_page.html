@@ -40,7 +40,7 @@
 
         <div id="progress-container"
              class="progress-container"
-             data-duration="{{ media.runtime*60 or 3600 }}">
+             data-duration="{{ media.runtime * 60 if media.runtime is not none else 3600 }}">
           <div id="progress-bar" class="progress-bar"></div>
           <span id="progress-tooltip" class="progress-tooltip"></span>
         </div> <!-- end progress container div -->
