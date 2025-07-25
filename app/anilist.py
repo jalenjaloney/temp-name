@@ -116,12 +116,6 @@ def parse_anime(anime_raw):
         })
     return parsed
 
-# currently fetches 15 entries/animes; running into rate limit issues with more pages, saves into csv
-anime_raw = fetch_anime(pages=1)
-anime_data = parse_anime(anime_raw)
-pd.DataFrame(anime_data).to_csv("anime_catalog.csv", index=False)
-print("Saved anime_catalog.csv with", len(anime_data), "entries")
-
 # get episode info from anime from api
 def fetch_episodes(anilist_id):
     response = requests.post(
@@ -163,7 +157,7 @@ def parse_episodes(anilist_id, episodes_raw):
     return parsed
 
 # Take episode data, store in csvs
-def generate_episode_csvs():
+def generate_episode_csvs(anime_data):
     all_episodes = []
     for anime in anime_data:
         try:
@@ -180,5 +174,15 @@ def generate_episode_csvs():
     pd.DataFrame(all_episodes).to_csv("anime_episodes.csv", index=False)
     print("Saved anime_episodes.csv with", len(all_episodes), "entries")
 
+def main():
+    # Fetch trending anime and write to anime_catalog.csv
+    anime_raw = fetch_anime(pages=1)
+    anime_data = parse_anime(anime_raw)
+    pd.DataFrame(anime_data).to_csv("anime_catalog.csv", index=False)
+    print("Saved anime_catalog.csv with", len(anime_data), "entries")
+
+    # Generate episodes CSV
+    generate_episode_csvs(anime_data)
+
 if __name__ == "__main__":
-    generate_episode_csvs()
+    main()

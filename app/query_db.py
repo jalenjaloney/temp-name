@@ -46,3 +46,6 @@ def create_media_db(db_path="media.db"):
     anime_eps_df.to_sql("anime_ep", conn, if_exists="replace", index=False)
 
     conn.close()
+
+if __name__ == "__main__":
+    create_media_db()

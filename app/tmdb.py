@@ -53,18 +53,6 @@ def parse_tmdb_items(items, media_type):
             })
     return parsed
 
-# Fetch and parse both movies and TV shows
-movies_raw = fetch_popular("movie", pages=2)
-tv_raw = fetch_popular("tv", pages=2)
-
-movies = parse_tmdb_items(movies_raw, "movie")
-tv = parse_tmdb_items(tv_raw, "tv")
-
-# Combine movie and TV data and store into single CSV file
-df = pd.DataFrame(movies + tv)
-df.to_csv("media_catalog.csv", index=False)
-print("Saved media_catalog.csv with", len(df), "entries")
-
 # Fetch all seasons of a particular TV show
 def fetch_tv_seasons(tv_id):
     url = f"{BASE_URL}/tv/{tv_id}"

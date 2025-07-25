@@ -13,6 +13,9 @@ anilist_id,episode_title,thumbnail
 186052,Episode 3 - The Town of Lune,https://img1.ak.crunchyroll.com/i/spire3-tmb/d061fd62134e4c86674f19189f16fb541752777613_full.jpg
 186052,Episode 2 - Abel the Castaway,https://img1.ak.crunchyroll.com/i/spire2-tmb/2f64cbe49c47912c838651feb9ab41b51752164138_full.jpg
 186052,"Episode 1 - The Slow, But Dangerous, Life",https://img1.ak.crunchyroll.com/i/spire4-tmb/1736b775707f46501e1c0bbaead074681751558721_full.jpg
+179879,"Episode 3 - A Life I Saw in a Dream, and a Dream-like Life",https://img1.ak.crunchyroll.com/i/spire4-tmb/d9be1736c9b92b693e62e9fbe5955c8d1752857747_full.jpg
+179879,"Episode 2 - Marie, I Want to Marry You",https://img1.ak.crunchyroll.com/i/spire1-tmb/438364872daca2ea63b0c0a81c64ad131752250348_full.jpg
+179879,Episode 1 - I Could Never Replace My Sister,https://img1.ak.crunchyroll.com/i/spire2-tmb/ac2941ccbeb2ff475f61a440ac322f9b1751646552_full.jpg
 189117,Episode 15 - The Escape,https://img1.ak.crunchyroll.com/i/spire4-tmb/6c3d9e316ea504970bcb569e2ce15d071753363899_full.jpg
 189117,Episode 14 - EARTH RACE,https://img1.ak.crunchyroll.com/i/spire1-tmb/2b6c079624473da320f75a1564b204951752759800_full.jpg
 189117,Episode 13 - Watching the Same Moon,https://img1.ak.crunchyroll.com/i/spire3-tmb/59a9f1268d2776c68e1a5759df20b4c71752156995_full.jpg
@@ -28,9 +31,6 @@ anilist_id,episode_title,thumbnail
 189117,Episode 3 - Light Trap in the Darkness,https://img1.ak.crunchyroll.com/i/spire4-tmb/9df155312fa3e38fa57884f8d84f35961737641984_full.jpg
 189117,Episode 2 - SCIENCE JOURNEY,https://img1.ak.crunchyroll.com/i/spire4-tmb/0343578c673ee3bd733c234cd79fb3661737039066_full.jpg
 189117,Episode 1 - RYUSUI VS. SENKU,https://img1.ak.crunchyroll.com/i/spire2-tmb/d435f370ef3e1fb3a2c606ed2abe888a1736432645_full.jpg
-179879,"Episode 3 - A Life I Saw in a Dream, and a Dream-like Life",https://img1.ak.crunchyroll.com/i/spire4-tmb/d9be1736c9b92b693e62e9fbe5955c8d1752857747_full.jpg
-179879,"Episode 2 - Marie, I Want to Marry You",https://img1.ak.crunchyroll.com/i/spire1-tmb/438364872daca2ea63b0c0a81c64ad131752250348_full.jpg
-179879,Episode 1 - I Could Never Replace My Sister,https://img1.ak.crunchyroll.com/i/spire2-tmb/ac2941ccbeb2ff475f61a440ac322f9b1751646552_full.jpg
 21,Episode 130 - Scent of Danger! the Seventh Member Is Nico Robin!,https://img1.ak.crunchyroll.com/i/spire4-tmb/d80b3fbce742e6deb4d2caf37d08ca6e1395451246_full.jpg
 21,Episode 129 - It All Started On That Day! Vivi Tells the Story of Her Adventure!,https://img1.ak.crunchyroll.com/i/spire4-tmb/7952451fa68d1dabaac8ad83488c4eaf1395451132_full.jpg
 21,Episode 128 - The Pirates' Banquet and Operation Escape from Alabasta!,https://img1.ak.crunchyroll.com/i/spire2-tmb/c4e3a81d230bf89f3e88dd654978d83c1395451834_full.jpg
@@ -100,13 +100,27 @@ anilist_id,episode_title,thumbnail
 21,Episode 64 - A Town That Welcomes Pirates? Setting Foot On Whisky Peak!,https://img1.ak.crunchyroll.com/i/spire2-tmb/7de0eb5a5516124eb90639b078e918f81394835887_full.jpg
 21,Episode 63 - A Promise Between Men! Luffy and the Whale Vow to Meet Again!,https://img1.ak.crunchyroll.com/i/spire2-tmb/4af5f85879ae184420238497ac9c34331394246618_full.jpg
 21,Episode 62 - The First Line of Defense? the Giant Whale Laboon Appears!,https://img1.ak.crunchyroll.com/i/spire4-tmb/c99339b8763577e3dbde3011d470eef81394246915_full.jpg
-178869,Episode 4 - Magical Talent,https://img1.ak.crunchyroll.com/i/spire3-tmb/d5a8529ca608fdff5bd46248f340ec0f1753266361_full.jpg
-178869,Episode 3 - Hero's Duty,https://img1.ak.crunchyroll.com/i/spire1-tmb/706ede7c7b30d0385ada8570f5eefafd1752661547_full.jpg
-178869,Episode 2 - The Beast Lord in Captivity,https://img1.ak.crunchyroll.com/i/spire4-tmb/a8f3d12e40050c89ca1c669e77380c531752061957_full.jpg
-178869,Episode 1 - The Lord of Dark Beasts,https://img1.ak.crunchyroll.com/i/spire2-tmb/22830b7a47c0be8d06cd110821c236c71751453674_full.jpg
-154768,Episode 15 - I Wuuuuv Slice-of-Life Scenes! ♡♡♡,https://img1.ak.crunchyroll.com/i/spire4-tmb/3c66b38db91428c43232e1573989e59e1752942173_full.jpg
-154768,Episode 14 - You Can Equip Boobs,https://img1.ak.crunchyroll.com/i/spire2-tmb/82b8722bd44f5c517ab7c83de1e77d4d1752332984_full.jpg
-154768,"Episode 13 - Wakana Gojo, 15 Years Old, Teenager",https://img1.ak.crunchyroll.com/i/spire1-tmb/e809771179871502fb0aaaa30955c4031751721222_full.jpg
-178090,Episode 15 - Ghoul Hunt ,https://img1.ak.crunchyroll.com/i/spire1-tmb/4183f9f5593d3d4514add591c021eec01753280202_full.jpg
-178090,Episode 14 - Jihriel's Miracles,https://img1.ak.crunchyroll.com/i/spire4-tmb/fc578bf46a14e341cd0c1be41b1d4b681752669411_full.jpg
-178090,Episode 13 - I’ll Join the Church!,https://img1.ak.crunchyroll.com/i/spire1-tmb/f4568857a6e0fc1dc69942aa5637b6071752075808_full.jpg
+176301,Episode 48 - The Beginning,https://img1.ak.crunchyroll.com/i/spire4-tmb/684f1e23301186ac476d81dccfcf0d9f1751641470_full.jpg
+176301,Episode 47 - The Shi Clan,https://img1.ak.crunchyroll.com/i/spire1-tmb/e3c0ecacad4d061e52f12e9dc7a92e3f1751029483_full.jpg
+176301,Episode 46 - Royal Guard,https://img1.ak.crunchyroll.com/i/spire1-tmb/6f5547c8cf0bf16af678f001f4b76ef91749828530_full.jpg
+176301,Episode 45 - Taibon,https://img1.ak.crunchyroll.com/i/spire3-tmb/04a6ed5db2e73d5d4cc406ade92edb471749226051_full.jpg
+176301,Episode 44 - The Stronghold,https://img1.ak.crunchyroll.com/i/spire1-tmb/4855905bceedac06455b5b63a4d9b9381748623687_full.jpg
+176301,Episode 43 - Festival,https://img1.ak.crunchyroll.com/i/spire1-tmb/8c4b27c06b3ec17a0f39dfccef8bd7e41748017056_full.jpg
+176301,Episode 42 - Lantern Plant,https://img1.ak.crunchyroll.com/i/spire2-tmb/7058956511c24ea6948c928ee38f86411746806897_full.jpg
+176301,Episode 41 - Fox Village,https://img1.ak.crunchyroll.com/i/spire3-tmb/2dcdaa962da3cd25a33916216add5b541746199755_full.jpg
+176301,Episode 40 - Festering Resentment,https://img1.ak.crunchyroll.com/i/spire4-tmb/de5892a568267d7e29dd7495df6d72401745592100_full.jpg
+176301,Episode 39 - Ice,https://img1.ak.crunchyroll.com/i/spire1-tmb/07a1d7b71fae297e02a34d1de3211c231744989687_full.jpg
+176301,Episode 38 - The Dancing Ghost,https://img1.ak.crunchyroll.com/i/spire2-tmb/23b2f1547473283035ff16100961cbe21744388803_full.jpg
+176301,Episode 37 - The Baths,https://img1.ak.crunchyroll.com/i/spire2-tmb/dec082d6da739511093952f79639f79b1743764428_full.jpg
+176301,Episode 36 - Ka Zuigetsu,https://img1.ak.crunchyroll.com/i/spire4-tmb/0a38f519fcc61a0b06277ab8de972b441743172143_full.jpg
+176301,Episode 35 - The Hunt,https://img1.ak.crunchyroll.com/i/spire1-tmb/71d821fdc41ec5bd48b78355a6b197e61742573588_full.jpg
+176301,Episode 34 - A Ghost Story,https://img1.ak.crunchyroll.com/i/spire3-tmb/6e498db105721c70e584112a6c08c7111741968829_full.jpg
+176301,Episode 33 - The Late Emperor,https://img1.ak.crunchyroll.com/i/spire4-tmb/1d6c455c7cf4465e7439e048684268c61741366868_full.jpg
+176301,Episode 32 - The Empress Dowager,https://img1.ak.crunchyroll.com/i/spire3-tmb/2dbd3d143531aa494fb0c9e7abdfcc821740757602_full.jpg
+176301,Episode 31 - The Shrine of Choosing,https://img1.ak.crunchyroll.com/i/spire1-tmb/320edf06ef7e17fc5c7e3636c57c055c1740154684_full.jpg
+176301,"Episode 30 - The Crystal Pavilion, For the Third Time",https://img1.ak.crunchyroll.com/i/spire4-tmb/08430bd822e4e919c1bf5214734704741739547157_full.jpg
+176301,Episode 29 - The Moon Fairy,https://img1.ak.crunchyroll.com/i/spire3-tmb/b65eb9ac72c75cc25c47f1056e14f4bb1738945870_full.jpg
+176301,Episode 28 - Mirror,https://img1.ak.crunchyroll.com/i/spire2-tmb/fbb607f88350ea5aa90de69a454f53ef1738339602_full.jpg
+176301,Episode 27 - Corpse Fungus,https://img1.ak.crunchyroll.com/i/spire4-tmb/066f609a9d274d993b46126a3ea730991737721646_full.jpg
+176301,Episode 26 - Caravan,https://img1.ak.crunchyroll.com/i/spire3-tmb/534d2fd94aec6ae647f2670509137d031737129686_full.jpg
+176301,Episode 25 - Maomao and Maomao,https://img1.ak.crunchyroll.com/i/spire2-tmb/dcd8594821409d91f04889eecfb9b8281736524318_full.jpg
