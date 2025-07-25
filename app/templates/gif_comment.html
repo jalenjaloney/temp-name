@@ -1,0 +1,19 @@
+<div class="gif-popup-wrapper">
+  <!-- Hidden input to store selected GIF -->
+  <input type="hidden" name="gif_url" id="gif_url">
+  <div id="gif_preview" style="margin: 5px 0;"></div>
+
+  <!-- GIF trigger button -->
+  <button type="button" id="open_gif_icon" class="gif-icon-btn" title="Add a GIF">🎞️</button>
+
+  <!-- GIF Search Popup -->
+  <div id="gif_search_popup" class="gif-popup hidden">
+    <div class="gif-popup-header">
+      <input type="text" id="gif_query" placeholder="Search GIFs">
+      <button type="button" id="gif_search_btn">Search</button>
+    </div>
+    <div class="gif-scroll-wrapper" id="gif_scroll_wrapper">
+      <div id="gif_results" class="gif-grid"></div>
+    </div>
+  </div>
+</div>
