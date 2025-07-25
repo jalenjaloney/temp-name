@@ -83,22 +83,24 @@ def parse_timestamp_string(ts_str):
     else:
         raise ValueError("Invalid timestamp format")
 
-# csv created from tmdb.py and anilist.py
-media_df = pd.read_csv("media_catalog.csv")
 
 # Update TMDB to show to catalogue page
 @app.route("/")
 def catalogue():
-    MEDIA_DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "media.db")
+    MEDIA_DB_PATH = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "..", "media.db"
+    )
     conn = sqlite3.connect(MEDIA_DB_PATH)
-    # Sends only the top 10 movies and tv shows to the catalogue page
-    movies = media_df[media_df["media_type"] == "movie"].head(10).to_dict(orient="records")
-    tv_shows = media_df[media_df["media_type"] == "tv"].head(10).to_dict(orient="records")
 
-    # sends top 10 trending animes
+    movie_query = "SELECT * FROM media WHERE media_type = 'movie' ORDER BY vote_average DESC LIMIT 10"
+    tv_query = "SELECT * FROM media WHERE media_type = 'tv' ORDER BY vote_average DESC LIMIT 10"
     anime_query = "SELECT * FROM anime ORDER BY trending DESC LIMIT 10"
-    anime_df = pd.read_sql(anime_query, conn)
-    anime = anime_df.to_dict(orient="records")
+
+    movies = pd.read_sql(movie_query, conn).to_dict(orient="records")
+    tv_shows = pd.read_sql(tv_query, conn).to_dict(orient="records")
+    anime = pd.read_sql(anime_query, conn).to_dict(orient="records")
+
+    conn.close()
 
     users = User.query.all()
     return render_template(
@@ -106,9 +108,16 @@ def catalogue():
     )
 
 
+
 @app.route("/media/<int:media_id>")
 def get_media(media_id):
-    media = media_df[media_df["tmdb_id"] == int(media_id)].iloc[0].to_dict()
+    MEDIA_DB_PATH = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "..", "media.db"
+    )
+    conn = sqlite3.connect(MEDIA_DB_PATH)
+    media_query = f"SELECT * FROM media WHERE tmdb_id = {media_id}"
+    media = pd.read_sql(media_query, conn).iloc[0].to_dict()
+
     # gets seasons
     seasons = []
     if media["media_type"] == "tv":

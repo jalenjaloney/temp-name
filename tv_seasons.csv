@@ -93,7 +93,7 @@ season_id,tv_id,title,season_number,name,overview,poster_url,air_date,episode_co
 65701-25,65701,Good Mythical Morning,25,Season 25,,,2024-01-08,161,0.0
 65701-26,65701,Good Mythical Morning,26,Season 26,,,2024-09-09,84,0.0
 65701-27,65701,Good Mythical Morning,27,Season 27,,,2025-01-06,147,0.0
-65701-28,65701,Good Mythical Morning,28,Season 28,,,2025-07-07,10,0.0
+65701-28,65701,Good Mythical Morning,28,Season 28,,,2025-07-07,12,0.0
 112470-0,112470,Ici tout commence,0,Specials,,https://image.tmdb.org/t/p/w500/kHiWgxrcsIf0cNDsttTY08dj9QN.jpg,2023-01-07,3,0.0
 112470-1,112470,Ici tout commence,1,Season 1,,https://image.tmdb.org/t/p/w500/qNpmpvN875N8jmIFjY9KwWnYQQc.jpg,2020-11-02,1237,3.5
 11890-0,11890,"Goede Tijden, Slechte Tijden",0,Specials,,,2021-08-19,8,0.0
@@ -349,10 +349,78 @@ The twentieth Race premiered on Sunday, February 19, 2012. It aired on CBS in th
 1966-58,1966,Horizon,58,2021,,https://image.tmdb.org/t/p/w500/aD9llHm1yBpWkivCvJptJQYnoTJ.jpg,2021-01-04,4,0.0
 1966-59,1966,Horizon,59,2022,,https://image.tmdb.org/t/p/w500/8PB1AypQimzVymBDcwyot4F4hWE.jpg,2022-03-31,4,0.0
 1966-60,1966,Horizon,60,2024,,,2024-07-22,1,9.0
+80885-1,80885,Ninja Hattori-kun,1,Season 1,,https://image.tmdb.org/t/p/w500/ngcV3Fz97ZX5jafY0pgct4bZiYK.jpg,1981-09-28,697,0.0
+1622-0,1622,Supernatural,0,Specials,,https://image.tmdb.org/t/p/w500/fg3MNPPng5PEV2Em8oiWfo1SN60.jpg,,220,0.0
+1622-1,1622,Supernatural,1,Season 1,"The Creepy. The Demented. The Unexplained. The Unearthly. Sam Winchester grew up hunting such terrifying things. But that’s all past. Law school beckons him. So does safety and normalcy. That is, until Sam’s estranged brother Dean appears with troubling news: their father has disappeared, a man who’s hunted evil for 22 years. So to find their father, the brothers must hunt what their father hunts…and Sam must return to the life he’d rather leave behind.",https://image.tmdb.org/t/p/w500/fFn80y3PPmCcTbIIjQS5ft0jNFc.jpg,2005-09-13,22,7.7
+1622-2,1622,Supernatural,2,Season 2,"They're back the ghouls and vampires, the ghosts and spirits and even more terrifying entities. And wherever these evil beings are, you'll find brothers Sam and Dean Winchester, hunters on the trail of the demon who murdered their mother…and of any other unholy agent of the Supernatural. Join the brothers in their mind-bending, bone-chilling Season 2 road trip across America a journey deeper into the mystery of their own destinies.",https://image.tmdb.org/t/p/w500/235GDaro5DuRJ9ogXmV7tOB6W5j.jpg,2006-09-28,22,8.1
+1622-3,1622,Supernatural,3,Season 3,"The yellow-eyed demon is vanquished, but at a terrible price. The battle that brought him down released hundreds of demons from Hell into an unsuspecting world. And it cost Sam his life. But a grief-stricken Dean made a deal with the Crossroad Demon: his soul for Sam's resurrection. Now Dean has just one year to live. One year to fight the unholy, the twisted, the ghoulish. One year to say farewell to Sam. And one year for Sam to search desperately for some way to save his brother. Mind-bending adventure awaits as the Winchester brothers continue their astonishing odyssey into the supernatural...and their personal odyssey into destiny.",https://image.tmdb.org/t/p/w500/vDIg3XI9JHfEORxTWstO2seUyCw.jpg,2007-10-04,16,8.0
+1622-4,1622,Supernatural,4,Season 4,"Resurrection. After enduring unspeakable torture, Dean escapes from Hell, rescued by an all-powerful creature he's never seen before an Angel a warrior of God who recruits Sam and Dean in Heaven's battle against Hell. And there are whispers that a certain fallen angel will soon be freed from his prison deep in Hell: Lucifer. If Sam and Dean can't stop it if Lucifer walks free he'll bring on the Apocalypse. Meanwhile, the Winchester brothers reunite and hit the road, battling the supernatural wherever they go. They encounter demons, spirits, Dracula himself and even a drunk, heavily armed seven-foot-tall teddy bear. All the while, the ultimate war draws them into its horror. Caught between Heaven and Hell, between God and the Devil, the Winchester brothers must battle for the future of humankind.",https://image.tmdb.org/t/p/w500/uswpAvIhUX98ybJEJYJp6EUe3d6.jpg,2008-09-18,22,8.1
+1622-5,1622,Supernatural,5,Season 5,"Two brothers and one fallen angel - against all the might of Satan and his army! As the Apocalypse grows closer, threatening to turn Earth into a battlefield soaked with human blood, Sam, Dean and Castiel struggle against daunting odds. New foes arise, including the Four Horsemen of the Apocalypse. Old friends depart, consumed by the fearsome wrath of Hell. Through it all, the Winchesters are targeted by demons and angels alike, who warn that each brother has a special and terrible role to play in the coming devastation. Season Five follows Sam and Dean on their most terrifying journey yet, one that may lead them to the only ally strong enough to defeat the Devil: God.",https://image.tmdb.org/t/p/w500/5BhXiXHjAq2LS7VyyiAA6egpZb8.jpg,2009-09-10,22,8.1
+1622-6,1622,Supernatural,6,Season 6," The prize: ending the Apocalypse. The price: Sam's life. Season 5's horrific finale left Dean alone, as Sam descended into Hell. Now a different man, Dean vows to stop hunting and devote himself to building a family with Lisa and her son Ben. Then, mysteriously, Sam reappears, drawing Dean back into the old life. But Sam's a different man too. He's returned without his soul. How the Winchesters confront this greatest challenge yet to their powerful bond is the troubled heart - and soul - of the profound and thrilling 22-Episode Season 6. As the brothers struggle to reunite, they must also battle deadly supernatural forces. Demons. Angels. Vampires. Shapeshifters. And a terrifying new foe called the Mother of All.",https://image.tmdb.org/t/p/w500/hGInmwwUlG3yvrvSH9CYcL6Ba1j.jpg,2010-09-24,22,7.8
+1622-7,1622,Supernatural,7,Season 7," In Season 7, Sam and Dean fight demons. Real demons, like Lucifer, who tortures Sam with visions of Hell. Private demons, as the brothers face a traumatic personal loss when Bobby is cut down by alien forces. And as Sam and Dean travel the back roads of America, hunting monsters who wreak havoc on the innocent, a new and more terrible foe hunts them: Leviathans, freed from Purgatory and immune to the brothers' arsenal of weapons and cunning. With Bobby gone, all Sam and Dean can rely on is each other. But will that be enough?",https://image.tmdb.org/t/p/w500/qiuf2qxR2Zd5sInYytZzSIXbUuL.jpg,2011-09-23,23,7.8
+1622-8,1622,Supernatural,8,Season 8,"After a year apart, Sam and Dean are reunited in the Eighth Season premiere. After escaping from Purgatory with the help of a vampire named Benny, Dean heads straight for Sam, but the reunion isn't exactly everything he imagined it would be. Although Sam drops everything to join his brother, leaving the life he had grown accustomed to enjoy turns out to be harder than he imagined. In the meantime, Benny’s help turns out to be more than what Dean bargained for. As the brothers struggle with their unexpected reunion, they make a shocking discovery that could lead them on a deeply personal mission to settle old scores. If only they could agree – is this a “family business” or isn’t it?",https://image.tmdb.org/t/p/w500/pmzX28gvLj52HtN5qeyb1Qw4q5l.jpg,2012-10-03,23,7.7
+1622-9,1622,Supernatural,9,Season 9," After defeating the Leviathan, Sam and Dean set off on an epic quest to seal the Gates of Hell last season. Facing a series of trials, the Winchesters soon found themselves in the middle of an age-old power struggle between the King of Hell and legions of warrior angels. But with the angels cast out of heaven and walking the earth, things just got very unpredictable.",https://image.tmdb.org/t/p/w500/gzxekP92imqSSq6FhagISMTr3dg.jpg,2013-10-08,23,7.6
+1622-10,1622,Supernatural,10,Season 10,"Season 10 begins with Sam’s frantic search for his missing brother, who is gone without a trace. The road to recovering the wayward Dean takes Sam down dark paths, with consequences that will shake the boys to their core. Meanwhile, Castiel has to pick up the pieces in the aftermath of Metatron’s campaign. With his grace failing and rogue angels still on the loose, Cas will face the ticking clock of his own mortality as all-new threats emerge to once again push all of our heroes to their limits.",https://image.tmdb.org/t/p/w500/y9Q90gjBX820NZw59O8HWlkZOek.jpg,2014-10-07,23,7.4
+1622-11,1622,Supernatural,11,Season 11,"Following the release of the Darkness, this season follows the Winchesters and their allies as they find themselves fighting the most powerful supernatural entity they've ever faced.",https://image.tmdb.org/t/p/w500/2RlcVP4LsRzr1g8oIU3hNq0BEwm.jpg,2015-10-07,23,7.7
+1622-12,1622,Supernatural,12,Season 12,"In the show's eleventh season, the Winchesters found themselves battling an apocalyptic force: the Darkness. Now, rallying help from their allies - both human and supernatural - Sam and Dean are about to go toe-to-toe with the most destructive enemy they've ever seen. The question is, will they win? And at what price?",https://image.tmdb.org/t/p/w500/gkNzVg2k8dF6mXsMnjhaMX1NpUy.jpg,2016-10-13,23,7.6
+1622-13,1622,Supernatural,13,Season 13,"Season 13 begins exactly where we left off, with Sam and Dean left to pick up the pieces after the loss of their mother, the demise of Crowley and the heartbreaking death of Castiel. The birth of Jack leaves the Winchester brothers with differing opinions on how to deal with a Nephilim. After being dragged into the breach, Mary must learn to survive Lucifer and an apocalyptic world.",https://image.tmdb.org/t/p/w500/xBJ7Ts2nDUbUWu4Ef9v086dbBrQ.jpg,2017-10-12,23,7.7
+1622-14,1622,Supernatural,14,Season 14,"The season follows Sam and Dean who, along with Jack and Castiel, try to take down the archangel Michael from another world, and learn something bigger is at hand.",https://image.tmdb.org/t/p/w500/bbzLtfh7VwfoaeQkkNJ2EMv6lKS.jpg,2018-10-11,20,7.3
+1622-15,1622,Supernatural,15,Season 15,The Winchester brothers' epic journey comes to a thrilling and terrifying close in Season 15.,https://image.tmdb.org/t/p/w500/j3kk9PK1Xp8G3r6nDxVLOL1rqLo.jpg,2019-10-10,20,7.5
 194766-1,194766,The Summer I Turned Pretty,1,Season 1,"Belly Conklin is about to turn 16, and she’s headed to her favorite place in the world, Cousins Beach, to spend the summer with her family and the Fishers. Belly’s grown up a lot over the past year, and she has a feeling that this summer is going to be different than all the summers before.",https://image.tmdb.org/t/p/w500/6yCL5HB1ugO3bMwloEDNiNdadUa.jpg,2022-06-16,7,7.6
 194766-2,194766,The Summer I Turned Pretty,2,Season 2,"Belly used to count down the days until she could return to Cousins Beach, but with Conrad and Jeremiah fighting over her heart and the return of Susannah's cancer, she's not sure summer will ever be the same. When an unexpected visitor threatens the future of Susannah's beloved house, Belly has to rally the gang to come together—and to decide once and for all where her heart lies.",https://image.tmdb.org/t/p/w500/A7ziP4QaTRAwWqGhHyknN5UULlf.jpg,2023-07-13,8,7.8
 194766-3,194766,The Summer I Turned Pretty,3,Season 3,"It's the end of her junior year of college, and Belly's looking forward to another summer in Cousins with her soulmate, Jeremiah. Her future seems set, until some core-shaking events bring her first love Conrad back into her life. Now on the brink of adulthood, Belly finds herself at a crossroads and must decide which brother has her heart. Summer will never be the same...",https://image.tmdb.org/t/p/w500/kApoJroNpuJio8wReWmbldvv3DL.jpg,2025-07-16,11,8.4
-80885-1,80885,Ninja Hattori-kun,1,Season 1,,https://image.tmdb.org/t/p/w500/ngcV3Fz97ZX5jafY0pgct4bZiYK.jpg,1981-09-28,697,0.0
+5092-0,5092,Infinite Challenge,0,Specials,,https://image.tmdb.org/t/p/w500/9nb6NQ44FfvLEoS1tChIkN12hEg.jpg,2008-09-14,30,0.0
+5092-1,5092,Infinite Challenge,1,Reckless Challenge,"The three regular cast members, joined by three guests, attempt to complete sports-related missions in an outdoor studio.  The challenges were based on viewers' suggestions.",https://image.tmdb.org/t/p/w500/4Nn3JUVrB4O6Qqo5yze051OG07O.jpg,2005-04-23,27,0.0
+5092-2,5092,Infinite Challenge,2,Excessive Challenge and Master of Quiz,The cast solve quizzes and play games.  Initially the season was similar to season one and was known as Excessive Challenge (무리한 도전).,https://image.tmdb.org/t/p/w500/swZx9NztltaiPQutg0lzDnOk0y9.jpg,2005-10-29,26,0.0
+5092-3,5092,Infinite Challenge,3,Infinite Challenge,,https://image.tmdb.org/t/p/w500/tYMiQJJLu7oHCreRNWWDhtLexFY.jpg,2006-05-06,563,8.4
+17887-1,17887,7de Laan,1,Season 1,,,2000-04-04,104,0.0
+17887-2,17887,7de Laan,2,Season 2,,,2002-01-24,208,0.0
+17887-3,17887,7de Laan,3,Season 3,,,2003-01-20,260,0.0
+17887-4,17887,7de Laan,4,Season 4,,,2004-01-19,260,0.0
+17887-5,17887,7de Laan,5,Season 5,,,2005-01-17,260,0.0
+17887-6,17887,7de Laan,6,Season 6,,,2006-01-16,260,0.0
+17887-7,17887,7de Laan,7,Season 7,,,2007-01-15,260,0.0
+17887-8,17887,7de Laan,8,Season 8,,,2008-01-14,260,0.0
+17887-9,17887,7de Laan,9,Season 9,,,2009-01-12,260,0.0
+17887-10,17887,7de Laan,10,Season 10,,,2010-01-11,260,0.0
+17887-11,17887,7de Laan,11,Season 11,,,2011-01-10,260,0.0
+17887-12,17887,7de Laan,12,Season 12,,,2012-01-09,260,0.0
+17887-13,17887,7de Laan,13,Season 13,,,2013-01-07,260,0.0
+17887-14,17887,7de Laan,14,Season 14,,,2014-01-06,260,0.0
+17887-15,17887,7de Laan,15,Season 15,,,2015-01-05,260,0.0
+17887-16,17887,7de Laan,16,Season 16,,,2016-01-04,260,0.0
+17887-17,17887,7de Laan,17,Season 17,,,2017-01-02,260,0.0
+17887-18,17887,7de Laan,18,Season 18,,,2018-01-01,260,0.0
+17887-19,17887,7de Laan,19,Season 19,,,2018-12-31,260,0.0
+17887-20,17887,7de Laan,20,Season 20,,,2019-12-31,260,0.0
+17887-21,17887,7de Laan,21,Season 21,,,2020-01-01,260,0.0
+17887-22,17887,7de Laan,22,Season 22,,,2020-12-30,260,0.0
+17887-23,17887,7de Laan,23,Season 23,,,2021-12-29,260,0.0
+17887-24,17887,7de Laan,24,Season 24,,,2022-12-28,260,0.0
+1434-0,1434,Family Guy,0,Specials,,https://image.tmdb.org/t/p/w500/ngPUB8NsOCmjSjSImVuvTIKVm1.jpg,2006-05-21,25,0.0
+1434-1,1434,Family Guy,1,Season 1,,https://image.tmdb.org/t/p/w500/5E4yhF7TVrr1l8aq7GM6IdLTsrP.jpg,1999-01-31,7,7.1
+1434-2,1434,Family Guy,2,Season 2,,https://image.tmdb.org/t/p/w500/rskVG2RP0Uzamv9zzslYE7TYPdE.jpg,1999-09-23,21,7.2
+1434-3,1434,Family Guy,3,Season 3,,https://image.tmdb.org/t/p/w500/5sK70w0MLNVa7OeJeOqRmSZUUmr.jpg,2001-07-11,22,6.9
+1434-4,1434,Family Guy,4,Season 4,,https://image.tmdb.org/t/p/w500/h6Qv5oONB3yN1MOqru7v0vAGJ6J.jpg,2005-05-01,30,6.8
+1434-5,1434,Family Guy,5,Season 5,,https://image.tmdb.org/t/p/w500/kyfo6OUtCRYCaxFmqQ3kGORCexq.jpg,2006-09-10,18,6.8
+1434-6,1434,Family Guy,6,Season 6,,https://image.tmdb.org/t/p/w500/pvK7pZUyOLcH9zWdydXD01UUTf0.jpg,2007-09-23,12,7.0
+1434-7,1434,Family Guy,7,Season 7,,https://image.tmdb.org/t/p/w500/5GUHJgPxDwh0njN3ytEIBENhmOJ.jpg,2008-09-28,16,6.7
+1434-8,1434,Family Guy,8,Season 8,,https://image.tmdb.org/t/p/w500/kwPaT3INWe36c5B3t7FJFWelm8y.jpg,2009-09-27,20,6.6
+1434-9,1434,Family Guy,9,Season 9,,https://image.tmdb.org/t/p/w500/gi9TE5c1bVTHEN4BmnICX23mlFO.jpg,2010-09-26,18,6.7
+1434-10,1434,Family Guy,10,Season 10,,https://image.tmdb.org/t/p/w500/hD0uA1xMNHsPDovAmgjDowjbctS.jpg,2011-09-25,23,6.9
+1434-11,1434,Family Guy,11,Season 11,,https://image.tmdb.org/t/p/w500/6reQqzBqJ7ObrNF2EfBDAvHRhoR.jpg,2012-09-30,22,6.7
+1434-12,1434,Family Guy,12,Season 12,,https://image.tmdb.org/t/p/w500/mPsPEP0xtDjWez5opDBTqAdxy51.jpg,2013-09-29,21,6.5
+1434-13,1434,Family Guy,13,Season 13,,https://image.tmdb.org/t/p/w500/yxjMLQzz0K5kPmO6k0agSsSnQm4.jpg,2014-09-28,18,6.6
+1434-14,1434,Family Guy,14,Season 14,,https://image.tmdb.org/t/p/w500/qVh5RrPkoexfvrZb2doRIxCnXbR.jpg,2015-09-27,20,6.9
+1434-15,1434,Family Guy,15,Season 15,,https://image.tmdb.org/t/p/w500/84lv0Q5XgrvWlEsrNxMlZS5w1p2.jpg,2016-09-25,20,6.6
+1434-16,1434,Family Guy,16,Season 16,,https://image.tmdb.org/t/p/w500/hhbAUydzQgchqLJpcJIJYwyPJm2.jpg,2017-10-01,20,6.6
+1434-17,1434,Family Guy,17,Season 17,,https://image.tmdb.org/t/p/w500/nS9U4AnJCPlmdM4L0h2TI4lpFOI.jpg,2018-09-30,20,6.2
+1434-18,1434,Family Guy,18,Season 18,,https://image.tmdb.org/t/p/w500/egxsrJV7cPlrGat4cq4OoX6TZkJ.jpg,2019-09-29,20,5.8
+1434-19,1434,Family Guy,19,Season 19,,https://image.tmdb.org/t/p/w500/ryTMELpfCvbfVPH2g8j8dyx9zLu.jpg,2020-09-27,20,6.1
+1434-20,1434,Family Guy,20,Season 20,,https://image.tmdb.org/t/p/w500/9RBeCo8QSaoJLmmuzlwzVH3Hi12.jpg,2021-09-26,20,5.9
+1434-21,1434,Family Guy,21,Season 21,,https://image.tmdb.org/t/p/w500/aLB7psB9N81n5GecHNOudXWW3AI.jpg,2022-09-25,20,6.9
+1434-22,1434,Family Guy,22,Season 22,,https://image.tmdb.org/t/p/w500/y0HUz4eUNUe3TeEd8fQWYazPaC7.jpg,2023-10-01,15,7.3
+1434-23,1434,Family Guy,23,Season 23,,https://image.tmdb.org/t/p/w500/8o8kiBkWFK3gVytHdyzEWUBXVfK.jpg,2025-02-16,18,7.0
 2734-0,2734,Law & Order: Special Victims Unit,0,Specials,,https://image.tmdb.org/t/p/w500/3pLGDNuFGdpgMd7IjfTznLDAl0.jpg,,6,0.0
 2734-1,2734,Law & Order: Special Victims Unit,1,Season 1,,https://image.tmdb.org/t/p/w500/fMcB4Kznfz3sR4Jkg1lOtf5blCp.jpg,1999-09-20,22,7.5
 2734-2,2734,Law & Order: Special Victims Unit,2,Season 2,,https://image.tmdb.org/t/p/w500/9yyzbzZuPUPlnvhuyi4VmDac1SL.jpg,2000-10-19,21,8.0
@@ -380,33 +448,6 @@ The twentieth Race premiered on Sunday, February 19, 2012. It aired on CBS in th
 2734-24,2734,Law & Order: Special Victims Unit,24,Season 24,,https://image.tmdb.org/t/p/w500/e8cx3BVz6jJDLEgW02UQhEBtsZw.jpg,2022-09-21,22,8.4
 2734-25,2734,Law & Order: Special Victims Unit,25,Season 25,,https://image.tmdb.org/t/p/w500/pDnpkJiGrvs9pehjbole86SaDtX.jpg,2024-01-17,13,8.2
 2734-26,2734,Law & Order: Special Victims Unit,26,Season 26,,https://image.tmdb.org/t/p/w500/abWOCrIo7bbAORxcQyOFNJdnnmR.jpg,2024-10-03,22,8.6
-5092-0,5092,Infinite Challenge,0,Specials,,https://image.tmdb.org/t/p/w500/9nb6NQ44FfvLEoS1tChIkN12hEg.jpg,2008-09-14,30,0.0
-5092-1,5092,Infinite Challenge,1,Reckless Challenge,"The three regular cast members, joined by three guests, attempt to complete sports-related missions in an outdoor studio.  The challenges were based on viewers' suggestions.",https://image.tmdb.org/t/p/w500/4Nn3JUVrB4O6Qqo5yze051OG07O.jpg,2005-04-23,27,0.0
-5092-2,5092,Infinite Challenge,2,Excessive Challenge and Master of Quiz,The cast solve quizzes and play games.  Initially the season was similar to season one and was known as Excessive Challenge (무리한 도전).,https://image.tmdb.org/t/p/w500/swZx9NztltaiPQutg0lzDnOk0y9.jpg,2005-10-29,26,0.0
-5092-3,5092,Infinite Challenge,3,Infinite Challenge,,https://image.tmdb.org/t/p/w500/tYMiQJJLu7oHCreRNWWDhtLexFY.jpg,2006-05-06,563,8.4
-68921-1,68921,WWE 205 Live,1,Season 1,,https://image.tmdb.org/t/p/w500/r86oSpHkmbYLIwXsrM7J382jIOY.jpg,2016-11-29,5,0.0
-68921-2,68921,WWE 205 Live,2,Season 2,,https://image.tmdb.org/t/p/w500/rlOm8fhfelTfEiOwJzHYVt2vCkA.jpg,2017-01-03,52,0.0
-68921-3,68921,WWE 205 Live,3,Season 3,,https://image.tmdb.org/t/p/w500/agKDCzf6lNPi6sEYW606pwseBEU.jpg,2018-01-02,52,0.0
-68921-4,68921,WWE 205 Live,4,Season 4,,,2019-01-02,50,0.0
-68921-5,68921,WWE 205 Live,5,Season 5,,,2020-01-03,52,0.0
-68921-6,68921,WWE 205 Live,6,Season 6,2021 season of WWE 205 Live,,2021-01-01,53,0.0
-68921-7,68921,WWE 205 Live,7,Season 7,,,2022-01-07,6,0.0
-1622-0,1622,Supernatural,0,Specials,,https://image.tmdb.org/t/p/w500/fg3MNPPng5PEV2Em8oiWfo1SN60.jpg,,220,0.0
-1622-1,1622,Supernatural,1,Season 1,"The Creepy. The Demented. The Unexplained. The Unearthly. Sam Winchester grew up hunting such terrifying things. But that’s all past. Law school beckons him. So does safety and normalcy. That is, until Sam’s estranged brother Dean appears with troubling news: their father has disappeared, a man who’s hunted evil for 22 years. So to find their father, the brothers must hunt what their father hunts…and Sam must return to the life he’d rather leave behind.",https://image.tmdb.org/t/p/w500/fFn80y3PPmCcTbIIjQS5ft0jNFc.jpg,2005-09-13,22,7.7
-1622-2,1622,Supernatural,2,Season 2,"They're back the ghouls and vampires, the ghosts and spirits and even more terrifying entities. And wherever these evil beings are, you'll find brothers Sam and Dean Winchester, hunters on the trail of the demon who murdered their mother…and of any other unholy agent of the Supernatural. Join the brothers in their mind-bending, bone-chilling Season 2 road trip across America a journey deeper into the mystery of their own destinies.",https://image.tmdb.org/t/p/w500/235GDaro5DuRJ9ogXmV7tOB6W5j.jpg,2006-09-28,22,8.1
-1622-3,1622,Supernatural,3,Season 3,"The yellow-eyed demon is vanquished, but at a terrible price. The battle that brought him down released hundreds of demons from Hell into an unsuspecting world. And it cost Sam his life. But a grief-stricken Dean made a deal with the Crossroad Demon: his soul for Sam's resurrection. Now Dean has just one year to live. One year to fight the unholy, the twisted, the ghoulish. One year to say farewell to Sam. And one year for Sam to search desperately for some way to save his brother. Mind-bending adventure awaits as the Winchester brothers continue their astonishing odyssey into the supernatural...and their personal odyssey into destiny.",https://image.tmdb.org/t/p/w500/vDIg3XI9JHfEORxTWstO2seUyCw.jpg,2007-10-04,16,8.0
-1622-4,1622,Supernatural,4,Season 4,"Resurrection. After enduring unspeakable torture, Dean escapes from Hell, rescued by an all-powerful creature he's never seen before an Angel a warrior of God who recruits Sam and Dean in Heaven's battle against Hell. And there are whispers that a certain fallen angel will soon be freed from his prison deep in Hell: Lucifer. If Sam and Dean can't stop it if Lucifer walks free he'll bring on the Apocalypse. Meanwhile, the Winchester brothers reunite and hit the road, battling the supernatural wherever they go. They encounter demons, spirits, Dracula himself and even a drunk, heavily armed seven-foot-tall teddy bear. All the while, the ultimate war draws them into its horror. Caught between Heaven and Hell, between God and the Devil, the Winchester brothers must battle for the future of humankind.",https://image.tmdb.org/t/p/w500/uswpAvIhUX98ybJEJYJp6EUe3d6.jpg,2008-09-18,22,8.1
-1622-5,1622,Supernatural,5,Season 5,"Two brothers and one fallen angel - against all the might of Satan and his army! As the Apocalypse grows closer, threatening to turn Earth into a battlefield soaked with human blood, Sam, Dean and Castiel struggle against daunting odds. New foes arise, including the Four Horsemen of the Apocalypse. Old friends depart, consumed by the fearsome wrath of Hell. Through it all, the Winchesters are targeted by demons and angels alike, who warn that each brother has a special and terrible role to play in the coming devastation. Season Five follows Sam and Dean on their most terrifying journey yet, one that may lead them to the only ally strong enough to defeat the Devil: God.",https://image.tmdb.org/t/p/w500/5BhXiXHjAq2LS7VyyiAA6egpZb8.jpg,2009-09-10,22,8.1
-1622-6,1622,Supernatural,6,Season 6," The prize: ending the Apocalypse. The price: Sam's life. Season 5's horrific finale left Dean alone, as Sam descended into Hell. Now a different man, Dean vows to stop hunting and devote himself to building a family with Lisa and her son Ben. Then, mysteriously, Sam reappears, drawing Dean back into the old life. But Sam's a different man too. He's returned without his soul. How the Winchesters confront this greatest challenge yet to their powerful bond is the troubled heart - and soul - of the profound and thrilling 22-Episode Season 6. As the brothers struggle to reunite, they must also battle deadly supernatural forces. Demons. Angels. Vampires. Shapeshifters. And a terrifying new foe called the Mother of All.",https://image.tmdb.org/t/p/w500/hGInmwwUlG3yvrvSH9CYcL6Ba1j.jpg,2010-09-24,22,7.8
-1622-7,1622,Supernatural,7,Season 7," In Season 7, Sam and Dean fight demons. Real demons, like Lucifer, who tortures Sam with visions of Hell. Private demons, as the brothers face a traumatic personal loss when Bobby is cut down by alien forces. And as Sam and Dean travel the back roads of America, hunting monsters who wreak havoc on the innocent, a new and more terrible foe hunts them: Leviathans, freed from Purgatory and immune to the brothers' arsenal of weapons and cunning. With Bobby gone, all Sam and Dean can rely on is each other. But will that be enough?",https://image.tmdb.org/t/p/w500/qiuf2qxR2Zd5sInYytZzSIXbUuL.jpg,2011-09-23,23,7.8
-1622-8,1622,Supernatural,8,Season 8,"After a year apart, Sam and Dean are reunited in the Eighth Season premiere. After escaping from Purgatory with the help of a vampire named Benny, Dean heads straight for Sam, but the reunion isn't exactly everything he imagined it would be. Although Sam drops everything to join his brother, leaving the life he had grown accustomed to enjoy turns out to be harder than he imagined. In the meantime, Benny’s help turns out to be more than what Dean bargained for. As the brothers struggle with their unexpected reunion, they make a shocking discovery that could lead them on a deeply personal mission to settle old scores. If only they could agree – is this a “family business” or isn’t it?",https://image.tmdb.org/t/p/w500/pmzX28gvLj52HtN5qeyb1Qw4q5l.jpg,2012-10-03,23,7.7
-1622-9,1622,Supernatural,9,Season 9," After defeating the Leviathan, Sam and Dean set off on an epic quest to seal the Gates of Hell last season. Facing a series of trials, the Winchesters soon found themselves in the middle of an age-old power struggle between the King of Hell and legions of warrior angels. But with the angels cast out of heaven and walking the earth, things just got very unpredictable.",https://image.tmdb.org/t/p/w500/gzxekP92imqSSq6FhagISMTr3dg.jpg,2013-10-08,23,7.6
-1622-10,1622,Supernatural,10,Season 10,"Season 10 begins with Sam’s frantic search for his missing brother, who is gone without a trace. The road to recovering the wayward Dean takes Sam down dark paths, with consequences that will shake the boys to their core. Meanwhile, Castiel has to pick up the pieces in the aftermath of Metatron’s campaign. With his grace failing and rogue angels still on the loose, Cas will face the ticking clock of his own mortality as all-new threats emerge to once again push all of our heroes to their limits.",https://image.tmdb.org/t/p/w500/y9Q90gjBX820NZw59O8HWlkZOek.jpg,2014-10-07,23,7.4
-1622-11,1622,Supernatural,11,Season 11,"Following the release of the Darkness, this season follows the Winchesters and their allies as they find themselves fighting the most powerful supernatural entity they've ever faced.",https://image.tmdb.org/t/p/w500/2RlcVP4LsRzr1g8oIU3hNq0BEwm.jpg,2015-10-07,23,7.7
-1622-12,1622,Supernatural,12,Season 12,"In the show's eleventh season, the Winchesters found themselves battling an apocalyptic force: the Darkness. Now, rallying help from their allies - both human and supernatural - Sam and Dean are about to go toe-to-toe with the most destructive enemy they've ever seen. The question is, will they win? And at what price?",https://image.tmdb.org/t/p/w500/gkNzVg2k8dF6mXsMnjhaMX1NpUy.jpg,2016-10-13,23,7.6
-1622-13,1622,Supernatural,13,Season 13,"Season 13 begins exactly where we left off, with Sam and Dean left to pick up the pieces after the loss of their mother, the demise of Crowley and the heartbreaking death of Castiel. The birth of Jack leaves the Winchester brothers with differing opinions on how to deal with a Nephilim. After being dragged into the breach, Mary must learn to survive Lucifer and an apocalyptic world.",https://image.tmdb.org/t/p/w500/xBJ7Ts2nDUbUWu4Ef9v086dbBrQ.jpg,2017-10-12,23,7.7
-1622-14,1622,Supernatural,14,Season 14,"The season follows Sam and Dean who, along with Jack and Castiel, try to take down the archangel Michael from another world, and learn something bigger is at hand.",https://image.tmdb.org/t/p/w500/bbzLtfh7VwfoaeQkkNJ2EMv6lKS.jpg,2018-10-11,20,7.3
-1622-15,1622,Supernatural,15,Season 15,The Winchester brothers' epic journey comes to a thrilling and terrifying close in Season 15.,https://image.tmdb.org/t/p/w500/j3kk9PK1Xp8G3r6nDxVLOL1rqLo.jpg,2019-10-10,20,7.5
 46825-0,46825,Rooster Teeth Animated Adventures,0,Specials,,https://image.tmdb.org/t/p/w500/y0foSIvySJVEoH1i0jqwxVrECym.jpg,2012-07-16,13,0.0
 46825-1,46825,Rooster Teeth Animated Adventures,1,2011,,https://image.tmdb.org/t/p/w500/6le7xhkBaGAX79Ne4If6Wf6shTG.jpg,2011-09-28,113,0.0
 46825-2,46825,Rooster Teeth Animated Adventures,2,2012,,https://image.tmdb.org/t/p/w500/pc5C3Ldpmh2XS4pLSE9JftSK6Qd.jpg,2012-01-04,52,0.0
@@ -421,81 +462,13 @@ The twentieth Race premiered on Sunday, February 19, 2012. It aired on CBS in th
 46825-11,46825,Rooster Teeth Animated Adventures,11,2021,,https://image.tmdb.org/t/p/w500/2wSZC5XkME1nn87n0huTEDfiE8m.jpg,2021-01-04,52,0.0
 46825-12,46825,Rooster Teeth Animated Adventures,12,2022,,https://image.tmdb.org/t/p/w500/lmkBBpjeyKDBrJokWy0iSRQFqsu.jpg,2022-01-02,52,0.0
 46825-13,46825,Rooster Teeth Animated Adventures,13,2023,,https://image.tmdb.org/t/p/w500/4QZ3ZLS77wdiBIv6Ar6ToVzytnV.jpg,2023-01-01,12,0.0
-17887-1,17887,7de Laan,1,Season 1,,,2000-04-04,104,0.0
-17887-2,17887,7de Laan,2,Season 2,,,2002-01-24,208,0.0
-17887-3,17887,7de Laan,3,Season 3,,,2003-01-20,260,0.0
-17887-4,17887,7de Laan,4,Season 4,,,2004-01-19,260,0.0
-17887-5,17887,7de Laan,5,Season 5,,,2005-01-17,260,0.0
-17887-6,17887,7de Laan,6,Season 6,,,2006-01-16,260,0.0
-17887-7,17887,7de Laan,7,Season 7,,,2007-01-15,260,0.0
-17887-8,17887,7de Laan,8,Season 8,,,2008-01-14,260,0.0
-17887-9,17887,7de Laan,9,Season 9,,,2009-01-12,260,0.0
-17887-10,17887,7de Laan,10,Season 10,,,2010-01-11,260,0.0
-17887-11,17887,7de Laan,11,Season 11,,,2011-01-10,260,0.0
-17887-12,17887,7de Laan,12,Season 12,,,2012-01-09,260,0.0
-17887-13,17887,7de Laan,13,Season 13,,,2013-01-07,260,0.0
-17887-14,17887,7de Laan,14,Season 14,,,2014-01-06,260,0.0
-17887-15,17887,7de Laan,15,Season 15,,,2015-01-05,260,0.0
-17887-16,17887,7de Laan,16,Season 16,,,2016-01-04,260,0.0
-17887-17,17887,7de Laan,17,Season 17,,,2017-01-02,260,0.0
-17887-18,17887,7de Laan,18,Season 18,,,2018-01-01,260,0.0
-17887-19,17887,7de Laan,19,Season 19,,,2018-12-31,260,0.0
-17887-20,17887,7de Laan,20,Season 20,,,2019-12-31,260,0.0
-17887-21,17887,7de Laan,21,Season 21,,,2020-01-01,260,0.0
-17887-22,17887,7de Laan,22,Season 22,,,2020-12-30,260,0.0
-17887-23,17887,7de Laan,23,Season 23,,,2021-12-29,260,0.0
-17887-24,17887,7de Laan,24,Season 24,,,2022-12-28,260,0.0
-12415-1,12415,Egoli: Place of Gold,1,Season 1,,,1992-04-06,260,0.0
-12415-2,12415,Egoli: Place of Gold,2,Season 2,,,1993-04-05,260,0.0
-12415-3,12415,Egoli: Place of Gold,3,Season 3,,,1994-04-04,260,0.0
-12415-4,12415,Egoli: Place of Gold,4,Season 4,,,1995-04-03,260,0.0
-12415-5,12415,Egoli: Place of Gold,5,Season 5,,,1996-04-01,260,0.0
-12415-6,12415,Egoli: Place of Gold,6,Season 6,,,1997-03-31,223,0.0
-12415-7,12415,Egoli: Place of Gold,7,Season 7,,,1998-02-05,337,0.0
-12415-8,12415,Egoli: Place of Gold,8,Season 8,,,1999-05-24,260,0.0
-12415-9,12415,Egoli: Place of Gold,9,Season 9,,,2000-05-22,186,0.0
-12415-10,12415,Egoli: Place of Gold,10,Season 10,,,2001-02-06,254,0.0
-12415-11,12415,Egoli: Place of Gold,11,Season 11,,,2002-01-28,260,0.0
-12415-12,12415,Egoli: Place of Gold,12,Season 12,,,2003-01-27,260,10.0
-12415-13,12415,Egoli: Place of Gold,13,Season 13,,,2004-01-26,260,0.0
-12415-14,12415,Egoli: Place of Gold,14,Season 14,,,2005-01-24,420,0.0
-12415-15,12415,Egoli: Place of Gold,15,Season 15,,,2006-09-04,93,0.0
-12415-16,12415,Egoli: Place of Gold,16,Season 16,,,2007-01-11,267,0.0
-12415-17,12415,Egoli: Place of Gold,17,Season 17,,,2008-01-21,309,0.0
-12415-18,12415,Egoli: Place of Gold,18,Season 18,,,2009-03-30,260,0.0
-1399-0,1399,Game of Thrones,0,Specials,,https://image.tmdb.org/t/p/w500/aos6lC1JGYt6ZRL85lgstNsfSeY.jpg,2010-12-05,286,0.0
-1399-1,1399,Game of Thrones,1,Season 1,"Trouble is brewing in the Seven Kingdoms of Westeros. For the driven inhabitants of this visionary world, control of Westeros' Iron Throne holds the lure of great power. But in a land where the seasons can last a lifetime, winter is coming...and beyond the Great Wall that protects them, an ancient evil has returned. In Season One, the story centers on three primary areas: the Stark and the Lannister families, whose designs on controlling the throne threaten a tenuous peace; the dragon princess Daenerys, heir to the former dynasty, who waits just over the Narrow Sea with her malevolent brother Viserys; and the Great Wall--a massive barrier of ice where a forgotten danger is stirring.",https://image.tmdb.org/t/p/w500/wgfKiqzuMrFIkU1M68DDDY8kGC1.jpg,2011-04-17,10,8.4
-1399-2,1399,Game of Thrones,2,Season 2,"The cold winds of winter are rising in Westeros...war is coming...and five kings continue their savage quest for control of the all-powerful Iron Throne. With winter fast approaching, the coveted Iron Throne is occupied by the cruel Joffrey, counseled by his conniving mother Cersei and uncle Tyrion. But the Lannister hold on the Throne is under assault on many fronts. Meanwhile, a new leader is rising among the wildings outside the Great Wall, adding new perils for Jon Snow and the order of the Night's Watch.",https://image.tmdb.org/t/p/w500/9xfNkPwDOqyeUvfNhs1XlWA0esP.jpg,2012-04-01,10,8.3
-1399-3,1399,Game of Thrones,3,Season 3,"Duplicity and treachery...nobility and honor...conquest and triumph...and, of course, dragons. In Season 3, family and loyalty are the overarching themes as many critical storylines from the first two seasons come to a brutal head. Meanwhile, the Lannisters maintain their hold on King's Landing, though stirrings in the North threaten to alter the balance of power; Robb Stark, King of the North, faces a major calamity as he tries to build on his victories; a massive army of wildlings led by Mance Rayder march for the Wall; and Daenerys Targaryen--reunited with her dragons--attempts to raise an army in her quest for the Iron Throne.",https://image.tmdb.org/t/p/w500/5MkZjRnCKiIGn3bkXrXfndEzqOU.jpg,2013-03-31,10,8.3
-1399-4,1399,Game of Thrones,4,Season 4,"The War of the Five Kings is drawing to a close, but new intrigues and plots are in motion, and the surviving factions must contend with enemies not only outside their ranks, but within.",https://image.tmdb.org/t/p/w500/jXIMScXE4J4EVHUba1JgxZnWbo4.jpg,2014-04-06,10,8.5
-1399-5,1399,Game of Thrones,5,Season 5,"The War of the Five Kings, once thought to be drawing to a close, is instead entering a new and more chaotic phase. Westeros is on the brink of collapse, and many are seizing what they can while the realm implodes, like a corpse making a feast for crows.",https://image.tmdb.org/t/p/w500/7Q1Hy1AHxAzA2lsmzEMBvuWTX0x.jpg,2015-04-12,10,8.2
-1399-6,1399,Game of Thrones,6,Season 6,"Following the shocking developments at the conclusion of season five, survivors from all parts of Westeros and Essos regroup to press forward, inexorably, towards their uncertain individual fates. Familiar faces will forge new alliances to bolster their strategic chances at survival, while new characters will emerge to challenge the balance of power in the east, west, north and south.",https://image.tmdb.org/t/p/w500/p1udLh0gfqyZFmXBGa393gk8go5.jpg,2016-04-24,10,8.3
-1399-7,1399,Game of Thrones,7,Season 7,The long winter is here. And with it comes a convergence of armies and attitudes that have been brewing for years.,https://image.tmdb.org/t/p/w500/oX51n32QyHeFP5kErksemJsJljL.jpg,2017-07-16,7,8.2
-1399-8,1399,Game of Thrones,8,Season 8,"The Great War has come, the Wall has fallen and the Night King's army of the dead marches towards Westeros. The end is here, but who will take the Iron Throne?",https://image.tmdb.org/t/p/w500/259Q5FuaD3TNB7DGauTaJVRC8XV.jpg,2019-04-14,6,6.2
-1434-0,1434,Family Guy,0,Specials,,https://image.tmdb.org/t/p/w500/ngPUB8NsOCmjSjSImVuvTIKVm1.jpg,2006-05-21,25,0.0
-1434-1,1434,Family Guy,1,Season 1,,https://image.tmdb.org/t/p/w500/5E4yhF7TVrr1l8aq7GM6IdLTsrP.jpg,1999-01-31,7,7.1
-1434-2,1434,Family Guy,2,Season 2,,https://image.tmdb.org/t/p/w500/rskVG2RP0Uzamv9zzslYE7TYPdE.jpg,1999-09-23,21,7.2
-1434-3,1434,Family Guy,3,Season 3,,https://image.tmdb.org/t/p/w500/5sK70w0MLNVa7OeJeOqRmSZUUmr.jpg,2001-07-11,22,6.9
-1434-4,1434,Family Guy,4,Season 4,,https://image.tmdb.org/t/p/w500/h6Qv5oONB3yN1MOqru7v0vAGJ6J.jpg,2005-05-01,30,6.8
-1434-5,1434,Family Guy,5,Season 5,,https://image.tmdb.org/t/p/w500/kyfo6OUtCRYCaxFmqQ3kGORCexq.jpg,2006-09-10,18,6.8
-1434-6,1434,Family Guy,6,Season 6,,https://image.tmdb.org/t/p/w500/pvK7pZUyOLcH9zWdydXD01UUTf0.jpg,2007-09-23,12,7.0
-1434-7,1434,Family Guy,7,Season 7,,https://image.tmdb.org/t/p/w500/5GUHJgPxDwh0njN3ytEIBENhmOJ.jpg,2008-09-28,16,6.7
-1434-8,1434,Family Guy,8,Season 8,,https://image.tmdb.org/t/p/w500/kwPaT3INWe36c5B3t7FJFWelm8y.jpg,2009-09-27,20,6.6
-1434-9,1434,Family Guy,9,Season 9,,https://image.tmdb.org/t/p/w500/gi9TE5c1bVTHEN4BmnICX23mlFO.jpg,2010-09-26,18,6.7
-1434-10,1434,Family Guy,10,Season 10,,https://image.tmdb.org/t/p/w500/hD0uA1xMNHsPDovAmgjDowjbctS.jpg,2011-09-25,23,6.9
-1434-11,1434,Family Guy,11,Season 11,,https://image.tmdb.org/t/p/w500/6reQqzBqJ7ObrNF2EfBDAvHRhoR.jpg,2012-09-30,22,6.7
-1434-12,1434,Family Guy,12,Season 12,,https://image.tmdb.org/t/p/w500/mPsPEP0xtDjWez5opDBTqAdxy51.jpg,2013-09-29,21,6.5
-1434-13,1434,Family Guy,13,Season 13,,https://image.tmdb.org/t/p/w500/yxjMLQzz0K5kPmO6k0agSsSnQm4.jpg,2014-09-28,18,6.6
-1434-14,1434,Family Guy,14,Season 14,,https://image.tmdb.org/t/p/w500/qVh5RrPkoexfvrZb2doRIxCnXbR.jpg,2015-09-27,20,6.9
-1434-15,1434,Family Guy,15,Season 15,,https://image.tmdb.org/t/p/w500/84lv0Q5XgrvWlEsrNxMlZS5w1p2.jpg,2016-09-25,20,6.6
-1434-16,1434,Family Guy,16,Season 16,,https://image.tmdb.org/t/p/w500/hhbAUydzQgchqLJpcJIJYwyPJm2.jpg,2017-10-01,20,6.6
-1434-17,1434,Family Guy,17,Season 17,,https://image.tmdb.org/t/p/w500/nS9U4AnJCPlmdM4L0h2TI4lpFOI.jpg,2018-09-30,20,6.2
-1434-18,1434,Family Guy,18,Season 18,,https://image.tmdb.org/t/p/w500/egxsrJV7cPlrGat4cq4OoX6TZkJ.jpg,2019-09-29,20,5.8
-1434-19,1434,Family Guy,19,Season 19,,https://image.tmdb.org/t/p/w500/ryTMELpfCvbfVPH2g8j8dyx9zLu.jpg,2020-09-27,20,6.1
-1434-20,1434,Family Guy,20,Season 20,,https://image.tmdb.org/t/p/w500/9RBeCo8QSaoJLmmuzlwzVH3Hi12.jpg,2021-09-26,20,5.9
-1434-21,1434,Family Guy,21,Season 21,,https://image.tmdb.org/t/p/w500/aLB7psB9N81n5GecHNOudXWW3AI.jpg,2022-09-25,20,6.9
-1434-22,1434,Family Guy,22,Season 22,,https://image.tmdb.org/t/p/w500/y0HUz4eUNUe3TeEd8fQWYazPaC7.jpg,2023-10-01,15,7.3
-1434-23,1434,Family Guy,23,Season 23,,https://image.tmdb.org/t/p/w500/8o8kiBkWFK3gVytHdyzEWUBXVfK.jpg,2025-02-16,18,7.0
+68921-1,68921,WWE 205 Live,1,Season 1,,https://image.tmdb.org/t/p/w500/r86oSpHkmbYLIwXsrM7J382jIOY.jpg,2016-11-29,5,0.0
+68921-2,68921,WWE 205 Live,2,Season 2,,https://image.tmdb.org/t/p/w500/rlOm8fhfelTfEiOwJzHYVt2vCkA.jpg,2017-01-03,52,0.0
+68921-3,68921,WWE 205 Live,3,Season 3,,https://image.tmdb.org/t/p/w500/agKDCzf6lNPi6sEYW606pwseBEU.jpg,2018-01-02,52,0.0
+68921-4,68921,WWE 205 Live,4,Season 4,,,2019-01-02,50,0.0
+68921-5,68921,WWE 205 Live,5,Season 5,,,2020-01-03,52,0.0
+68921-6,68921,WWE 205 Live,6,Season 6,2021 season of WWE 205 Live,,2021-01-01,53,0.0
+68921-7,68921,WWE 205 Live,7,Season 7,,,2022-01-07,6,0.0
 4614-0,4614,NCIS,0,Specials,,https://image.tmdb.org/t/p/w500/FlzeiA7DV0KQQ6FOExjTaHWBjs.jpg,,120,0.0
 4614-1,4614,NCIS,1,Season 1,,https://image.tmdb.org/t/p/w500/ruiOyO3M47kM4TSpsuwyxr1HnSR.jpg,2003-09-22,23,7.5
 4614-2,4614,NCIS,2,Season 2,,https://image.tmdb.org/t/p/w500/xuHMeqMludcvuc044p1KK8P0khI.jpg,2004-09-27,23,7.4
@@ -520,6 +493,43 @@ The twentieth Race premiered on Sunday, February 19, 2012. It aired on CBS in th
 4614-21,4614,NCIS,21,Season 21,,https://image.tmdb.org/t/p/w500/19ht0bW0v1BzQO3WO319R9EXSE6.jpg,2024-02-11,10,7.5
 4614-22,4614,NCIS,22,Season 22,,https://image.tmdb.org/t/p/w500/kKkPQbrZh9dINkz0zO0QnD5MDW1.jpg,2024-10-14,20,8.3
 4614-23,4614,NCIS,23,Season 23,,,,1,0.0
+456-0,456,The Simpsons,0,Specials,,https://image.tmdb.org/t/p/w500/oICoFoPJuEk5VJbEP2HYLEmEQi3.jpg,1987-04-17,82,0.0
+456-1,456,The Simpsons,1,Season 1,,https://image.tmdb.org/t/p/w500/t544zSFUNyvmyeP4sHotlcEX3zH.jpg,1989-12-17,13,7.1
+456-2,456,The Simpsons,2,Season 2,,https://image.tmdb.org/t/p/w500/bRyDlUQQafSoIT052jpjLBMe8TH.jpg,1990-10-11,22,7.5
+456-3,456,The Simpsons,3,Season 3,,https://image.tmdb.org/t/p/w500/9ghmIhWJJuTx3UHyfVVBXQoUGvI.jpg,1991-09-19,24,7.5
+456-4,456,The Simpsons,4,Season 4,,https://image.tmdb.org/t/p/w500/voqu5a4drV1CXMjjZ0Mkw35n26l.jpg,1992-09-24,22,7.7
+456-5,456,The Simpsons,5,Season 5,,https://image.tmdb.org/t/p/w500/9O7tIcS2KZk1ukMq3aOvoj8KIJZ.jpg,1993-09-30,22,7.7
+456-6,456,The Simpsons,6,Season 6,,https://image.tmdb.org/t/p/w500/qD20BnTxIdF1rcnX4BARmFshzKA.jpg,1994-09-04,25,7.6
+456-7,456,The Simpsons,7,Season 7,,https://image.tmdb.org/t/p/w500/blCeZS6BmN3wwmF40fuCZSeFwbB.jpg,1995-09-17,25,7.6
+456-8,456,The Simpsons,8,Season 8,,https://image.tmdb.org/t/p/w500/xLebCxRHSwXBW39a4OLmMSGChLs.jpg,1996-10-27,25,7.6
+456-9,456,The Simpsons,9,Season 9,,https://image.tmdb.org/t/p/w500/6PTYyLD8bSiNZf1PFdCQ9JyiIFW.jpg,1997-09-21,25,7.1
+456-10,456,The Simpsons,10,Season 10,,https://image.tmdb.org/t/p/w500/A77xKuxA13aXA1mQd6YLAaTIErK.jpg,1998-08-23,23,6.9
+456-11,456,The Simpsons,11,Season 11,,https://image.tmdb.org/t/p/w500/4Rq5t85B4bt8TYvmhCVhDmk7qMN.jpg,1999-09-26,22,6.6
+456-12,456,The Simpsons,12,Season 12,,https://image.tmdb.org/t/p/w500/jfxiyjRLoQq9LavlFNRBgjuweg5.jpg,2000-11-01,21,6.7
+456-13,456,The Simpsons,13,Season 13,,https://image.tmdb.org/t/p/w500/xflc3aV1SbP2bGeZNuu4AG6cIqH.jpg,2001-11-06,22,6.4
+456-14,456,The Simpsons,14,Season 14,,https://image.tmdb.org/t/p/w500/9IowK57TpeO09D4B46jd4J3wjPO.jpg,2002-11-03,22,6.5
+456-15,456,The Simpsons,15,Season 15,,https://image.tmdb.org/t/p/w500/bmMwmEfwmziKzWP2jiU0GMw8yKd.jpg,2003-11-02,22,6.5
+456-16,456,The Simpsons,16,Season 16,,https://image.tmdb.org/t/p/w500/ifjiG1gHGRyYmNDWRb9Ul9VCfEn.jpg,2004-11-07,21,6.3
+456-17,456,The Simpsons,17,Season 17,,https://image.tmdb.org/t/p/w500/evIWfK3hKFIExETjv6L2YS9J8fw.jpg,2005-09-11,22,6.4
+456-18,456,The Simpsons,18,Season 18,,https://image.tmdb.org/t/p/w500/kwb8AZAHyhn96dzn17mtTV3l8dl.jpg,2006-09-10,22,6.2
+456-19,456,The Simpsons,19,Season 19,,https://image.tmdb.org/t/p/w500/nLKZJ1ozVvYFtaOynzkShE8wN4k.jpg,2007-09-23,20,6.3
+456-20,456,The Simpsons,20,Season 20,,https://image.tmdb.org/t/p/w500/2CUdLX4K8fMlcdVPHUbciTYt4ri.jpg,2008-09-28,21,6.4
+456-21,456,The Simpsons,21,Season 21,,https://image.tmdb.org/t/p/w500/fEykf9XN4Cn5tJ17pOD2PObdjoc.jpg,2009-09-27,23,6.2
+456-22,456,The Simpsons,22,Season 22,,https://image.tmdb.org/t/p/w500/xUZeYO9NPkmXCcuRrr8PgXzk2Qd.jpg,2010-09-26,22,6.4
+456-23,456,The Simpsons,23,Season 23,,https://image.tmdb.org/t/p/w500/wlQnKb3pHBxtMivCjcvM8TDpBbv.jpg,2011-09-25,22,6.3
+456-24,456,The Simpsons,24,Season 24,,https://image.tmdb.org/t/p/w500/qGPFl3X6ukZ6fBQRiLxueLWQh9y.jpg,2012-09-30,22,6.4
+456-25,456,The Simpsons,25,Season 25,,https://image.tmdb.org/t/p/w500/iwlh2yoia66MCaZEqybsLSt3OHa.jpg,2013-09-29,22,6.6
+456-26,456,The Simpsons,26,Season 26,,https://image.tmdb.org/t/p/w500/9bGpb3vWygBogXpQBnTodFWaQte.jpg,2014-09-28,22,6.5
+456-27,456,The Simpsons,27,Season 27,,https://image.tmdb.org/t/p/w500/aw26dkO0PnxD0EfYWXCMUQLFNbI.jpg,2015-09-27,22,6.4
+456-28,456,The Simpsons,28,Season 28,,https://image.tmdb.org/t/p/w500/j4GZ2oH5PEWEyZkwuZ41OYLb30W.jpg,2016-09-25,22,6.0
+456-29,456,The Simpsons,29,Season 29,,https://image.tmdb.org/t/p/w500/93JeevhHA93SpHZ5hxqJyOtB5Wf.jpg,2017-10-01,21,6.0
+456-30,456,The Simpsons,30,Season 30,,https://image.tmdb.org/t/p/w500/l18xQsO27KFJwsj35JaAsG95dN7.jpg,2018-09-30,23,5.8
+456-31,456,The Simpsons,31,Season 31,,https://image.tmdb.org/t/p/w500/1y2zzQhnAuFpRNovNMHWlubOaxw.jpg,2019-09-29,22,5.7
+456-32,456,The Simpsons,32,Season 32,,https://image.tmdb.org/t/p/w500/ifvEta1mmPGLu3E6lFnPSJAyBhh.jpg,2020-09-27,22,5.9
+456-33,456,The Simpsons,33,Season 33,,https://image.tmdb.org/t/p/w500/sjg9DQMgZzUA0Uqfw7eL89gFXOr.jpg,2021-09-26,22,5.8
+456-34,456,The Simpsons,34,Season 34,,https://image.tmdb.org/t/p/w500/2C6Tuxep3eLeFB1vny8FIVXFIDz.jpg,2022-09-25,22,6.8
+456-35,456,The Simpsons,35,Season 35,,https://image.tmdb.org/t/p/w500/s7EtmSmdN6ENGwJFfzu9Bn9cgSW.jpg,2023-10-01,18,7.8
+456-36,456,The Simpsons,36,Season 36,,https://image.tmdb.org/t/p/w500/dl0S3pJSQUyBLPAOefMMujbtp4O.jpg,2024-09-29,18,6.6
 291-0,291,Coronation Street,0,Specials,,,,47,0.0
 291-1,291,Coronation Street,1,Season 1,1960,,1960-12-08,7,2.0
 291-2,291,Coronation Street,2,Season 2,,,1961-01-04,102,0.0
@@ -587,43 +597,79 @@ The twentieth Race premiered on Sunday, February 19, 2012. It aired on CBS in th
 291-64,291,Coronation Street,64,Season 64,,,2023-01-02,160,0.0
 291-65,291,Coronation Street,65,Season 65,,,2024-01-01,157,0.0
 291-66,291,Coronation Street,66,Season 66,,,2025-01-01,88,0.0
-456-0,456,The Simpsons,0,Specials,,https://image.tmdb.org/t/p/w500/oICoFoPJuEk5VJbEP2HYLEmEQi3.jpg,1987-04-17,82,0.0
-456-1,456,The Simpsons,1,Season 1,,https://image.tmdb.org/t/p/w500/t544zSFUNyvmyeP4sHotlcEX3zH.jpg,1989-12-17,13,7.1
-456-2,456,The Simpsons,2,Season 2,,https://image.tmdb.org/t/p/w500/bRyDlUQQafSoIT052jpjLBMe8TH.jpg,1990-10-11,22,7.5
-456-3,456,The Simpsons,3,Season 3,,https://image.tmdb.org/t/p/w500/9ghmIhWJJuTx3UHyfVVBXQoUGvI.jpg,1991-09-19,24,7.5
-456-4,456,The Simpsons,4,Season 4,,https://image.tmdb.org/t/p/w500/voqu5a4drV1CXMjjZ0Mkw35n26l.jpg,1992-09-24,22,7.7
-456-5,456,The Simpsons,5,Season 5,,https://image.tmdb.org/t/p/w500/9O7tIcS2KZk1ukMq3aOvoj8KIJZ.jpg,1993-09-30,22,7.7
-456-6,456,The Simpsons,6,Season 6,,https://image.tmdb.org/t/p/w500/qD20BnTxIdF1rcnX4BARmFshzKA.jpg,1994-09-04,25,7.6
-456-7,456,The Simpsons,7,Season 7,,https://image.tmdb.org/t/p/w500/blCeZS6BmN3wwmF40fuCZSeFwbB.jpg,1995-09-17,25,7.6
-456-8,456,The Simpsons,8,Season 8,,https://image.tmdb.org/t/p/w500/xLebCxRHSwXBW39a4OLmMSGChLs.jpg,1996-10-27,25,7.6
-456-9,456,The Simpsons,9,Season 9,,https://image.tmdb.org/t/p/w500/6PTYyLD8bSiNZf1PFdCQ9JyiIFW.jpg,1997-09-21,25,7.1
-456-10,456,The Simpsons,10,Season 10,,https://image.tmdb.org/t/p/w500/A77xKuxA13aXA1mQd6YLAaTIErK.jpg,1998-08-23,23,6.9
-456-11,456,The Simpsons,11,Season 11,,https://image.tmdb.org/t/p/w500/4Rq5t85B4bt8TYvmhCVhDmk7qMN.jpg,1999-09-26,22,6.6
-456-12,456,The Simpsons,12,Season 12,,https://image.tmdb.org/t/p/w500/jfxiyjRLoQq9LavlFNRBgjuweg5.jpg,2000-11-01,21,6.7
-456-13,456,The Simpsons,13,Season 13,,https://image.tmdb.org/t/p/w500/xflc3aV1SbP2bGeZNuu4AG6cIqH.jpg,2001-11-06,22,6.4
-456-14,456,The Simpsons,14,Season 14,,https://image.tmdb.org/t/p/w500/9IowK57TpeO09D4B46jd4J3wjPO.jpg,2002-11-03,22,6.5
-456-15,456,The Simpsons,15,Season 15,,https://image.tmdb.org/t/p/w500/bmMwmEfwmziKzWP2jiU0GMw8yKd.jpg,2003-11-02,22,6.5
-456-16,456,The Simpsons,16,Season 16,,https://image.tmdb.org/t/p/w500/ifjiG1gHGRyYmNDWRb9Ul9VCfEn.jpg,2004-11-07,21,6.3
-456-17,456,The Simpsons,17,Season 17,,https://image.tmdb.org/t/p/w500/evIWfK3hKFIExETjv6L2YS9J8fw.jpg,2005-09-11,22,6.4
-456-18,456,The Simpsons,18,Season 18,,https://image.tmdb.org/t/p/w500/kwb8AZAHyhn96dzn17mtTV3l8dl.jpg,2006-09-10,22,6.2
-456-19,456,The Simpsons,19,Season 19,,https://image.tmdb.org/t/p/w500/nLKZJ1ozVvYFtaOynzkShE8wN4k.jpg,2007-09-23,20,6.3
-456-20,456,The Simpsons,20,Season 20,,https://image.tmdb.org/t/p/w500/2CUdLX4K8fMlcdVPHUbciTYt4ri.jpg,2008-09-28,21,6.4
-456-21,456,The Simpsons,21,Season 21,,https://image.tmdb.org/t/p/w500/fEykf9XN4Cn5tJ17pOD2PObdjoc.jpg,2009-09-27,23,6.2
-456-22,456,The Simpsons,22,Season 22,,https://image.tmdb.org/t/p/w500/xUZeYO9NPkmXCcuRrr8PgXzk2Qd.jpg,2010-09-26,22,6.4
-456-23,456,The Simpsons,23,Season 23,,https://image.tmdb.org/t/p/w500/wlQnKb3pHBxtMivCjcvM8TDpBbv.jpg,2011-09-25,22,6.3
-456-24,456,The Simpsons,24,Season 24,,https://image.tmdb.org/t/p/w500/qGPFl3X6ukZ6fBQRiLxueLWQh9y.jpg,2012-09-30,22,6.4
-456-25,456,The Simpsons,25,Season 25,,https://image.tmdb.org/t/p/w500/iwlh2yoia66MCaZEqybsLSt3OHa.jpg,2013-09-29,22,6.6
-456-26,456,The Simpsons,26,Season 26,,https://image.tmdb.org/t/p/w500/9bGpb3vWygBogXpQBnTodFWaQte.jpg,2014-09-28,22,6.5
-456-27,456,The Simpsons,27,Season 27,,https://image.tmdb.org/t/p/w500/aw26dkO0PnxD0EfYWXCMUQLFNbI.jpg,2015-09-27,22,6.4
-456-28,456,The Simpsons,28,Season 28,,https://image.tmdb.org/t/p/w500/j4GZ2oH5PEWEyZkwuZ41OYLb30W.jpg,2016-09-25,22,6.0
-456-29,456,The Simpsons,29,Season 29,,https://image.tmdb.org/t/p/w500/93JeevhHA93SpHZ5hxqJyOtB5Wf.jpg,2017-10-01,21,6.0
-456-30,456,The Simpsons,30,Season 30,,https://image.tmdb.org/t/p/w500/l18xQsO27KFJwsj35JaAsG95dN7.jpg,2018-09-30,23,5.8
-456-31,456,The Simpsons,31,Season 31,,https://image.tmdb.org/t/p/w500/1y2zzQhnAuFpRNovNMHWlubOaxw.jpg,2019-09-29,22,5.7
-456-32,456,The Simpsons,32,Season 32,,https://image.tmdb.org/t/p/w500/ifvEta1mmPGLu3E6lFnPSJAyBhh.jpg,2020-09-27,22,5.9
-456-33,456,The Simpsons,33,Season 33,,https://image.tmdb.org/t/p/w500/sjg9DQMgZzUA0Uqfw7eL89gFXOr.jpg,2021-09-26,22,5.8
-456-34,456,The Simpsons,34,Season 34,,https://image.tmdb.org/t/p/w500/2C6Tuxep3eLeFB1vny8FIVXFIDz.jpg,2022-09-25,22,6.8
-456-35,456,The Simpsons,35,Season 35,,https://image.tmdb.org/t/p/w500/s7EtmSmdN6ENGwJFfzu9Bn9cgSW.jpg,2023-10-01,18,7.8
-456-36,456,The Simpsons,36,Season 36,,https://image.tmdb.org/t/p/w500/dl0S3pJSQUyBLPAOefMMujbtp4O.jpg,2024-09-29,18,6.6
+549-0,549,Law & Order,0,Specials,,https://image.tmdb.org/t/p/w500/vVUVEqs0KwplqHvv2GyCj2tpMSr.jpg,,7,0.0
+549-1,549,Law & Order,1,Season 1,,https://image.tmdb.org/t/p/w500/hGrkBU5p60zZj9bMByo9cegZfhl.jpg,1990-09-13,22,7.4
+549-2,549,Law & Order,2,Season 2,,https://image.tmdb.org/t/p/w500/nykyEGoMsVPnyrnoUL0g93YJPQZ.jpg,1991-09-16,22,7.4
+549-3,549,Law & Order,3,Season 3,,https://image.tmdb.org/t/p/w500/emKji2D1tLAJsFad84ENA4PufI5.jpg,1992-09-22,22,7.6
+549-4,549,Law & Order,4,Season 4,,https://image.tmdb.org/t/p/w500/fiSP98l9G7zjC0sBWwQ02Nmhpub.jpg,1993-09-15,22,7.6
+549-5,549,Law & Order,5,Season 5,,https://image.tmdb.org/t/p/w500/v8yqfobOp6jSDomgcOnotfsGM2i.jpg,1994-09-21,23,7.7
+549-6,549,Law & Order,6,Season 6,,https://image.tmdb.org/t/p/w500/5GaJYO3BXCUaHKXr9e7wC1IARwo.jpg,1995-09-20,23,7.7
+549-7,549,Law & Order,7,Season 7,,https://image.tmdb.org/t/p/w500/mEGBAiPkZcp4GgPv7CQmFhOEWrK.jpg,1996-09-18,23,7.5
+549-8,549,Law & Order,8,Season 8,,https://image.tmdb.org/t/p/w500/caieRmySO32CyyoPydhxGh7iN33.jpg,1997-09-24,24,7.5
+549-9,549,Law & Order,9,Season 9,,https://image.tmdb.org/t/p/w500/OuntFFHJqftivArTHjnFu1jSPM.jpg,1998-09-23,24,7.4
+549-10,549,Law & Order,10,Season 10,,https://image.tmdb.org/t/p/w500/fnYm6dcs1bmYvl3afnGxofsVgyw.jpg,1999-09-22,24,7.3
+549-11,549,Law & Order,11,Season 11,,https://image.tmdb.org/t/p/w500/u5MyTy53EWtnsMQewECGfNDywme.jpg,2000-10-17,24,7.3
+549-12,549,Law & Order,12,Season 12,,https://image.tmdb.org/t/p/w500/xAazzYBfFquWWqes5dozpQ0x4jW.jpg,2001-09-25,24,7.5
+549-13,549,Law & Order,13,Season 13,,https://image.tmdb.org/t/p/w500/2DzgIJzKVY9OfYxRMJjJLIZRhfi.jpg,2002-10-01,24,7.5
+549-14,549,Law & Order,14,Season 14,,https://image.tmdb.org/t/p/w500/26ByCQKroHuBs7ZgbkwHTsHvU77.jpg,2003-09-23,24,7.3
+549-15,549,Law & Order,15,Season 15,,https://image.tmdb.org/t/p/w500/z07aBZ5euhdhl0hyzWhwU1mGsrN.jpg,2004-09-21,24,7.1
+549-16,549,Law & Order,16,Season 16,,https://image.tmdb.org/t/p/w500/vo1hHZ1Bpt7XOYDqab7rqw5VTZL.jpg,2005-09-20,22,7.2
+549-17,549,Law & Order,17,Season 17,,https://image.tmdb.org/t/p/w500/zjSZrjqz9f3n6XoPYpaIgzwDQT3.jpg,2006-09-21,22,7.1
+549-18,549,Law & Order,18,Season 18,,https://image.tmdb.org/t/p/w500/q0nVi8xzk7DHpeFnQ678f8asYxC.jpg,2008-01-01,18,7.1
+549-19,549,Law & Order,19,Season 19,,https://image.tmdb.org/t/p/w500/fIIoj3EzsHcgF9Yd0ISWKinmLX8.jpg,2008-11-04,22,7.0
+549-20,549,Law & Order,20,Season 20,,https://image.tmdb.org/t/p/w500/yoISWagCsb16Hnoi16Ot1nur2FV.jpg,2009-09-24,23,7.0
+549-21,549,Law & Order,21,Season 21,,https://image.tmdb.org/t/p/w500/l7qr5Q5iJXeja9iDmdXagoUZ0Vm.jpg,2022-02-23,10,7.5
+549-22,549,Law & Order,22,Season 22,,https://image.tmdb.org/t/p/w500/77OPlbsvX3pzoFbyfpcE3GXMCod.jpg,2022-09-22,22,7.8
+549-23,549,Law & Order,23,Season 23,,https://image.tmdb.org/t/p/w500/m9zTQr4TYS98UFSiA1k0mMfECPe.jpg,2024-01-17,13,8.5
+549-24,549,Law & Order,24,Season 24,,https://image.tmdb.org/t/p/w500/6vFL8S6Cci8s7SHWXz60xOisGBC.jpg,2024-10-03,22,8.4
+82873-1,82873,The Kelly Clarkson Show,1,Season 1,,https://image.tmdb.org/t/p/w500/40xMyC9DRVMhGaU2JVn4Dl0xGfc.jpg,2019-09-09,87,0.0
+82873-2,82873,The Kelly Clarkson Show,2,Season 2,,https://image.tmdb.org/t/p/w500/rUrkO77RtQ0NC77yh0B8FCQpUZM.jpg,2020-09-21,45,9.2
+82873-3,82873,The Kelly Clarkson Show,3,Season 3,,https://image.tmdb.org/t/p/w500/1Qjgh4fGYpxgZXUTDIuoXhDRf0s.jpg,2021-09-13,185,8.5
+82873-4,82873,The Kelly Clarkson Show,4,Season 4,,https://image.tmdb.org/t/p/w500/1Qjgh4fGYpxgZXUTDIuoXhDRf0s.jpg,2022-09-12,162,0.0
+82873-5,82873,The Kelly Clarkson Show,5,Season 5,,https://image.tmdb.org/t/p/w500/rUrkO77RtQ0NC77yh0B8FCQpUZM.jpg,2023-10-16,180,0.0
+82873-6,82873,The Kelly Clarkson Show,6,Season 6,,,2024-09-23,172,0.0
+2912-0,2912,Jeopardy!,0,Specials,,,2009-11-19,9,0.0
+2912-1,2912,Jeopardy!,1,Season 1,,,1984-09-10,162,10.0
+2912-2,2912,Jeopardy!,2,Season 2,,,1985-09-09,194,0.0
+2912-3,2912,Jeopardy!,3,Season 3,,,1986-09-08,231,0.0
+2912-4,2912,Jeopardy!,4,Season 4,,,1987-09-07,220,0.0
+2912-5,2912,Jeopardy!,5,Season 5,,,1988-09-05,215,0.0
+2912-6,2912,Jeopardy!,6,Season 6,,,1989-09-04,201,0.0
+2912-7,2912,Jeopardy!,7,Season 7,,,1990-09-03,212,0.0
+2912-8,2912,Jeopardy!,8,Season 8,,,1991-09-02,194,0.0
+2912-9,2912,Jeopardy!,9,Season 9,,,1992-09-07,229,10.0
+2912-10,2912,Jeopardy!,10,Season 10,,,1993-09-06,230,0.0
+2912-11,2912,Jeopardy!,11,Season 11,,,1994-09-05,213,0.0
+2912-12,2912,Jeopardy!,12,Season 12,,,1995-09-04,229,0.0
+2912-13,2912,Jeopardy!,13,Season 13,,,1996-09-02,218,0.0
+2912-14,2912,Jeopardy!,14,Season 14,,,1997-09-01,230,0.0
+2912-15,2912,Jeopardy!,15,Season 15,,,1998-09-07,230,0.0
+2912-16,2912,Jeopardy!,16,Season 16,,,1999-09-06,230,0.0
+2912-17,2912,Jeopardy!,17,Season 17,,,2000-09-04,230,0.0
+2912-18,2912,Jeopardy!,18,Season 18,,,2001-09-03,229,0.0
+2912-19,2912,Jeopardy!,19,Season 19,,,2002-09-02,230,0.0
+2912-20,2912,Jeopardy!,20,Season 20,,,2003-09-08,230,0.0
+2912-21,2912,Jeopardy!,21,Season 21,,,2004-09-06,230,0.0
+2912-22,2912,Jeopardy!,22,Season 22,,,2005-09-12,230,0.0
+2912-23,2912,Jeopardy!,23,Season 23,,,2006-09-11,230,0.0
+2912-24,2912,Jeopardy!,24,Season 24,,https://image.tmdb.org/t/p/w500/4oQeIPhQdhGIfDv4XOpx6ovY7w5.jpg,2007-09-10,230,0.0
+2912-25,2912,Jeopardy!,25,Season 25,,https://image.tmdb.org/t/p/w500/l3DmfjuJl2ux1WXzsjtjljUZHoR.jpg,2008-09-08,230,0.0
+2912-26,2912,Jeopardy!,26,Season 26,,https://image.tmdb.org/t/p/w500/l3DmfjuJl2ux1WXzsjtjljUZHoR.jpg,2009-09-14,230,0.0
+2912-27,2912,Jeopardy!,27,Season 27,,https://image.tmdb.org/t/p/w500/l3DmfjuJl2ux1WXzsjtjljUZHoR.jpg,2010-09-13,230,0.0
+2912-28,2912,Jeopardy!,28,Season 28,,https://image.tmdb.org/t/p/w500/l3DmfjuJl2ux1WXzsjtjljUZHoR.jpg,2011-09-19,230,10.0
+2912-29,2912,Jeopardy!,29,Season 29,,https://image.tmdb.org/t/p/w500/l3DmfjuJl2ux1WXzsjtjljUZHoR.jpg,2012-09-17,230,0.0
+2912-30,2912,Jeopardy!,30,Season 30,,https://image.tmdb.org/t/p/w500/1H7g10a25KyjhcptPeDhRiezptU.jpg,2013-09-16,230,0.0
+2912-31,2912,Jeopardy!,31,Season 31,,https://image.tmdb.org/t/p/w500/w6IuAySlbGtxY1A2uUpkrVjnXMr.jpg,2014-09-15,230,0.0
+2912-32,2912,Jeopardy!,32,Season 32,,https://image.tmdb.org/t/p/w500/wJmIG2CIjGM4ChEFf6PcV762eIB.jpg,2015-09-14,230,0.0
+2912-33,2912,Jeopardy!,33,Season 33,,https://image.tmdb.org/t/p/w500/gznNccjuVhNEjYt8IUopLuBh6GV.jpg,2016-09-12,230,0.0
+2912-34,2912,Jeopardy!,34,Season 34,,https://image.tmdb.org/t/p/w500/gznNccjuVhNEjYt8IUopLuBh6GV.jpg,2017-09-11,230,0.0
+2912-35,2912,Jeopardy!,35,Season 35,,https://image.tmdb.org/t/p/w500/mK0a4VYtDpi3wfXOBbzlmZBErQ4.jpg,2018-09-10,230,0.0
+2912-36,2912,Jeopardy!,36,Season 36,,https://image.tmdb.org/t/p/w500/8CqBrGO5JLR7OMmBmLXzdLshkP5.jpg,2019-09-09,190,0.0
+2912-37,2912,Jeopardy!,37,Season 37,,https://image.tmdb.org/t/p/w500/aSIHw2DyO6QqW2k2Ak5J2JPojG.jpg,2020-09-14,230,0.0
+2912-38,2912,Jeopardy!,38,Season 38,,https://image.tmdb.org/t/p/w500/6Iwg6enhbWr54vVSmvD1ttPAQSj.jpg,2021-09-13,240,8.0
+2912-39,2912,Jeopardy!,39,Season 39,,https://image.tmdb.org/t/p/w500/67JYOtGQLYRldIgZMgHr0dyjlIn.jpg,2022-09-12,230,2.0
+2912-40,2912,Jeopardy!,40,Season 40,,https://image.tmdb.org/t/p/w500/7dJGVVaxTIwJOGkyYHGcXSIMeHg.jpg,2023-09-11,236,0.0
+2912-41,2912,Jeopardy!,41,Season 41,,,2024-09-09,230,0.0
 4496-0,4496,Meet the Press,0,Specials,,,2015-09-28,61,0.0
 4496-1,4496,Meet the Press,1,Season 1,,,1947-11-06,7,4.5
 4496-2,4496,Meet the Press,2,Season 2,,,1948-01-01,53,0.0
@@ -704,66 +750,53 @@ The twentieth Race premiered on Sunday, February 19, 2012. It aired on CBS in th
 4496-77,4496,Meet the Press,77,Season 77,,,2022-12-31,2,0.0
 4496-78,4496,Meet the Press,78,Season 78,,,2024-01-07,14,0.0
 4496-79,4496,Meet the Press,79,Season 79,,,2025-01-05,29,0.0
-72879-0,72879,Tomorrow Is Ours,0,Specials,,https://image.tmdb.org/t/p/w500/sG10mLNqedPw5nhmnXSje3ndY7H.jpg,2019-06-10,2,0.0
-72879-1,72879,Tomorrow Is Ours,1,Season 1,,https://image.tmdb.org/t/p/w500/vVIBtSfmLFSVvhtpzSfE0pbi0lQ.jpg,2017-07-17,2005,8.9
-82873-1,82873,The Kelly Clarkson Show,1,Season 1,,https://image.tmdb.org/t/p/w500/40xMyC9DRVMhGaU2JVn4Dl0xGfc.jpg,2019-09-09,87,0.0
-82873-2,82873,The Kelly Clarkson Show,2,Season 2,,https://image.tmdb.org/t/p/w500/rUrkO77RtQ0NC77yh0B8FCQpUZM.jpg,2020-09-21,45,9.2
-82873-3,82873,The Kelly Clarkson Show,3,Season 3,,https://image.tmdb.org/t/p/w500/1Qjgh4fGYpxgZXUTDIuoXhDRf0s.jpg,2021-09-13,185,8.5
-82873-4,82873,The Kelly Clarkson Show,4,Season 4,,https://image.tmdb.org/t/p/w500/1Qjgh4fGYpxgZXUTDIuoXhDRf0s.jpg,2022-09-12,162,0.0
-82873-5,82873,The Kelly Clarkson Show,5,Season 5,,https://image.tmdb.org/t/p/w500/rUrkO77RtQ0NC77yh0B8FCQpUZM.jpg,2023-10-16,180,0.0
-82873-6,82873,The Kelly Clarkson Show,6,Season 6,,,2024-09-23,172,0.0
-34860-0,34860,Ninja Boy Rantaro,0,Specials,,,,18,0.0
-34860-1,34860,Ninja Boy Rantaro,1,Season 1,,https://image.tmdb.org/t/p/w500/k5CuBy00DQCuAg5pPWtyQWOcy3P.jpg,1993-04-10,91,0.0
-34860-2,34860,Ninja Boy Rantaro,2,Season 2,,,,120,0.0
-34860-3,34860,Ninja Boy Rantaro,3,Season 3,,,,81,0.0
-34860-4,34860,Ninja Boy Rantaro,4,Season 4,,,2003-04-07,130,0.0
-34860-5,34860,Ninja Boy Rantaro,5,Season 5,,,2003-10-15,130,0.0
-34860-6,34860,Ninja Boy Rantaro,6,Season 6,,,2004-04-19,131,0.0
-34860-7,34860,Ninja Boy Rantaro,7,Season 7,,,,1,0.0
-34860-8,34860,Ninja Boy Rantaro,8,Season 8,,,,80,0.0
-34860-9,34860,Ninja Boy Rantaro,9,Season 9,,,,26,0.0
-34860-10,34860,Ninja Boy Rantaro,10,Season 10,,,,15,0.0
-34860-11,34860,Ninja Boy Rantaro,11,Season 11,,,,5,0.0
-34860-12,34860,Ninja Boy Rantaro,12,Season 12,,,,78,0.0
-34860-13,34860,Ninja Boy Rantaro,13,Season 13,,,,0,0.0
-34860-14,34860,Ninja Boy Rantaro,14,Season 14,,,,16,0.0
-34860-15,34860,Ninja Boy Rantaro,15,Season 15,,,,48,0.0
-34860-16,34860,Ninja Boy Rantaro,16,Season 16,,,2008-01-01,100,0.0
-34860-17,34860,Ninja Boy Rantaro,17,Season 17,,,,1,0.0
-34860-18,34860,Ninja Boy Rantaro,18,Season 18,,,,91,0.0
-34860-19,34860,Ninja Boy Rantaro,19,Season 19,,,,90,0.0
-34860-20,34860,Ninja Boy Rantaro,20,Season 20,,,,90,0.0
-34860-21,34860,Ninja Boy Rantaro,21,Season 21,,,,75,0.0
-34860-22,34860,Ninja Boy Rantaro,22,Season 22,,,,75,0.0
-34860-23,34860,Ninja Boy Rantaro,23,Season 23,,,,70,0.0
-34860-24,34860,Ninja Boy Rantaro,24,Season 24,,,,70,0.0
-34860-25,34860,Ninja Boy Rantaro,25,Season 25,,,,64,0.0
-34860-26,34860,Ninja Boy Rantaro,26,Season 26,,,,76,0.0
-34860-27,34860,Ninja Boy Rantaro,27,Season 27,,,,76,0.0
-549-0,549,Law & Order,0,Specials,,https://image.tmdb.org/t/p/w500/vVUVEqs0KwplqHvv2GyCj2tpMSr.jpg,,7,0.0
-549-1,549,Law & Order,1,Season 1,,https://image.tmdb.org/t/p/w500/hGrkBU5p60zZj9bMByo9cegZfhl.jpg,1990-09-13,22,7.4
-549-2,549,Law & Order,2,Season 2,,https://image.tmdb.org/t/p/w500/nykyEGoMsVPnyrnoUL0g93YJPQZ.jpg,1991-09-16,22,7.4
-549-3,549,Law & Order,3,Season 3,,https://image.tmdb.org/t/p/w500/emKji2D1tLAJsFad84ENA4PufI5.jpg,1992-09-22,22,7.6
-549-4,549,Law & Order,4,Season 4,,https://image.tmdb.org/t/p/w500/fiSP98l9G7zjC0sBWwQ02Nmhpub.jpg,1993-09-15,22,7.6
-549-5,549,Law & Order,5,Season 5,,https://image.tmdb.org/t/p/w500/v8yqfobOp6jSDomgcOnotfsGM2i.jpg,1994-09-21,23,7.7
-549-6,549,Law & Order,6,Season 6,,https://image.tmdb.org/t/p/w500/5GaJYO3BXCUaHKXr9e7wC1IARwo.jpg,1995-09-20,23,7.7
-549-7,549,Law & Order,7,Season 7,,https://image.tmdb.org/t/p/w500/mEGBAiPkZcp4GgPv7CQmFhOEWrK.jpg,1996-09-18,23,7.5
-549-8,549,Law & Order,8,Season 8,,https://image.tmdb.org/t/p/w500/caieRmySO32CyyoPydhxGh7iN33.jpg,1997-09-24,24,7.5
-549-9,549,Law & Order,9,Season 9,,https://image.tmdb.org/t/p/w500/OuntFFHJqftivArTHjnFu1jSPM.jpg,1998-09-23,24,7.4
-549-10,549,Law & Order,10,Season 10,,https://image.tmdb.org/t/p/w500/fnYm6dcs1bmYvl3afnGxofsVgyw.jpg,1999-09-22,24,7.3
-549-11,549,Law & Order,11,Season 11,,https://image.tmdb.org/t/p/w500/u5MyTy53EWtnsMQewECGfNDywme.jpg,2000-10-17,24,7.3
-549-12,549,Law & Order,12,Season 12,,https://image.tmdb.org/t/p/w500/xAazzYBfFquWWqes5dozpQ0x4jW.jpg,2001-09-25,24,7.5
-549-13,549,Law & Order,13,Season 13,,https://image.tmdb.org/t/p/w500/2DzgIJzKVY9OfYxRMJjJLIZRhfi.jpg,2002-10-01,24,7.5
-549-14,549,Law & Order,14,Season 14,,https://image.tmdb.org/t/p/w500/26ByCQKroHuBs7ZgbkwHTsHvU77.jpg,2003-09-23,24,7.3
-549-15,549,Law & Order,15,Season 15,,https://image.tmdb.org/t/p/w500/z07aBZ5euhdhl0hyzWhwU1mGsrN.jpg,2004-09-21,24,7.1
-549-16,549,Law & Order,16,Season 16,,https://image.tmdb.org/t/p/w500/vo1hHZ1Bpt7XOYDqab7rqw5VTZL.jpg,2005-09-20,22,7.2
-549-17,549,Law & Order,17,Season 17,,https://image.tmdb.org/t/p/w500/zjSZrjqz9f3n6XoPYpaIgzwDQT3.jpg,2006-09-21,22,7.1
-549-18,549,Law & Order,18,Season 18,,https://image.tmdb.org/t/p/w500/q0nVi8xzk7DHpeFnQ678f8asYxC.jpg,2008-01-01,18,7.1
-549-19,549,Law & Order,19,Season 19,,https://image.tmdb.org/t/p/w500/fIIoj3EzsHcgF9Yd0ISWKinmLX8.jpg,2008-11-04,22,7.0
-549-20,549,Law & Order,20,Season 20,,https://image.tmdb.org/t/p/w500/yoISWagCsb16Hnoi16Ot1nur2FV.jpg,2009-09-24,23,7.0
-549-21,549,Law & Order,21,Season 21,,https://image.tmdb.org/t/p/w500/l7qr5Q5iJXeja9iDmdXagoUZ0Vm.jpg,2022-02-23,10,7.5
-549-22,549,Law & Order,22,Season 22,,https://image.tmdb.org/t/p/w500/77OPlbsvX3pzoFbyfpcE3GXMCod.jpg,2022-09-22,22,7.8
-549-23,549,Law & Order,23,Season 23,,https://image.tmdb.org/t/p/w500/m9zTQr4TYS98UFSiA1k0mMfECPe.jpg,2024-01-17,13,8.5
-549-24,549,Law & Order,24,Season 24,,https://image.tmdb.org/t/p/w500/6vFL8S6Cci8s7SHWXz60xOisGBC.jpg,2024-10-03,22,8.4
-132791-0,132791,SUPERKID,0,Specials,,,1983-07-20,3,0.0
-132791-1,132791,SUPERKID,1,Season 1,,https://image.tmdb.org/t/p/w500/83rTkr8XlUk8CyNA9KNuaUWuNqK.jpg,1983-04-04,526,0.0
+1399-0,1399,Game of Thrones,0,Specials,,https://image.tmdb.org/t/p/w500/aos6lC1JGYt6ZRL85lgstNsfSeY.jpg,2010-12-05,286,0.0
+1399-1,1399,Game of Thrones,1,Season 1,"Trouble is brewing in the Seven Kingdoms of Westeros. For the driven inhabitants of this visionary world, control of Westeros' Iron Throne holds the lure of great power. But in a land where the seasons can last a lifetime, winter is coming...and beyond the Great Wall that protects them, an ancient evil has returned. In Season One, the story centers on three primary areas: the Stark and the Lannister families, whose designs on controlling the throne threaten a tenuous peace; the dragon princess Daenerys, heir to the former dynasty, who waits just over the Narrow Sea with her malevolent brother Viserys; and the Great Wall--a massive barrier of ice where a forgotten danger is stirring.",https://image.tmdb.org/t/p/w500/wgfKiqzuMrFIkU1M68DDDY8kGC1.jpg,2011-04-17,10,8.4
+1399-2,1399,Game of Thrones,2,Season 2,"The cold winds of winter are rising in Westeros...war is coming...and five kings continue their savage quest for control of the all-powerful Iron Throne. With winter fast approaching, the coveted Iron Throne is occupied by the cruel Joffrey, counseled by his conniving mother Cersei and uncle Tyrion. But the Lannister hold on the Throne is under assault on many fronts. Meanwhile, a new leader is rising among the wildings outside the Great Wall, adding new perils for Jon Snow and the order of the Night's Watch.",https://image.tmdb.org/t/p/w500/9xfNkPwDOqyeUvfNhs1XlWA0esP.jpg,2012-04-01,10,8.3
+1399-3,1399,Game of Thrones,3,Season 3,"Duplicity and treachery...nobility and honor...conquest and triumph...and, of course, dragons. In Season 3, family and loyalty are the overarching themes as many critical storylines from the first two seasons come to a brutal head. Meanwhile, the Lannisters maintain their hold on King's Landing, though stirrings in the North threaten to alter the balance of power; Robb Stark, King of the North, faces a major calamity as he tries to build on his victories; a massive army of wildlings led by Mance Rayder march for the Wall; and Daenerys Targaryen--reunited with her dragons--attempts to raise an army in her quest for the Iron Throne.",https://image.tmdb.org/t/p/w500/5MkZjRnCKiIGn3bkXrXfndEzqOU.jpg,2013-03-31,10,8.3
+1399-4,1399,Game of Thrones,4,Season 4,"The War of the Five Kings is drawing to a close, but new intrigues and plots are in motion, and the surviving factions must contend with enemies not only outside their ranks, but within.",https://image.tmdb.org/t/p/w500/jXIMScXE4J4EVHUba1JgxZnWbo4.jpg,2014-04-06,10,8.5
+1399-5,1399,Game of Thrones,5,Season 5,"The War of the Five Kings, once thought to be drawing to a close, is instead entering a new and more chaotic phase. Westeros is on the brink of collapse, and many are seizing what they can while the realm implodes, like a corpse making a feast for crows.",https://image.tmdb.org/t/p/w500/7Q1Hy1AHxAzA2lsmzEMBvuWTX0x.jpg,2015-04-12,10,8.2
+1399-6,1399,Game of Thrones,6,Season 6,"Following the shocking developments at the conclusion of season five, survivors from all parts of Westeros and Essos regroup to press forward, inexorably, towards their uncertain individual fates. Familiar faces will forge new alliances to bolster their strategic chances at survival, while new characters will emerge to challenge the balance of power in the east, west, north and south.",https://image.tmdb.org/t/p/w500/p1udLh0gfqyZFmXBGa393gk8go5.jpg,2016-04-24,10,8.3
+1399-7,1399,Game of Thrones,7,Season 7,The long winter is here. And with it comes a convergence of armies and attitudes that have been brewing for years.,https://image.tmdb.org/t/p/w500/oX51n32QyHeFP5kErksemJsJljL.jpg,2017-07-16,7,8.2
+1399-8,1399,Game of Thrones,8,Season 8,"The Great War has come, the Wall has fallen and the Night King's army of the dead marches towards Westeros. The end is here, but who will take the Iron Throne?",https://image.tmdb.org/t/p/w500/259Q5FuaD3TNB7DGauTaJVRC8XV.jpg,2019-04-14,6,6.2
+3670-0,3670,Cops,0,Specials,,https://image.tmdb.org/t/p/w500/rjiqAnLQQXX0HCNTZ1cxNtgEn0O.jpg,1989-11-04,10,0.0
+3670-1,3670,Cops,1,Season 1,,https://image.tmdb.org/t/p/w500/3j07gmdWRUuy5ozmVRbtLh3gJuf.jpg,1989-03-11,16,10.0
+3670-2,3670,Cops,2,Season 2,,https://image.tmdb.org/t/p/w500/tGOoDNUcyqqq5zjuqENlZALgPhL.jpg,1989-09-23,32,0.0
+3670-3,3670,Cops,3,Season 3,,https://image.tmdb.org/t/p/w500/fFOG55k0Pe9l2AzDU4a1xHNfGU6.jpg,1990-09-15,42,0.0
+3670-4,3670,Cops,4,Season 4,,https://image.tmdb.org/t/p/w500/oiR89HkhR7dlJkLcUpDjnFyEKoC.jpg,1991-08-10,47,0.0
+3670-5,3670,Cops,5,Season 5,,https://image.tmdb.org/t/p/w500/kKDrGRe5WtFzLQZzmCpoX2P4qfa.jpg,1992-08-15,46,0.0
+3670-6,3670,Cops,6,Season 6,,https://image.tmdb.org/t/p/w500/1e4o1me679bcGsMq7g3v3Ia2xr3.jpg,1993-08-07,53,0.0
+3670-7,3670,Cops,7,Season 7,,https://image.tmdb.org/t/p/w500/qinPU0DD65SLwGzsKeK9SITWMYt.jpg,1995-01-07,44,0.0
+3670-8,3670,Cops,8,Season 8,,https://image.tmdb.org/t/p/w500/kGiTNNaf8jMr4yoyRk25oOJQTDc.jpg,1995-07-29,43,0.0
+3670-9,3670,Cops,9,Season 9,,https://image.tmdb.org/t/p/w500/bDAeZhRZ8u5pmxrnGOxq4sO6VAZ.jpg,1996-08-31,37,0.0
+3670-10,3670,Cops,10,Season 10,,https://image.tmdb.org/t/p/w500/yIsPMwb5HK6bfI00g1WWpPq0N9U.jpg,1997-10-25,36,0.0
+3670-11,3670,Cops,11,Season 11,,https://image.tmdb.org/t/p/w500/gmwLUjFk8Mdfaslr9xOw4NxTUeV.jpg,1998-12-19,36,0.0
+3670-12,3670,Cops,12,Season 12,,https://image.tmdb.org/t/p/w500/ei0orFR1LyWaxedIl5GzaSY1PLw.jpg,1999-10-09,36,0.0
+3670-13,3670,Cops,13,Season 13,,https://image.tmdb.org/t/p/w500/j2ovOCwR2bITLZuiGjHcSYgQuYm.jpg,2000-12-02,40,0.0
+3670-14,3670,Cops,14,Season 14,,https://image.tmdb.org/t/p/w500/mCjpJsOxja0bLB8GkoGoqmNrq1q.jpg,2002-04-06,38,0.0
+3670-15,3670,Cops,15,Season 15,,https://image.tmdb.org/t/p/w500/fM6pYUYuucHv2BomLRzei0OAWWS.jpg,2002-05-04,38,0.0
+3670-16,3670,Cops,16,Season 16,,https://image.tmdb.org/t/p/w500/iQr5DWAcFb4qUoFAqC5KMJsOQqg.jpg,2003-04-26,41,0.0
+3670-17,3670,Cops,17,Season 17,,https://image.tmdb.org/t/p/w500/o29HzD3tf7wNEovjFJZf3NPzhGB.jpg,2004-05-15,37,0.0
+3670-18,3670,Cops,18,Season 18,,https://image.tmdb.org/t/p/w500/pdMhYtCtqLQFgloiVihUFmz7TYl.jpg,2005-09-10,36,0.0
+3670-19,3670,Cops,19,Season 19,,https://image.tmdb.org/t/p/w500/lDa0Ei0nFbIuYsGqVFYD1q9XCvv.jpg,2006-09-09,36,0.0
+3670-20,3670,Cops,20,Season 20,,https://image.tmdb.org/t/p/w500/zThtszx6h7ebw5Z0bywWNgnBYM6.jpg,2007-09-08,38,0.0
+3670-21,3670,Cops,21,Season 21,,https://image.tmdb.org/t/p/w500/aRJSjf1nzqv8j2S8STUqRoqOMsx.jpg,2008-09-06,36,0.0
+3670-22,3670,Cops,22,Season 22,,https://image.tmdb.org/t/p/w500/6iStbJoGsiTwEpe4WLRGDh17F69.jpg,2009-09-12,36,0.0
+3670-23,3670,Cops,23,Season 23,,https://image.tmdb.org/t/p/w500/3JSIN9Axe4JRHWiPr0bNxTtu990.jpg,2010-09-11,22,0.0
+3670-24,3670,Cops,24,Season 24,,https://image.tmdb.org/t/p/w500/6ohR2NivGeeEIqGnfYe55WUy8CD.jpg,2011-09-10,22,0.0
+3670-25,3670,Cops,25,Season 25,,https://image.tmdb.org/t/p/w500/zDQpF3gaAaw2FZOhZ3PnPayUyYP.jpg,2012-12-15,16,5.3
+3670-26,3670,Cops,26,Season 26,,https://image.tmdb.org/t/p/w500/uwHQ6ZhdVcFyQ070lXnmYmbde4V.jpg,2013-09-14,22,0.5
+3670-27,3670,Cops,27,Season 27,,https://image.tmdb.org/t/p/w500/xyUEqVpm9PS8cRpTsYgSMYoTGE9.jpg,2014-07-12,34,0.0
+3670-28,3670,Cops,28,Season 28,,https://image.tmdb.org/t/p/w500/abrwgc9jBlPLHgjSQy8muC9ZicB.jpg,2015-06-20,33,0.0
+3670-29,3670,Cops,29,Season 29,,https://image.tmdb.org/t/p/w500/QnyWZuMTiFejBVxFU29caDAv0y.jpg,2016-06-04,33,9.0
+3670-30,3670,Cops,30,Season 30,,https://image.tmdb.org/t/p/w500/aL9RC2J8xuSVunPlFDHPGrfEL6g.jpg,2017-06-17,33,10.0
+3670-31,3670,Cops,31,Season 31,,https://image.tmdb.org/t/p/w500/5ttevwXnCCslkTjf1AdjDDFwukE.jpg,2018-06-05,33,0.0
+3670-32,3670,Cops,32,Season 32,,https://image.tmdb.org/t/p/w500/ahIegokjP5VlXTrnUWTAbLOfhEF.jpg,2019-06-05,33,1.0
+3670-33,3670,Cops,33,Season 33,,https://image.tmdb.org/t/p/w500/3gcnRME1d7mxDkTK8q196L3Zj2P.jpg,2021-10-01,33,0.0
+3670-34,3670,Cops,34,Season 34,,https://image.tmdb.org/t/p/w500/pABphjx5PviKTxhV4X3KXvGTptH.jpg,2022-09-30,17,0.0
+3670-35,3670,Cops,35,Season 35,,https://image.tmdb.org/t/p/w500/iJOFazzBUZQO5MS4scGWvGz2SzJ.jpg,2023-04-07,33,0.0
+3670-36,3670,Cops,36,Season 36,"Season 36 of Cops began Friday April 5th, 2024",https://image.tmdb.org/t/p/w500/effO9E9sJaHPq7vR3QCh7MAK0QE.jpg,2024-04-05,21,0.0
+3670-37,3670,Cops,37,Season 37,,https://image.tmdb.org/t/p/w500/7Rno8UzOzImaJpPVd7GEy3Sgt9A.jpg,2025-03-07,21,0.0
+153485-1,153485,Sazae-san,1,Season 1,,https://image.tmdb.org/t/p/w500/sR3tqK13hhpohIfnpd2z3HkpnUb.jpg,1969-10-14,2650,0.0
+30983-0,30983,Case Closed,0,Specials,,https://image.tmdb.org/t/p/w500/673EClC1zs7dJZYceI5bzwBjUiH.jpg,2000-01-01,37,0.0
+30983-1,30983,Case Closed,1,Season 1,"Kudo Shinichi is a seventeen year-old high school detective whom people call the ""Modern Sherlock Holmes."" However, one night after a date with his childhood sweetheart, Ran, Shinichi witnessed an illegal trade and, caught off his guard, was knocked unconscious and fed a drug that was supposed to kill him... but he woke up and found himself shrunken to a seven year-old. In order to track down the men who did this to him, Shinichi hid his identity and lived with Ran, whose father happened to be a hopeless detective, and with that came a series of murders and mysteries that he must solve.",https://image.tmdb.org/t/p/w500/i2IIP5SOLJcMqLFCoPqeeRepYUG.jpg,1996-01-08,1170,7.4
