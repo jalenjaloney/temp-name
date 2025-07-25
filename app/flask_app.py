@@ -247,6 +247,48 @@ def search_gifs():
     # Convert to JSON response for Javascript in html
     return jsonify(gifs)
 
+@app.route("/api/search")
+def api_search():
+    q = request.args.get("q", "").strip()
+    limit = min(int(request.args.get("limit", 10)),50)
+
+
+    if not q:
+        return jsonify([])
+    
+    MEDIA_DB_PATH = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "..", "media.db"
+    )
+    conn = sqlite3.connect(MEDIA_DB_PATH)
+    # Query the media table instead of Item ORM
+    search_query = """
+        SELECT tmdb_id, title, overview, media_type, poster_url
+        FROM media 
+        WHERE title LIKE ? 
+        ORDER BY title ASC 
+        LIMIT ?
+    """
+    
+    # Execute query with parameterized values for security
+    cursor = conn.execute(search_query, (f"%{q}%", limit))
+    results = cursor.fetchall()
+    conn.close()
+
+        # Format results for JSON response
+    formatted_results = []
+    for row in results:
+        formatted_results.append({
+            "id": row[0],  # tmdb_id
+            "title": row[1],  # title
+            "description": row[2] or "",  # overview (handle None values)
+            "media_type": row[3],  # media_type
+            "poster_url": row[4] or ""  # poster_url
+        })
+
+    return jsonify(formatted_results)
+
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     form = RegistrationForm()

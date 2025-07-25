@@ -6,7 +6,11 @@
 
   <div class="form-group">
     {{ form.username.label(class="form-control-label") }}
-    {{ form.username(class="form-control" + (' is-invalid' if form.username.errors else '')) }}
+    {{ form.username(required=True, class="form-control" + (' is-invalid' if form.username.errors else ''),
+    minlength=2,
+    maxlength=20,
+    pattern="[A-Za-z0-9_.-]+",
+    title="Username can only include letters, numbers, dashes, underscores, and periods.") }}
     {% if form.username.errors %}
       <div class="invalid-feedback">
         {% for error in form.username.errors %}
@@ -18,7 +22,10 @@
 
   <div class="form-group">
     {{ form.password.label(class="form-control-label") }}
-    {{ form.password(class="form-control" + (' is-invalid' if form.password.errors else '')) }}
+    {{ form.password(required=True, class="form-control" + (' is-invalid' if form.password.errors else ''),
+    minlength=8,
+    pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).+",
+    title="Password must include uppercase, lowercase, number, and special character.") }}
     {% if form.password.errors %}
       <div class="invalid-feedback">
         {% for error in form.password.errors %}
@@ -30,7 +37,7 @@
 
   <div class="form-group">
     {{ form.confirm_password.label(class="form-control-label") }}
-    {{ form.confirm_password(class="form-control" + (' is-invalid' if form.confirm_password.errors else '')) }}
+    {{ form.confirm_password(required=True, class="form-control" + (' is-invalid' if form.confirm_password.errors else '')) }}
     {% if form.confirm_password.errors %}
       <div class="invalid-feedback">
         {% for error in form.confirm_password.errors %}
@@ -49,4 +56,69 @@
     <a href="{{ url_for('login') }}" class="btn btn-link">Log in here</a>
   </p>
 </form>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Updates feedback message and sets validity
+  function setValidationState(field, feedbackEl, message) {
+    if (message) {
+      feedbackEl.textContent = message;
+      field.classList.add("is-invalid");
+      field.classList.remove("is-valid");
+    } else {
+      feedbackEl.textContent = "";
+      field.classList.remove("is-invalid");
+      field.classList.add("is-valid");
+    }
+  }
+
+  function validateUsername(field) {
+    if (field.validity.patternMismatch) {
+      return "Only letters, numbers, dots, dashes, and underscores allowed.";
+    }
+    if (field.validity.tooShort) {
+      return "Username must be at least 2 characters long.";
+    }
+    return "";
+  }
+
+  function validatePassword(value) {
+    if (!/[a-z]/.test(value)) return "Include at least one lowercase letter.";
+    if (!/[A-Z]/.test(value)) return "Include at least one uppercase letter.";
+    if (!/\d/.test(value)) return "Include at least one number.";
+    if (!/[@$!%*?&]/.test(value)) return "Include at least one special character.";
+    if (value.length < 8) return "Password too short.";
+    return "";
+  }
+
+  function validateConfirmPassword(confirmValue) {
+    const curPassword = document.querySelector('input[name="password"]').value;
+    if (confirmValue != curPassword) {
+        return "Passwords do not match.";
+    }
+    return "";
+  }
+
+  // Create a div based on what function called it (by string name)
+  function setupLiveValidation(fieldName, validateFn, expectsField = true) {
+    const field = document.querySelector(`input[name="${fieldName}"]`);
+    if (!field) return;
+
+    const feedback = document.createElement("div");
+    feedback.classList.add("live-feedback");
+    field.parentNode.appendChild(feedback);
+
+    field.addEventListener("input", () => {
+      // Pass field or field.value depending on validator expectation
+      const message = expectsField ? validateFn(field) : validateFn(field.value);
+      setValidationState(field, feedback, message);
+    });
+  }
+
+  setupLiveValidation("username", validateUsername);
+  setupLiveValidation("password", validatePassword, false);
+  setupLiveValidation("confirm_password", validateConfirmPassword, false);
+});
+</script>
 {% endblock %}

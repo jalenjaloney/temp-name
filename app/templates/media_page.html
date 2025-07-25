@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
+<main class="main-container">
 <div class="Container">
   <div class="main-content-wrapper">
     <div class="movie-main">
@@ -136,9 +137,11 @@
     </div> <!-- Close comments-sidebar -->
   </div> <!-- Close main-content-wrapper -->
 </div> <!-- Main container end-->
+</main>
 {% endblock content %}
 
 {% block scripts %}
-<script src="{{ url_for('static', filename='progress_bar.js') }}"></script>
-<script src="{{ url_for('static', filename='gif_popup.js') }}"></script>
+
+<script src="{{ url_for('static', filename='scripts/progress_bar.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/gif_popup.js') }}"></script>
 {% endblock scripts %}

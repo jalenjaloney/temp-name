@@ -27,3 +27,5 @@ class Comment(db.Model):
     gif_url = db.Column(db.Text)
 
     user = db.relationship("User", backref="comments")
+
+
