@@ -271,7 +271,7 @@ def view_anime(anime_id):
     return render_template("anime_page.html", anime=anime, episodes=episodes)
 
 # anime details
-@app.route("/anime/episode/<int:episode_id>", methods=["GET", "POST"])
+@app.route("/aniepisode/<int:episode_id>", methods=["GET", "POST"])
 def view_anime_episode(episode_id):
     MEDIA_DB_PATH = os.path.join(
         os.path.dirname(os.path.abspath(__file__)), "..", "media.db"

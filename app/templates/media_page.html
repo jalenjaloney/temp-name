@@ -12,7 +12,7 @@
             {% if media.still_url %}
               <img src="{{ media.still_url }}" alt="{{ media.episode_name }}">
             {% endif %}
-          {% elif media_type == 'anime_episode' %} {# Add this new condition #}
+          {% elif media_type == 'anime_episode' %}
             <h2>{{ media.episode_title }}</h2>
             {% if media.thumbnail %}
               <img src="{{ media.thumbnail }}" alt="{{ media.episode_title }}">
