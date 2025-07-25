@@ -83,16 +83,20 @@ def parse_timestamp_string(ts_str):
 
 # csv created from tmdb.py and anilist.py
 media_df = pd.read_csv("media_catalog.csv")
-anime_df = pd.read_csv("anime_catalog.csv")
 
 # Update TMDB to show to catalogue page
 @app.route("/")
 def catalogue():
+    MEDIA_DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "media.db")
+    conn = sqlite3.connect(MEDIA_DB_PATH)
     # Sends only the top 10 movies and tv shows to the catalogue page
     movies = media_df[media_df["media_type"] == "movie"].head(10).to_dict(orient="records")
     tv_shows = media_df[media_df["media_type"] == "tv"].head(10).to_dict(orient="records")
+
     # sends top 10 trending animes
-    anime = anime_df.sort_values(by="trending", ascending=False).head(10).to_dict(orient="records")
+    anime_query = "SELECT * FROM anime ORDER BY trending DESC LIMIT 10"
+    anime_df = pd.read_sql(anime_query, conn)
+    anime = anime_df.to_dict(orient="records")
 
     users = User.query.all()
     return render_template(
