@@ -6,7 +6,7 @@ import git
 import pandas as pd
 import requests
 from dotenv import load_dotenv
-from flask import Flask, flash, redirect, render_template, request, url_for
+from flask import Flask, flash, redirect, render_template, request, url_for, jsonify
 from flask_behind_proxy import FlaskBehindProxy
 from flask_login import (
     LoginManager,
@@ -28,6 +28,7 @@ from app.tmdb import (
 from app.forms import RegistrationForm, LoginForm, commentForm
 from app.google_ai import get_comments, summarize_comments
 from app.models import Comment, User, db
+from app.tenor import search_gif, featured_gifs
 
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
@@ -142,6 +143,7 @@ def view_movie(movie_id):
             timestamp=timestamp_seconds,
             user_id=current_user.id,
             episode_id=int(movie_id),
+            gif_url=form.gif_url.data
         )
         db.session.add(new_comment)
         db.session.commit()
@@ -193,7 +195,8 @@ def view_episode(episode_id):
             content=form.content.data,
             timestamp=timestamp_seconds,
             user_id=current_user.id,
-            episode_id=int(episode_id),
+            gif_url = form.gif_url.data,
+            episode_id=int(episode_id)
         )
         db.session.add(new_comment)
         db.session.commit()
@@ -233,6 +236,16 @@ def delete_comment(comment_id):
     flash("Comment deleted.", "success")
     return redirect(request.referrer or url_for("catalogue"))
 
+@app.route("/search_gifs")
+def search_gifs():
+    query = request.args.get("q")
+    pos = request.args.get("pos")
+    limit = int(request.args.get("limit", 20))
+
+    gifs = search_gif(query, limit=limit, pos=pos)
+    
+    # Convert to JSON response for Javascript in html
+    return jsonify(gifs)
 
 @app.route("/register", methods=["GET", "POST"])
 def register():

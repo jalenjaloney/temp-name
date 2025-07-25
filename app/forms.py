@@ -6,6 +6,7 @@ from wtforms import (
     SubmitField,
     BooleanField,
     ValidationError,
+    HiddenField
 )
 from wtforms.validators import DataRequired, Regexp, Length, EqualTo
 from app.models import User
@@ -37,7 +38,7 @@ class LoginForm(FlaskForm):
 
 
 class commentForm(FlaskForm):
-    content = TextAreaField("Comment", validators=[DataRequired()])
+    content = TextAreaField("Comment")
     timestamp = StringField(
         "Timestamp (HH:MM:SS)",
         validators=[
@@ -47,4 +48,21 @@ class commentForm(FlaskForm):
                 message="Use HH:MM:SS or MM:SS format"),
         ],
     )
+    gif_url = HiddenField("GIF URL")
     submit = SubmitField("Post Comment")
+
+    # Overriding validation logic for entire comment form
+    def validate(self, extra_validators=None):
+        rv = FlaskForm.validate(self)
+        if not rv:
+            return False
+
+        # Require either text or gif in comment
+        has_text = self.content.data and self.content.data.strip()
+        has_gif = self.gif_url.data and self.gif_url.data.strip()
+
+        if not has_text and not has_gif:
+            self.content.errors.append("Cannot post an empty comment.")
+            return False
+
+        return True
