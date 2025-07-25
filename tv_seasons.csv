@@ -1,5 +1,5 @@
 season_id,tv_id,title,season_number,name,overview,poster_url,air_date,episode_count,vote_average
-244808-1,244808,Nukitashi the Animation,1,Season 1,,https://image.tmdb.org/t/p/w500/zlybZJXfu4IpPnWXhnRtobl9BgZ.jpg,2025-07-19,11,0.0
+244808-1,244808,Nukitashi the Animation,1,Season 1,,https://image.tmdb.org/t/p/w500/zlybZJXfu4IpPnWXhnRtobl9BgZ.jpg,2025-07-19,11,10.0
 50821-1,50821,Among Friends,1,Season 1,,,1998-10-26,368,0.0
 50821-2,50821,Among Friends,2,Season 2,,,1999-08-23,450,0.0
 50821-3,50821,Among Friends,3,Season 3,,,2000-08-21,444,0.0
@@ -23,6 +23,22 @@ season_id,tv_id,title,season_number,name,overview,poster_url,air_date,episode_co
 50821-21,50821,Among Friends,21,Season 21,,,2018-07-16,488,0.0
 50821-22,50821,Among Friends,22,Season 22,,,2019-07-15,488,0.0
 50821-23,50821,Among Friends,23,Season 23,,,2020-07-13,502,10.0
+279060-0,279060,Chespirito: Not Really on Purpose,0,Specials,,,2025-06-03,2,0.0
+279060-1,279060,Chespirito: Not Really on Purpose,1,Miniseries,,https://image.tmdb.org/t/p/w500/5aeWxSfa9ojOhscbWxFDu1tM0BE.jpg,2025-06-05,8,7.3
+59941-1,59941,The Tonight Show Starring Jimmy Fallon,1,Season 1,,https://image.tmdb.org/t/p/w500/jZ4lEt1vT260afMQIwVQcVFsAys.jpg,2014-02-17,191,6.5
+59941-2,59941,The Tonight Show Starring Jimmy Fallon,2,Season 2,,https://image.tmdb.org/t/p/w500/4K6wA4raiWSNRL7AWMM0oPbVr8m.jpg,2015-01-05,223,10.0
+59941-3,59941,The Tonight Show Starring Jimmy Fallon,3,Season 3,,https://image.tmdb.org/t/p/w500/xFOVcKxo7SSexJiLsTw2PrbNGcZ.jpg,2015-09-21,86,8.5
+59941-4,59941,The Tonight Show Starring Jimmy Fallon,4,Season 4,,https://image.tmdb.org/t/p/w500/xFOVcKxo7SSexJiLsTw2PrbNGcZ.jpg,2016-09-19,54,0.0
+59941-5,59941,The Tonight Show Starring Jimmy Fallon,5,Season 5,,https://image.tmdb.org/t/p/w500/a8ZFFnuZsvRTNGbyqL3WKXNdMEn.jpg,2017-09-25,7,0.0
+59941-6,59941,The Tonight Show Starring Jimmy Fallon,6,Season 6,,https://image.tmdb.org/t/p/w500/fyqYTmskIlZlKuTVoMr7lkam25y.jpg,2018-09-04,34,0.0
+59941-7,59941,The Tonight Show Starring Jimmy Fallon,7,Season 7,,https://image.tmdb.org/t/p/w500/5bpeJ2JUToKB3EQrPs9AEd2noRs.jpg,2019-09-23,145,0.0
+59941-8,59941,The Tonight Show Starring Jimmy Fallon,8,Season 8,,https://image.tmdb.org/t/p/w500/zGroKOCHxiG51dzwYdgRecE3moq.jpg,2020-09-20,197,0.0
+59941-9,59941,The Tonight Show Starring Jimmy Fallon,9,Season 9,,https://image.tmdb.org/t/p/w500/zGroKOCHxiG51dzwYdgRecE3moq.jpg,2021-09-19,194,8.8
+59941-10,59941,The Tonight Show Starring Jimmy Fallon,10,Season 10,,https://image.tmdb.org/t/p/w500/g4amxJvtpnY79J77xeamnAEUO8r.jpg,2022-09-18,132,0.0
+59941-11,59941,The Tonight Show Starring Jimmy Fallon,11,Season 11,,https://image.tmdb.org/t/p/w500/xjpQElMypNrutNT3ZjInjJ7LKEv.jpg,2023-10-01,182,10.0
+59941-12,59941,The Tonight Show Starring Jimmy Fallon,12,Season 12,,https://image.tmdb.org/t/p/w500/1N4o5PmmqhlVDrcdJ2RlCFWbLGX.jpg,2024-09-23,140,10.0
+65733-0,65733,Doraemon,0,Specials,,,2005-04-15,147,0.0
+65733-1,65733,Doraemon,1,Season 1,,https://image.tmdb.org/t/p/w500/9ZN1P32SHviL3SV51qLivxycvcx.jpg,2005-04-22,1319,7.3
 22980-0,22980,Watch What Happens Live with Andy Cohen,0,Specials,,,2012-08-26,6,0.0
 22980-1,22980,Watch What Happens Live with Andy Cohen,1,Season 1,,,2009-07-16,22,9.0
 22980-2,22980,Watch What Happens Live with Andy Cohen,2,Season 2,,,2010-01-14,29,0.0
@@ -45,19 +61,10 @@ season_id,tv_id,title,season_number,name,overview,poster_url,air_date,episode_co
 22980-19,22980,Watch What Happens Live with Andy Cohen,19,Season 19,,,2022-01-05,209,0.0
 22980-20,22980,Watch What Happens Live with Andy Cohen,20,Season 20,,,2023-01-02,203,0.0
 22980-21,22980,Watch What Happens Live with Andy Cohen,21,Season 21,,,2024-01-07,208,0.0
-22980-22,22980,Watch What Happens Live with Andy Cohen,22,Season 22,,,2025-01-06,120,0.0
-59941-1,59941,The Tonight Show Starring Jimmy Fallon,1,Season 1,,https://image.tmdb.org/t/p/w500/jZ4lEt1vT260afMQIwVQcVFsAys.jpg,2014-02-17,191,6.5
-59941-2,59941,The Tonight Show Starring Jimmy Fallon,2,Season 2,,https://image.tmdb.org/t/p/w500/4K6wA4raiWSNRL7AWMM0oPbVr8m.jpg,2015-01-05,223,10.0
-59941-3,59941,The Tonight Show Starring Jimmy Fallon,3,Season 3,,https://image.tmdb.org/t/p/w500/xFOVcKxo7SSexJiLsTw2PrbNGcZ.jpg,2015-09-21,86,8.5
-59941-4,59941,The Tonight Show Starring Jimmy Fallon,4,Season 4,,https://image.tmdb.org/t/p/w500/xFOVcKxo7SSexJiLsTw2PrbNGcZ.jpg,2016-09-19,54,0.0
-59941-5,59941,The Tonight Show Starring Jimmy Fallon,5,Season 5,,https://image.tmdb.org/t/p/w500/a8ZFFnuZsvRTNGbyqL3WKXNdMEn.jpg,2017-09-25,7,0.0
-59941-6,59941,The Tonight Show Starring Jimmy Fallon,6,Season 6,,https://image.tmdb.org/t/p/w500/fyqYTmskIlZlKuTVoMr7lkam25y.jpg,2018-09-04,34,0.0
-59941-7,59941,The Tonight Show Starring Jimmy Fallon,7,Season 7,,https://image.tmdb.org/t/p/w500/5bpeJ2JUToKB3EQrPs9AEd2noRs.jpg,2019-09-23,145,0.0
-59941-8,59941,The Tonight Show Starring Jimmy Fallon,8,Season 8,,https://image.tmdb.org/t/p/w500/zGroKOCHxiG51dzwYdgRecE3moq.jpg,2020-09-20,197,0.0
-59941-9,59941,The Tonight Show Starring Jimmy Fallon,9,Season 9,,https://image.tmdb.org/t/p/w500/zGroKOCHxiG51dzwYdgRecE3moq.jpg,2021-09-19,194,8.8
-59941-10,59941,The Tonight Show Starring Jimmy Fallon,10,Season 10,,https://image.tmdb.org/t/p/w500/g4amxJvtpnY79J77xeamnAEUO8r.jpg,2022-09-18,132,0.0
-59941-11,59941,The Tonight Show Starring Jimmy Fallon,11,Season 11,,https://image.tmdb.org/t/p/w500/xjpQElMypNrutNT3ZjInjJ7LKEv.jpg,2023-10-01,182,10.0
-59941-12,59941,The Tonight Show Starring Jimmy Fallon,12,Season 12,,https://image.tmdb.org/t/p/w500/1N4o5PmmqhlVDrcdJ2RlCFWbLGX.jpg,2024-09-23,140,10.0
+22980-22,22980,Watch What Happens Live with Andy Cohen,22,Season 22,,,2025-01-06,121,0.0
+93405-1,93405,Squid Game,1,Season 1,"Hundreds of cash-strapped players accept a strange invitation to compete in children's games. Inside, a tempting prize awaits — with deadly high stakes.",https://image.tmdb.org/t/p/w500/jlbrV1Kl4Y8pWXu12SppebRs7On.jpg,2021-09-17,9,8.3
+93405-2,93405,Squid Game,2,Season 2,"Ready to run for your lives? Player 456 returns for more heart-pounding children's games, facing deadly new challenges — but armed with a hidden agenda.",https://image.tmdb.org/t/p/w500/sXZhtWLo3fecavpDuOyJiayjt32.jpg,2024-12-26,7,8.4
+93405-3,93405,Squid Game,3,Season 3,Gi-hun is devastated by the loss of his best friend and sinks into deep despair after discovering that the Game Master had hidden his true identity to secretly infiltrate the game.,https://image.tmdb.org/t/p/w500/6VZsJ37aJDvf45PLJk7Z0UVhzxt.jpg,2025-06-27,6,8.0
 65701-0,65701,Good Mythical Morning,0,Specials,,,,781,0.0
 65701-1,65701,Good Mythical Morning,1,Season 1,,,2012-01-09,129,0.0
 65701-2,65701,Good Mythical Morning,2,Season 2,,,2012-08-06,85,0.0
@@ -87,6 +94,8 @@ season_id,tv_id,title,season_number,name,overview,poster_url,air_date,episode_co
 65701-26,65701,Good Mythical Morning,26,Season 26,,,2024-09-09,84,0.0
 65701-27,65701,Good Mythical Morning,27,Season 27,,,2025-01-06,147,0.0
 65701-28,65701,Good Mythical Morning,28,Season 28,,,2025-07-07,10,0.0
+112470-0,112470,Ici tout commence,0,Specials,,https://image.tmdb.org/t/p/w500/kHiWgxrcsIf0cNDsttTY08dj9QN.jpg,2023-01-07,3,0.0
+112470-1,112470,Ici tout commence,1,Season 1,,https://image.tmdb.org/t/p/w500/qNpmpvN875N8jmIFjY9KwWnYQQc.jpg,2020-11-02,1237,3.5
 11890-0,11890,"Goede Tijden, Slechte Tijden",0,Specials,,,2021-08-19,8,0.0
 11890-1,11890,"Goede Tijden, Slechte Tijden",1,Season 1,,,1990-10-01,195,0.0
 11890-2,11890,"Goede Tijden, Slechte Tijden",2,Season 2,,,1991-09-16,185,0.0
@@ -124,12 +133,7 @@ season_id,tv_id,title,season_number,name,overview,poster_url,air_date,episode_co
 11890-34,11890,"Goede Tijden, Slechte Tijden",34,Season 34,,,2023-08-28,160,0.0
 11890-35,11890,"Goede Tijden, Slechte Tijden",35,Season 35,,,2024-08-26,180,0.0
 11890-36,11890,"Goede Tijden, Slechte Tijden",36,Season 36,,,2025-09-01,20,0.0
-65733-0,65733,Doraemon,0,Specials,,,2005-04-15,147,0.0
-65733-1,65733,Doraemon,1,Season 1,,https://image.tmdb.org/t/p/w500/9ZN1P32SHviL3SV51qLivxycvcx.jpg,2005-04-22,1319,7.3
-93405-1,93405,Squid Game,1,Season 1,"Hundreds of cash-strapped players accept a strange invitation to compete in children's games. Inside, a tempting prize awaits — with deadly high stakes.",https://image.tmdb.org/t/p/w500/jlbrV1Kl4Y8pWXu12SppebRs7On.jpg,2021-09-17,9,8.3
-93405-2,93405,Squid Game,2,Season 2,"Ready to run for your lives? Player 456 returns for more heart-pounding children's games, facing deadly new challenges — but armed with a hidden agenda.",https://image.tmdb.org/t/p/w500/sXZhtWLo3fecavpDuOyJiayjt32.jpg,2024-12-26,7,8.4
-93405-3,93405,Squid Game,3,Season 3,Gi-hun is devastated by the loss of his best friend and sinks into deep despair after discovering that the Game Master had hidden his true identity to secretly infiltrate the game.,https://image.tmdb.org/t/p/w500/6VZsJ37aJDvf45PLJk7Z0UVhzxt.jpg,2025-06-27,6,7.9
-65270-1,65270,Radio Star,1,Season 1,,https://image.tmdb.org/t/p/w500/uRUZDsvUfIP3JUEgOC8ReBlQQUU.jpg,2007-05-30,924,1.0
+65270-1,65270,Radio Star,1,Season 1,,https://image.tmdb.org/t/p/w500/uRUZDsvUfIP3JUEgOC8ReBlQQUU.jpg,2007-05-30,925,1.0
 65270-2,65270,Radio Star,2,Season 2,,,,0,0.0
 2224-0,2224,The Daily Show,0,Specials,,,1999-12-15,98,0.0
 2224-1,2224,The Daily Show,1,Season 1,,https://image.tmdb.org/t/p/w500/yCk9E4zzDi5W9zpDc2L8vCeLA.jpg,1996-07-22,6,7.7
@@ -175,9 +179,13 @@ From Tuesdays through Thursdays, members of  ""The Best F#@king News Team"" will
 61818-9,61818,Late Night with Seth Meyers,9,Season 9,,https://image.tmdb.org/t/p/w500/AsjhFts83lp2IadKIW6Y4CbDLSE.jpg,2021-09-21,137,4.5
 61818-10,61818,Late Night with Seth Meyers,10,Season 10,,https://image.tmdb.org/t/p/w500/AcWJFVsLgW8zYVMxYRDEvTCgrPZ.jpg,2022-09-20,91,0.0
 61818-11,61818,Late Night with Seth Meyers,11,Season 11,,https://image.tmdb.org/t/p/w500/dvkMNB19GAMm5NqGS7HvZIp8qK9.jpg,2023-10-03,140,0.0
-61818-12,61818,Late Night with Seth Meyers,12,Season 12,,https://image.tmdb.org/t/p/w500/43rpRdZih4gh4vyed5hq1BFTO2c.jpg,2024-09-24,119,1.2
-112470-0,112470,Ici tout commence,0,Specials,,https://image.tmdb.org/t/p/w500/kHiWgxrcsIf0cNDsttTY08dj9QN.jpg,2023-01-07,3,0.0
-112470-1,112470,Ici tout commence,1,Season 1,,https://image.tmdb.org/t/p/w500/qNpmpvN875N8jmIFjY9KwWnYQQc.jpg,2020-11-02,1237,3.5
+61818-12,61818,Late Night with Seth Meyers,12,Season 12,,https://image.tmdb.org/t/p/w500/43rpRdZih4gh4vyed5hq1BFTO2c.jpg,2024-09-24,119,1.1
+70672-1,70672,Men on a Mission,1,Men on a Mission (Knowing Bros),,https://image.tmdb.org/t/p/w500/2jIi55JtYKJTL1km8qHMuUilOWo.jpg,2015-12-05,495,8.3
+30801-0,30801,2 Days and 1 Night,0,Specials,,https://image.tmdb.org/t/p/w500/aTixMf5OaKA50QNvcKv18X9SLjX.jpg,2008-08-10,13,0.0
+30801-1,30801,2 Days and 1 Night,1,Season 1,,https://image.tmdb.org/t/p/w500/r8bWuiyCxKstFudGnvwPpXGh6c4.jpg,2007-08-05,232,0.0
+30801-2,30801,2 Days and 1 Night,2,Season 2,,https://image.tmdb.org/t/p/w500/jumidoRzlRfdpJrbM9fGKqgsuu7.jpg,2012-06-24,89,0.0
+30801-3,30801,2 Days and 1 Night,3,Season 3,,https://image.tmdb.org/t/p/w500/uoAWUyOx7bbhIbjLziLAgIDRcjG.jpg,,279,9.0
+30801-4,30801,2 Days and 1 Night,4,Season 4,"It’s the return of KBS Variety. 2 Days and 1 Night is back for season 4 with the cast you couldn't have predicted. Youn Jung Hoon the big brother, Lavi who’s 15 years younger than Jung Hoon, variety rookie Kim Seon Ho, Moon Se Yoon the passionate food fighter, DinDin who’s proud to be on the show, and Kim Jong Min the living history of 2 Days and 1 Night. It’s “Real Wild Road Variety” at various beautiful locations in South Korea. In unpredictable situations and severe environments, the members will show various fun and six different charms and chemistries to capture the viewers. The trip with six cheerful men, it’s 2 Days and 1 Night 4!",https://image.tmdb.org/t/p/w500/qezeCEkIKHQM5iwyVeYBuXmYA2h.jpg,2019-12-08,290,10.0
 1416-0,1416,Grey's Anatomy,0,Specials,,https://image.tmdb.org/t/p/w500/snQYndfsEr3Sto2jOmkmsQuUXAQ.jpg,2006-02-14,68,0.0
 1416-1,1416,Grey's Anatomy,1,Season 1,"Meredith Grey, the daughter of the once-renowned surgeon Ellis Grey, becomes an intern at the Seattle Grace Hospital. She meets fellow interns Cristina Yang, Isobel ""Izzie"" Stevens, George O'Malley and Alex Karev who become her closest friends during the intern program. She finds herself working with renowned surgeons such as the heart surgeon Preston Burke and Richard Webber, chief of surgery and old friend of her mother. She finds herself working under her one night stand and famous neurosurgeon Derek Shepherd and working with her resident Dr. Miranda Bailey also known as The Nazi.",https://image.tmdb.org/t/p/w500/ulGju8GyXE36wCgmvyFJL3sLiVm.jpg,2005-03-27,9,7.5
 1416-2,1416,Grey's Anatomy,2,Season 2,"The season continued to focus on the surgical residency of five young interns as they try to balance to the challenges of their competitive careers, with the difficulties that determine their personal lives. It was set in the fictional Seattle Grace Hospital, located in the city of Seattle, Washington. Whereas the first season put the emphasis mainly on the unexpected impact the surgical field has on the main characters, the second one provides a detailed perspective on the personal background of each character, focusing on the consequences that their decisions have on their careers. Throughout the season, new story lines were introduced, including the love triangle between Meredith Grey, Derek Shepherd, and Addison Montgomery, the main arc of the season. Also heavily developed was the story line involving Izzie Stevens' relationship with patient Denny Duquette, which resulted in critical acclaim and positive fan response.",https://image.tmdb.org/t/p/w500/bO0S3fU8Tcqn0g5DCmDcX1oqA2t.jpg,2005-09-25,27,8.2
@@ -189,8 +197,8 @@ From Tuesdays through Thursdays, members of  ""The Best F#@king News Team"" will
 1416-8,1416,Grey's Anatomy,8,Season 8,"No matter how hot it gets - in the operating room or in the bedroom - the doctors of Seattle Grace know they can always lean on one another. As fifth-year residents, it's do or die for the doctors, and things get bumpy when the chief makes a decision that rocks the entire staff. Outside the hospital, Meredith and Derek struggle to keep their relationship afloat while they try to adopt an orphaned baby girl, and Cristina wrestles with a difficult choice that threatens to ruin her marriage.",https://image.tmdb.org/t/p/w500/pvuMQwMPWDqunRiajmeGQmUF0zS.jpg,2011-09-21,24,7.7
 1416-9,1416,Grey's Anatomy,9,Season 9,"It's a year of bold new beginnings as your favorite doctors return to Seattle Grace for the biggest challenge of their lives. The plane crash that took the lives of Lexie Grey and Mark Sloan sent shockwaves throughout the hospital. But from the ashes, romance will rise, with each surgeon handling the loss in their own personal way. Meredith finds her groove in the operating room while Derek's hand injury forces him to focus on something other than surgery. And as Mark prepares to say goodbye, Alex falls for someone new, Cristina tries to rekindle the flame with Owen, and Bailey and Ben discover the perils of a long-distance relationship.",https://image.tmdb.org/t/p/w500/gLP8aeWDfoOIqp1EFEMLSoHlIHW.jpg,2012-09-27,24,7.7
 1416-10,1416,Grey's Anatomy,10,Season 10,"The storm may have passed, but now the relationships and romance of Grey Sloan Memorial must survive in its wake. Bonds are tested, love is lost and the hospital bids farewell to Dr. Cristina Yang. Following a massive mudslide, the hospital becomes a madhouse, and the lives of two doctors hang in the balance. The drama escalates as Arizona tries desperately to mend her broken marriage, while Derek and Meredith juggle their roles as surgeons and new parents. Meanwhile, a stunning betrayal pits Cristina against Meredith and, as April prepares for her big day, a familiar face returns to town. Big secrets lead to big problems and turn best friends into rivals.",https://image.tmdb.org/t/p/w500/h0z0USK1KerDJu02c218zFMIa52.jpg,2013-09-26,24,7.7
-1416-11,1416,Grey's Anatomy,11,Season 11,"During an interview, Shonda Rhimes stated that ""Season 11 is really a Meredith-centric season. She lost her ‘person’, her half-sister has shown up, her husband is chafing to go someplace else…"" She went on to reveal that she's been wanting to do the ""familial grenade"" storyline for a long time, and at the end of Season 10, she knew it was the time to do it. Rhimes also claimed that Season 11 will pick up right where Season 10 left us, so there won't be much that the audience won't see. In another interview discussing this storyline, Rhimes revealed that she and the writers are thinking about doing flashback periods to the younger days of Drs. Ellis Grey and Richard Webber.",https://image.tmdb.org/t/p/w500/AvMxKxyj6zIG5fR0fg7D6bWH4AY.jpg,2014-09-25,24,7.8
-1416-12,1416,Grey's Anatomy,12,Season 12,"The doctors find themselves simmering in a world of sexual politics. Bailey struggles with what it means to be a woman in charge of the hospital and her husband, while Maggie faces the challenges of dating a younger man and Amelia battles her own demons. Meanwhile, in the wake of a brutal attack, Meredith finds comfort and love in the most unexpected place, Callie and Arizona find themselves in a fight for their lives, and tensions run high when Amelia and Meredith come face to face with the doctor responsible for Derek's death.",https://image.tmdb.org/t/p/w500/b8pkzoNM5X0XSwppEA7jTID5Dcm.jpg,2015-09-22,24,7.6
+1416-11,1416,Grey's Anatomy,11,Season 11,"During an interview, Shonda Rhimes stated that ""Season 11 is really a Meredith-centric season. She lost her ‘person’, her half-sister has shown up, her husband is chafing to go someplace else…"" She went on to reveal that she's been wanting to do the ""familial grenade"" storyline for a long time, and at the end of Season 10, she knew it was the time to do it. Rhimes also claimed that Season 11 will pick up right where Season 10 left us, so there won't be much that the audience won't see. In another interview discussing this storyline, Rhimes revealed that she and the writers are thinking about doing flashback periods to the younger days of Drs. Ellis Grey and Richard Webber.",https://image.tmdb.org/t/p/w500/AvMxKxyj6zIG5fR0fg7D6bWH4AY.jpg,2014-09-25,24,7.9
+1416-12,1416,Grey's Anatomy,12,Season 12,"The doctors find themselves simmering in a world of sexual politics. Bailey struggles with what it means to be a woman in charge of the hospital and her husband, while Maggie faces the challenges of dating a younger man and Amelia battles her own demons. Meanwhile, in the wake of a brutal attack, Meredith finds comfort and love in the most unexpected place, Callie and Arizona find themselves in a fight for their lives, and tensions run high when Amelia and Meredith come face to face with the doctor responsible for Derek's death.",https://image.tmdb.org/t/p/w500/b8pkzoNM5X0XSwppEA7jTID5Dcm.jpg,2015-09-22,24,7.7
 1416-13,1416,Grey's Anatomy,13,Season 13,"After being on her own for some time, Meredith is beginning to explore the idea of a romance with Riggs. Unfortunately, Maggie desires him as well, which threatens to drive a bitter wedge between the sisters. At the same time, despite their differences, Jackson and April must come together when they are assigned a difficult case. Meanwhile, Alex faces the consequences of his vicious attack on DeLuca, Owen and Amelia's marriage implodes and a hospital-wide mutiny erupts when Bailey demotes Webber. Finally, Arizona may have found love again - but is she sleeping with the enemy?",https://image.tmdb.org/t/p/w500/i4gNHaY1MzP50zcjgw3ew2hKCCW.jpg,2016-09-21,24,7.2
 1416-14,1416,Grey's Anatomy,14,Season 14,"After the fire, Miranda Bailey starts renovations at the hospital. She discovers she'll need more than new walls and paint to repair broken trust, tainted reputations and broken relationships. Against the backdrop of a year full of love, loss and groundbreaking changes, Meredith pioneers a revolutionary surgical technique that earns her a nomination for the coveted award named after its founder, Harper Avery. But when former legend Dr. Avery gets involved in a scandal, Meredith's efforts and the future of Grey Sloan are put in jeopardy.",https://image.tmdb.org/t/p/w500/2eSQFbeZZ7lCru40Q0UYGJ20itx.jpg,2017-09-27,24,7.7
 1416-15,1416,Grey's Anatomy,15,Season 15,"Romance is brewing in ways you did not see coming as doctor Teddy Altman is back in an explosive love triangle. And the drama continues as a windstorm blows through Seattle, causing the power to go out at Grey Sloan, leaving the doctors scrambling to save their patients' lives, including Meredith, who desperately needs to get to her patient for her heart transplant.",https://image.tmdb.org/t/p/w500/eqgIOObafPJitt8JNh1LuO2fvqu.jpg,2018-09-25,25,7.6
@@ -201,9 +209,6 @@ From Tuesdays through Thursdays, members of  ""The Best F#@king News Team"" will
 1416-20,1416,Grey's Anatomy,20,Season 20,"The interns face new challenges as they grow into their roles, while the hospital recovers from a major health crisis involving Teddy. Meredith appears briefly, continuing her research in Boston. Bailey, Richard, Jo, and Link guide the next generation through high-stakes surgeries and personal drama.",https://image.tmdb.org/t/p/w500/jcEl8SISNfGdlQFwLzeEtsjDvpw.jpg,2024-03-13,10,8.4
 1416-21,1416,Grey's Anatomy,21,Season 21,"The story deepens as the new doctors step into leadership. Emotional fallout from the past season lingers, and big decisions shape the future of Grey Sloan. Legacy characters and fresh faces continue to balance life, loss, and medicine.",https://image.tmdb.org/t/p/w500/7jEVqXC14bhfAzSPgr896dMdDv6.jpg,2024-09-26,18,8.3
 1416-22,1416,Grey's Anatomy,22,Season 22,,,2025-10-16,3,0.0
-279060-0,279060,Chespirito: Not Really on Purpose,0,Specials,,,2025-06-03,2,0.0
-279060-1,279060,Chespirito: Not Really on Purpose,1,Miniseries,,https://image.tmdb.org/t/p/w500/5aeWxSfa9ojOhscbWxFDu1tM0BE.jpg,2025-06-05,8,6.9
-70672-1,70672,Men on a Mission,1,Men on a Mission (Knowing Bros),,https://image.tmdb.org/t/p/w500/2jIi55JtYKJTL1km8qHMuUilOWo.jpg,2015-12-05,495,8.3
 30957-0,30957,The Amazing Race,0,Specials,,https://image.tmdb.org/t/p/w500/wfD2ormxlz2X35QtjCaBcqEVwof.jpg,,1,0.0
 30957-1,30957,The Amazing Race,1,Season 1,"The Amazing Race 1 is the first season of the American reality television series The Amazing Race. It was broadcast for the first time on September 5, 2001, and ended on December 13, 2001, on American television.",https://image.tmdb.org/t/p/w500/2GRhG8LSASzV9F1KpXyjsucaCPm.jpg,2001-09-05,13,8.0
 30957-2,30957,The Amazing Race,2,Season 2,"The Amazing Race 2 is the second installment of the American reality television show The Amazing Race. The Amazing Race 2 features eleven teams of two with a pre-existing relationship in a race around the world. It premiered on March 11, 2002 and ended on May 15, 2002.",https://image.tmdb.org/t/p/w500/t6uHOVovIrxDDwMm2e9KLBlH5sX.jpg,2002-03-11,11,8.0
@@ -265,11 +270,6 @@ The twentieth Race premiered on Sunday, February 19, 2012. It aired on CBS in th
 30957-36,30957,The Amazing Race,36,Season 36,,https://image.tmdb.org/t/p/w500/p1HNFU9BqvAeuFvBwSYO1keW8Vn.jpg,2024-03-13,10,7.1
 30957-37,30957,The Amazing Race,37,Season 37,,https://image.tmdb.org/t/p/w500/Gpp9TzTmGskKv2JfOQsMZKDKV9.jpg,2025-03-05,12,6.0
 30957-38,30957,The Amazing Race,38,Season 38,,,2025-09-25,2,0.0
-30801-0,30801,2 Days and 1 Night,0,Specials,,https://image.tmdb.org/t/p/w500/aTixMf5OaKA50QNvcKv18X9SLjX.jpg,2008-08-10,13,0.0
-30801-1,30801,2 Days and 1 Night,1,Season 1,,https://image.tmdb.org/t/p/w500/r8bWuiyCxKstFudGnvwPpXGh6c4.jpg,2007-08-05,232,0.0
-30801-2,30801,2 Days and 1 Night,2,Season 2,,https://image.tmdb.org/t/p/w500/jumidoRzlRfdpJrbM9fGKqgsuu7.jpg,2012-06-24,89,0.0
-30801-3,30801,2 Days and 1 Night,3,Season 3,,https://image.tmdb.org/t/p/w500/uoAWUyOx7bbhIbjLziLAgIDRcjG.jpg,,279,9.0
-30801-4,30801,2 Days and 1 Night,4,Season 4,"It’s the return of KBS Variety. 2 Days and 1 Night is back for season 4 with the cast you couldn't have predicted. Youn Jung Hoon the big brother, Lavi who’s 15 years younger than Jung Hoon, variety rookie Kim Seon Ho, Moon Se Yoon the passionate food fighter, DinDin who’s proud to be on the show, and Kim Jong Min the living history of 2 Days and 1 Night. It’s “Real Wild Road Variety” at various beautiful locations in South Korea. In unpredictable situations and severe environments, the members will show various fun and six different charms and chemistries to capture the viewers. The trip with six cheerful men, it’s 2 Days and 1 Night 4!",https://image.tmdb.org/t/p/w500/qezeCEkIKHQM5iwyVeYBuXmYA2h.jpg,2019-12-08,290,10.0
 79744-1,79744,The Rookie,1,Season 1,A life-changing incident pushes a 45-year-old man to chase his dream of becoming a cop. But he must prove himself to his LAPD superiors to make the cut.,https://image.tmdb.org/t/p/w500/c5tWybs91GuwEFOucnj7yZu2YLu.jpg,2018-10-16,20,8.1
 79744-2,79744,The Rookie,2,Season 2,"Six months into his career as a cop, John Nolan, the oldest rookie in the LAPD, has used his life experience, determination and sense of humor to keep up with rookies 20 years his junior. But as he embarks on the second half of his rookie year, Nolan will be put to the test by a host of new challenges, romantic relationships and deadly criminals, as he looks to figure out what kind of cop he ultimately wants to be.",https://image.tmdb.org/t/p/w500/arPUIveaNTdlZeSrOPrgof6UvhQ.jpg,2019-09-29,20,8.4
 79744-3,79744,The Rookie,3,Season 3,"As their training comes to an end, Nolan and his fellow rookies on the force must navigate complex professional and personal challenges.",https://image.tmdb.org/t/p/w500/6hChiX0vIjWY4y2kz1WndHVMsDu.jpg,2021-01-02,14,7.7
@@ -278,51 +278,16 @@ The twentieth Race premiered on Sunday, February 19, 2012. It aired on CBS in th
 79744-6,79744,The Rookie,6,Season 6,,https://image.tmdb.org/t/p/w500/wbeqBUFydztHDQ4h7dZqnknh5HE.jpg,2024-02-20,10,9.0
 79744-7,79744,The Rookie,7,Season 7,John and the team welcome two new rookies and continue the hunt for two dangerous inmates with very personal vendettas following their prison escape.,https://image.tmdb.org/t/p/w500/mVIHgmRmzc5yowuw2JDDbRaOzly.jpg,2025-01-07,18,8.9
 79744-8,79744,The Rookie,8,Season 8,,https://image.tmdb.org/t/p/w500/4DJJUh84DpVqLrn3bHgC8H98j2y.jpg,,0,0.0
-12415-1,12415,Egoli: Place of Gold,1,Season 1,,,1992-04-06,260,0.0
-12415-2,12415,Egoli: Place of Gold,2,Season 2,,,1993-04-05,260,0.0
-12415-3,12415,Egoli: Place of Gold,3,Season 3,,,1994-04-04,260,0.0
-12415-4,12415,Egoli: Place of Gold,4,Season 4,,,1995-04-03,260,0.0
-12415-5,12415,Egoli: Place of Gold,5,Season 5,,,1996-04-01,260,0.0
-12415-6,12415,Egoli: Place of Gold,6,Season 6,,,1997-03-31,223,0.0
-12415-7,12415,Egoli: Place of Gold,7,Season 7,,,1998-02-05,337,0.0
-12415-8,12415,Egoli: Place of Gold,8,Season 8,,,1999-05-24,260,0.0
-12415-9,12415,Egoli: Place of Gold,9,Season 9,,,2000-05-22,186,0.0
-12415-10,12415,Egoli: Place of Gold,10,Season 10,,,2001-02-06,254,0.0
-12415-11,12415,Egoli: Place of Gold,11,Season 11,,,2002-01-28,260,0.0
-12415-12,12415,Egoli: Place of Gold,12,Season 12,,,2003-01-27,260,10.0
-12415-13,12415,Egoli: Place of Gold,13,Season 13,,,2004-01-26,260,0.0
-12415-14,12415,Egoli: Place of Gold,14,Season 14,,,2005-01-24,420,0.0
-12415-15,12415,Egoli: Place of Gold,15,Season 15,,,2006-09-04,93,0.0
-12415-16,12415,Egoli: Place of Gold,16,Season 16,,,2007-01-11,267,0.0
-12415-17,12415,Egoli: Place of Gold,17,Season 17,,,2008-01-21,309,0.0
-12415-18,12415,Egoli: Place of Gold,18,Season 18,,,2009-03-30,260,0.0
-2734-0,2734,Law & Order: Special Victims Unit,0,Specials,,https://image.tmdb.org/t/p/w500/3pLGDNuFGdpgMd7IjfTznLDAl0.jpg,,6,0.0
-2734-1,2734,Law & Order: Special Victims Unit,1,Season 1,,https://image.tmdb.org/t/p/w500/fMcB4Kznfz3sR4Jkg1lOtf5blCp.jpg,1999-09-20,22,7.5
-2734-2,2734,Law & Order: Special Victims Unit,2,Season 2,,https://image.tmdb.org/t/p/w500/9yyzbzZuPUPlnvhuyi4VmDac1SL.jpg,2000-10-19,21,8.0
-2734-3,2734,Law & Order: Special Victims Unit,3,Season 3,,https://image.tmdb.org/t/p/w500/9S59DS9XpzrBRcDhrEsurHxaTwD.jpg,2001-09-27,23,8.0
-2734-4,2734,Law & Order: Special Victims Unit,4,Season 4,,https://image.tmdb.org/t/p/w500/iIlD5l14GbVPDGcVqFXB7XObGlp.jpg,2002-09-26,25,7.5
-2734-5,2734,Law & Order: Special Victims Unit,5,Season 5,,https://image.tmdb.org/t/p/w500/vowmLggLYRC75DpEttts7ej2FBM.jpg,2003-09-22,25,7.8
-2734-6,2734,Law & Order: Special Victims Unit,6,Season 6,"Detectives Benson, Stabler, Fin and Munch face serial killers, self-proclaimed psychics and cult leaders as they investigate crime in New York City.",https://image.tmdb.org/t/p/w500/p3iU1fLz9h8O1d6g4KrOzKbU2vq.jpg,2004-09-20,23,7.6
-2734-7,2734,Law & Order: Special Victims Unit,7,Season 7,"The unit's gut-wrenching cases include a schoolyard shooting of a child, a shady dating service and a shocking revelation regarding Tutuola's son.",https://image.tmdb.org/t/p/w500/i66p9aJpaPPd2Y83cRE256R4kiv.jpg,2005-09-19,22,7.7
-2734-8,2734,Law & Order: Special Victims Unit,8,Season 8,,https://image.tmdb.org/t/p/w500/mvNHgkbvREA6ty5lJpW4Dj0ks7L.jpg,2006-09-18,22,7.7
-2734-9,2734,Law & Order: Special Victims Unit,9,Season 9,"Guest stars, including Cynthia Nixon, Robin Williams, Method Man, Jared Harris and Melissa Joan Hart, are season highlights.",https://image.tmdb.org/t/p/w500/hSJbnNHL2Hlm6HO2JzrT0s4vNVZ.jpg,2007-09-24,19,7.9
-2734-10,2734,Law & Order: Special Victims Unit,10,Season 10,"Stabler confronts his own demons when his daughter is caught with drugs, and Benson follows connections between an abused child and an attack on a woman.",https://image.tmdb.org/t/p/w500/j2qRsT11WL8sX1ULWWxS7opu8Dj.jpg,2008-09-21,22,7.8
-2734-11,2734,Law & Order: Special Victims Unit,11,Season 11,"A new ADA joins the team, a crime scene photo of a murdered teen goes viral and Stabler tries to prove Benson did not murder a biker.",https://image.tmdb.org/t/p/w500/uVNfsziEtWZpnAbKevNjArafEGa.jpg,2009-09-21,24,7.5
-2734-12,2734,Law & Order: Special Victims Unit,12,Season 12,,https://image.tmdb.org/t/p/w500/oEOX17rWyWOx9gNmb9cJAiKqQBa.jpg,2010-09-21,24,7.5
-2734-13,2734,Law & Order: Special Victims Unit,13,Season 13,Season 13 dealt with the departure of Detective Elliot Stabler from the Special Victims Unit after a shooting in the squad room.,https://image.tmdb.org/t/p/w500/tITqx6k7Pansb4gEPeZ0AG3lkDf.jpg,2011-09-20,23,7.4
-2734-14,2734,Law & Order: Special Victims Unit,14,Season 14,,https://image.tmdb.org/t/p/w500/vSJ7X9IY4Sa1MyuhCKX4qylDqLM.jpg,2012-09-25,24,7.9
-2734-15,2734,Law & Order: Special Victims Unit,15,Season 15,,https://image.tmdb.org/t/p/w500/rpkLpzLncTl2Sowna0SDKinyZPG.jpg,2013-09-24,24,8.3
-2734-16,2734,Law & Order: Special Victims Unit,16,Season 16,,https://image.tmdb.org/t/p/w500/vbxnHjk1kbAYtSg2YG1NkH7N3kf.jpg,2014-09-23,23,8.1
-2734-17,2734,Law & Order: Special Victims Unit,17,Season 17,,https://image.tmdb.org/t/p/w500/3S1WWliIdFSXglNutCSppRnk4jE.jpg,2015-09-22,23,8.4
-2734-18,2734,Law & Order: Special Victims Unit,18,Season 18,,https://image.tmdb.org/t/p/w500/3i28LB4U06W3zo7xJ3iD2ftIxPT.jpg,2016-09-20,21,7.9
-2734-19,2734,Law & Order: Special Victims Unit,19,Season 19,,https://image.tmdb.org/t/p/w500/6LZk57ODCi1A6HCDqpssn43OjFN.jpg,2017-09-26,24,7.9
-2734-20,2734,Law & Order: Special Victims Unit,20,Season 20,,https://image.tmdb.org/t/p/w500/qnZEj6rA5UFW839dOKRhIFI4moe.jpg,2018-09-26,24,7.5
-2734-21,2734,Law & Order: Special Victims Unit,21,Season 21,,https://image.tmdb.org/t/p/w500/1sSCkqrjq8DgS5WpdLoim4JetYH.jpg,2019-09-25,20,7.5
-2734-22,2734,Law & Order: Special Victims Unit,22,Season 22,,https://image.tmdb.org/t/p/w500/4fClCRCTK5pRDP80tVUmABQtuSe.jpg,2020-11-11,16,8.3
-2734-23,2734,Law & Order: Special Victims Unit,23,Season 23,,https://image.tmdb.org/t/p/w500/a2EhFAU2Ymgx2LFZdrh0QwXoncY.jpg,2021-09-22,22,8.3
-2734-24,2734,Law & Order: Special Victims Unit,24,Season 24,,https://image.tmdb.org/t/p/w500/e8cx3BVz6jJDLEgW02UQhEBtsZw.jpg,2022-09-21,22,8.4
-2734-25,2734,Law & Order: Special Victims Unit,25,Season 25,,https://image.tmdb.org/t/p/w500/pDnpkJiGrvs9pehjbole86SaDtX.jpg,2024-01-17,13,8.2
-2734-26,2734,Law & Order: Special Victims Unit,26,Season 26,,https://image.tmdb.org/t/p/w500/abWOCrIo7bbAORxcQyOFNJdnnmR.jpg,2024-10-03,22,8.6
+63770-1,63770,The Late Show with Stephen Colbert,1,Season 1,,https://image.tmdb.org/t/p/w500/cbJunCfhH2QmaDnAxM30UhX47G0.jpg,2015-09-08,202,6.0
+63770-2,63770,The Late Show with Stephen Colbert,2,Season 2,,https://image.tmdb.org/t/p/w500/3mYUDshg9VNLjQQpdi1aocRn8mq.jpg,2016-09-06,206,6.2
+63770-3,63770,The Late Show with Stephen Colbert,3,Season 3,,https://image.tmdb.org/t/p/w500/kn4PK9Pa5rLH6GitXFHtlDO04nI.jpg,2017-09-05,194,0.0
+63770-4,63770,The Late Show with Stephen Colbert,4,Season 4,,https://image.tmdb.org/t/p/w500/wT72vl9J4dE7i8NBy9vkxg6KkLo.jpg,2018-09-04,195,5.9
+63770-5,63770,The Late Show with Stephen Colbert,5,Season 5,,https://image.tmdb.org/t/p/w500/wT72vl9J4dE7i8NBy9vkxg6KkLo.jpg,2019-09-03,173,6.0
+63770-6,63770,The Late Show with Stephen Colbert,6,Season 6,,https://image.tmdb.org/t/p/w500/wT72vl9J4dE7i8NBy9vkxg6KkLo.jpg,2020-09-14,168,6.0
+63770-7,63770,The Late Show with Stephen Colbert,7,Season 7,,https://image.tmdb.org/t/p/w500/9jkThAGYj2yp8jsS6Nriy5mzKFT.jpg,2021-09-07,170,9.4
+63770-8,63770,The Late Show with Stephen Colbert,8,Season 8,,https://image.tmdb.org/t/p/w500/ykWcgG38SqTvT2MVhKsrOPdLvBC.jpg,2022-09-06,107,9.9
+63770-9,63770,The Late Show with Stephen Colbert,9,Season 9,,https://image.tmdb.org/t/p/w500/8hDarCWTgBV2uLWglSI7qcXNLpw.jpg,2023-10-02,129,9.2
+63770-10,63770,The Late Show with Stephen Colbert,10,Season 10,,https://image.tmdb.org/t/p/w500/3sjs8nq5FxAkU6FXVpDdRwSbgLZ.jpg,2024-09-03,145,1.2
 1966-0,1966,Horizon,0,Specials,,,1966-12-25,111,0.0
 1966-1,1966,Horizon,1,1964,,,1964-02-04,9,0.0
 1966-2,1966,Horizon,2,1965,,,1965-01-06,24,0.0
@@ -384,7 +349,37 @@ The twentieth Race premiered on Sunday, February 19, 2012. It aired on CBS in th
 1966-58,1966,Horizon,58,2021,,https://image.tmdb.org/t/p/w500/aD9llHm1yBpWkivCvJptJQYnoTJ.jpg,2021-01-04,4,0.0
 1966-59,1966,Horizon,59,2022,,https://image.tmdb.org/t/p/w500/8PB1AypQimzVymBDcwyot4F4hWE.jpg,2022-03-31,4,0.0
 1966-60,1966,Horizon,60,2024,,,2024-07-22,1,9.0
+194766-1,194766,The Summer I Turned Pretty,1,Season 1,"Belly Conklin is about to turn 16, and she’s headed to her favorite place in the world, Cousins Beach, to spend the summer with her family and the Fishers. Belly’s grown up a lot over the past year, and she has a feeling that this summer is going to be different than all the summers before.",https://image.tmdb.org/t/p/w500/6yCL5HB1ugO3bMwloEDNiNdadUa.jpg,2022-06-16,7,7.6
+194766-2,194766,The Summer I Turned Pretty,2,Season 2,"Belly used to count down the days until she could return to Cousins Beach, but with Conrad and Jeremiah fighting over her heart and the return of Susannah's cancer, she's not sure summer will ever be the same. When an unexpected visitor threatens the future of Susannah's beloved house, Belly has to rally the gang to come together—and to decide once and for all where her heart lies.",https://image.tmdb.org/t/p/w500/A7ziP4QaTRAwWqGhHyknN5UULlf.jpg,2023-07-13,8,7.8
+194766-3,194766,The Summer I Turned Pretty,3,Season 3,"It's the end of her junior year of college, and Belly's looking forward to another summer in Cousins with her soulmate, Jeremiah. Her future seems set, until some core-shaking events bring her first love Conrad back into her life. Now on the brink of adulthood, Belly finds herself at a crossroads and must decide which brother has her heart. Summer will never be the same...",https://image.tmdb.org/t/p/w500/kApoJroNpuJio8wReWmbldvv3DL.jpg,2025-07-16,11,8.4
 80885-1,80885,Ninja Hattori-kun,1,Season 1,,https://image.tmdb.org/t/p/w500/ngcV3Fz97ZX5jafY0pgct4bZiYK.jpg,1981-09-28,697,0.0
+2734-0,2734,Law & Order: Special Victims Unit,0,Specials,,https://image.tmdb.org/t/p/w500/3pLGDNuFGdpgMd7IjfTznLDAl0.jpg,,6,0.0
+2734-1,2734,Law & Order: Special Victims Unit,1,Season 1,,https://image.tmdb.org/t/p/w500/fMcB4Kznfz3sR4Jkg1lOtf5blCp.jpg,1999-09-20,22,7.5
+2734-2,2734,Law & Order: Special Victims Unit,2,Season 2,,https://image.tmdb.org/t/p/w500/9yyzbzZuPUPlnvhuyi4VmDac1SL.jpg,2000-10-19,21,8.0
+2734-3,2734,Law & Order: Special Victims Unit,3,Season 3,,https://image.tmdb.org/t/p/w500/9S59DS9XpzrBRcDhrEsurHxaTwD.jpg,2001-09-27,23,8.0
+2734-4,2734,Law & Order: Special Victims Unit,4,Season 4,,https://image.tmdb.org/t/p/w500/iIlD5l14GbVPDGcVqFXB7XObGlp.jpg,2002-09-26,25,7.5
+2734-5,2734,Law & Order: Special Victims Unit,5,Season 5,,https://image.tmdb.org/t/p/w500/vowmLggLYRC75DpEttts7ej2FBM.jpg,2003-09-22,25,7.8
+2734-6,2734,Law & Order: Special Victims Unit,6,Season 6,"Detectives Benson, Stabler, Fin and Munch face serial killers, self-proclaimed psychics and cult leaders as they investigate crime in New York City.",https://image.tmdb.org/t/p/w500/p3iU1fLz9h8O1d6g4KrOzKbU2vq.jpg,2004-09-20,23,7.6
+2734-7,2734,Law & Order: Special Victims Unit,7,Season 7,"The unit's gut-wrenching cases include a schoolyard shooting of a child, a shady dating service and a shocking revelation regarding Tutuola's son.",https://image.tmdb.org/t/p/w500/i66p9aJpaPPd2Y83cRE256R4kiv.jpg,2005-09-19,22,7.7
+2734-8,2734,Law & Order: Special Victims Unit,8,Season 8,,https://image.tmdb.org/t/p/w500/mvNHgkbvREA6ty5lJpW4Dj0ks7L.jpg,2006-09-18,22,7.7
+2734-9,2734,Law & Order: Special Victims Unit,9,Season 9,"Guest stars, including Cynthia Nixon, Robin Williams, Method Man, Jared Harris and Melissa Joan Hart, are season highlights.",https://image.tmdb.org/t/p/w500/hSJbnNHL2Hlm6HO2JzrT0s4vNVZ.jpg,2007-09-24,19,7.9
+2734-10,2734,Law & Order: Special Victims Unit,10,Season 10,"Stabler confronts his own demons when his daughter is caught with drugs, and Benson follows connections between an abused child and an attack on a woman.",https://image.tmdb.org/t/p/w500/j2qRsT11WL8sX1ULWWxS7opu8Dj.jpg,2008-09-21,22,7.8
+2734-11,2734,Law & Order: Special Victims Unit,11,Season 11,"A new ADA joins the team, a crime scene photo of a murdered teen goes viral and Stabler tries to prove Benson did not murder a biker.",https://image.tmdb.org/t/p/w500/uVNfsziEtWZpnAbKevNjArafEGa.jpg,2009-09-21,24,7.5
+2734-12,2734,Law & Order: Special Victims Unit,12,Season 12,,https://image.tmdb.org/t/p/w500/oEOX17rWyWOx9gNmb9cJAiKqQBa.jpg,2010-09-21,24,7.5
+2734-13,2734,Law & Order: Special Victims Unit,13,Season 13,Season 13 dealt with the departure of Detective Elliot Stabler from the Special Victims Unit after a shooting in the squad room.,https://image.tmdb.org/t/p/w500/tITqx6k7Pansb4gEPeZ0AG3lkDf.jpg,2011-09-20,23,7.4
+2734-14,2734,Law & Order: Special Victims Unit,14,Season 14,,https://image.tmdb.org/t/p/w500/vSJ7X9IY4Sa1MyuhCKX4qylDqLM.jpg,2012-09-25,24,7.9
+2734-15,2734,Law & Order: Special Victims Unit,15,Season 15,,https://image.tmdb.org/t/p/w500/rpkLpzLncTl2Sowna0SDKinyZPG.jpg,2013-09-24,24,8.3
+2734-16,2734,Law & Order: Special Victims Unit,16,Season 16,,https://image.tmdb.org/t/p/w500/vbxnHjk1kbAYtSg2YG1NkH7N3kf.jpg,2014-09-23,23,8.1
+2734-17,2734,Law & Order: Special Victims Unit,17,Season 17,,https://image.tmdb.org/t/p/w500/3S1WWliIdFSXglNutCSppRnk4jE.jpg,2015-09-22,23,8.4
+2734-18,2734,Law & Order: Special Victims Unit,18,Season 18,,https://image.tmdb.org/t/p/w500/3i28LB4U06W3zo7xJ3iD2ftIxPT.jpg,2016-09-20,21,7.9
+2734-19,2734,Law & Order: Special Victims Unit,19,Season 19,,https://image.tmdb.org/t/p/w500/6LZk57ODCi1A6HCDqpssn43OjFN.jpg,2017-09-26,24,7.9
+2734-20,2734,Law & Order: Special Victims Unit,20,Season 20,,https://image.tmdb.org/t/p/w500/qnZEj6rA5UFW839dOKRhIFI4moe.jpg,2018-09-26,24,7.5
+2734-21,2734,Law & Order: Special Victims Unit,21,Season 21,,https://image.tmdb.org/t/p/w500/1sSCkqrjq8DgS5WpdLoim4JetYH.jpg,2019-09-25,20,7.5
+2734-22,2734,Law & Order: Special Victims Unit,22,Season 22,,https://image.tmdb.org/t/p/w500/4fClCRCTK5pRDP80tVUmABQtuSe.jpg,2020-11-11,16,8.3
+2734-23,2734,Law & Order: Special Victims Unit,23,Season 23,,https://image.tmdb.org/t/p/w500/a2EhFAU2Ymgx2LFZdrh0QwXoncY.jpg,2021-09-22,22,8.3
+2734-24,2734,Law & Order: Special Victims Unit,24,Season 24,,https://image.tmdb.org/t/p/w500/e8cx3BVz6jJDLEgW02UQhEBtsZw.jpg,2022-09-21,22,8.4
+2734-25,2734,Law & Order: Special Victims Unit,25,Season 25,,https://image.tmdb.org/t/p/w500/pDnpkJiGrvs9pehjbole86SaDtX.jpg,2024-01-17,13,8.2
+2734-26,2734,Law & Order: Special Victims Unit,26,Season 26,,https://image.tmdb.org/t/p/w500/abWOCrIo7bbAORxcQyOFNJdnnmR.jpg,2024-10-03,22,8.6
 5092-0,5092,Infinite Challenge,0,Specials,,https://image.tmdb.org/t/p/w500/9nb6NQ44FfvLEoS1tChIkN12hEg.jpg,2008-09-14,30,0.0
 5092-1,5092,Infinite Challenge,1,Reckless Challenge,"The three regular cast members, joined by three guests, attempt to complete sports-related missions in an outdoor studio.  The challenges were based on viewers' suggestions.",https://image.tmdb.org/t/p/w500/4Nn3JUVrB4O6Qqo5yze051OG07O.jpg,2005-04-23,27,0.0
 5092-2,5092,Infinite Challenge,2,Excessive Challenge and Master of Quiz,The cast solve quizzes and play games.  Initially the season was similar to season one and was known as Excessive Challenge (무리한 도전).,https://image.tmdb.org/t/p/w500/swZx9NztltaiPQutg0lzDnOk0y9.jpg,2005-10-29,26,0.0
@@ -396,33 +391,6 @@ The twentieth Race premiered on Sunday, February 19, 2012. It aired on CBS in th
 68921-5,68921,WWE 205 Live,5,Season 5,,,2020-01-03,52,0.0
 68921-6,68921,WWE 205 Live,6,Season 6,2021 season of WWE 205 Live,,2021-01-01,53,0.0
 68921-7,68921,WWE 205 Live,7,Season 7,,,2022-01-07,6,0.0
-46825-0,46825,Rooster Teeth Animated Adventures,0,Specials,,https://image.tmdb.org/t/p/w500/y0foSIvySJVEoH1i0jqwxVrECym.jpg,2012-07-16,13,0.0
-46825-1,46825,Rooster Teeth Animated Adventures,1,2011,,https://image.tmdb.org/t/p/w500/6le7xhkBaGAX79Ne4If6Wf6shTG.jpg,2011-09-28,113,0.0
-46825-2,46825,Rooster Teeth Animated Adventures,2,2012,,https://image.tmdb.org/t/p/w500/pc5C3Ldpmh2XS4pLSE9JftSK6Qd.jpg,2012-01-04,52,0.0
-46825-3,46825,Rooster Teeth Animated Adventures,3,2013,,https://image.tmdb.org/t/p/w500/bE5JPplUMJ8rXtDlsaf735YkCVC.jpg,2013-01-02,50,0.0
-46825-4,46825,Rooster Teeth Animated Adventures,4,2014,,https://image.tmdb.org/t/p/w500/3FreafZiTZN6HKBB5kiluJXCj3U.jpg,2014-01-08,45,0.0
-46825-5,46825,Rooster Teeth Animated Adventures,5,2015,,https://image.tmdb.org/t/p/w500/gCFtYsqrlOa9VnzrEEmBqiXs3L0.jpg,2015-01-07,38,0.0
-46825-6,46825,Rooster Teeth Animated Adventures,6,2016,,https://image.tmdb.org/t/p/w500/bJmzkzJZsM7LaOqhvSgnl4psycE.jpg,2016-01-05,47,0.0
-46825-7,46825,Rooster Teeth Animated Adventures,7,2017,,https://image.tmdb.org/t/p/w500/iknkXSsZheDJs71udERC8c8gxVP.jpg,2016-12-14,53,0.0
-46825-8,46825,Rooster Teeth Animated Adventures,8,2018,,https://image.tmdb.org/t/p/w500/4PEpB0A1OJGxU9sAiEwsC2G8UNt.jpg,2018-01-08,52,0.0
-46825-9,46825,Rooster Teeth Animated Adventures,9,2019,,https://image.tmdb.org/t/p/w500/akcD6oRAxVvpq6G0kGrHQeH1re6.jpg,2019-01-07,52,0.0
-46825-10,46825,Rooster Teeth Animated Adventures,10,2020,,https://image.tmdb.org/t/p/w500/paTTfugyuU3ooWCNOkjWUT3cFBh.jpg,2020-01-06,52,0.0
-46825-11,46825,Rooster Teeth Animated Adventures,11,2021,,https://image.tmdb.org/t/p/w500/2wSZC5XkME1nn87n0huTEDfiE8m.jpg,2021-01-04,52,0.0
-46825-12,46825,Rooster Teeth Animated Adventures,12,2022,,https://image.tmdb.org/t/p/w500/lmkBBpjeyKDBrJokWy0iSRQFqsu.jpg,2022-01-02,52,0.0
-46825-13,46825,Rooster Teeth Animated Adventures,13,2023,,https://image.tmdb.org/t/p/w500/4QZ3ZLS77wdiBIv6Ar6ToVzytnV.jpg,2023-01-01,12,0.0
-63770-1,63770,The Late Show with Stephen Colbert,1,Season 1,,https://image.tmdb.org/t/p/w500/cbJunCfhH2QmaDnAxM30UhX47G0.jpg,2015-09-08,202,6.0
-63770-2,63770,The Late Show with Stephen Colbert,2,Season 2,,https://image.tmdb.org/t/p/w500/3mYUDshg9VNLjQQpdi1aocRn8mq.jpg,2016-09-06,206,6.2
-63770-3,63770,The Late Show with Stephen Colbert,3,Season 3,,https://image.tmdb.org/t/p/w500/kn4PK9Pa5rLH6GitXFHtlDO04nI.jpg,2017-09-05,194,0.0
-63770-4,63770,The Late Show with Stephen Colbert,4,Season 4,,https://image.tmdb.org/t/p/w500/wT72vl9J4dE7i8NBy9vkxg6KkLo.jpg,2018-09-04,195,5.9
-63770-5,63770,The Late Show with Stephen Colbert,5,Season 5,,https://image.tmdb.org/t/p/w500/wT72vl9J4dE7i8NBy9vkxg6KkLo.jpg,2019-09-03,173,6.0
-63770-6,63770,The Late Show with Stephen Colbert,6,Season 6,,https://image.tmdb.org/t/p/w500/wT72vl9J4dE7i8NBy9vkxg6KkLo.jpg,2020-09-14,168,6.0
-63770-7,63770,The Late Show with Stephen Colbert,7,Season 7,,https://image.tmdb.org/t/p/w500/9jkThAGYj2yp8jsS6Nriy5mzKFT.jpg,2021-09-07,170,9.4
-63770-8,63770,The Late Show with Stephen Colbert,8,Season 8,,https://image.tmdb.org/t/p/w500/ykWcgG38SqTvT2MVhKsrOPdLvBC.jpg,2022-09-06,107,9.9
-63770-9,63770,The Late Show with Stephen Colbert,9,Season 9,,https://image.tmdb.org/t/p/w500/8hDarCWTgBV2uLWglSI7qcXNLpw.jpg,2023-10-02,129,9.2
-63770-10,63770,The Late Show with Stephen Colbert,10,Season 10,,https://image.tmdb.org/t/p/w500/3sjs8nq5FxAkU6FXVpDdRwSbgLZ.jpg,2024-09-03,145,1.2
-194766-1,194766,The Summer I Turned Pretty,1,Season 1,"Belly Conklin is about to turn 16, and she’s headed to her favorite place in the world, Cousins Beach, to spend the summer with her family and the Fishers. Belly’s grown up a lot over the past year, and she has a feeling that this summer is going to be different than all the summers before.",https://image.tmdb.org/t/p/w500/6yCL5HB1ugO3bMwloEDNiNdadUa.jpg,2022-06-16,7,7.6
-194766-2,194766,The Summer I Turned Pretty,2,Season 2,"Belly used to count down the days until she could return to Cousins Beach, but with Conrad and Jeremiah fighting over her heart and the return of Susannah's cancer, she's not sure summer will ever be the same. When an unexpected visitor threatens the future of Susannah's beloved house, Belly has to rally the gang to come together—and to decide once and for all where her heart lies.",https://image.tmdb.org/t/p/w500/A7ziP4QaTRAwWqGhHyknN5UULlf.jpg,2023-07-13,8,7.8
-194766-3,194766,The Summer I Turned Pretty,3,Season 3,"It's the end of her junior year of college, and Belly's looking forward to another summer in Cousins with her soulmate, Jeremiah. Her future seems set, until some core-shaking events bring her first love Conrad back into her life. Now on the brink of adulthood, Belly finds herself at a crossroads and must decide which brother has her heart. Summer will never be the same...",https://image.tmdb.org/t/p/w500/kApoJroNpuJio8wReWmbldvv3DL.jpg,2025-07-16,11,8.3
 1622-0,1622,Supernatural,0,Specials,,https://image.tmdb.org/t/p/w500/fg3MNPPng5PEV2Em8oiWfo1SN60.jpg,,220,0.0
 1622-1,1622,Supernatural,1,Season 1,"The Creepy. The Demented. The Unexplained. The Unearthly. Sam Winchester grew up hunting such terrifying things. But that’s all past. Law school beckons him. So does safety and normalcy. That is, until Sam’s estranged brother Dean appears with troubling news: their father has disappeared, a man who’s hunted evil for 22 years. So to find their father, the brothers must hunt what their father hunts…and Sam must return to the life he’d rather leave behind.",https://image.tmdb.org/t/p/w500/fFn80y3PPmCcTbIIjQS5ft0jNFc.jpg,2005-09-13,22,7.7
 1622-2,1622,Supernatural,2,Season 2,"They're back the ghouls and vampires, the ghosts and spirits and even more terrifying entities. And wherever these evil beings are, you'll find brothers Sam and Dean Winchester, hunters on the trail of the demon who murdered their mother…and of any other unholy agent of the Supernatural. Join the brothers in their mind-bending, bone-chilling Season 2 road trip across America a journey deeper into the mystery of their own destinies.",https://image.tmdb.org/t/p/w500/235GDaro5DuRJ9ogXmV7tOB6W5j.jpg,2006-09-28,22,8.1
@@ -439,34 +407,20 @@ The twentieth Race premiered on Sunday, February 19, 2012. It aired on CBS in th
 1622-13,1622,Supernatural,13,Season 13,"Season 13 begins exactly where we left off, with Sam and Dean left to pick up the pieces after the loss of their mother, the demise of Crowley and the heartbreaking death of Castiel. The birth of Jack leaves the Winchester brothers with differing opinions on how to deal with a Nephilim. After being dragged into the breach, Mary must learn to survive Lucifer and an apocalyptic world.",https://image.tmdb.org/t/p/w500/xBJ7Ts2nDUbUWu4Ef9v086dbBrQ.jpg,2017-10-12,23,7.7
 1622-14,1622,Supernatural,14,Season 14,"The season follows Sam and Dean who, along with Jack and Castiel, try to take down the archangel Michael from another world, and learn something bigger is at hand.",https://image.tmdb.org/t/p/w500/bbzLtfh7VwfoaeQkkNJ2EMv6lKS.jpg,2018-10-11,20,7.3
 1622-15,1622,Supernatural,15,Season 15,The Winchester brothers' epic journey comes to a thrilling and terrifying close in Season 15.,https://image.tmdb.org/t/p/w500/j3kk9PK1Xp8G3r6nDxVLOL1rqLo.jpg,2019-10-10,20,7.5
-34860-0,34860,Ninja Boy Rantaro,0,Specials,,,,18,0.0
-34860-1,34860,Ninja Boy Rantaro,1,Season 1,,https://image.tmdb.org/t/p/w500/k5CuBy00DQCuAg5pPWtyQWOcy3P.jpg,1993-04-10,91,0.0
-34860-2,34860,Ninja Boy Rantaro,2,Season 2,,,,120,0.0
-34860-3,34860,Ninja Boy Rantaro,3,Season 3,,,,81,0.0
-34860-4,34860,Ninja Boy Rantaro,4,Season 4,,,2003-04-07,130,0.0
-34860-5,34860,Ninja Boy Rantaro,5,Season 5,,,2003-10-15,130,0.0
-34860-6,34860,Ninja Boy Rantaro,6,Season 6,,,2004-04-19,131,0.0
-34860-7,34860,Ninja Boy Rantaro,7,Season 7,,,,1,0.0
-34860-8,34860,Ninja Boy Rantaro,8,Season 8,,,,80,0.0
-34860-9,34860,Ninja Boy Rantaro,9,Season 9,,,,26,0.0
-34860-10,34860,Ninja Boy Rantaro,10,Season 10,,,,15,0.0
-34860-11,34860,Ninja Boy Rantaro,11,Season 11,,,,5,0.0
-34860-12,34860,Ninja Boy Rantaro,12,Season 12,,,,78,0.0
-34860-13,34860,Ninja Boy Rantaro,13,Season 13,,,,0,0.0
-34860-14,34860,Ninja Boy Rantaro,14,Season 14,,,,16,0.0
-34860-15,34860,Ninja Boy Rantaro,15,Season 15,,,,48,0.0
-34860-16,34860,Ninja Boy Rantaro,16,Season 16,,,2008-01-01,100,0.0
-34860-17,34860,Ninja Boy Rantaro,17,Season 17,,,,1,0.0
-34860-18,34860,Ninja Boy Rantaro,18,Season 18,,,,91,0.0
-34860-19,34860,Ninja Boy Rantaro,19,Season 19,,,,90,0.0
-34860-20,34860,Ninja Boy Rantaro,20,Season 20,,,,90,0.0
-34860-21,34860,Ninja Boy Rantaro,21,Season 21,,,,75,0.0
-34860-22,34860,Ninja Boy Rantaro,22,Season 22,,,,75,0.0
-34860-23,34860,Ninja Boy Rantaro,23,Season 23,,,,70,0.0
-34860-24,34860,Ninja Boy Rantaro,24,Season 24,,,,70,0.0
-34860-25,34860,Ninja Boy Rantaro,25,Season 25,,,,64,0.0
-34860-26,34860,Ninja Boy Rantaro,26,Season 26,,,,76,0.0
-34860-27,34860,Ninja Boy Rantaro,27,Season 27,,,,76,0.0
+46825-0,46825,Rooster Teeth Animated Adventures,0,Specials,,https://image.tmdb.org/t/p/w500/y0foSIvySJVEoH1i0jqwxVrECym.jpg,2012-07-16,13,0.0
+46825-1,46825,Rooster Teeth Animated Adventures,1,2011,,https://image.tmdb.org/t/p/w500/6le7xhkBaGAX79Ne4If6Wf6shTG.jpg,2011-09-28,113,0.0
+46825-2,46825,Rooster Teeth Animated Adventures,2,2012,,https://image.tmdb.org/t/p/w500/pc5C3Ldpmh2XS4pLSE9JftSK6Qd.jpg,2012-01-04,52,0.0
+46825-3,46825,Rooster Teeth Animated Adventures,3,2013,,https://image.tmdb.org/t/p/w500/bE5JPplUMJ8rXtDlsaf735YkCVC.jpg,2013-01-02,50,0.0
+46825-4,46825,Rooster Teeth Animated Adventures,4,2014,,https://image.tmdb.org/t/p/w500/3FreafZiTZN6HKBB5kiluJXCj3U.jpg,2014-01-08,45,0.0
+46825-5,46825,Rooster Teeth Animated Adventures,5,2015,,https://image.tmdb.org/t/p/w500/gCFtYsqrlOa9VnzrEEmBqiXs3L0.jpg,2015-01-07,38,0.0
+46825-6,46825,Rooster Teeth Animated Adventures,6,2016,,https://image.tmdb.org/t/p/w500/bJmzkzJZsM7LaOqhvSgnl4psycE.jpg,2016-01-05,47,0.0
+46825-7,46825,Rooster Teeth Animated Adventures,7,2017,,https://image.tmdb.org/t/p/w500/iknkXSsZheDJs71udERC8c8gxVP.jpg,2016-12-14,53,0.0
+46825-8,46825,Rooster Teeth Animated Adventures,8,2018,,https://image.tmdb.org/t/p/w500/4PEpB0A1OJGxU9sAiEwsC2G8UNt.jpg,2018-01-08,52,0.0
+46825-9,46825,Rooster Teeth Animated Adventures,9,2019,,https://image.tmdb.org/t/p/w500/akcD6oRAxVvpq6G0kGrHQeH1re6.jpg,2019-01-07,52,0.0
+46825-10,46825,Rooster Teeth Animated Adventures,10,2020,,https://image.tmdb.org/t/p/w500/paTTfugyuU3ooWCNOkjWUT3cFBh.jpg,2020-01-06,52,0.0
+46825-11,46825,Rooster Teeth Animated Adventures,11,2021,,https://image.tmdb.org/t/p/w500/2wSZC5XkME1nn87n0huTEDfiE8m.jpg,2021-01-04,52,0.0
+46825-12,46825,Rooster Teeth Animated Adventures,12,2022,,https://image.tmdb.org/t/p/w500/lmkBBpjeyKDBrJokWy0iSRQFqsu.jpg,2022-01-02,52,0.0
+46825-13,46825,Rooster Teeth Animated Adventures,13,2023,,https://image.tmdb.org/t/p/w500/4QZ3ZLS77wdiBIv6Ar6ToVzytnV.jpg,2023-01-01,12,0.0
 17887-1,17887,7de Laan,1,Season 1,,,2000-04-04,104,0.0
 17887-2,17887,7de Laan,2,Season 2,,,2002-01-24,208,0.0
 17887-3,17887,7de Laan,3,Season 3,,,2003-01-20,260,0.0
@@ -491,6 +445,24 @@ The twentieth Race premiered on Sunday, February 19, 2012. It aired on CBS in th
 17887-22,17887,7de Laan,22,Season 22,,,2020-12-30,260,0.0
 17887-23,17887,7de Laan,23,Season 23,,,2021-12-29,260,0.0
 17887-24,17887,7de Laan,24,Season 24,,,2022-12-28,260,0.0
+12415-1,12415,Egoli: Place of Gold,1,Season 1,,,1992-04-06,260,0.0
+12415-2,12415,Egoli: Place of Gold,2,Season 2,,,1993-04-05,260,0.0
+12415-3,12415,Egoli: Place of Gold,3,Season 3,,,1994-04-04,260,0.0
+12415-4,12415,Egoli: Place of Gold,4,Season 4,,,1995-04-03,260,0.0
+12415-5,12415,Egoli: Place of Gold,5,Season 5,,,1996-04-01,260,0.0
+12415-6,12415,Egoli: Place of Gold,6,Season 6,,,1997-03-31,223,0.0
+12415-7,12415,Egoli: Place of Gold,7,Season 7,,,1998-02-05,337,0.0
+12415-8,12415,Egoli: Place of Gold,8,Season 8,,,1999-05-24,260,0.0
+12415-9,12415,Egoli: Place of Gold,9,Season 9,,,2000-05-22,186,0.0
+12415-10,12415,Egoli: Place of Gold,10,Season 10,,,2001-02-06,254,0.0
+12415-11,12415,Egoli: Place of Gold,11,Season 11,,,2002-01-28,260,0.0
+12415-12,12415,Egoli: Place of Gold,12,Season 12,,,2003-01-27,260,10.0
+12415-13,12415,Egoli: Place of Gold,13,Season 13,,,2004-01-26,260,0.0
+12415-14,12415,Egoli: Place of Gold,14,Season 14,,,2005-01-24,420,0.0
+12415-15,12415,Egoli: Place of Gold,15,Season 15,,,2006-09-04,93,0.0
+12415-16,12415,Egoli: Place of Gold,16,Season 16,,,2007-01-11,267,0.0
+12415-17,12415,Egoli: Place of Gold,17,Season 17,,,2008-01-21,309,0.0
+12415-18,12415,Egoli: Place of Gold,18,Season 18,,,2009-03-30,260,0.0
 1399-0,1399,Game of Thrones,0,Specials,,https://image.tmdb.org/t/p/w500/aos6lC1JGYt6ZRL85lgstNsfSeY.jpg,2010-12-05,286,0.0
 1399-1,1399,Game of Thrones,1,Season 1,"Trouble is brewing in the Seven Kingdoms of Westeros. For the driven inhabitants of this visionary world, control of Westeros' Iron Throne holds the lure of great power. But in a land where the seasons can last a lifetime, winter is coming...and beyond the Great Wall that protects them, an ancient evil has returned. In Season One, the story centers on three primary areas: the Stark and the Lannister families, whose designs on controlling the throne threaten a tenuous peace; the dragon princess Daenerys, heir to the former dynasty, who waits just over the Narrow Sea with her malevolent brother Viserys; and the Great Wall--a massive barrier of ice where a forgotten danger is stirring.",https://image.tmdb.org/t/p/w500/wgfKiqzuMrFIkU1M68DDDY8kGC1.jpg,2011-04-17,10,8.4
 1399-2,1399,Game of Thrones,2,Season 2,"The cold winds of winter are rising in Westeros...war is coming...and five kings continue their savage quest for control of the all-powerful Iron Throne. With winter fast approaching, the coveted Iron Throne is occupied by the cruel Joffrey, counseled by his conniving mother Cersei and uncle Tyrion. But the Lannister hold on the Throne is under assault on many fronts. Meanwhile, a new leader is rising among the wildings outside the Great Wall, adding new perils for Jon Snow and the order of the Night's Watch.",https://image.tmdb.org/t/p/w500/9xfNkPwDOqyeUvfNhs1XlWA0esP.jpg,2012-04-01,10,8.3
@@ -500,6 +472,158 @@ The twentieth Race premiered on Sunday, February 19, 2012. It aired on CBS in th
 1399-6,1399,Game of Thrones,6,Season 6,"Following the shocking developments at the conclusion of season five, survivors from all parts of Westeros and Essos regroup to press forward, inexorably, towards their uncertain individual fates. Familiar faces will forge new alliances to bolster their strategic chances at survival, while new characters will emerge to challenge the balance of power in the east, west, north and south.",https://image.tmdb.org/t/p/w500/p1udLh0gfqyZFmXBGa393gk8go5.jpg,2016-04-24,10,8.3
 1399-7,1399,Game of Thrones,7,Season 7,The long winter is here. And with it comes a convergence of armies and attitudes that have been brewing for years.,https://image.tmdb.org/t/p/w500/oX51n32QyHeFP5kErksemJsJljL.jpg,2017-07-16,7,8.2
 1399-8,1399,Game of Thrones,8,Season 8,"The Great War has come, the Wall has fallen and the Night King's army of the dead marches towards Westeros. The end is here, but who will take the Iron Throne?",https://image.tmdb.org/t/p/w500/259Q5FuaD3TNB7DGauTaJVRC8XV.jpg,2019-04-14,6,6.2
+1434-0,1434,Family Guy,0,Specials,,https://image.tmdb.org/t/p/w500/ngPUB8NsOCmjSjSImVuvTIKVm1.jpg,2006-05-21,25,0.0
+1434-1,1434,Family Guy,1,Season 1,,https://image.tmdb.org/t/p/w500/5E4yhF7TVrr1l8aq7GM6IdLTsrP.jpg,1999-01-31,7,7.1
+1434-2,1434,Family Guy,2,Season 2,,https://image.tmdb.org/t/p/w500/rskVG2RP0Uzamv9zzslYE7TYPdE.jpg,1999-09-23,21,7.2
+1434-3,1434,Family Guy,3,Season 3,,https://image.tmdb.org/t/p/w500/5sK70w0MLNVa7OeJeOqRmSZUUmr.jpg,2001-07-11,22,6.9
+1434-4,1434,Family Guy,4,Season 4,,https://image.tmdb.org/t/p/w500/h6Qv5oONB3yN1MOqru7v0vAGJ6J.jpg,2005-05-01,30,6.8
+1434-5,1434,Family Guy,5,Season 5,,https://image.tmdb.org/t/p/w500/kyfo6OUtCRYCaxFmqQ3kGORCexq.jpg,2006-09-10,18,6.8
+1434-6,1434,Family Guy,6,Season 6,,https://image.tmdb.org/t/p/w500/pvK7pZUyOLcH9zWdydXD01UUTf0.jpg,2007-09-23,12,7.0
+1434-7,1434,Family Guy,7,Season 7,,https://image.tmdb.org/t/p/w500/5GUHJgPxDwh0njN3ytEIBENhmOJ.jpg,2008-09-28,16,6.7
+1434-8,1434,Family Guy,8,Season 8,,https://image.tmdb.org/t/p/w500/kwPaT3INWe36c5B3t7FJFWelm8y.jpg,2009-09-27,20,6.6
+1434-9,1434,Family Guy,9,Season 9,,https://image.tmdb.org/t/p/w500/gi9TE5c1bVTHEN4BmnICX23mlFO.jpg,2010-09-26,18,6.7
+1434-10,1434,Family Guy,10,Season 10,,https://image.tmdb.org/t/p/w500/hD0uA1xMNHsPDovAmgjDowjbctS.jpg,2011-09-25,23,6.9
+1434-11,1434,Family Guy,11,Season 11,,https://image.tmdb.org/t/p/w500/6reQqzBqJ7ObrNF2EfBDAvHRhoR.jpg,2012-09-30,22,6.7
+1434-12,1434,Family Guy,12,Season 12,,https://image.tmdb.org/t/p/w500/mPsPEP0xtDjWez5opDBTqAdxy51.jpg,2013-09-29,21,6.5
+1434-13,1434,Family Guy,13,Season 13,,https://image.tmdb.org/t/p/w500/yxjMLQzz0K5kPmO6k0agSsSnQm4.jpg,2014-09-28,18,6.6
+1434-14,1434,Family Guy,14,Season 14,,https://image.tmdb.org/t/p/w500/qVh5RrPkoexfvrZb2doRIxCnXbR.jpg,2015-09-27,20,6.9
+1434-15,1434,Family Guy,15,Season 15,,https://image.tmdb.org/t/p/w500/84lv0Q5XgrvWlEsrNxMlZS5w1p2.jpg,2016-09-25,20,6.6
+1434-16,1434,Family Guy,16,Season 16,,https://image.tmdb.org/t/p/w500/hhbAUydzQgchqLJpcJIJYwyPJm2.jpg,2017-10-01,20,6.6
+1434-17,1434,Family Guy,17,Season 17,,https://image.tmdb.org/t/p/w500/nS9U4AnJCPlmdM4L0h2TI4lpFOI.jpg,2018-09-30,20,6.2
+1434-18,1434,Family Guy,18,Season 18,,https://image.tmdb.org/t/p/w500/egxsrJV7cPlrGat4cq4OoX6TZkJ.jpg,2019-09-29,20,5.8
+1434-19,1434,Family Guy,19,Season 19,,https://image.tmdb.org/t/p/w500/ryTMELpfCvbfVPH2g8j8dyx9zLu.jpg,2020-09-27,20,6.1
+1434-20,1434,Family Guy,20,Season 20,,https://image.tmdb.org/t/p/w500/9RBeCo8QSaoJLmmuzlwzVH3Hi12.jpg,2021-09-26,20,5.9
+1434-21,1434,Family Guy,21,Season 21,,https://image.tmdb.org/t/p/w500/aLB7psB9N81n5GecHNOudXWW3AI.jpg,2022-09-25,20,6.9
+1434-22,1434,Family Guy,22,Season 22,,https://image.tmdb.org/t/p/w500/y0HUz4eUNUe3TeEd8fQWYazPaC7.jpg,2023-10-01,15,7.3
+1434-23,1434,Family Guy,23,Season 23,,https://image.tmdb.org/t/p/w500/8o8kiBkWFK3gVytHdyzEWUBXVfK.jpg,2025-02-16,18,7.0
+4614-0,4614,NCIS,0,Specials,,https://image.tmdb.org/t/p/w500/FlzeiA7DV0KQQ6FOExjTaHWBjs.jpg,,120,0.0
+4614-1,4614,NCIS,1,Season 1,,https://image.tmdb.org/t/p/w500/ruiOyO3M47kM4TSpsuwyxr1HnSR.jpg,2003-09-22,23,7.5
+4614-2,4614,NCIS,2,Season 2,,https://image.tmdb.org/t/p/w500/xuHMeqMludcvuc044p1KK8P0khI.jpg,2004-09-27,23,7.4
+4614-3,4614,NCIS,3,Season 3,,https://image.tmdb.org/t/p/w500/oODrsSxzOkk7ODM2D13OVSdhhGM.jpg,2005-09-19,24,7.3
+4614-4,4614,NCIS,4,Season 4,,https://image.tmdb.org/t/p/w500/g8ITNivPqH4oO6DooQyTXpV4k7O.jpg,2006-09-18,24,7.0
+4614-5,4614,NCIS,5,Season 5,,https://image.tmdb.org/t/p/w500/TuaO9cUbFMoUvWXozQDBXxk0jX.jpg,2007-09-24,19,7.3
+4614-6,4614,NCIS,6,Season 6,,https://image.tmdb.org/t/p/w500/1gPhXsISRdx9Zr9Zjt6gYRCRLTx.jpg,2008-09-22,25,7.3
+4614-7,4614,NCIS,7,Season 7,,https://image.tmdb.org/t/p/w500/piRf9xx4yVeHPWdbl672ohh1Yw6.jpg,2009-09-21,24,7.3
+4614-8,4614,NCIS,8,Season 8,,https://image.tmdb.org/t/p/w500/zlw3MFUmiy3vR6SYm4vigAjfsE9.jpg,2010-09-20,24,7.2
+4614-9,4614,NCIS,9,Season 9,,https://image.tmdb.org/t/p/w500/lxdcCxdliuJIG7cvX4bA34hLY9O.jpg,2011-09-19,24,7.4
+4614-10,4614,NCIS,10,Season 10,"Despite a bomb attack on Gibbs and the team, duty continues to call for these special agents as they try to regroup and put the pieces back together.",https://image.tmdb.org/t/p/w500/z0GQhIt7uF9aPnMr7YQH6nS2ch4.jpg,2012-09-24,24,7.2
+4614-11,4614,NCIS,11,Season 11,"When Season 10 ended in the series' biggest cliffhanger, the NCIS was virtually disbanded and Gibbs was aiming a rifle at the FBI agent responsible.",https://image.tmdb.org/t/p/w500/tctlBaYAGMQXC0WeSWRsQTRlHrq.jpg,2013-09-23,24,7.2
+4614-12,4614,NCIS,12,Season 12,"In Season 12, Gibbs and McGee travel to Russia to retrieve a computer expert and get into an ongoing battle with mercenary Sergei Mishnev.",https://image.tmdb.org/t/p/w500/mFMuez4mJttuV59RLLCrBRJv1Uv.jpg,2014-09-22,24,7.1
+4614-13,4614,NCIS,13,Season 13,,https://image.tmdb.org/t/p/w500/VfG3LekB3PQpfjCt4qbX0H6Ake.jpg,2015-09-21,24,7.3
+4614-14,4614,NCIS,14,Season 14,"Following the unexpected departure of a key member, the NCIS team regroups and recruits several new faces, including a former MI6 operative.",https://image.tmdb.org/t/p/w500/7LMI9VVUD4zAgVLQrGGdNUVCAa8.jpg,2016-09-19,24,7.6
+4614-15,4614,NCIS,15,Season 15,,https://image.tmdb.org/t/p/w500/bdMcCHERoYwYCpHJW0aHYNm2oKG.jpg,2017-09-25,24,8.0
+4614-16,4614,NCIS,16,Season 16,,https://image.tmdb.org/t/p/w500/sQz8u7UpRE02SthffFgIywogoKS.jpg,2018-09-24,24,7.9
+4614-17,4614,NCIS,17,Season 17,,https://image.tmdb.org/t/p/w500/gK2yIQjtMGYmlLjIbHQuSadzJ9n.jpg,2019-09-23,20,7.8
+4614-18,4614,NCIS,18,Season 18,,https://image.tmdb.org/t/p/w500/gYeIW2bgvQEwTFdkxufkzximplS.jpg,2020-11-16,16,7.9
+4614-19,4614,NCIS,19,Season 19,,https://image.tmdb.org/t/p/w500/lSTchtc26YNdOjdKvZtLs22SokL.jpg,2021-09-19,21,7.9
+4614-20,4614,NCIS,20,Season 20,,https://image.tmdb.org/t/p/w500/2exOHePjOTquUsbThPGhuEjYTyA.jpg,2022-09-18,22,7.6
+4614-21,4614,NCIS,21,Season 21,,https://image.tmdb.org/t/p/w500/19ht0bW0v1BzQO3WO319R9EXSE6.jpg,2024-02-11,10,7.5
+4614-22,4614,NCIS,22,Season 22,,https://image.tmdb.org/t/p/w500/kKkPQbrZh9dINkz0zO0QnD5MDW1.jpg,2024-10-14,20,8.3
+4614-23,4614,NCIS,23,Season 23,,,,1,0.0
+291-0,291,Coronation Street,0,Specials,,,,47,0.0
+291-1,291,Coronation Street,1,Season 1,1960,,1960-12-08,7,2.0
+291-2,291,Coronation Street,2,Season 2,,,1961-01-04,102,0.0
+291-3,291,Coronation Street,3,Season 3,,,1962-01-01,105,0.0
+291-4,291,Coronation Street,4,Season 4,,,1963-01-02,74,0.0
+291-5,291,Coronation Street,5,Season 5,,,1964-01-01,42,0.0
+291-6,291,Coronation Street,6,Season 6,,,1965-01-04,22,0.0
+291-7,291,Coronation Street,7,Season 7,,,1966-01-03,61,0.0
+291-8,291,Coronation Street,8,Season 8,,,1967-01-02,2,0.0
+291-9,291,Coronation Street,9,Season 9,,,1968-01-01,50,0.0
+291-10,291,Coronation Street,10,Season 10,,,1969-01-01,104,0.0
+291-11,291,Coronation Street,11,Season 11,,,1970-01-05,7,0.0
+291-12,291,Coronation Street,12,Season 12,,,1971-01-04,8,0.0
+291-13,291,Coronation Street,13,Season 13,,,1972-01-03,2,0.0
+291-14,291,Coronation Street,14,Season 14,,,1973-01-01,2,0.0
+291-15,291,Coronation Street,15,Season 15,,,1974-01-02,41,0.0
+291-16,291,Coronation Street,16,Season 16,,,1975-01-01,7,0.0
+291-17,291,Coronation Street,17,Season 17,,,1976-01-05,5,0.0
+291-18,291,Coronation Street,18,Season 18,,,1977-01-03,3,0.0
+291-19,291,Coronation Street,19,Season 19,1978,,1978-01-01,16,0.0
+291-20,291,Coronation Street,20,Season 20,,,1979-01-01,2,0.0
+291-21,291,Coronation Street,21,Season 21,,,1980-01-02,27,0.0
+291-22,291,Coronation Street,22,Season 22,,,1981-01-05,4,0.0
+291-23,291,Coronation Street,23,Season 23,1982,,1982-01-03,6,0.0
+291-24,291,Coronation Street,24,Season 24,,,1983-01-03,2,0.0
+291-25,291,Coronation Street,25,Season 25,,,1984-01-02,2,0.0
+291-26,291,Coronation Street,26,Season 26,,,1985-01-02,2,0.0
+291-27,291,Coronation Street,27,Season 27,,,1986-01-01,2,0.0
+291-28,291,Coronation Street,28,Season 28,,,1987-01-05,76,0.0
+291-29,291,Coronation Street,29,Season 29,,,1988-01-04,41,0.0
+291-30,291,Coronation Street,30,Season 30,,,1989-01-02,2,0.0
+291-31,291,Coronation Street,31,Season 31,,,1990-01-01,35,0.0
+291-32,291,Coronation Street,32,Season 32,,,1991-01-02,7,0.0
+291-33,291,Coronation Street,33,Season 33,1992,,1991-12-31,80,0.0
+291-34,291,Coronation Street,34,Season 34,,,1993-01-01,2,0.0
+291-35,291,Coronation Street,35,Season 35,,,1994-01-03,14,0.0
+291-36,291,Coronation Street,36,Season 36,,,1995-01-02,10,0.0
+291-37,291,Coronation Street,37,Season 37,,,1996-01-01,63,0.0
+291-38,291,Coronation Street,38,Season 38,,,1997-01-01,12,0.0
+291-39,291,Coronation Street,39,Season 39,,,1998-01-02,2,0.0
+291-40,291,Coronation Street,40,Season 40,,,1999-01-01,208,0.0
+291-41,291,Coronation Street,41,Season 41,,,2000-01-01,6,0.0
+291-42,291,Coronation Street,42,Season 42,,,2001-01-01,2,0.0
+291-43,291,Coronation Street,43,Season 43,,,2002-01-01,25,0.0
+291-44,291,Coronation Street,44,Season 44,,,2003-01-01,11,0.0
+291-45,291,Coronation Street,45,Season 45,,,2004-01-01,3,0.0
+291-46,291,Coronation Street,46,Season 46,2005,,2005-01-01,13,0.0
+291-47,291,Coronation Street,47,Season 47,,,2006-01-01,2,0.0
+291-48,291,Coronation Street,48,Season 48,2007,,2006-12-31,54,0.0
+291-49,291,Coronation Street,49,Season 49,2008,,2008-01-02,19,0.0
+291-50,291,Coronation Street,50,Season 50,2009,,2009-01-01,51,0.0
+291-51,291,Coronation Street,51,Season 51,2010,,2009-12-31,61,0.0
+291-52,291,Coronation Street,52,Season 52,2011,,2011-01-02,264,0.0
+291-53,291,Coronation Street,53,Season 53,,,2012-01-02,258,0.0
+291-54,291,Coronation Street,54,Season 54,,,2013-01-02,260,0.0
+291-55,291,Coronation Street,55,Season 55,,,2014-01-01,253,0.0
+291-56,291,Coronation Street,56,Season 56,,,2015-01-02,210,0.0
+291-57,291,Coronation Street,57,Season 57,,,2016-01-01,22,0.0
+291-58,291,Coronation Street,58,Season 58,,,2017-01-01,10,0.0
+291-59,291,Coronation Street,59,Season 59,,,2018-01-01,95,0.0
+291-60,291,Coronation Street,60,Season 60,,,2019-01-01,134,0.0
+291-61,291,Coronation Street,61,Season 61,,,2019-12-31,220,0.0
+291-62,291,Coronation Street,62,Season 62,,,2021-01-01,266,0.0
+291-63,291,Coronation Street,63,Season 63,,,2022-01-03,177,0.0
+291-64,291,Coronation Street,64,Season 64,,,2023-01-02,160,0.0
+291-65,291,Coronation Street,65,Season 65,,,2024-01-01,157,0.0
+291-66,291,Coronation Street,66,Season 66,,,2025-01-01,88,0.0
+456-0,456,The Simpsons,0,Specials,,https://image.tmdb.org/t/p/w500/oICoFoPJuEk5VJbEP2HYLEmEQi3.jpg,1987-04-17,82,0.0
+456-1,456,The Simpsons,1,Season 1,,https://image.tmdb.org/t/p/w500/t544zSFUNyvmyeP4sHotlcEX3zH.jpg,1989-12-17,13,7.1
+456-2,456,The Simpsons,2,Season 2,,https://image.tmdb.org/t/p/w500/bRyDlUQQafSoIT052jpjLBMe8TH.jpg,1990-10-11,22,7.5
+456-3,456,The Simpsons,3,Season 3,,https://image.tmdb.org/t/p/w500/9ghmIhWJJuTx3UHyfVVBXQoUGvI.jpg,1991-09-19,24,7.5
+456-4,456,The Simpsons,4,Season 4,,https://image.tmdb.org/t/p/w500/voqu5a4drV1CXMjjZ0Mkw35n26l.jpg,1992-09-24,22,7.7
+456-5,456,The Simpsons,5,Season 5,,https://image.tmdb.org/t/p/w500/9O7tIcS2KZk1ukMq3aOvoj8KIJZ.jpg,1993-09-30,22,7.7
+456-6,456,The Simpsons,6,Season 6,,https://image.tmdb.org/t/p/w500/qD20BnTxIdF1rcnX4BARmFshzKA.jpg,1994-09-04,25,7.6
+456-7,456,The Simpsons,7,Season 7,,https://image.tmdb.org/t/p/w500/blCeZS6BmN3wwmF40fuCZSeFwbB.jpg,1995-09-17,25,7.6
+456-8,456,The Simpsons,8,Season 8,,https://image.tmdb.org/t/p/w500/xLebCxRHSwXBW39a4OLmMSGChLs.jpg,1996-10-27,25,7.6
+456-9,456,The Simpsons,9,Season 9,,https://image.tmdb.org/t/p/w500/6PTYyLD8bSiNZf1PFdCQ9JyiIFW.jpg,1997-09-21,25,7.1
+456-10,456,The Simpsons,10,Season 10,,https://image.tmdb.org/t/p/w500/A77xKuxA13aXA1mQd6YLAaTIErK.jpg,1998-08-23,23,6.9
+456-11,456,The Simpsons,11,Season 11,,https://image.tmdb.org/t/p/w500/4Rq5t85B4bt8TYvmhCVhDmk7qMN.jpg,1999-09-26,22,6.6
+456-12,456,The Simpsons,12,Season 12,,https://image.tmdb.org/t/p/w500/jfxiyjRLoQq9LavlFNRBgjuweg5.jpg,2000-11-01,21,6.7
+456-13,456,The Simpsons,13,Season 13,,https://image.tmdb.org/t/p/w500/xflc3aV1SbP2bGeZNuu4AG6cIqH.jpg,2001-11-06,22,6.4
+456-14,456,The Simpsons,14,Season 14,,https://image.tmdb.org/t/p/w500/9IowK57TpeO09D4B46jd4J3wjPO.jpg,2002-11-03,22,6.5
+456-15,456,The Simpsons,15,Season 15,,https://image.tmdb.org/t/p/w500/bmMwmEfwmziKzWP2jiU0GMw8yKd.jpg,2003-11-02,22,6.5
+456-16,456,The Simpsons,16,Season 16,,https://image.tmdb.org/t/p/w500/ifjiG1gHGRyYmNDWRb9Ul9VCfEn.jpg,2004-11-07,21,6.3
+456-17,456,The Simpsons,17,Season 17,,https://image.tmdb.org/t/p/w500/evIWfK3hKFIExETjv6L2YS9J8fw.jpg,2005-09-11,22,6.4
+456-18,456,The Simpsons,18,Season 18,,https://image.tmdb.org/t/p/w500/kwb8AZAHyhn96dzn17mtTV3l8dl.jpg,2006-09-10,22,6.2
+456-19,456,The Simpsons,19,Season 19,,https://image.tmdb.org/t/p/w500/nLKZJ1ozVvYFtaOynzkShE8wN4k.jpg,2007-09-23,20,6.3
+456-20,456,The Simpsons,20,Season 20,,https://image.tmdb.org/t/p/w500/2CUdLX4K8fMlcdVPHUbciTYt4ri.jpg,2008-09-28,21,6.4
+456-21,456,The Simpsons,21,Season 21,,https://image.tmdb.org/t/p/w500/fEykf9XN4Cn5tJ17pOD2PObdjoc.jpg,2009-09-27,23,6.2
+456-22,456,The Simpsons,22,Season 22,,https://image.tmdb.org/t/p/w500/xUZeYO9NPkmXCcuRrr8PgXzk2Qd.jpg,2010-09-26,22,6.4
+456-23,456,The Simpsons,23,Season 23,,https://image.tmdb.org/t/p/w500/wlQnKb3pHBxtMivCjcvM8TDpBbv.jpg,2011-09-25,22,6.3
+456-24,456,The Simpsons,24,Season 24,,https://image.tmdb.org/t/p/w500/qGPFl3X6ukZ6fBQRiLxueLWQh9y.jpg,2012-09-30,22,6.4
+456-25,456,The Simpsons,25,Season 25,,https://image.tmdb.org/t/p/w500/iwlh2yoia66MCaZEqybsLSt3OHa.jpg,2013-09-29,22,6.6
+456-26,456,The Simpsons,26,Season 26,,https://image.tmdb.org/t/p/w500/9bGpb3vWygBogXpQBnTodFWaQte.jpg,2014-09-28,22,6.5
+456-27,456,The Simpsons,27,Season 27,,https://image.tmdb.org/t/p/w500/aw26dkO0PnxD0EfYWXCMUQLFNbI.jpg,2015-09-27,22,6.4
+456-28,456,The Simpsons,28,Season 28,,https://image.tmdb.org/t/p/w500/j4GZ2oH5PEWEyZkwuZ41OYLb30W.jpg,2016-09-25,22,6.0
+456-29,456,The Simpsons,29,Season 29,,https://image.tmdb.org/t/p/w500/93JeevhHA93SpHZ5hxqJyOtB5Wf.jpg,2017-10-01,21,6.0
+456-30,456,The Simpsons,30,Season 30,,https://image.tmdb.org/t/p/w500/l18xQsO27KFJwsj35JaAsG95dN7.jpg,2018-09-30,23,5.8
+456-31,456,The Simpsons,31,Season 31,,https://image.tmdb.org/t/p/w500/1y2zzQhnAuFpRNovNMHWlubOaxw.jpg,2019-09-29,22,5.7
+456-32,456,The Simpsons,32,Season 32,,https://image.tmdb.org/t/p/w500/ifvEta1mmPGLu3E6lFnPSJAyBhh.jpg,2020-09-27,22,5.9
+456-33,456,The Simpsons,33,Season 33,,https://image.tmdb.org/t/p/w500/sjg9DQMgZzUA0Uqfw7eL89gFXOr.jpg,2021-09-26,22,5.8
+456-34,456,The Simpsons,34,Season 34,,https://image.tmdb.org/t/p/w500/2C6Tuxep3eLeFB1vny8FIVXFIDz.jpg,2022-09-25,22,6.8
+456-35,456,The Simpsons,35,Season 35,,https://image.tmdb.org/t/p/w500/s7EtmSmdN6ENGwJFfzu9Bn9cgSW.jpg,2023-10-01,18,7.8
+456-36,456,The Simpsons,36,Season 36,,https://image.tmdb.org/t/p/w500/dl0S3pJSQUyBLPAOefMMujbtp4O.jpg,2024-09-29,18,6.6
 4496-0,4496,Meet the Press,0,Specials,,,2015-09-28,61,0.0
 4496-1,4496,Meet the Press,1,Season 1,,,1947-11-06,7,4.5
 4496-2,4496,Meet the Press,2,Season 2,,,1948-01-01,53,0.0
@@ -580,99 +704,42 @@ The twentieth Race premiered on Sunday, February 19, 2012. It aired on CBS in th
 4496-77,4496,Meet the Press,77,Season 77,,,2022-12-31,2,0.0
 4496-78,4496,Meet the Press,78,Season 78,,,2024-01-07,14,0.0
 4496-79,4496,Meet the Press,79,Season 79,,,2025-01-05,29,0.0
-1434-0,1434,Family Guy,0,Specials,,https://image.tmdb.org/t/p/w500/ngPUB8NsOCmjSjSImVuvTIKVm1.jpg,2006-05-21,25,0.0
-1434-1,1434,Family Guy,1,Season 1,,https://image.tmdb.org/t/p/w500/5E4yhF7TVrr1l8aq7GM6IdLTsrP.jpg,1999-01-31,7,7.1
-1434-2,1434,Family Guy,2,Season 2,,https://image.tmdb.org/t/p/w500/rskVG2RP0Uzamv9zzslYE7TYPdE.jpg,1999-09-23,21,7.2
-1434-3,1434,Family Guy,3,Season 3,,https://image.tmdb.org/t/p/w500/5sK70w0MLNVa7OeJeOqRmSZUUmr.jpg,2001-07-11,22,6.9
-1434-4,1434,Family Guy,4,Season 4,,https://image.tmdb.org/t/p/w500/h6Qv5oONB3yN1MOqru7v0vAGJ6J.jpg,2005-05-01,30,6.8
-1434-5,1434,Family Guy,5,Season 5,,https://image.tmdb.org/t/p/w500/kyfo6OUtCRYCaxFmqQ3kGORCexq.jpg,2006-09-10,18,6.8
-1434-6,1434,Family Guy,6,Season 6,,https://image.tmdb.org/t/p/w500/pvK7pZUyOLcH9zWdydXD01UUTf0.jpg,2007-09-23,12,7.0
-1434-7,1434,Family Guy,7,Season 7,,https://image.tmdb.org/t/p/w500/5GUHJgPxDwh0njN3ytEIBENhmOJ.jpg,2008-09-28,16,6.7
-1434-8,1434,Family Guy,8,Season 8,,https://image.tmdb.org/t/p/w500/kwPaT3INWe36c5B3t7FJFWelm8y.jpg,2009-09-27,20,6.6
-1434-9,1434,Family Guy,9,Season 9,,https://image.tmdb.org/t/p/w500/gi9TE5c1bVTHEN4BmnICX23mlFO.jpg,2010-09-26,18,6.7
-1434-10,1434,Family Guy,10,Season 10,,https://image.tmdb.org/t/p/w500/hD0uA1xMNHsPDovAmgjDowjbctS.jpg,2011-09-25,23,6.9
-1434-11,1434,Family Guy,11,Season 11,,https://image.tmdb.org/t/p/w500/6reQqzBqJ7ObrNF2EfBDAvHRhoR.jpg,2012-09-30,22,6.7
-1434-12,1434,Family Guy,12,Season 12,,https://image.tmdb.org/t/p/w500/mPsPEP0xtDjWez5opDBTqAdxy51.jpg,2013-09-29,21,6.5
-1434-13,1434,Family Guy,13,Season 13,,https://image.tmdb.org/t/p/w500/yxjMLQzz0K5kPmO6k0agSsSnQm4.jpg,2014-09-28,18,6.6
-1434-14,1434,Family Guy,14,Season 14,,https://image.tmdb.org/t/p/w500/qVh5RrPkoexfvrZb2doRIxCnXbR.jpg,2015-09-27,20,6.9
-1434-15,1434,Family Guy,15,Season 15,,https://image.tmdb.org/t/p/w500/84lv0Q5XgrvWlEsrNxMlZS5w1p2.jpg,2016-09-25,20,6.6
-1434-16,1434,Family Guy,16,Season 16,,https://image.tmdb.org/t/p/w500/hhbAUydzQgchqLJpcJIJYwyPJm2.jpg,2017-10-01,20,6.6
-1434-17,1434,Family Guy,17,Season 17,,https://image.tmdb.org/t/p/w500/nS9U4AnJCPlmdM4L0h2TI4lpFOI.jpg,2018-09-30,20,6.2
-1434-18,1434,Family Guy,18,Season 18,,https://image.tmdb.org/t/p/w500/egxsrJV7cPlrGat4cq4OoX6TZkJ.jpg,2019-09-29,20,5.8
-1434-19,1434,Family Guy,19,Season 19,,https://image.tmdb.org/t/p/w500/ryTMELpfCvbfVPH2g8j8dyx9zLu.jpg,2020-09-27,20,6.1
-1434-20,1434,Family Guy,20,Season 20,,https://image.tmdb.org/t/p/w500/9RBeCo8QSaoJLmmuzlwzVH3Hi12.jpg,2021-09-26,20,5.9
-1434-21,1434,Family Guy,21,Season 21,,https://image.tmdb.org/t/p/w500/aLB7psB9N81n5GecHNOudXWW3AI.jpg,2022-09-25,20,6.9
-1434-22,1434,Family Guy,22,Season 22,,https://image.tmdb.org/t/p/w500/y0HUz4eUNUe3TeEd8fQWYazPaC7.jpg,2023-10-01,15,7.3
-1434-23,1434,Family Guy,23,Season 23,,https://image.tmdb.org/t/p/w500/8o8kiBkWFK3gVytHdyzEWUBXVfK.jpg,2025-02-16,18,7.0
-4614-0,4614,NCIS,0,Specials,,https://image.tmdb.org/t/p/w500/FlzeiA7DV0KQQ6FOExjTaHWBjs.jpg,,120,0.0
-4614-1,4614,NCIS,1,Season 1,,https://image.tmdb.org/t/p/w500/ruiOyO3M47kM4TSpsuwyxr1HnSR.jpg,2003-09-22,23,7.5
-4614-2,4614,NCIS,2,Season 2,,https://image.tmdb.org/t/p/w500/xuHMeqMludcvuc044p1KK8P0khI.jpg,2004-09-27,23,7.4
-4614-3,4614,NCIS,3,Season 3,,https://image.tmdb.org/t/p/w500/oODrsSxzOkk7ODM2D13OVSdhhGM.jpg,2005-09-19,24,7.3
-4614-4,4614,NCIS,4,Season 4,,https://image.tmdb.org/t/p/w500/g8ITNivPqH4oO6DooQyTXpV4k7O.jpg,2006-09-18,24,7.0
-4614-5,4614,NCIS,5,Season 5,,https://image.tmdb.org/t/p/w500/TuaO9cUbFMoUvWXozQDBXxk0jX.jpg,2007-09-24,19,7.3
-4614-6,4614,NCIS,6,Season 6,,https://image.tmdb.org/t/p/w500/1gPhXsISRdx9Zr9Zjt6gYRCRLTx.jpg,2008-09-22,25,7.3
-4614-7,4614,NCIS,7,Season 7,,https://image.tmdb.org/t/p/w500/piRf9xx4yVeHPWdbl672ohh1Yw6.jpg,2009-09-21,24,7.3
-4614-8,4614,NCIS,8,Season 8,,https://image.tmdb.org/t/p/w500/zlw3MFUmiy3vR6SYm4vigAjfsE9.jpg,2010-09-20,24,7.2
-4614-9,4614,NCIS,9,Season 9,,https://image.tmdb.org/t/p/w500/lxdcCxdliuJIG7cvX4bA34hLY9O.jpg,2011-09-19,24,7.4
-4614-10,4614,NCIS,10,Season 10,"Despite a bomb attack on Gibbs and the team, duty continues to call for these special agents as they try to regroup and put the pieces back together.",https://image.tmdb.org/t/p/w500/z0GQhIt7uF9aPnMr7YQH6nS2ch4.jpg,2012-09-24,24,7.2
-4614-11,4614,NCIS,11,Season 11,"When Season 10 ended in the series' biggest cliffhanger, the NCIS was virtually disbanded and Gibbs was aiming a rifle at the FBI agent responsible.",https://image.tmdb.org/t/p/w500/tctlBaYAGMQXC0WeSWRsQTRlHrq.jpg,2013-09-23,24,7.2
-4614-12,4614,NCIS,12,Season 12,"In Season 12, Gibbs and McGee travel to Russia to retrieve a computer expert and get into an ongoing battle with mercenary Sergei Mishnev.",https://image.tmdb.org/t/p/w500/mFMuez4mJttuV59RLLCrBRJv1Uv.jpg,2014-09-22,24,7.1
-4614-13,4614,NCIS,13,Season 13,,https://image.tmdb.org/t/p/w500/VfG3LekB3PQpfjCt4qbX0H6Ake.jpg,2015-09-21,24,7.3
-4614-14,4614,NCIS,14,Season 14,"Following the unexpected departure of a key member, the NCIS team regroups and recruits several new faces, including a former MI6 operative.",https://image.tmdb.org/t/p/w500/7LMI9VVUD4zAgVLQrGGdNUVCAa8.jpg,2016-09-19,24,7.6
-4614-15,4614,NCIS,15,Season 15,,https://image.tmdb.org/t/p/w500/bdMcCHERoYwYCpHJW0aHYNm2oKG.jpg,2017-09-25,24,8.0
-4614-16,4614,NCIS,16,Season 16,,https://image.tmdb.org/t/p/w500/sQz8u7UpRE02SthffFgIywogoKS.jpg,2018-09-24,24,7.9
-4614-17,4614,NCIS,17,Season 17,,https://image.tmdb.org/t/p/w500/gK2yIQjtMGYmlLjIbHQuSadzJ9n.jpg,2019-09-23,20,7.8
-4614-18,4614,NCIS,18,Season 18,,https://image.tmdb.org/t/p/w500/gYeIW2bgvQEwTFdkxufkzximplS.jpg,2020-11-16,16,7.9
-4614-19,4614,NCIS,19,Season 19,,https://image.tmdb.org/t/p/w500/lSTchtc26YNdOjdKvZtLs22SokL.jpg,2021-09-19,21,7.9
-4614-20,4614,NCIS,20,Season 20,,https://image.tmdb.org/t/p/w500/2exOHePjOTquUsbThPGhuEjYTyA.jpg,2022-09-18,22,7.6
-4614-21,4614,NCIS,21,Season 21,,https://image.tmdb.org/t/p/w500/19ht0bW0v1BzQO3WO319R9EXSE6.jpg,2024-02-11,10,7.5
-4614-22,4614,NCIS,22,Season 22,,https://image.tmdb.org/t/p/w500/kKkPQbrZh9dINkz0zO0QnD5MDW1.jpg,2024-10-14,20,8.3
-4614-23,4614,NCIS,23,Season 23,,,,1,0.0
-456-0,456,The Simpsons,0,Specials,,https://image.tmdb.org/t/p/w500/oICoFoPJuEk5VJbEP2HYLEmEQi3.jpg,1987-04-17,82,0.0
-456-1,456,The Simpsons,1,Season 1,,https://image.tmdb.org/t/p/w500/t544zSFUNyvmyeP4sHotlcEX3zH.jpg,1989-12-17,13,7.1
-456-2,456,The Simpsons,2,Season 2,,https://image.tmdb.org/t/p/w500/bRyDlUQQafSoIT052jpjLBMe8TH.jpg,1990-10-11,22,7.5
-456-3,456,The Simpsons,3,Season 3,,https://image.tmdb.org/t/p/w500/9ghmIhWJJuTx3UHyfVVBXQoUGvI.jpg,1991-09-19,24,7.5
-456-4,456,The Simpsons,4,Season 4,,https://image.tmdb.org/t/p/w500/voqu5a4drV1CXMjjZ0Mkw35n26l.jpg,1992-09-24,22,7.7
-456-5,456,The Simpsons,5,Season 5,,https://image.tmdb.org/t/p/w500/9O7tIcS2KZk1ukMq3aOvoj8KIJZ.jpg,1993-09-30,22,7.7
-456-6,456,The Simpsons,6,Season 6,,https://image.tmdb.org/t/p/w500/qD20BnTxIdF1rcnX4BARmFshzKA.jpg,1994-09-04,25,7.6
-456-7,456,The Simpsons,7,Season 7,,https://image.tmdb.org/t/p/w500/blCeZS6BmN3wwmF40fuCZSeFwbB.jpg,1995-09-17,25,7.6
-456-8,456,The Simpsons,8,Season 8,,https://image.tmdb.org/t/p/w500/xLebCxRHSwXBW39a4OLmMSGChLs.jpg,1996-10-27,25,7.6
-456-9,456,The Simpsons,9,Season 9,,https://image.tmdb.org/t/p/w500/6PTYyLD8bSiNZf1PFdCQ9JyiIFW.jpg,1997-09-21,25,7.1
-456-10,456,The Simpsons,10,Season 10,,https://image.tmdb.org/t/p/w500/A77xKuxA13aXA1mQd6YLAaTIErK.jpg,1998-08-23,23,6.9
-456-11,456,The Simpsons,11,Season 11,,https://image.tmdb.org/t/p/w500/4Rq5t85B4bt8TYvmhCVhDmk7qMN.jpg,1999-09-26,22,6.6
-456-12,456,The Simpsons,12,Season 12,,https://image.tmdb.org/t/p/w500/jfxiyjRLoQq9LavlFNRBgjuweg5.jpg,2000-11-01,21,6.7
-456-13,456,The Simpsons,13,Season 13,,https://image.tmdb.org/t/p/w500/xflc3aV1SbP2bGeZNuu4AG6cIqH.jpg,2001-11-06,22,6.4
-456-14,456,The Simpsons,14,Season 14,,https://image.tmdb.org/t/p/w500/9IowK57TpeO09D4B46jd4J3wjPO.jpg,2002-11-03,22,6.5
-456-15,456,The Simpsons,15,Season 15,,https://image.tmdb.org/t/p/w500/bmMwmEfwmziKzWP2jiU0GMw8yKd.jpg,2003-11-02,22,6.5
-456-16,456,The Simpsons,16,Season 16,,https://image.tmdb.org/t/p/w500/ifjiG1gHGRyYmNDWRb9Ul9VCfEn.jpg,2004-11-07,21,6.3
-456-17,456,The Simpsons,17,Season 17,,https://image.tmdb.org/t/p/w500/evIWfK3hKFIExETjv6L2YS9J8fw.jpg,2005-09-11,22,6.4
-456-18,456,The Simpsons,18,Season 18,,https://image.tmdb.org/t/p/w500/kwb8AZAHyhn96dzn17mtTV3l8dl.jpg,2006-09-10,22,6.2
-456-19,456,The Simpsons,19,Season 19,,https://image.tmdb.org/t/p/w500/nLKZJ1ozVvYFtaOynzkShE8wN4k.jpg,2007-09-23,20,6.3
-456-20,456,The Simpsons,20,Season 20,,https://image.tmdb.org/t/p/w500/2CUdLX4K8fMlcdVPHUbciTYt4ri.jpg,2008-09-28,21,6.4
-456-21,456,The Simpsons,21,Season 21,,https://image.tmdb.org/t/p/w500/fEykf9XN4Cn5tJ17pOD2PObdjoc.jpg,2009-09-27,23,6.2
-456-22,456,The Simpsons,22,Season 22,,https://image.tmdb.org/t/p/w500/xUZeYO9NPkmXCcuRrr8PgXzk2Qd.jpg,2010-09-26,22,6.4
-456-23,456,The Simpsons,23,Season 23,,https://image.tmdb.org/t/p/w500/wlQnKb3pHBxtMivCjcvM8TDpBbv.jpg,2011-09-25,22,6.3
-456-24,456,The Simpsons,24,Season 24,,https://image.tmdb.org/t/p/w500/qGPFl3X6ukZ6fBQRiLxueLWQh9y.jpg,2012-09-30,22,6.4
-456-25,456,The Simpsons,25,Season 25,,https://image.tmdb.org/t/p/w500/iwlh2yoia66MCaZEqybsLSt3OHa.jpg,2013-09-29,22,6.6
-456-26,456,The Simpsons,26,Season 26,,https://image.tmdb.org/t/p/w500/9bGpb3vWygBogXpQBnTodFWaQte.jpg,2014-09-28,22,6.5
-456-27,456,The Simpsons,27,Season 27,,https://image.tmdb.org/t/p/w500/aw26dkO0PnxD0EfYWXCMUQLFNbI.jpg,2015-09-27,22,6.4
-456-28,456,The Simpsons,28,Season 28,,https://image.tmdb.org/t/p/w500/j4GZ2oH5PEWEyZkwuZ41OYLb30W.jpg,2016-09-25,22,6.0
-456-29,456,The Simpsons,29,Season 29,,https://image.tmdb.org/t/p/w500/93JeevhHA93SpHZ5hxqJyOtB5Wf.jpg,2017-10-01,21,6.0
-456-30,456,The Simpsons,30,Season 30,,https://image.tmdb.org/t/p/w500/l18xQsO27KFJwsj35JaAsG95dN7.jpg,2018-09-30,23,5.8
-456-31,456,The Simpsons,31,Season 31,,https://image.tmdb.org/t/p/w500/1y2zzQhnAuFpRNovNMHWlubOaxw.jpg,2019-09-29,22,5.7
-456-32,456,The Simpsons,32,Season 32,,https://image.tmdb.org/t/p/w500/ifvEta1mmPGLu3E6lFnPSJAyBhh.jpg,2020-09-27,22,5.9
-456-33,456,The Simpsons,33,Season 33,,https://image.tmdb.org/t/p/w500/sjg9DQMgZzUA0Uqfw7eL89gFXOr.jpg,2021-09-26,22,5.8
-456-34,456,The Simpsons,34,Season 34,,https://image.tmdb.org/t/p/w500/2C6Tuxep3eLeFB1vny8FIVXFIDz.jpg,2022-09-25,22,6.8
-456-35,456,The Simpsons,35,Season 35,,https://image.tmdb.org/t/p/w500/s7EtmSmdN6ENGwJFfzu9Bn9cgSW.jpg,2023-10-01,18,7.8
-456-36,456,The Simpsons,36,Season 36,,https://image.tmdb.org/t/p/w500/dl0S3pJSQUyBLPAOefMMujbtp4O.jpg,2024-09-29,18,6.6
-132791-0,132791,SUPERKID,0,Specials,,,1983-07-20,3,0.0
-132791-1,132791,SUPERKID,1,Season 1,,https://image.tmdb.org/t/p/w500/83rTkr8XlUk8CyNA9KNuaUWuNqK.jpg,1983-04-04,526,0.0
+72879-0,72879,Tomorrow Is Ours,0,Specials,,https://image.tmdb.org/t/p/w500/sG10mLNqedPw5nhmnXSje3ndY7H.jpg,2019-06-10,2,0.0
+72879-1,72879,Tomorrow Is Ours,1,Season 1,,https://image.tmdb.org/t/p/w500/vVIBtSfmLFSVvhtpzSfE0pbi0lQ.jpg,2017-07-17,2005,8.9
 82873-1,82873,The Kelly Clarkson Show,1,Season 1,,https://image.tmdb.org/t/p/w500/40xMyC9DRVMhGaU2JVn4Dl0xGfc.jpg,2019-09-09,87,0.0
 82873-2,82873,The Kelly Clarkson Show,2,Season 2,,https://image.tmdb.org/t/p/w500/rUrkO77RtQ0NC77yh0B8FCQpUZM.jpg,2020-09-21,45,9.2
 82873-3,82873,The Kelly Clarkson Show,3,Season 3,,https://image.tmdb.org/t/p/w500/1Qjgh4fGYpxgZXUTDIuoXhDRf0s.jpg,2021-09-13,185,8.5
 82873-4,82873,The Kelly Clarkson Show,4,Season 4,,https://image.tmdb.org/t/p/w500/1Qjgh4fGYpxgZXUTDIuoXhDRf0s.jpg,2022-09-12,162,0.0
 82873-5,82873,The Kelly Clarkson Show,5,Season 5,,https://image.tmdb.org/t/p/w500/rUrkO77RtQ0NC77yh0B8FCQpUZM.jpg,2023-10-16,180,0.0
 82873-6,82873,The Kelly Clarkson Show,6,Season 6,,,2024-09-23,172,0.0
+34860-0,34860,Ninja Boy Rantaro,0,Specials,,,,18,0.0
+34860-1,34860,Ninja Boy Rantaro,1,Season 1,,https://image.tmdb.org/t/p/w500/k5CuBy00DQCuAg5pPWtyQWOcy3P.jpg,1993-04-10,91,0.0
+34860-2,34860,Ninja Boy Rantaro,2,Season 2,,,,120,0.0
+34860-3,34860,Ninja Boy Rantaro,3,Season 3,,,,81,0.0
+34860-4,34860,Ninja Boy Rantaro,4,Season 4,,,2003-04-07,130,0.0
+34860-5,34860,Ninja Boy Rantaro,5,Season 5,,,2003-10-15,130,0.0
+34860-6,34860,Ninja Boy Rantaro,6,Season 6,,,2004-04-19,131,0.0
+34860-7,34860,Ninja Boy Rantaro,7,Season 7,,,,1,0.0
+34860-8,34860,Ninja Boy Rantaro,8,Season 8,,,,80,0.0
+34860-9,34860,Ninja Boy Rantaro,9,Season 9,,,,26,0.0
+34860-10,34860,Ninja Boy Rantaro,10,Season 10,,,,15,0.0
+34860-11,34860,Ninja Boy Rantaro,11,Season 11,,,,5,0.0
+34860-12,34860,Ninja Boy Rantaro,12,Season 12,,,,78,0.0
+34860-13,34860,Ninja Boy Rantaro,13,Season 13,,,,0,0.0
+34860-14,34860,Ninja Boy Rantaro,14,Season 14,,,,16,0.0
+34860-15,34860,Ninja Boy Rantaro,15,Season 15,,,,48,0.0
+34860-16,34860,Ninja Boy Rantaro,16,Season 16,,,2008-01-01,100,0.0
+34860-17,34860,Ninja Boy Rantaro,17,Season 17,,,,1,0.0
+34860-18,34860,Ninja Boy Rantaro,18,Season 18,,,,91,0.0
+34860-19,34860,Ninja Boy Rantaro,19,Season 19,,,,90,0.0
+34860-20,34860,Ninja Boy Rantaro,20,Season 20,,,,90,0.0
+34860-21,34860,Ninja Boy Rantaro,21,Season 21,,,,75,0.0
+34860-22,34860,Ninja Boy Rantaro,22,Season 22,,,,75,0.0
+34860-23,34860,Ninja Boy Rantaro,23,Season 23,,,,70,0.0
+34860-24,34860,Ninja Boy Rantaro,24,Season 24,,,,70,0.0
+34860-25,34860,Ninja Boy Rantaro,25,Season 25,,,,64,0.0
+34860-26,34860,Ninja Boy Rantaro,26,Season 26,,,,76,0.0
+34860-27,34860,Ninja Boy Rantaro,27,Season 27,,,,76,0.0
 549-0,549,Law & Order,0,Specials,,https://image.tmdb.org/t/p/w500/vVUVEqs0KwplqHvv2GyCj2tpMSr.jpg,,7,0.0
 549-1,549,Law & Order,1,Season 1,,https://image.tmdb.org/t/p/w500/hGrkBU5p60zZj9bMByo9cegZfhl.jpg,1990-09-13,22,7.4
 549-2,549,Law & Order,2,Season 2,,https://image.tmdb.org/t/p/w500/nykyEGoMsVPnyrnoUL0g93YJPQZ.jpg,1991-09-16,22,7.4
@@ -698,83 +765,5 @@ The twentieth Race premiered on Sunday, February 19, 2012. It aired on CBS in th
 549-22,549,Law & Order,22,Season 22,,https://image.tmdb.org/t/p/w500/77OPlbsvX3pzoFbyfpcE3GXMCod.jpg,2022-09-22,22,7.8
 549-23,549,Law & Order,23,Season 23,,https://image.tmdb.org/t/p/w500/m9zTQr4TYS98UFSiA1k0mMfECPe.jpg,2024-01-17,13,8.5
 549-24,549,Law & Order,24,Season 24,,https://image.tmdb.org/t/p/w500/6vFL8S6Cci8s7SHWXz60xOisGBC.jpg,2024-10-03,22,8.4
-2912-0,2912,Jeopardy!,0,Specials,,,2009-11-19,9,0.0
-2912-1,2912,Jeopardy!,1,Season 1,,,1984-09-10,162,10.0
-2912-2,2912,Jeopardy!,2,Season 2,,,1985-09-09,194,0.0
-2912-3,2912,Jeopardy!,3,Season 3,,,1986-09-08,231,0.0
-2912-4,2912,Jeopardy!,4,Season 4,,,1987-09-07,220,0.0
-2912-5,2912,Jeopardy!,5,Season 5,,,1988-09-05,215,0.0
-2912-6,2912,Jeopardy!,6,Season 6,,,1989-09-04,201,0.0
-2912-7,2912,Jeopardy!,7,Season 7,,,1990-09-03,212,0.0
-2912-8,2912,Jeopardy!,8,Season 8,,,1991-09-02,194,0.0
-2912-9,2912,Jeopardy!,9,Season 9,,,1992-09-07,229,10.0
-2912-10,2912,Jeopardy!,10,Season 10,,,1993-09-06,230,0.0
-2912-11,2912,Jeopardy!,11,Season 11,,,1994-09-05,213,0.0
-2912-12,2912,Jeopardy!,12,Season 12,,,1995-09-04,229,0.0
-2912-13,2912,Jeopardy!,13,Season 13,,,1996-09-02,218,0.0
-2912-14,2912,Jeopardy!,14,Season 14,,,1997-09-01,230,0.0
-2912-15,2912,Jeopardy!,15,Season 15,,,1998-09-07,230,0.0
-2912-16,2912,Jeopardy!,16,Season 16,,,1999-09-06,230,0.0
-2912-17,2912,Jeopardy!,17,Season 17,,,2000-09-04,230,0.0
-2912-18,2912,Jeopardy!,18,Season 18,,,2001-09-03,229,0.0
-2912-19,2912,Jeopardy!,19,Season 19,,,2002-09-02,230,0.0
-2912-20,2912,Jeopardy!,20,Season 20,,,2003-09-08,230,0.0
-2912-21,2912,Jeopardy!,21,Season 21,,,2004-09-06,230,0.0
-2912-22,2912,Jeopardy!,22,Season 22,,,2005-09-12,230,0.0
-2912-23,2912,Jeopardy!,23,Season 23,,,2006-09-11,230,0.0
-2912-24,2912,Jeopardy!,24,Season 24,,https://image.tmdb.org/t/p/w500/4oQeIPhQdhGIfDv4XOpx6ovY7w5.jpg,2007-09-10,230,0.0
-2912-25,2912,Jeopardy!,25,Season 25,,https://image.tmdb.org/t/p/w500/l3DmfjuJl2ux1WXzsjtjljUZHoR.jpg,2008-09-08,230,0.0
-2912-26,2912,Jeopardy!,26,Season 26,,https://image.tmdb.org/t/p/w500/l3DmfjuJl2ux1WXzsjtjljUZHoR.jpg,2009-09-14,230,0.0
-2912-27,2912,Jeopardy!,27,Season 27,,https://image.tmdb.org/t/p/w500/l3DmfjuJl2ux1WXzsjtjljUZHoR.jpg,2010-09-13,230,0.0
-2912-28,2912,Jeopardy!,28,Season 28,,https://image.tmdb.org/t/p/w500/l3DmfjuJl2ux1WXzsjtjljUZHoR.jpg,2011-09-19,230,10.0
-2912-29,2912,Jeopardy!,29,Season 29,,https://image.tmdb.org/t/p/w500/l3DmfjuJl2ux1WXzsjtjljUZHoR.jpg,2012-09-17,230,0.0
-2912-30,2912,Jeopardy!,30,Season 30,,https://image.tmdb.org/t/p/w500/1H7g10a25KyjhcptPeDhRiezptU.jpg,2013-09-16,230,0.0
-2912-31,2912,Jeopardy!,31,Season 31,,https://image.tmdb.org/t/p/w500/w6IuAySlbGtxY1A2uUpkrVjnXMr.jpg,2014-09-15,230,0.0
-2912-32,2912,Jeopardy!,32,Season 32,,https://image.tmdb.org/t/p/w500/wJmIG2CIjGM4ChEFf6PcV762eIB.jpg,2015-09-14,230,0.0
-2912-33,2912,Jeopardy!,33,Season 33,,https://image.tmdb.org/t/p/w500/gznNccjuVhNEjYt8IUopLuBh6GV.jpg,2016-09-12,230,0.0
-2912-34,2912,Jeopardy!,34,Season 34,,https://image.tmdb.org/t/p/w500/gznNccjuVhNEjYt8IUopLuBh6GV.jpg,2017-09-11,230,0.0
-2912-35,2912,Jeopardy!,35,Season 35,,https://image.tmdb.org/t/p/w500/mK0a4VYtDpi3wfXOBbzlmZBErQ4.jpg,2018-09-10,230,0.0
-2912-36,2912,Jeopardy!,36,Season 36,,https://image.tmdb.org/t/p/w500/8CqBrGO5JLR7OMmBmLXzdLshkP5.jpg,2019-09-09,190,0.0
-2912-37,2912,Jeopardy!,37,Season 37,,https://image.tmdb.org/t/p/w500/aSIHw2DyO6QqW2k2Ak5J2JPojG.jpg,2020-09-14,230,0.0
-2912-38,2912,Jeopardy!,38,Season 38,,https://image.tmdb.org/t/p/w500/6Iwg6enhbWr54vVSmvD1ttPAQSj.jpg,2021-09-13,240,8.0
-2912-39,2912,Jeopardy!,39,Season 39,,https://image.tmdb.org/t/p/w500/67JYOtGQLYRldIgZMgHr0dyjlIn.jpg,2022-09-12,230,2.0
-2912-40,2912,Jeopardy!,40,Season 40,,https://image.tmdb.org/t/p/w500/7dJGVVaxTIwJOGkyYHGcXSIMeHg.jpg,2023-09-11,236,0.0
-2912-41,2912,Jeopardy!,41,Season 41,,,2024-09-09,230,0.0
-3670-0,3670,Cops,0,Specials,,https://image.tmdb.org/t/p/w500/rjiqAnLQQXX0HCNTZ1cxNtgEn0O.jpg,1989-11-04,10,0.0
-3670-1,3670,Cops,1,Season 1,,https://image.tmdb.org/t/p/w500/3j07gmdWRUuy5ozmVRbtLh3gJuf.jpg,1989-03-11,16,10.0
-3670-2,3670,Cops,2,Season 2,,https://image.tmdb.org/t/p/w500/tGOoDNUcyqqq5zjuqENlZALgPhL.jpg,1989-09-23,32,0.0
-3670-3,3670,Cops,3,Season 3,,https://image.tmdb.org/t/p/w500/fFOG55k0Pe9l2AzDU4a1xHNfGU6.jpg,1990-09-15,42,0.0
-3670-4,3670,Cops,4,Season 4,,https://image.tmdb.org/t/p/w500/oiR89HkhR7dlJkLcUpDjnFyEKoC.jpg,1991-08-10,47,0.0
-3670-5,3670,Cops,5,Season 5,,https://image.tmdb.org/t/p/w500/kKDrGRe5WtFzLQZzmCpoX2P4qfa.jpg,1992-08-15,46,0.0
-3670-6,3670,Cops,6,Season 6,,https://image.tmdb.org/t/p/w500/1e4o1me679bcGsMq7g3v3Ia2xr3.jpg,1993-08-07,53,0.0
-3670-7,3670,Cops,7,Season 7,,https://image.tmdb.org/t/p/w500/qinPU0DD65SLwGzsKeK9SITWMYt.jpg,1995-01-07,44,0.0
-3670-8,3670,Cops,8,Season 8,,https://image.tmdb.org/t/p/w500/kGiTNNaf8jMr4yoyRk25oOJQTDc.jpg,1995-07-29,43,0.0
-3670-9,3670,Cops,9,Season 9,,https://image.tmdb.org/t/p/w500/bDAeZhRZ8u5pmxrnGOxq4sO6VAZ.jpg,1996-08-31,37,0.0
-3670-10,3670,Cops,10,Season 10,,https://image.tmdb.org/t/p/w500/yIsPMwb5HK6bfI00g1WWpPq0N9U.jpg,1997-10-25,36,0.0
-3670-11,3670,Cops,11,Season 11,,https://image.tmdb.org/t/p/w500/gmwLUjFk8Mdfaslr9xOw4NxTUeV.jpg,1998-12-19,36,0.0
-3670-12,3670,Cops,12,Season 12,,https://image.tmdb.org/t/p/w500/ei0orFR1LyWaxedIl5GzaSY1PLw.jpg,1999-10-09,36,0.0
-3670-13,3670,Cops,13,Season 13,,https://image.tmdb.org/t/p/w500/j2ovOCwR2bITLZuiGjHcSYgQuYm.jpg,2000-12-02,40,0.0
-3670-14,3670,Cops,14,Season 14,,https://image.tmdb.org/t/p/w500/mCjpJsOxja0bLB8GkoGoqmNrq1q.jpg,2002-04-06,38,0.0
-3670-15,3670,Cops,15,Season 15,,https://image.tmdb.org/t/p/w500/fM6pYUYuucHv2BomLRzei0OAWWS.jpg,2002-05-04,38,0.0
-3670-16,3670,Cops,16,Season 16,,https://image.tmdb.org/t/p/w500/iQr5DWAcFb4qUoFAqC5KMJsOQqg.jpg,2003-04-26,41,0.0
-3670-17,3670,Cops,17,Season 17,,https://image.tmdb.org/t/p/w500/o29HzD3tf7wNEovjFJZf3NPzhGB.jpg,2004-05-15,37,0.0
-3670-18,3670,Cops,18,Season 18,,https://image.tmdb.org/t/p/w500/pdMhYtCtqLQFgloiVihUFmz7TYl.jpg,2005-09-10,36,0.0
-3670-19,3670,Cops,19,Season 19,,https://image.tmdb.org/t/p/w500/lDa0Ei0nFbIuYsGqVFYD1q9XCvv.jpg,2006-09-09,36,0.0
-3670-20,3670,Cops,20,Season 20,,https://image.tmdb.org/t/p/w500/zThtszx6h7ebw5Z0bywWNgnBYM6.jpg,2007-09-08,38,0.0
-3670-21,3670,Cops,21,Season 21,,https://image.tmdb.org/t/p/w500/aRJSjf1nzqv8j2S8STUqRoqOMsx.jpg,2008-09-06,36,0.0
-3670-22,3670,Cops,22,Season 22,,https://image.tmdb.org/t/p/w500/6iStbJoGsiTwEpe4WLRGDh17F69.jpg,2009-09-12,36,0.0
-3670-23,3670,Cops,23,Season 23,,https://image.tmdb.org/t/p/w500/3JSIN9Axe4JRHWiPr0bNxTtu990.jpg,2010-09-11,22,0.0
-3670-24,3670,Cops,24,Season 24,,https://image.tmdb.org/t/p/w500/6ohR2NivGeeEIqGnfYe55WUy8CD.jpg,2011-09-10,22,0.0
-3670-25,3670,Cops,25,Season 25,,https://image.tmdb.org/t/p/w500/zDQpF3gaAaw2FZOhZ3PnPayUyYP.jpg,2012-12-15,16,5.3
-3670-26,3670,Cops,26,Season 26,,https://image.tmdb.org/t/p/w500/uwHQ6ZhdVcFyQ070lXnmYmbde4V.jpg,2013-09-14,22,0.5
-3670-27,3670,Cops,27,Season 27,,https://image.tmdb.org/t/p/w500/xyUEqVpm9PS8cRpTsYgSMYoTGE9.jpg,2014-07-12,34,0.0
-3670-28,3670,Cops,28,Season 28,,https://image.tmdb.org/t/p/w500/abrwgc9jBlPLHgjSQy8muC9ZicB.jpg,2015-06-20,33,0.0
-3670-29,3670,Cops,29,Season 29,,https://image.tmdb.org/t/p/w500/QnyWZuMTiFejBVxFU29caDAv0y.jpg,2016-06-04,33,9.0
-3670-30,3670,Cops,30,Season 30,,https://image.tmdb.org/t/p/w500/aL9RC2J8xuSVunPlFDHPGrfEL6g.jpg,2017-06-17,33,10.0
-3670-31,3670,Cops,31,Season 31,,https://image.tmdb.org/t/p/w500/5ttevwXnCCslkTjf1AdjDDFwukE.jpg,2018-06-05,33,0.0
-3670-32,3670,Cops,32,Season 32,,https://image.tmdb.org/t/p/w500/ahIegokjP5VlXTrnUWTAbLOfhEF.jpg,2019-06-05,33,1.0
-3670-33,3670,Cops,33,Season 33,,https://image.tmdb.org/t/p/w500/3gcnRME1d7mxDkTK8q196L3Zj2P.jpg,2021-10-01,33,0.0
-3670-34,3670,Cops,34,Season 34,,https://image.tmdb.org/t/p/w500/pABphjx5PviKTxhV4X3KXvGTptH.jpg,2022-09-30,17,0.0
-3670-35,3670,Cops,35,Season 35,,https://image.tmdb.org/t/p/w500/iJOFazzBUZQO5MS4scGWvGz2SzJ.jpg,2023-04-07,33,0.0
-3670-36,3670,Cops,36,Season 36,"Season 36 of Cops began Friday April 5th, 2024",https://image.tmdb.org/t/p/w500/effO9E9sJaHPq7vR3QCh7MAK0QE.jpg,2024-04-05,21,0.0
-3670-37,3670,Cops,37,Season 37,,https://image.tmdb.org/t/p/w500/7Rno8UzOzImaJpPVd7GEy3Sgt9A.jpg,2025-03-07,21,0.0
+132791-0,132791,SUPERKID,0,Specials,,,1983-07-20,3,0.0
+132791-1,132791,SUPERKID,1,Season 1,,https://image.tmdb.org/t/p/w500/83rTkr8XlUk8CyNA9KNuaUWuNqK.jpg,1983-04-04,526,0.0

@@ -24,6 +24,7 @@ class Comment(db.Model):
 
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
     episode_id = db.Column(db.Integer, nullable=False)
+    gif_url = db.Column(db.Text)
 
     user = db.relationship("User", backref="comments")
 

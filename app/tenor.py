@@ -1,78 +1,56 @@
 import requests
 import os
 from dotenv import load_dotenv
-import json
-
-load_dotenv()
-'''
-tenor_key = os.getenv("TENOR_API_KEY")
-
-# search for excited top 8 GIFs
-url = "https://tenor.googleapis.com/v2/search"
-params = {
-    "q": "excited",
-    "key": tenor_key,
-    "limit": 5
-}
-
-response = requests.get(url, params)
-print(response.json())
-'''
 
 # set the apikey
-tenor_key = os.getenv("TENOR_API_KEY")  # click to set to your apikey
-ckey = "my_test_app"  # set the client_key for the integration
-lmt = 10
+load_dotenv()
+tenor_key = os.getenv("TENOR_API_KEY")
 
-# get the top 10 featured GIFs - using the default locale of en_US
-r = requests.get("https://tenor.googleapis.com/v2/featured?key=%s&client_key=%s&limit=%s" % (tenor_key, ckey, lmt))
+def search_gif(query, limit=20, pos=None):
+    if not query:
+        return []
+   
+    url = "https://tenor.googleapis.com/v2/search"
+    params = {
+        "q": query,
+        "key": tenor_key,
+        "limit": limit,
+        # 'pos' is pagination token that specifies where to continue the search
+        "pos": str(pos)
+    }
 
-if r.status_code == 200:
-    featured_gifs = json.loads(r.content)
-else:
-    featured_gifs = None
+    response = requests.get(url, params=params)
 
-# get the current list of categories - using the default locale of en_US
-r = requests.get("https://tenor.googleapis.com/v2/categories?key=%s&client_key=%s" % (tenor_key, ckey))
+    if response.status_code == 200:
+        data = response.json()
+        gifs = []
+        # Extract the .gif URL from each result
+        for result in data["results"]:
+            url = result["media_formats"]["gif"]["url"]
+            gifs.append(url)
+        # Save the position for the next request to start from
+        next_pos = data.get("next", None)
+        return {"gifs": gifs, "next": next_pos}
+    else:
+        # If API call fails, return an empty list
+        return {"gifs": [], "next": None}
 
-if r.status_code == 200:
-    categories = json.loads(r.content)
-else:
-    categories = None
+def featured_gifs(limit=20):
+    url = "https://tenor.googleapis.com/v2/featured"
+    params = {
+        "key": tenor_key,
+        "limit": limit
+    }
 
-# load either the featured GIFs or categories below the search bar for the user
-# for GIFs use the smaller formats for faster load times
-print (featured_gifs)
-print (categories)
-
-'''
-lmt = 8
-
-# our test search
-search_term = "excited"
-
-# get the top 8 GIFs for the search term
-r = requests.get(
-    "https://tenor.googleapis.com/v2/search?q=%s&key=%s&client_key=%s&limit=%s" % (search_term, tenor_key, ckey,  lmt))
-
-if r.status_code == 200:
-    # load the GIFs using the urls for the smaller GIF sizes
-    top_8gifs = json.loads(r.content)
-    print(top_8gifs)
-else:
-    top_8gifs = None
-
-# get the GIF's id and search used
-shard_gifs_id = top_8gifs["results"][0]["id"]
-
-search_term = "excited"
-
-r = requests.get("https://tenor.googleapis.com/v2/registershare?id=%s&key=%s&client_key=%s&q=%s" % (shard_gifs_id, tenor_key, ckey, search_term))
-
-if r.status_code == 200:
-    pass
-    # move on
-else:
-    pass
-    # handle error
-'''
+    response = requests.get(url, params)
+    if response.status_code == 200:
+        data = response.json()
+        links = []
+        # Extract the .gif URL from each result
+        for result in data["results"]:
+            url = result["media_formats"]["gif"]["url"]
+            links.append(url)
+        return links
+    else:
+        # If API call fails, return an empty list
+        return []

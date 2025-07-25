@@ -70,12 +70,15 @@
           <!--Comment form-->
           <div>
             <label for="content">{{ form.content.label }}</label><br>
-            {{ form.content(rows=3, cols=40) }}
             {% for error in form.content.errors %}
               <p style="color: red;">{{ error }}</p>
             {% endfor %}
-          </div>
+            <div class="comment-with-gif">
+              {{ form.content(rows=3, cols=40) }}
+            </div>
 
+            {% include 'gif_comment.html' %}
+          </div>
           <br>
           {{ form.submit() }}
         </form>
@@ -107,7 +110,14 @@
                 <code>{{ "%02d:%02d:%02d"|format(hrs, mins, secs) }}</code>
               </div>
               <div class="comment-body">
-                {{ comment.content }}
+                <!-- Display commet text if exists -->
+                {% if comment.content %}
+                  <p>{{ comment.content }}</p>
+                {% endif %}
+                <!-- Display comment gif if exists -->
+                {% if comment.gif_url %}
+                  <br><img src="{{ comment.gif_url }}" alt="GIF" width="200">
+                {% endif %}
               </div>
               {% if current_user.is_authenticated and comment.user_id == current_user.id %}
                 <form method="POST" action="{{ url_for('delete_comment', comment_id=comment.id) }}">
@@ -131,5 +141,7 @@
 {% endblock content %}
 
 {% block scripts %}
+
 <script src="{{ url_for('static', filename='scripts/progress_bar.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/gif_popup.js') }}"></script>
 {% endblock scripts %}
