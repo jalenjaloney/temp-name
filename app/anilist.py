@@ -1,6 +1,8 @@
 import requests
 import pandas as pd
 import time # rate limits
+import re
+import html
 # import os
 # from dotenv import load_dotenv
 # anilist api uses oauth, don't need token for public data
@@ -54,7 +56,7 @@ def fetch_anime(pages):
     for page in range(1, pages + 1):
         response = requests.post(
             ANILIST_URL,
-            json={"query": MAIN_QUERY, "variables": {"page": page, "perPage": 25}},
+            json={"query": MAIN_QUERY, "variables": {"page": page, "perPage": 15}},
             headers={"Content-Type": "application/json"}
         )
         response.raise_for_status()
@@ -81,23 +83,41 @@ def format_start_date(start_date):
 def parse_anime(anime_raw):
     parsed = []
     for anime in anime_raw:
+        # clean up the desciptions before appending
+        raw_description = anime["description"]
+
+        cleaned_descrip = raw_description
+
+        # remove the HTML tags and decode the entries
+        cleaned_descrip = re.sub(r'<[^>]*>', '', cleaned_descrip)
+        cleaned_descrip = html.unescape(cleaned_descrip)
+
+        cleaned_descrip = re.sub(r'\(Source:.*', '', cleaned_descrip, flags=re.DOTALL)
+        cleaned_descrip = re.sub(r'Notes:.*', '', cleaned_descrip, flags=re.IGNORECASE | re.DOTALL)
+
+        # remove tags
+        cleaned_descrip = cleaned_descrip.replace('<br>', '\n')
+        cleaned_descrip = re.sub(r'\n+', '\n', cleaned_descrip)
+        cleaned_descrip = cleaned_descrip.strip()
+
+
         parsed.append({
             "anilist_id": anime["id"],
             "title_romaji": anime["title"]["romaji"],
             "title_english": anime["title"]["english"],
             "episodes": anime["episodes"],
             "duration": anime["duration"],
-            "average_score": anime["averageScore"],
+            "average_score": f"{anime['averageScore'] / 10:.1f}" if anime["averageScore"] is not None else None,
             "trending": anime["trending"],
             "genres": ", ".join(anime["genres"]),
-            "description": anime["description"],
+            "description": cleaned_descrip,
             "cover_url": anime["coverImage"]["large"],
             "start_date": format_start_date(anime["startDate"]),
         })
     return parsed
 
-# currently fetches 50 entries/animes; running into rate limit issues with more pages, saves into csv
-anime_raw = fetch_anime(pages=2)
+# currently fetches 15 entries/animes; running into rate limit issues with more pages, saves into csv
+anime_raw = fetch_anime(pages=1)
 anime_data = parse_anime(anime_raw)
 pd.DataFrame(anime_data).to_csv("anime_catalog.csv", index=False)
 print("Saved anime_catalog.csv with", len(anime_data), "entries")
@@ -117,6 +137,19 @@ def fetch_episodes(anilist_id):
     media = data.get("data", {}).get("Media", {})
 
     return media.get("streamingEpisodes", [])
+
+# try to get episode num
+def extract_ep_num(episode_title):
+    if episode_title:
+        # all title starts w/ episode _
+        match = re.match(r'^(?:Episode|Ep)?\s*(\d+)', episode_title, re.IGNORECASE)
+        if match:
+            return int(match.group(1))
+        # Fallback if no specific "Episode X" prefix, just look for any leading number
+        num_match = re.match(r'^(\d+)', episode_title)
+        if num_match:
+            return int(num_match.group(1))
+    return 0
 
 # get the title and thumbnail
 def parse_episodes(anilist_id, episodes_raw):

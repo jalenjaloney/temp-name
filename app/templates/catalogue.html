@@ -45,7 +45,7 @@
         <h1 class="section-header">👺 Featured Anime</h1>
         <div class="featured-grid">
             {% for anime_show in anime %}
-            <a href="#" class="media-link">
+            <a href="{{ url_for('view_anime', anime_id=anime_show.anilist_id) }}" class="media-link">
                 <div>
                     <img src="{{ anime_show.cover_url }}" alt="{{ anime_show.title_romaji }}">
                     <p class="media-title">{{ anime_show.title_english or anime_show.title_romaji }}</p>

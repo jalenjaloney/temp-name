@@ -5,8 +5,9 @@ import subprocess
 import git
 import pandas as pd
 import requests
+import re
 from dotenv import load_dotenv
-from flask import Flask, flash, redirect, render_template, request, url_for, jsonify
+from flask import Flask, abort, flash, redirect, render_template, request, url_for, jsonify
 from flask_behind_proxy import FlaskBehindProxy
 from flask_login import (
     LoginManager,
@@ -23,6 +24,15 @@ from app.tmdb import (
     parse_seasons,
     fetch_season_episodes,
     parse_episodes,
+)
+# import functions for anilist
+from app.anilist import (
+    fetch_anime,
+    format_start_date,
+    parse_anime,
+    fetch_episodes,
+    parse_episodes,
+    extract_ep_num,
 )
 
 from app.forms import RegistrationForm, LoginForm, commentForm
@@ -221,6 +231,27 @@ def view_episode(episode_id):
         comments=comments,
         emoji_summary=emoji_summary,
     )
+
+# anime
+@app.route("/anime/<int:anime_id>")
+def view_anime(anime_id):
+    MEDIA_DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "media.db")
+    conn = sqlite3.connect(MEDIA_DB_PATH)
+
+    anime_query = f"SELECT * FROM anime WHERE anilist_id = {anime_id}"
+    anime_result = pd.read_sql(anime_query, conn).to_dict(orient="records")
+    if not anime_result:
+        abort(404)
+    anime = anime_result[0]
+
+    episode_query = f"SELECT * FROM anime_ep WHERE anilist_id = {anime_id}"
+    episodes = pd.read_sql(episode_query, conn).to_dict(orient="records")
+    conn.close()
+
+    # get episode nums
+    episodes.sort(key=lambda x: extract_ep_num(x.get('episode_title')), reverse=False)
+
+    return render_template("anime_page.html", anime=anime, episodes=episodes)
 
 
 @app.route("/comment/<int:comment_id>/delete", methods=["POST"])
