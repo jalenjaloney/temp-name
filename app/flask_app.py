@@ -6,7 +6,7 @@ import git
 import pandas as pd
 import requests
 from dotenv import load_dotenv
-from flask import Flask, flash, redirect, render_template, request, url_for, jsonify
+from flask import Flask, flash, redirect, render_template, request, url_for, jsonify, abort
 from flask_behind_proxy import FlaskBehindProxy
 from flask_login import (
     LoginManager,
@@ -29,6 +29,7 @@ from app.forms import RegistrationForm, LoginForm, commentForm
 from app.google_ai import get_comments, summarize_comments
 from app.models import Comment, User, db
 from app.tenor import search_gif, featured_gifs
+from app.cache_tmdb import fetch_and_cache_movie, fetch_and_cache_show
 
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
@@ -89,8 +90,36 @@ def catalogue():
 
 @app.route("/media/<int:media_id>")
 def get_media(media_id):
-    media = df[df["tmdb_id"] == int(media_id)].iloc[0].to_dict()
-    # gets seasons
+    MEDIA_DB_PATH = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "..", "media.db"
+    )
+    conn = sqlite3.connect(MEDIA_DB_PATH)
+    
+    # START OF SHOW LIVE QUERY
+    # Check if media exists in our database
+    media_query = f"SELECT * FROM media WHERE tmdb_id = {media_id}"
+    media_df = pd.read_sql(media_query, conn)
+    
+    # If media doesn't exist, fetch and cache it
+    if media_df.empty:
+        try:
+            fetch_and_cache_show(media_id, conn)
+        except Exception as e:
+            # If it fails as a TV show, it might be a movie that got here somehow
+            try:
+                fetch_and_cache_movie(media_id, conn)
+            except Exception as e2:
+                conn.close()
+                abort(404)
+        
+        media_df = pd.read_sql(media_query, conn)
+    
+    if media_df.empty:
+        conn.close()
+        abort(404)
+    
+    media = media_df.iloc[0].to_dict()    # gets seasons
+
     seasons = []
     if media["media_type"] == "tv":
         MEDIA_DB_PATH = os.path.join(
@@ -123,9 +152,26 @@ def view_movie(movie_id):
         os.path.dirname(os.path.abspath(__file__)), "..", "media.db"
     )
     conn = sqlite3.connect(MEDIA_DB_PATH)
-    movie_query = (
-        f"SELECT * FROM media WHERE tmdb_id = {movie_id} AND media_type = 'movie'")
-    movie = pd.read_sql(movie_query, conn).iloc[0].to_dict()
+
+    movie_query = f"SELECT * FROM media WHERE tmdb_id = {movie_id} AND media_type = 'movie'"
+    media_df = pd.read_sql(movie_query, conn)
+
+    #THIS IS WHERE THE NEW LIVE QUERY IS DONE
+    # Check if movie exists in DB, and fetch if not
+    if media_df.empty:
+        try:
+            fetch_and_cache_movie(movie_id, conn)
+        except Exception as e:
+            conn.close()
+            abort(404)
+
+        media_df = pd.read_sql(movie_query, conn)
+
+    if media_df.empty:
+        conn.close()
+        abort(404)
+
+    movie = media_df.iloc[0].to_dict()
     conn.close()
 
     # Allow commenting
@@ -250,43 +296,75 @@ def search_gifs():
 @app.route("/api/search")
 def api_search():
     q = request.args.get("q", "").strip()
-    limit = min(int(request.args.get("limit", 10)),50)
-
+    limit = min(int(request.args.get("limit", 10)), 50)
 
     if not q:
         return jsonify([])
-    
+
+    # Step 1: Check local SQLite DB
     MEDIA_DB_PATH = os.path.join(
         os.path.dirname(os.path.abspath(__file__)), "..", "media.db"
     )
     conn = sqlite3.connect(MEDIA_DB_PATH)
-    # Query the media table instead of Item ORM
-    search_query = """
+    cursor = conn.execute(
+        """
         SELECT tmdb_id, title, overview, media_type, poster_url
         FROM media 
         WHERE title LIKE ? 
         ORDER BY title ASC 
         LIMIT ?
-    """
-    
-    # Execute query with parameterized values for security
-    cursor = conn.execute(search_query, (f"%{q}%", limit))
+        """,
+        (f"%{q}%", limit)
+    )
     results = cursor.fetchall()
     conn.close()
 
-        # Format results for JSON response
-    formatted_results = []
-    for row in results:
-        formatted_results.append({
-            "id": row[0],  # tmdb_id
-            "title": row[1],  # title
-            "description": row[2] or "",  # overview (handle None values)
-            "media_type": row[3],  # media_type
-            "poster_url": row[4] or ""  # poster_url
+    if results:
+        # Format DB results
+        return jsonify([
+            {
+                "id": row[0],
+                "title": row[1],
+                "description": row[2] or "",
+                "media_type": row[3],
+                "poster_url": row[4] or ""
+            }
+            for row in results
+        ])
+
+    # Step 2: Fallback to TMDB if no local matches
+    TMDB_API_KEY = os.getenv("TMDB_API_KEY")
+    url = f"https://api.themoviedb.org/3/search/multi"
+    res = requests.get(url, params={
+        "api_key": TMDB_API_KEY,
+        "query": q,
+        "include_adult": False,
+        "page": 1
+    })
+
+    if not res.ok:
+        return jsonify([])
+
+    data = res.json().get("results", [])[:limit]
+    formatted = []
+
+    for item in data:
+        media_type = item.get("media_type")
+        if media_type not in ["movie", "tv"]:
+            continue
+
+        title = item.get("title") or item.get("name") or ""
+        poster_url = f"https://image.tmdb.org/t/p/w200{item['poster_path']}" if item.get("poster_path") else ""
+
+        formatted.append({
+            "id": item["id"],
+            "title": title,
+            "description": item.get("overview", ""),
+            "media_type": media_type,
+            "poster_url": poster_url
         })
 
-    return jsonify(formatted_results)
-
+    return jsonify(formatted)
 
 
 @app.route("/register", methods=["GET", "POST"])
