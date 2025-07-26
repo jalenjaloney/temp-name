@@ -93,7 +93,7 @@ def catalogue():
     )
     conn = sqlite3.connect(MEDIA_DB_PATH)
 
-    movie_query = "SELECT * FROM media WHERE media_type = 'movie' ORDER BY vote_average DESC LIMIT 10"
+    movie_query = "SELECT * FROM media WHERE media_type = 'movie' ORDER BY vote_average DESC LIMIT 50"
     tv_query = "SELECT * FROM media WHERE media_type = 'tv' ORDER BY vote_average DESC LIMIT 10"
     anime_query = "SELECT * FROM anime ORDER BY trending DESC LIMIT 10"
 

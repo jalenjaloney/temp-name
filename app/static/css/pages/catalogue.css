@@ -1,6 +1,9 @@
+@import url('./vars.css');
+
 .catalogue-wrapper {
   max-width: 1800px;
   margin: 0 auto;
+  margin-left: 1rem;
   padding: 1rem 0.5rem;
   min-height: fit-content;
 }
@@ -8,8 +11,8 @@
 .section-header {
   font-size: 1.5rem;
   font-weight: 600;
-  margin: 2rem 0 1rem;
-  color: #444;
+  margin: 2rem 0 .75rem;
+  color: #f5f5f7;
 }
 
 .media-section {
@@ -18,22 +21,34 @@
 }
 
 .movie-scroll {
+  padding-top: 0.3rem;
   display: flex;
   gap: 1rem;
   overflow-x: auto;
+  overflow-y: visible;
   padding-bottom: 0.5rem;
   scroll-snap-type: x mandatory;
+  scrollbar-width: none;        /* Hide scrollbar on Firefox */
+  -ms-overflow-style: none;     /* Hide scrollbar on IE and Edge */
+}
+
+.movie-scroll::-webkit-scrollbar {
+  display: none;                /* Hide scrollbar on Chrome, Safari, and Opera */
 }
 
 .movie-card {
-  flex: 0 0 140px; /* tighter width */
+  flex: 0 0 calc(
+    (100% - (var(--featured-grid-columns) - 2) * 1rem) / (var(--featured-grid-columns) - 1)
+  );
   scroll-snap-align: start;
+  position: relative;
+  overflow: visible;
 }
 
 .movie-card img {
   width: 100%;
-  border-radius: 12px 12px 0 0;
   object-fit: cover;
+  margin-top: 0;
 }
 
 .movie-card:hover {
@@ -50,43 +65,63 @@
   border-radius: 8px;
   font-size: 0.75rem;
   font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.movie-card:hover .rank-badge {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .media-title {
   padding: 0.5rem;
+  margin-bottom: 15px;
   font-weight: 500;
   font-size: 1.25rem;
-  color: #222;
+  color: #f5f5f7;
   text-decoration: none;
 }
 
 /* Featured TV Shows Grid */
 .featured-grid {
+  padding-top: 0.3rem;
+  margin: 0;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(var(--featured-grid-columns), 1fr);
+  gap: 1rem 1rem;
+  font-size: 0;
 }
 
 .featured-grid img {
   width: 100%;
   height: auto;
-  border-radius: 12px;
+  margin: 0;
+  padding: 0;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   transition: transform 0.2s ease;
+  vertical-align: top;
 }
 
 .featured-grid img:hover {
   transform: scale(1.03);
 }
 
-@media (max-width: 900px) {
-  .featured-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+:root {
+  --featured-grid-columns: 5;
 }
 
-@media (max-width: 600px) {
-  .featured-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.featured-grid {
+  grid-template-columns: repeat(var(--featured-grid-columns), 1fr);
+}
+
+.movie-scroll {
+  gap: 1rem;
+}
+
+.movie-card {
+  flex: 0 0 calc(
+    (100% - (var(--featured-grid-columns) - 2) * 1rem) / (var(--featured-grid-columns) - 1)
+  );
 }

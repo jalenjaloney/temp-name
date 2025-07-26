@@ -1,11 +1,10 @@
 .movie-card {
-  flex: 0 0 140px;
+  flex: 0 0 250px;
   scroll-snap-align: start;
 }
 
 .movie-card img {
   width: 100%;
-  border-radius: 12px 12px 0 0;
   object-fit: cover;
 }
 
