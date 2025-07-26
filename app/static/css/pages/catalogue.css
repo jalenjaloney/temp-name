@@ -1,6 +1,9 @@
+@import url('./vars.css');
+
 .catalogue-wrapper {
   max-width: 1800px;
   margin: 0 auto;
+  margin-left: 1rem;
   padding: 1rem 0.5rem;
   min-height: fit-content;
 }
@@ -34,7 +37,9 @@
 }
 
 .movie-card {
-  flex: 0 0 250px; /* tighter width */
+  flex: 0 0 calc(
+    (100% - (var(--featured-grid-columns) - 2) * 1rem) / (var(--featured-grid-columns) - 1)
+  );
   scroll-snap-align: start;
   position: relative;
   overflow: visible;
@@ -84,7 +89,7 @@
   padding-top: 0.3rem;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(var(--featured-grid-columns), 1fr);
   gap: 1rem 1rem;
   font-size: 0;
 }
@@ -103,14 +108,20 @@
   transform: scale(1.03);
 }
 
-@media (max-width: 900px) {
-  .featured-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+:root {
+  --featured-grid-columns: 5;
 }
 
-@media (max-width: 600px) {
-  .featured-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.featured-grid {
+  grid-template-columns: repeat(var(--featured-grid-columns), 1fr);
+}
+
+.movie-scroll {
+  gap: 1rem;
+}
+
+.movie-card {
+  flex: 0 0 calc(
+    (100% - (var(--featured-grid-columns) - 2) * 1rem) / (var(--featured-grid-columns) - 1)
+  );
 }
