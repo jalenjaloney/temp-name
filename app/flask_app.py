@@ -6,6 +6,7 @@ import git
 import pandas as pd
 import requests
 from dotenv import load_dotenv
+from flask import Flask, abort, flash, redirect, render_template, request, url_for, jsonify
 from flask import Flask, flash, redirect, render_template, request, url_for, jsonify, abort
 from flask_behind_proxy import FlaskBehindProxy
 from flask_login import (
@@ -24,9 +25,19 @@ from app.tmdb import (
     fetch_season_episodes,
     parse_episodes,
 )
+# import functions for anilist
+from app.anilist import (
+    fetch_anime,
+    format_start_date,
+    parse_anime,
+    fetch_episodes,
+    parse_episodes,
+    extract_ep_num,
+)
 
 from app.forms import RegistrationForm, LoginForm, commentForm
 from app.google_ai import get_comments, summarize_comments
+
 from app.models import Comment, User, db
 from app.tenor import search_gif, featured_gifs
 from app.cache_tmdb import fetch_and_cache_movie, fetch_and_cache_show
@@ -73,19 +84,30 @@ def parse_timestamp_string(ts_str):
     else:
         raise ValueError("Invalid timestamp format")
 
-# media catalo csv created from tmdb.py
-df = pd.read_csv("media_catalog.csv")
 
 # Update TMDB to show to catalogue page
 @app.route("/")
 def catalogue():
-    # Sends only the top 10 movies and tv shows to the catalogue page
-    movies = df[df["media_type"] == "movie"].head(10).to_dict(orient="records")
-    tv_shows = df[df["media_type"] == "tv"].head(10).to_dict(orient="records")
+    MEDIA_DB_PATH = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "..", "media.db"
+    )
+    conn = sqlite3.connect(MEDIA_DB_PATH)
+
+    movie_query = "SELECT * FROM media WHERE media_type = 'movie' ORDER BY vote_average DESC LIMIT 10"
+    tv_query = "SELECT * FROM media WHERE media_type = 'tv' ORDER BY vote_average DESC LIMIT 10"
+    anime_query = "SELECT * FROM anime ORDER BY trending DESC LIMIT 10"
+
+    movies = pd.read_sql(movie_query, conn).to_dict(orient="records")
+    tv_shows = pd.read_sql(tv_query, conn).to_dict(orient="records")
+    anime = pd.read_sql(anime_query, conn).to_dict(orient="records")
+
+    conn.close()
+
     users = User.query.all()
     return render_template(
-        "catalogue.html", movies=movies, tv_shows=tv_shows, users=users
+        "catalogue.html", movies=movies, tv_shows=tv_shows, anime=anime, users=users
     )
+
 
 
 @app.route("/media/<int:media_id>")
@@ -120,6 +142,14 @@ def get_media(media_id):
     
     media = media_df.iloc[0].to_dict()    # gets seasons
 
+    MEDIA_DB_PATH = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "..", "media.db"
+    )
+    conn = sqlite3.connect(MEDIA_DB_PATH)
+    media_query = f"SELECT * FROM media WHERE tmdb_id = {media_id}"
+    media = pd.read_sql(media_query, conn).iloc[0].to_dict()
+
+    # gets seasons
     seasons = []
     if media["media_type"] == "tv":
         MEDIA_DB_PATH = os.path.join(
@@ -262,6 +292,93 @@ def view_episode(episode_id):
         "media_page.html",
         media=episode,
         media_type="episode",
+        form=form,
+        comments=comments,
+        emoji_summary=emoji_summary,
+    )
+
+# anime
+@app.route("/anime/<int:anime_id>")
+def view_anime(anime_id):
+    MEDIA_DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "media.db")
+    conn = sqlite3.connect(MEDIA_DB_PATH)
+
+    anime_query = f"SELECT * FROM anime WHERE anilist_id = {anime_id}"
+    anime_result = pd.read_sql(anime_query, conn).to_dict(orient="records")
+    if not anime_result:
+        abort(404)
+    anime = anime_result[0]
+
+    episode_query = f"SELECT * FROM anime_ep WHERE anilist_id = {anime_id}"
+    episodes = pd.read_sql(episode_query, conn).to_dict(orient="records")
+    conn.close()
+
+    # get episode nums
+    episodes.sort(key=lambda x: extract_ep_num(x.get('episode_title')), reverse=False)
+
+    return render_template("anime_page.html", anime=anime, episodes=episodes)
+
+# anime details
+@app.route("/aniepisode/<int:episode_id>", methods=["GET", "POST"])
+def view_anime_episode(episode_id):
+    MEDIA_DB_PATH = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "..", "media.db"
+    )
+    conn = sqlite3.connect(MEDIA_DB_PATH)
+
+    episode_query = f"SELECT * FROM anime_ep WHERE episode_id = {episode_id}"
+    episode_df = pd.read_sql(episode_query, conn)
+    
+
+    if episode_df.empty:
+        abort(404)
+
+    episode = episode_df.iloc[0].to_dict()
+
+    anilist_id = episode.get("anilist_id") # Get the anilist_id from the episode data
+    anime_details = None
+    if anilist_id:
+        anime_query = f"SELECT * FROM anime WHERE anilist_id = {anilist_id}"
+        anime_df = pd.read_sql(anime_query, conn)
+        if not anime_df.empty:
+            anime_details = anime_df.iloc[0].to_dict()
+    conn.close()
+
+    # Allow commenting
+    form = commentForm()
+    if form.validate_on_submit() and current_user.is_authenticated:
+        try:
+            timestamp_seconds = parse_timestamp_string(form.timestamp.data)
+        except ValueError:
+            flash("Invalid timestamp format.", "danger")
+            return redirect(url_for("view_anime_episode", episode_id=episode_id))
+
+        new_comment = Comment(
+            content=form.content.data,
+            timestamp=timestamp_seconds,
+            gif_url=form.gif_url.data,
+            user_id=current_user.id,
+            episode_id=int(episode_id),
+        )
+        db.session.add(new_comment)
+        db.session.commit()
+        flash("Comment added!")
+        return redirect(url_for("view_anime_episode", episode_id=episode_id))
+
+    comments = (
+        Comment.query.filter_by(episode_id=int(episode_id))
+        .order_by(Comment.timestamp)
+        .all()
+    )
+
+    comment_block = get_comments(episode_id)
+    emoji_summary = summarize_comments(comment_block) if comment_block else ""
+
+    return render_template(
+        "media_page.html",
+        media=episode,
+        anime=anime_details,
+        media_type="anime_episode",
         form=form,
         comments=comments,
         emoji_summary=emoji_summary,
@@ -410,7 +527,7 @@ def webhook():
         origin.pull()
 
         # Rebuild media.db
-        subprocess.run(["python3", "app/query_db.py"])
+        subprocess.run(["python3", "app/daily_update.py"])
 
         return "Updated PythonAnywhere successfully", 200
     else:

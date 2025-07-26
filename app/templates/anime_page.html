@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+<main class="main-container">
+  <div class="Container">
+    {% if anime %}
+    <div class="Details">
+      <div class="title-poster">
+        <h1>{{ anime.title_english }}</h1>
+        {% if anime.cover_url %}
+        <img src="{{ anime.cover_url }}" alt="{{ anime.title_english }}" width="300">
+        {% endif %}
+      </div>
+
+      <div class="Overview">
+        
+        <p>{{ anime.description }}</p>
+        <p><strong>Release Date:</strong> {{ anime.start_date }}</p>
+        <p><strong>Rating:</strong> {{ anime.average_score }}</p>
+      </div>
+    </div>
+    {% else %}
+      <h2>Anime not found.</h2>
+    {% endif %}
+
+    {% if episodes %}
+    <div class="seasons-button-grid">
+      {% for episode in episodes %}
+      <div class="season-block">
+        <a href="{{ url_for('view_anime_episode', episode_id=episode.episode_id) }}">
+          <button class="btn-season">{{ episode.episode_title }}</button>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</main>
+{% endblock %}

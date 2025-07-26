@@ -1,0 +1,31 @@
+/* Custom scrollbar styles for the dark theme */
+.scrollbar-hide {
+    -ms-overflow-style: none; 
+    scrollbar-width: none;    
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none; 
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box; 
+    -webkit-box-orient: vertical; 
+    -webkit-line-clamp: 2; 
+}
+
+/* Cinematic animations with red glow */
+.animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 20px hsla(0, 85%, 65%, 0.5); /* Use hsla for transparency */
+    }
+    to {
+        text-shadow: 0 0 30px hsla(0, 85%, 65%, 0.8), 0 0 40px hsla(0, 85%, 65%, 0.6);
+    }
+}

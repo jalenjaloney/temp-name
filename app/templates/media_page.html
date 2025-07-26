@@ -12,18 +12,30 @@
             {% if media.still_url %}
               <img src="{{ media.still_url }}" alt="{{ media.episode_name }}">
             {% endif %}
+          {% elif media_type == 'anime_episode' %}
+            <h2>{{ media.episode_title }}</h2>
+            {% if media.thumbnail %}
+              <img src="{{ media.thumbnail }}" alt="{{ media.episode_title }}">
+            {% endif %}
           {% else %}
             <h2>{{ media.title }}</h2>
             {% if media.poster_url %}
               <img src="{{ media.poster_url }}" alt="{{ media.title }}">
             {% endif %}
           {% endif %}
+          <p><strong>Air Date:</strong> {{ media.air_date if media_type == 'episode' else media.release_date }}</p>
+          <p><strong>Rating:</strong> {{ media.vote_average }}</p>
         </div> <!-- Title poster ends here-->
         
         <div class="Overview">
-          <p>{{ media.overview }}</p>
-          <p><strong>Air Date:</strong> {{ media.air_date if media_type == 'episode' else media.release_date }}</p>
-          <p><strong>Rating:</strong> {{ media.vote_average }}</p>
+          {% if media_type == 'anime_episode' %}
+            <p></p>
+          {% else %}
+            <p>{{ media.overview }}</p>
+            <p><strong>Air Date:</strong> {{ media.air_date if media_type == 'episode' else media.release_date }}</p>
+            <p><strong>Rating:</strong> {{ media.vote_average }}</p>
+          {% endif %}
+        
           {% if emoji_summary %}
             <p><strong>General Viewer Reaction:</strong> {{ emoji_summary }}</p>
           {% endif %}
@@ -37,10 +49,9 @@
         <button id="play-btn" type="button" class="play-btn" aria-label="Play">
           ▶
         </button>
-
         <div id="progress-container"
              class="progress-container"
-             data-duration="{{ media.runtime*60 or 3600 }}">
+             data-duration="{{ media.duration * 60 if media_type == 'anime_episode' and media.duration is not none else media.runtime * 60 if media.runtime is not none else 3600 }}">
           <div id="progress-bar" class="progress-bar"></div>
           <span id="progress-tooltip" class="progress-tooltip"></span>
         </div> <!-- end progress container div -->

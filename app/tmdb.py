@@ -1,6 +1,5 @@
 import requests
 import pandas as pd
-from flask import Flask, render_template
 import os
 from dotenv import load_dotenv
 
@@ -10,8 +9,6 @@ TMDB_API_KEY = os.getenv("TMDB_API_KEY")
 
 BASE_URL = "https://api.themoviedb.org/3"
 IMG_BASE_URL = "https://image.tmdb.org/t/p/w500"
-
-app = Flask(__name__)
 
 # Fetch multiple pages of popular movies or TV shows
 def fetch_popular(media_type="movie", pages=1):
@@ -55,18 +52,6 @@ def parse_tmdb_items(items, media_type):
                 "vote_average": item.get("vote_average"),
             })
     return parsed
-
-# Fetch and parse both movies and TV shows
-movies_raw = fetch_popular("movie", pages=2)
-tv_raw = fetch_popular("tv", pages=2)
-
-movies = parse_tmdb_items(movies_raw, "movie")
-tv = parse_tmdb_items(tv_raw, "tv")
-
-# Combine movie and TV data and store into single CSV file
-df = pd.DataFrame(movies + tv)
-df.to_csv("media_catalog.csv", index=False)
-print("Saved media_catalog.csv with", len(df), "entries")
 
 # Fetch all seasons of a particular TV show
 def fetch_tv_seasons(tv_id):
@@ -132,7 +117,7 @@ def parse_episodes(tv_id, season_num, season_id, episodes_raw):
     return episodes
 
 # Take all the episode data and store them in csvs
-def generate_episode_csvs():
+def generate_episode_csvs(tv):
     season_data = []
     episode_data = []
     for show in tv:
@@ -161,5 +146,17 @@ def generate_episode_csvs():
     episode_df.to_csv("tv_episodes.csv", index=False)
     print("Saved tv_episodes.csv with", len(episode_df), "entries")
 
+def main():
+    movies_raw = fetch_popular("movie", pages=2)
+    tv_raw = fetch_popular("tv", pages=2)
+    movies = parse_tmdb_items(movies_raw, "movie")
+    tv = parse_tmdb_items(tv_raw, "tv")
+    df = pd.DataFrame(movies + tv)
+    df.to_csv("media_catalog.csv", index=False)
+    print("Saved media_catalog.csv with", len(df), "entries")
+
+    generate_episode_csvs(tv)
+
 if __name__ == "__main__":
-    generate_episode_csvs()
+    main()
+

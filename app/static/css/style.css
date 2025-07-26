@@ -1,0 +1,44 @@
+/* BASE STYLES */
+@import url('base/reset.css');
+@import url('base/variables.css');
+@import url('base/typography.css');
+
+/* COMPONENT STYLES */
+@import url('components/buttons.css');
+@import url('components/forms.css');
+@import url('components/alerts.css');
+@import url('components/sidebar.css');
+@import url('components/navbar.css');
+@import url('components/logo.css');
+@import url('components/media-card.css');
+@import url('components/progress.css');
+@import url('components/comments.css');
+
+/* LAYOUT STYLES */
+@import url('layout/main-layout.css');
+@import url('layout/auth-layout.css');
+
+/* PAGE STYLES */
+@import url('pages/catalogue.css');
+@import url('pages/media-page.css');
+@import url('pages/season-page.css');
+
+/* MISCELLANEOUS STYLES */ 
+.greeting {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 24px;
+  color: #333;
+  background-color: #ffffff;
+  padding: 15px 25px;
+  margin: 20px auto;
+  border-left: 6px solid #183B4E;
+  border-radius: 8px;
+  width: fit-content;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.greeting:hover {
+  transform: scale(1.02);
+  background-color: #f4f4f4;
+}

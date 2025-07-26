@@ -1,0 +1,92 @@
+.catalogue-wrapper {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 1rem 0.5rem;
+  min-height: fit-content;
+}
+
+.section-header {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem;
+  color: #444;
+}
+
+.media-section {
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+}
+
+.movie-scroll {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scroll-snap-type: x mandatory;
+}
+
+.movie-card {
+  flex: 0 0 140px; /* tighter width */
+  scroll-snap-align: start;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+  object-fit: cover;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+.rank-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: #ff4757;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.media-title {
+  padding: 0.5rem;
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: #222;
+  text-decoration: none;
+}
+
+/* Featured TV Shows Grid */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+
+.featured-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.featured-grid img:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 900px) {
+  .featured-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
